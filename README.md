@@ -31,51 +31,68 @@ Błąd API → ponowienie w kolejnym przebiegu, po 3 próbach status `failed` i 
 
 ## Uruchomienie (raz, ok. 20 minut)
 
-### 1. Strona FB połączona z Instagramem
+### 1. Portfolio firmowe ze stroną i Instagramem
 
-Meta Business Suite → Ustawienia → Konta → Konta na Instagramie → połącz `@welife.world` ze stroną WE.LIFE.
-Konto IG musi być kontem **profesjonalnym** (Firma).
+1. Wejdź na https://business.facebook.com i zaloguj się kontem FB, które zarządza stroną WE.LIFE.
+   Jeśli nie masz portfolio firmowego, utwórz je: nazwa `WE.LIFE`, Twoje imię i nazwisko, e-mail firmowy.
+2. https://business.facebook.com/settings → **Konta → Strony** → Dodaj → Dodaj stronę → `WE.LIFE`.
+3. **Konta → Konta na Instagramie** → Dodaj → zaloguj się na `@welife.world` (konto musi być profesjonalne, typ Firma).
+4. Połącz stronę z Instagramem: w aplikacji Instagram → Edytuj profil → **Strona** → Połącz istniejącą stronę → `WE.LIFE`
+   (albo w Meta Business Suite → Ustawienia → Konta na Instagramie → Połącz).
 
-### 2. Aplikacja Meta i token (polecane: użytkownik systemowy, token bez wygaśnięcia)
+### 2. Aplikacja Meta
 
-1. https://developers.facebook.com/apps → **Utwórz aplikację** → typ **Firma (Business)**,
-   przypisz ją do portfolio firmowego, w którym jest strona WE.LIFE.
-2. W aplikacji dodaj produkt **Instagram** (wariant „API setup with Facebook login”).
-3. https://business.facebook.com/settings → **Użytkownicy systemowi** → Dodaj (rola Administrator).
-4. Przy użytkowniku systemowym: **Przypisz zasoby** → strona WE.LIFE (pełna kontrola),
-   konto Instagram `@welife.world`, aplikacja z punktu 1.
-5. **Wygeneruj nowy token** → aplikacja z punktu 1 → wygaśnięcie: **Nigdy** → uprawnienia:
+1. https://developers.facebook.com → zaloguj się tym samym kontem FB. Za pierwszym razem: **Zacznij**,
+   zaakceptuj warunki i potwierdź telefon lub e-mail.
+2. **Moje aplikacje → Utwórz aplikację**. Przypadek użycia: **Inne**. Typ aplikacji: **Firma** (Business).
+   Nazwa: `WE.LIFE Publisher`, e-mail kontaktowy, portfolio firmowe: `WE.LIFE`.
+3. W panelu aplikacji → **Dodaj produkt** → **Instagram** → Skonfiguruj → wariant
+   **„API setup with Facebook login”** (logowanie przez Facebooka).
+4. Tryb aplikacji zostaw na razie **W trakcie tworzenia**. Jeśli później publikacja zwróci błąd uprawnień,
+   przełącz na **Na żywo**: Ustawienia aplikacji → Podstawowe → URL polityki prywatności
+   `https://welife.world/privacy`, kategoria, ikona (`profil-1080.png`) → przełącznik trybu u góry.
+
+### 3. Użytkownik systemowy i token bez wygaśnięcia
+
+1. https://business.facebook.com/settings → **Użytkownicy → Użytkownicy systemowi** → Dodaj.
+   Nazwa: `welife-publisher`, rola: **Administrator**.
+2. Przy użytkowniku systemowym → **Przypisz zasoby**:
+   - Strony → `WE.LIFE` → pełna kontrola;
+   - Konta na Instagramie → `@welife.world` → pełna kontrola;
+   - Aplikacje → `WE.LIFE Publisher` → zarządzanie aplikacją.
+3. **Wygeneruj nowy token** → aplikacja `WE.LIFE Publisher` → wygaśnięcie: **Nigdy** → uprawnienia:
    `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement`,
-   `pages_manage_posts`, `business_management`. Skopiuj token (pokazuje się raz).
+   `pages_manage_posts`, `business_management` → Wygeneruj.
+4. Skopiuj token od razu (pokazuje się raz) i zapisz w menedżerze haseł.
+   **Nie wklejaj go do czatu, maila ani plików w repo.**
 
 Szybsza alternatywa na test: Graph API Explorer → token użytkownika z tymi uprawnieniami →
 „Extend Access Token” w Access Token Debugger (ważny 60 dni; workflow „Sprawdź konfigurację”
 ostrzeże 10 dni przed końcem).
 
-Jeśli Meta poprosi o weryfikację firmy albo App Review, zatrzymaj się i napisz do Claude:
-to zależy od konta, a automat poczeka w trybie próbnym.
+Jeśli Meta poprosi o weryfikację firmy albo App Review, zatrzymaj się: automat poczeka w trybie próbnym.
 
-### 3. Sekrety w tym repo
+### 4. Sekrety w tym repo
 
-Settings → Secrets and variables → Actions → **Secrets** → New repository secret:
+https://github.com/pawelszczeciak/welife-social/settings/secrets/actions → **New repository secret**:
 
 | nazwa | wartość |
 | --- | --- |
-| `META_ACCESS_TOKEN` | token z kroku 2 |
-| `FB_PAGE_ID` | ID strony WE.LIFE (Strona → Informacje / Ustawienia → Przejrzystość strony) |
-| `IG_USER_ID` | ID konta IG; jeśli nie wiesz, zostaw puste i uruchom krok 4 |
+| `META_ACCESS_TOKEN` | token z kroku 3 |
+| `FB_PAGE_ID` | ID strony: Facebook → strona WE.LIFE → Informacje → Przejrzystość strony → Identyfikator strony |
+| `IG_USER_ID` | ID konta IG; jeśli nie wiesz, pomiń i wykonaj krok 5 |
 
-### 4. Sprawdzenie
+### 5. Sprawdzenie
 
-Actions → **Sprawdź konfigurację** → Run workflow. Log pokaże ważność tokenu, uprawnienia,
-nazwę strony i połączone konto IG z jego ID (wpisz je jako `IG_USER_ID`, jeśli brakowało).
-Zielony przebieg = gotowe.
+https://github.com/pawelszczeciak/welife-social/actions → **Sprawdź konfigurację** → Run workflow → otwórz log.
+Pokaże ważność tokenu, brakujące uprawnienia, nazwę strony i ID połączonego konta IG.
+Wpisz to ID jako sekret `IG_USER_ID` i uruchom ponownie. Zielony przebieg = gotowe.
 
-Potem Actions → **Publikacja** → Run workflow i przeczytaj log trybu próbnego.
+Potem **Publikacja** → Run workflow: log trybu próbnego pokaże, co i kiedy wyjdzie.
 
-### 5. Włączenie publikacji
+### 6. Włączenie publikacji
 
-Settings → Secrets and variables → Actions → **Variables** → New repository variable:
+Settings → Secrets and variables → Actions → zakładka **Variables** → New repository variable:
 `PUBLISH_LIVE` = `true`. Wyłączenie: zmień na `false` albo usuń zmienną.
 
 ## Dodawanie postów
