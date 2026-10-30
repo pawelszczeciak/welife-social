@@ -1,0 +1,22 @@
+# Przy każdym pushu: testy automatu i walidacja całej kolejki (beta w tekście, brak {{…}},
+# limit hashtagów, istniejące pliki, JPEG dla zdjęć IG).
+name: Testy
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: node --test test/*.test.mjs
+      - run: node scripts/validate-queue.mjs

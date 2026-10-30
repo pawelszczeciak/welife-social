@@ -1,0 +1,27 @@
+# Raz w tygodniu (i na żądanie) sprawdza token, uprawnienia i połączenie strony FB z IG.
+# Czerwony przebieg = e-mail z GitHuba, np. gdy token wygasa za mniej niż 10 dni.
+name: Sprawdź konfigurację
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - env:
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: node scripts/check-config.mjs

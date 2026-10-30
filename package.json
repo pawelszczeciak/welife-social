@@ -1,0 +1,12 @@
+{
+  "name": "welife-social",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-queue.mjs",
+    "publish:dry": "node scripts/publish.mjs",
+    "check": "node scripts/check-config.mjs"
+  }
+}

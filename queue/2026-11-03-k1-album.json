@@ -1,0 +1,22 @@
+{
+  "id": "2026-11-03-k1-album",
+  "publish_at": "2026-11-03T19:00:00+01:00",
+  "platforms": [
+    "facebook"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K1-01-okladka.jpg",
+    "media/K1-02-stawka.jpg",
+    "media/K1-03-krok-1.jpg",
+    "media/K1-04-krok-2.jpg",
+    "media/K1-05-krok-3.jpg",
+    "media/K1-06-krok-4.jpg",
+    "media/K1-07-krok-5.jpg",
+    "media/K1-08-podsumowanie.jpg",
+    "media/K1-09-we-life.jpg",
+    "media/K1-10-cta.jpg"
+  ],
+  "caption": "Trzeci słoik passaty w szafce to nie przypadek. To lista zakupów pisana z pamięci.\n\n5 kroków, które robimy przed każdymi większymi zakupami:\n1. Najpierw plan posiłków, potem lista.\n2. Lodówka i szafka przed zakupami. Ten krok najłatwiej pominąć, a daje najwięcej.\n3. To, co ma krótki termin, idzie na początek tygodnia.\n4. Ilości z przepisu, nie na oko.\n5. Po zakupach zapisz, co weszło do domu.\n\nW WE.LIFE kroki 1, 4 i 5 robią się w aplikacji: lista składa się z planu i pomija to, co masz w spiżarni. To wersja beta (testowa), za darmo. Napisz PLAN w komentarzu albo w wiadomości, wyślemy Ci link.",
+  "note": "Album K1 na FB. Na Instagramie K1 publikujesz ręcznie jako pierwszy post."
+}

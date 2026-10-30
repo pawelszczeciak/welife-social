@@ -1,0 +1,16 @@
+{
+  "id": "2026-11-02-r1",
+  "publish_at": "2026-11-02T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R1.mp4"
+  ],
+  "cover": "media/R1-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Napisz PLAN w komentarzu, a wyślemy Ci link do darmowej bety WE.LIFE.\n\nLista zakupów pisana z pamięci łatwo dubluje to, co już stoi w szafce. Stąd trzeci słoik passaty i druga paczka ryżu.\n\nW WE.LIFE robisz plan posiłków na 7 dni. Lista zakupów składa się z przepisów, razem z ilościami, a produkty zapisane w spiżarni z niej wypadają.\n\nTo wersja beta, czyli testowa. Działa w przeglądarce na telefonie, po polsku, bez karty.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #listazakupów #mniejmarnowania",
+  "note": "Po publikacji przypnij na Instagramie (API nie przypina)."
+}
