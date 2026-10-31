@@ -1,0 +1,17 @@
+{
+  "id": "2026-11-19-c7",
+  "publish_at": "2026-11-19T19:00:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook"
+  ],
+  "type": "image",
+  "media": [
+    "media/C7.jpg"
+  ],
+  "ai_imagery": true,
+  "caption": "Zapasy bez przepisywania.\n\nZrób zdjęcie paragonu, WE.LIFE odczyta produkty i ilości, a Ty je potwierdzasz. Spiżarnia zgadza się z szafkami, a plan posiłków i lista zakupów biorą ją pod uwagę.\n\nWE.LIFE to darmowa wersja beta (testowa). Napisz PLAN w komentarzu, wyślemy Ci link.\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\n#spiżarnia #listazakupów #planposiłków",
+  "facebook": {
+    "message": "Zapasy bez przepisywania.\n\nZrób zdjęcie paragonu, WE.LIFE odczyta produkty i ilości, a Ty je potwierdzasz. Spiżarnia zgadza się z szafkami, a plan posiłków i lista zakupów biorą ją pod uwagę.\n\nWE.LIFE to darmowa wersja beta (testowa): https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=karta-c7\n\nZdjęcie: ilustracja wygenerowana przez AI."
+  }
+}

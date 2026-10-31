@@ -1,0 +1,15 @@
+{
+  "id": "2026-11-22-r12",
+  "publish_at": "2026-11-22T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R12.mp4"
+  ],
+  "cover": "media/R12-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Napisz PLAN, a wyślemy Ci link do WE.LIFE. To darmowa wersja beta (testowa).\n\nPrzepisy w WE.LIFE są rozpisane krok po kroku, ze składnikami, a tryb gotowania prowadzi Cię przez kolejne kroki. Porcje dopasujesz do liczby osób, a z przepisów ułożysz plan posiłków na tydzień.\n\nNie musisz zgadywać, co dalej. Wystarczy zrobić następny krok.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#gotowanie #przepisy #planposiłków"
+}
