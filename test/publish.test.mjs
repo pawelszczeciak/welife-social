@@ -9,7 +9,7 @@ import { tmpdir } from "node:os";
 import { run } from "../scripts/publish.mjs";
 import { check } from "../scripts/check-config.mjs";
 
-async function mockGraph({ failPublish = 0 } = {}) {
+async function mockGraph({ failPublish = 0, bioLink = "https://welife.world/?utm_source=instagram" } = {}) {
   const calls = [];
   let n = 0;
   let fails = failPublish;
@@ -38,6 +38,7 @@ async function mockGraph({ failPublish = 0 } = {}) {
     if (p === "PAGE/videos" || p === "PAGE/feed" || p === "PAGE/photos") return send(200, { id: `fb${++n}` });
     if (p === "debug_token") return send(200, { data: { is_valid: true, expires_at: 0, scopes: ["instagram_basic", "instagram_content_publish", "pages_show_list", "pages_read_engagement", "pages_manage_posts"] } });
     if (p === "PAGE") return send(200, { name: "WE.LIFE", instagram_business_account: { id: "IG", username: "welife.world" } });
+    if (p === "IG") return send(200, { username: "welife.world", biography: "Plan posiłków. Wersja beta.", website: bioLink });
     if (/^c\d+$/.test(p)) return send(200, { status_code: "FINISHED" });
     if (/^m\d+$/.test(p)) return send(200, { permalink: `https://www.instagram.com/reel/${p}/` });
     send(404, { error: { message: `unknown ${p}` } });
@@ -177,5 +178,12 @@ test("check-config: token bez wygaśnięcia, strona połączona z IG", async () 
   assert.deepEqual(r.problems, []);
   const wrong = await check({ META_ACCESS_TOKEN: "T", FB_PAGE_ID: "PAGE", IG_USER_ID: "OTHER", GRAPH_BASE: g.base }, { log: () => {} });
   assert.match(wrong.problems[0], /nie pasuje/);
+  g.close();
+});
+
+test("check-config: brak linku do welife.world w bio IG to problem do zgłoszenia", async () => {
+  const g = await mockGraph({ bioLink: "" });
+  const r = await check({ META_ACCESS_TOKEN: "T", FB_PAGE_ID: "PAGE", IG_USER_ID: "IG", GRAPH_BASE: g.base }, { log: () => {} });
+  assert.match(r.problems.join(" "), /linku do welife\.world/);
   g.close();
 });

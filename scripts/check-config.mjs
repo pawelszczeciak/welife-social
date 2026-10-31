@@ -36,6 +36,14 @@ export async function check(env = process.env, { log = console.log, fetchImpl = 
   if (!ig) problems.push("strona nie jest połączona z kontem Instagram (Meta Business Suite → Ustawienia → Konta)");
   else if (env.IG_USER_ID && env.IG_USER_ID !== ig.id) problems.push(`IG_USER_ID=${env.IG_USER_ID} nie pasuje do konta strony (${ig.id})`);
   else if (!env.IG_USER_ID) problems.push(`brak IG_USER_ID: ustaw sekret na ${ig.id}`);
+  // Posty kierują do „linku w bio”, więc bez niego cały ruch z Instagrama przepada.
+  if (ig) {
+    const profile = await graph.get(ig.id, { fields: "username,biography,website" });
+    log(`bio IG: ${(profile.biography ?? "").replace(/\s+/g, " ").slice(0, 80) || "(puste)"} · link: ${profile.website ?? "(brak)"}`);
+    if (!/welife\.world/i.test(profile.website ?? "")) {
+      problems.push("w bio Instagrama brakuje linku do welife.world: ustaw go w aplikacji (Edytuj profil → Linki)");
+    }
+  }
   return { problems };
 }
 

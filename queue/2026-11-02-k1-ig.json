@@ -1,0 +1,22 @@
+{
+  "id": "2026-11-02-k1-ig",
+  "publish_at": "2026-11-02T12:00:00+01:00",
+  "platforms": [
+    "instagram"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K1-01-okladka.jpg",
+    "media/K1-02-stawka.jpg",
+    "media/K1-03-krok-1.jpg",
+    "media/K1-04-krok-2.jpg",
+    "media/K1-05-krok-3.jpg",
+    "media/K1-06-krok-4.jpg",
+    "media/K1-07-krok-5.jpg",
+    "media/K1-08-podsumowanie.jpg",
+    "media/K1-09-we-life.jpg",
+    "media/K1-10-cta.jpg"
+  ],
+  "caption": "Trzeci słoik passaty w szafce to nie przypadek. To lista zakupów pisana z pamięci.\n\nPrzesuń, jest 5 kroków. Drugi daje najwięcej i najłatwiej go pominąć.\n\nLista bez dublowania zaczyna się od dwóch rzeczy: planu posiłków i tego, co już masz w lodówce. Najpierw plan posiłków na 3 albo 4 dni, potem zapasy, a ilości bierzesz z przepisu, nie na oko.\n\nW WE.LIFE lista składa się z planu sama i pomija produkty zapisane w spiżarni. To na razie wersja beta (testowa), za darmo. Link masz w bio @welife.world.\n\n#listazakupów #planposiłków #mniejmarnowania",
+  "note": "Pierwszy post na Instagramie. Przypięcie zostaje ręczne (API go nie obsługuje)."
+}
