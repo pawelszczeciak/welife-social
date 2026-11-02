@@ -6,5 +6,20 @@
     "permalink": "https://www.instagram.com/p/DfPKxxzl8Fo/",
     "published_at": "2026-11-02T11:10:56.190Z",
     "updated_at": "2026-11-02T11:09:48.079Z"
+  },
+  "2026-11-02-r1:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "2591191488028636",
+    "published_at": "2026-11-02T17:37:51.345Z",
+    "updated_at": "2026-11-02T17:36:57.747Z"
+  },
+  "2026-11-02-r1:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18436559476180491",
+    "permalink": "https://www.instagram.com/reel/DfP3AkvHdO5/",
+    "published_at": "2026-11-02T17:37:45.260Z",
+    "updated_at": "2026-11-02T17:36:57.747Z"
   }
 }
