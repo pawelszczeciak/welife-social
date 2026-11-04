@@ -31,14 +31,19 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          TIKTOK_PRIVACY: ${{ vars.TIKTOK_PRIVACY }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_VAULT_KEY: ${{ secrets.TIKTOK_VAULT_KEY }}
         run: node scripts/publish.mjs
       - name: Zapisz stan publikacji
         if: always()
         run: |
-          if [ -n "$(git status --porcelain state)" ]; then
+          if [ -n "$(git status --porcelain state vault)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add state
+            git add state vault
             git commit -m "Stan publikacji"
             git pull --rebase
             git push

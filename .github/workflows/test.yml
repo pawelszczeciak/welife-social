@@ -18,5 +18,5 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - run: node --test test/*.test.mjs
+      - run: node --test --test-timeout=60000 --test-force-exit test/*.test.mjs
       - run: node scripts/validate-queue.mjs

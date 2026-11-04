@@ -1,12 +1,49 @@
 // Sprawdza konfigurację automatu: ważność i uprawnienia tokenu, stronę FB i połączone konto IG.
 // Kończy się błędem (czerwony przebieg = e-mail z GitHuba), gdy coś wymaga Twojej uwagi,
 // np. token wygasa za mniej niż 10 dni.
-import { pathToFileURL } from "node:url";
+import { pathToFileURL, fileURLToPath } from "node:url";
+import { resolve, dirname } from "node:path";
 import { makeGraph } from "./lib.mjs";
+import { tiktokConfigured, getTikTokAccess, creatorInfo, readVault } from "./tiktok.mjs";
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const REQUIRED = ["instagram_basic", "instagram_content_publish", "pages_show_list", "pages_read_engagement", "pages_manage_posts"];
 
-export async function check(env = process.env, { log = console.log, fetchImpl = fetch, now = Date.now() } = {}) {
+export async function check(env = process.env, opts = {}) {
+  const { problems } = await checkMeta(env, { log: console.log, fetchImpl: fetch, now: Date.now(), ...opts });
+  problems.push(...(await checkTikTok(env, { log: console.log, fetchImpl: fetch, now: Date.now(), root: ROOT, ...opts })));
+  return { problems };
+}
+
+// TikTok jest opcjonalny: bez sekretów tylko odnotowujemy, że go nie ma.
+async function checkTikTok(env, { log, fetchImpl, now, root }) {
+  if (!tiktokConfigured(env)) {
+    log("TikTok: nie skonfigurowany");
+    return [];
+  }
+  const problems = [];
+  try {
+    const { accessToken, refreshed } = await getTikTokAccess(env, { root, fetchImpl, now });
+    if (refreshed) log("TikTok: odświeżono token, nowy refresh token zapisany zaszyfrowany w vault/");
+    const info = await creatorInfo(env, accessToken, fetchImpl);
+    const options = info.privacy_level_options ?? [];
+    log(`TikTok: @${info.creator_username ?? "?"} · prywatność: ${options.join(", ") || "(brak)"} · maks. długość filmu: ${info.max_video_post_duration_sec ?? "?"} s`);
+    const privacy = env.TIKTOK_PRIVACY || "SELF_ONLY";
+    if (!options.includes(privacy)) problems.push(`TikTok: TIKTOK_PRIVACY=${privacy} nie jest dostępne dla konta (${options.join(", ")})`);
+    const vault = readVault(root, env);
+    if (vault?.refresh_expires_at) {
+      const days = Math.floor((vault.refresh_expires_at - now) / 86400000);
+      log(`TikTok: refresh token ważny jeszcze ${days} dni (odnawia się przy każdej publikacji)`);
+      if (days < 14) problems.push(`TikTok: refresh token wygasa za ${days} dni: uruchom scripts/tiktok-auth.mjs`);
+    }
+  } catch (e) {
+    problems.push(`TikTok: ${e.message}`);
+  }
+  return problems;
+}
+
+async function checkMeta(env, { log, fetchImpl, now }) {
   const problems = [];
   if (!env.META_ACCESS_TOKEN) return { problems: ["brak sekretu META_ACCESS_TOKEN"] };
   const graph = makeGraph({ base: env.GRAPH_BASE || undefined, version: env.GRAPH_VERSION || undefined, token: env.META_ACCESS_TOKEN, fetchImpl });

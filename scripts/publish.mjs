@@ -1,4 +1,4 @@
-// Publikuje posty z queue/, których czas minął, na Instagram i stronę FB.
+// Publikuje posty z queue/, których czas minął, na Instagram, stronę FB i TikTok.
 // Domyślnie TRYB PRÓBNY: nic nie wysyła, tylko wypisuje, co by zrobił.
 // Na żywo dopiero gdy PUBLISH_LIVE=true (zmienna repo w GitHub Actions).
 //
@@ -8,6 +8,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { loadQueue, validate, makeGraph, publishInstagram, publishFacebook } from "./lib.mjs";
+import { tiktokConfigured, getTikTokAccess, publishTikTok } from "./tiktok.mjs";
 
 const HOUR = 3600 * 1000;
 
@@ -28,6 +29,8 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
   };
   const graph = makeGraph({ base: env.GRAPH_BASE || undefined, version: env.GRAPH_VERSION || undefined, token: env.META_ACCESS_TOKEN, fetchImpl });
   const targets = { instagram: env.IG_USER_ID, facebook: env.FB_PAGE_ID };
+  // Token TikToka pobieramy leniwie, tylko gdy jest należna rolka (każde odświeżenie rotuje refresh token).
+  let tiktokToken = null;
 
   log(`${live ? "NA ŻYWO" : "TRYB PRÓBNY (PUBLISH_LIVE≠true)"} · teraz ${new Date(now).toISOString()}`);
   if (live && !env.META_ACCESS_TOKEN) throw new Error("PUBLISH_LIVE=true, ale brak sekretu META_ACCESS_TOKEN");
@@ -50,7 +53,11 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
         if (live) set({ status: "skipped_stale" });
         continue;
       }
-      if (!targets[platform]) {
+      if (platform === "tiktok" && !tiktokConfigured(env)) {
+        log(`POMINIĘTE ${key}: TikTok nie skonfigurowany (brak sekretów TIKTOK_*)`);
+        continue;
+      }
+      if (platform !== "tiktok" && !targets[platform]) {
         log(`BŁĄD ${key}: brak ${platform === "instagram" ? "IG_USER_ID" : "FB_PAGE_ID"}`);
         failures++;
         continue;
@@ -67,6 +74,13 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
         continue;
       }
       try {
+        if (platform === "tiktok") {
+          tiktokToken ??= (await getTikTokAccess(env, { root, fetchImpl, now })).accessToken;
+          const result = await publishTikTok(env, tiktokToken, post, { root, fetchImpl, waitOpts });
+          set({ status: "published", id: result.id, tiktok_status: result.status, privacy: result.privacy, permalink: result.permalink, attempts: entry.attempts + 1, published_at: new Date().toISOString() });
+          log(`OPUBLIKOWANE ${key} → ${result.permalink ?? result.id} (${result.status}, ${result.privacy})`);
+          continue;
+        }
         for (const m of [...(post.media ?? []), ...(post.cover ? [post.cover] : [])]) {
           // Meta pobiera pliki sama, więc najpierw sprawdzamy, czy adres publiczny działa
           // (GET pierwszego bajtu: nie każdy CDN obsługuje HEAD).

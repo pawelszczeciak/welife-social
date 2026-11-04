@@ -4,9 +4,10 @@
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
-    "test": "node --test test/*.test.mjs",
+    "test": "node --test --test-timeout=60000 --test-force-exit test/*.test.mjs",
     "validate": "node scripts/validate-queue.mjs",
     "publish:dry": "node scripts/publish.mjs",
-    "check": "node scripts/check-config.mjs"
+    "check": "node scripts/check-config.mjs",
+    "tiktok:auth": "node scripts/tiktok-auth.mjs"
   }
 }

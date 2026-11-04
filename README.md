@@ -1,8 +1,8 @@
 # welife-social
 
 Kolejka gotowych postów WE.LIFE i automat, który publikuje je o zaplanowanych godzinach
-na Instagramie (@welife.world) i stronie WE.LIFE na Facebooku. Działa przez **oficjalne API Meta**
-(Instagram Graph API + Pages API) w GitHub Actions. Nie używa botów ani logowania na konto.
+na Instagramie (@welife.world), stronie WE.LIFE na Facebooku i opcjonalnie na TikToku (sekcja „TikTok”). Działa przez **oficjalne API** (Meta, TikTok)
+(Instagram Graph API, Pages API, TikTok Content Posting API) w GitHub Actions. Nie używa botów ani logowania na konto.
 
 Strategia, plany i szablony wiadomości są w prywatnym repo `welife-app` (`marketing/`).
 Tutaj trafiają tylko rzeczy, które i tak zaraz będą publiczne: gotowe posty i ich pliki.
@@ -123,6 +123,56 @@ Jeden plik na post w `queue/` (nazwa = id), pliki w `media/`. Przykład rolki:
 
 Po pushu workflow **Testy** sprawdza całą kolejkę. Rolki i karuzele generuje `welife-app`
 (`marketing/instagram/tools/reel.mjs`, `render.mjs`); Claude może dopisywać tu kolejne posty.
+
+## TikTok (opcjonalny, trzecia platforma)
+
+Automat publikuje na TikToku tylko **rolki** (`"platforms": [..., "tiktok"]`, `"type": "reel"`),
+przez oficjalne Content Posting API (Direct Post, wysyłka pliku MP4 z repo). Bez sekretów TikToka
+platforma jest pomijana bez błędu.
+
+### Najpierw uczciwie: widoczność publiczna
+
+- **Aplikacja bez audytu TikToka publikuje tylko prywatnie.** Dokumentacja: „All content posted by
+  unaudited clients will be restricted to private viewing mode”. Dlatego domyślnie `TIKTOK_PRIVACY=SELF_ONLY`.
+- **Audyt raczej nie przejdzie dla narzędzia wewnętrznego.** Wytyczne TikToka (Content Sharing Guidelines)
+  wymieniają jako niedozwolone: „A utility tool to help upload contents to the account(s) you or your team
+  manages” i oczekują aplikacji dla szerokiego grona użytkowników, z interfejsem wyboru prywatności itd.
+- W praktyce: filmy trafią na konto TikTok jako **prywatne**. Żeby były widoczne dla wszystkich, trzeba
+  w aplikacji TikTok zmienić prywatność filmu ręcznie (⋯ → Ustawienia prywatności → Wszyscy) albo
+  publikować na TikToku ręcznie. Nie potwierdziliśmy, czy TikTok pozwala zmienić prywatność filmu
+  opublikowanego przez aplikację bez audytu.
+
+### Konfiguracja (raz)
+
+1. Konto TikTok WE.LIFE (najlepiej konto firmowe/twórcy), zalogowane w przeglądarce.
+2. https://developers.tiktok.com → **Manage apps → Connect an app** → dane WE.LIFE.
+3. W aplikacji dodaj produkty **Login Kit** i **Content Posting API** (włącz **Direct Post**),
+   zakresy `user.info.basic` i `video.publish`.
+4. Login Kit → **Redirect URI**: `https://welife.world/` (dokładnie tak; TikTok dopisze `?code=...`).
+5. Wyślij aplikację do przeglądu albo użyj trybu **Sandbox** z kontem WE.LIFE jako użytkownikiem testowym
+   (zakres `video.publish` musi być zatwierdzony dla aplikacji, inaczej autoryzacja go nie przyzna).
+6. U siebie, w katalogu repo (Node 22+):
+   ```bash
+   TIKTOK_CLIENT_KEY=... TIKTOK_CLIENT_SECRET=... node scripts/tiktok-auth.mjs
+   ```
+   Otwórz wypisany adres, zatwierdź dostęp, wklej adres z paska po przekierowaniu. Skrypt wypisze
+   `TIKTOK_REFRESH_TOKEN` i `TIKTOK_VAULT_KEY`.
+7. Sekrety repo: `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REFRESH_TOKEN`, `TIKTOK_VAULT_KEY`.
+   Zmienna repo (opcjonalna): `TIKTOK_PRIVACY` (domyślnie `SELF_ONLY`; po ewentualnym audycie `PUBLIC_TO_EVERYONE`).
+8. Actions → **Sprawdź konfigurację** → log pokaże `TikTok: @konto · prywatność: ...`.
+9. Do postów w `queue/` dopisz `"tiktok"` w `platforms` (tylko rolki). Opis bierze się z `caption`
+   albo z `tiktok.caption`; maks. 5 hashtagów i 2200 znaków.
+
+### Jak działają tokeny
+
+TikTok **rotuje refresh token przy każdym odświeżeniu** (stary przestaje działać). Automat zapisuje nowy
+token zaszyfrowany (AES-256-GCM, klucz `TIKTOK_VAULT_KEY`) w `vault/tiktok.json.enc` i commituje go razem
+ze stanem. Odświeża tylko wtedy, gdy jest rolka do wysłania albo przy cotygodniowym sprawdzeniu, a access
+token (ważny 2 h) używa ponownie. Gdy trzeba połączyć konto od nowa: uruchom ponownie `tiktok-auth.mjs`
+i podmień sekret `TIKTOK_REFRESH_TOKEN` (automat sam rozpozna nowy sekret, pliku `vault/` nie trzeba kasować).
+Bez `TIKTOK_VAULT_KEY` automat nie odświeży tokenu, żeby go nie zgubić. Film z ilustracjami AI
+(`ai_imagery: true`) dostaje etykietę TikToka „AI-generated” (`is_aigc`), a post jest oznaczony jako promocja
+własnej marki (`brand_organic_toggle`).
 
 ## Czego API nie zrobi (zostaje ręcznie)
 

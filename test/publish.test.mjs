@@ -187,3 +187,153 @@ test("check-config: brak linku do welife.world w bio IG to problem do zgłoszeni
   assert.match(r.problems.join(" "), /linku do welife\.world/);
   g.close();
 });
+
+// ── TikTok ──────────────────────────────────────────────────────────────────
+import { randomBytes } from "node:crypto";
+import { chunkPlan, readVault } from "../scripts/tiktok.mjs";
+import { validate } from "../scripts/lib.mjs";
+
+async function mockTikTok() {
+  const calls = [];
+  let statusPolls = 0;
+  const server = createServer(async (req, res) => {
+    const chunks = [];
+    for await (const c of req) chunks.push(c);
+    const raw = Buffer.concat(chunks);
+    const url = new URL(req.url, "http://x");
+    const send = (code, obj) => {
+      res.writeHead(code, { "content-type": "application/json" });
+      res.end(JSON.stringify(obj));
+    };
+    const call = { method: req.method, path: url.pathname, headers: req.headers, bytes: raw.length };
+    calls.push(call);
+    if (url.pathname === "/v2/oauth/token/") {
+      call.form = Object.fromEntries(new URLSearchParams(raw.toString()));
+      return send(200, { access_token: "TT_ACCESS", expires_in: 7200, refresh_token: "TT_REFRESH_2", refresh_expires_in: 15552000, open_id: "OPEN", scope: "video.publish", token_type: "Bearer" });
+    }
+    if (req.headers.authorization !== "Bearer TT_ACCESS" && url.pathname.startsWith("/v2/post/")) {
+      return send(401, { error: { code: "access_token_invalid", message: "bad token" } });
+    }
+    if (url.pathname === "/v2/post/publish/creator_info/query/") {
+      return send(200, { data: { creator_username: "welife.world", privacy_level_options: ["PUBLIC_TO_EVERYONE", "MUTUAL_FOLLOW_FRIENDS", "SELF_ONLY"], comment_disabled: false, duet_disabled: false, stitch_disabled: true, max_video_post_duration_sec: 600 }, error: { code: "ok" } });
+    }
+    if (url.pathname === "/v2/post/publish/video/init/") {
+      call.json = JSON.parse(raw.toString());
+      const base = `http://127.0.0.1:${server.address().port}`;
+      return send(200, { data: { publish_id: "p_1", upload_url: `${base}/upload/p_1` }, error: { code: "ok" } });
+    }
+    if (url.pathname === "/upload/p_1" && req.method === "PUT") return res.writeHead(201).end();
+    if (url.pathname === "/v2/post/publish/status/fetch/") {
+      statusPolls++;
+      return send(200, { data: { status: statusPolls < 2 ? "PROCESSING_UPLOAD" : "PUBLISH_COMPLETE", publicaly_available_post_id: [] }, error: { code: "ok" } });
+    }
+    send(404, { error: { code: "not_found" } });
+  });
+  await new Promise((r) => server.listen(0, r));
+  return { base: `http://127.0.0.1:${server.address().port}`, calls, close: () => server.close() };
+}
+
+const tiktokEnv = (t, over = {}) => ({
+  PUBLISH_LIVE: "true", NOW: "2026-11-02T18:40:00+01:00", TIKTOK_BASE: t.base, META_ACCESS_TOKEN: "META",
+  TIKTOK_CLIENT_KEY: "CK", TIKTOK_CLIENT_SECRET: "CLIENT_SECRET_X", TIKTOK_REFRESH_TOKEN: "TT_REFRESH_1",
+  TIKTOK_VAULT_KEY: randomBytes(32).toString("base64"), ...over,
+});
+const ttReel = (over = {}) => reel({ platforms: ["tiktok"], ai_imagery: true, caption: `${BETA} Zdjęcia: ilustracje AI. #planposiłków`, ...over });
+
+test("TikTok: odświeżenie → creator_info → init (FILE_UPLOAD) → wysyłka → status, bez tokenów w stanie", async () => {
+  const t = await mockTikTok();
+  const root = fixture([ttReel(), ttReel({ id: "r2", publish_at: "2026-11-02T18:35:00+01:00" })]);
+  writeFileSync(join(root, "media", "R1.mp4"), Buffer.alloc(1234, 1));
+  const e = tiktokEnv(t);
+  const r = await run(e, { root, ...quiet, waitOpts: { intervalMs: 1 } });
+  assert.equal(r.failures, 0);
+  const s = state(root);
+  assert.equal(s["r1:tiktok"].status, "published");
+  assert.equal(s["r1:tiktok"].id, "p_1");
+  assert.equal(s["r1:tiktok"].privacy, "SELF_ONLY");
+  const tokenCalls = t.calls.filter((c) => c.path === "/v2/oauth/token/");
+  assert.equal(tokenCalls.length, 1, "jeden refresh na przebieg, drugi film używa tego samego tokenu");
+  assert.equal(tokenCalls[0].form.grant_type, "refresh_token");
+  assert.equal(tokenCalls[0].form.refresh_token, "TT_REFRESH_1");
+  const init = t.calls.find((c) => c.path === "/v2/post/publish/video/init/").json;
+  assert.deepEqual(init.source_info, { source: "FILE_UPLOAD", video_size: 1234, chunk_size: 1234, total_chunk_count: 1 });
+  assert.equal(init.post_info.privacy_level, "SELF_ONLY");
+  assert.equal(init.post_info.is_aigc, true);
+  assert.equal(init.post_info.brand_organic_toggle, true);
+  assert.equal(init.post_info.disable_stitch, true, "ustawienia z creator_info są respektowane");
+  const put = t.calls.find((c) => c.method === "PUT");
+  assert.equal(put.headers["content-range"], "bytes 0-1233/1234");
+  assert.equal(put.bytes, 1234);
+  const saved = readFileSync(join(root, "state", "published.json"), "utf8");
+  assert.doesNotMatch(saved, /TT_ACCESS|TT_REFRESH|CLIENT_SECRET_X/);
+  const vaultRaw = readFileSync(join(root, "vault", "tiktok.json.enc"), "utf8");
+  assert.doesNotMatch(vaultRaw, /TT_REFRESH_2|TT_ACCESS/, "sejf jest zaszyfrowany");
+  assert.equal(readVault(root, e).refresh_token, "TT_REFRESH_2", "nowy (rotowany) refresh token zapisany");
+  // Kolejny przebieg z ważnym access tokenem w sejfie nie odświeża ponownie.
+  writeFileSync(join(root, "queue", "r3.json"), JSON.stringify(ttReel({ id: "r3", publish_at: "2026-11-02T18:38:00+01:00" })));
+  await run(e, { root, ...quiet, waitOpts: { intervalMs: 1 } });
+  assert.equal(t.calls.filter((c) => c.path === "/v2/oauth/token/").length, 1);
+  assert.equal(state(root)["r3:tiktok"].status, "published");
+  t.close();
+});
+
+test("TikTok przyjmuje tylko rolki", () => {
+  const errors = validate({ id: "x", publish_at: "2026-11-02T19:00:00+01:00", type: "image", media: ["media/a.jpg"], caption: BETA }, "tiktok");
+  assert.match(errors.join(" "), /tylko rolki/);
+  assert.deepEqual(validate(ttReel(), "tiktok"), []);
+});
+
+test("bez sekretów TikTok: platforma pominięta bez błędu, reszta publikuje się normalnie", async () => {
+  const g = await mockGraph();
+  const root = fixture([reel({ platforms: ["instagram", "tiktok"] })]);
+  const r = await run(env(g), { root, ...quiet });
+  assert.equal(r.failures, 0);
+  const s = state(root);
+  assert.equal(s["r1:instagram"].status, "published");
+  assert.equal(s["r1:tiktok"], undefined);
+  g.close();
+});
+
+test("brak TIKTOK_VAULT_KEY: błąd przed odświeżeniem, więc refresh token nie przepada", async () => {
+  const t = await mockTikTok();
+  const root = fixture([ttReel()]);
+  const r = await run(tiktokEnv(t, { TIKTOK_VAULT_KEY: "" }), { root, ...quiet });
+  assert.equal(r.failures, 1);
+  assert.match(state(root)["r1:tiktok"].error, /TIKTOK_VAULT_KEY/);
+  assert.equal(t.calls.length, 0, "żadnego wywołania TikToka");
+  t.close();
+});
+
+test("podział pliku wg zasad TikToka", () => {
+  assert.deepEqual(chunkPlan(4 * 1024 * 1024), { chunkSize: 4 * 1024 * 1024, count: 1 });
+  assert.deepEqual(chunkPlan(50_000_123, 10_000_000), { chunkSize: 10_000_000, count: 5 });
+  assert.equal(chunkPlan(200 * 1024 * 1024, 200 * 1024 * 1024).chunkSize, 64 * 1024 * 1024);
+});
+
+test("check-config: TikTok nie skonfigurowany nie jest problemem; skonfigurowany pokazuje konto", async () => {
+  const g = await mockGraph();
+  const logs = [];
+  const r = await check({ META_ACCESS_TOKEN: "T", FB_PAGE_ID: "PAGE", IG_USER_ID: "IG", GRAPH_BASE: g.base }, { log: (l) => logs.push(l) });
+  assert.deepEqual(r.problems, []);
+  assert.ok(logs.includes("TikTok: nie skonfigurowany"));
+  const t = await mockTikTok();
+  const root = fixture([]);
+  const logs2 = [];
+  const r2 = await check({ META_ACCESS_TOKEN: "T", FB_PAGE_ID: "PAGE", IG_USER_ID: "IG", GRAPH_BASE: g.base, ...tiktokEnv(t), TIKTOK_PRIVACY: "FOLLOWER_OF_CREATOR" }, { log: (l) => logs2.push(l), root });
+  assert.ok(logs2.some((l) => l.startsWith("TikTok: @welife.world")));
+  assert.match(r2.problems.join(" "), /FOLLOWER_OF_CREATOR/);
+  g.close();
+  t.close();
+});
+
+test("TikTok: nowy sekret TIKTOK_REFRESH_TOKEN (ponowna autoryzacja) ma pierwszeństwo przed starym sejfem", async () => {
+  const t = await mockTikTok();
+  const root = fixture([ttReel()]);
+  const e = tiktokEnv(t);
+  await run(e, { root, ...quiet, waitOpts: { intervalMs: 1 } });
+  writeFileSync(join(root, "queue", "r9.json"), JSON.stringify(ttReel({ id: "r9", publish_at: "2026-11-02T18:39:00+01:00" })));
+  await run({ ...e, TIKTOK_REFRESH_TOKEN: "TT_REFRESH_NEW" }, { root, ...quiet, waitOpts: { intervalMs: 1 } });
+  const refreshes = t.calls.filter((c) => c.path === "/v2/oauth/token/").map((c) => c.form.refresh_token);
+  assert.deepEqual(refreshes, ["TT_REFRESH_1", "TT_REFRESH_NEW"]);
+  t.close();
+});

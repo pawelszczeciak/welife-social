@@ -1,9 +1,10 @@
 // Wspólne funkcje automatu: kolejka, walidacja, klient Graph API, publikacja IG i FB.
+// TikTok ma własny moduł: scripts/tiktok.mjs.
 // Bez zależności: Node 22+ (fetch, node:test).
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-export const PLATFORMS = ["instagram", "facebook"];
+export const PLATFORMS = ["instagram", "facebook", "tiktok"];
 export const TYPES = ["reel", "carousel", "image", "text"];
 const IG_HASHTAG_LIMIT = 5;
 
@@ -16,6 +17,7 @@ export function loadQueue(dir) {
 
 export function textFor(post, platform) {
   if (platform === "facebook" && post.facebook?.message) return post.facebook.message;
+  if (platform === "tiktok" && post.tiktok?.caption) return post.tiktok.caption;
   return post.caption ?? "";
 }
 
@@ -27,14 +29,15 @@ export function validate(post, platform, root) {
   if (Number.isNaN(Date.parse(post.publish_at))) errors.push("publish_at nie jest datą ISO z przesunięciem");
   if (!TYPES.includes(post.type)) errors.push(`nieznany typ: ${post.type}`);
   if (platform === "instagram" && post.type === "text") errors.push("Instagram nie przyjmuje postów bez zdjęcia/filmu");
+  if (platform === "tiktok" && post.type !== "reel") errors.push("TikTok w tym automacie przyjmuje tylko rolki (type: reel)");
   if (!text.trim()) errors.push("pusty tekst");
   if (text.includes("{{")) errors.push("tekst zawiera niewypełnione pole {{…}}");
   // Zasada właściciela: każdy materiał mówi, że to wersja beta (testowa).
   if (!/beta/i.test(text)) errors.push("tekst nie mówi, że WE.LIFE to wersja beta");
   if (post.ai_imagery && !/\bAI\b/.test(text)) errors.push("obrazy AI bez informacji „AI” w tekście");
-  if (platform === "instagram") {
+  if (platform === "instagram" || platform === "tiktok") {
     const tags = text.match(/(?:^|\s)#\w+/gu) ?? [];
-    if (tags.length > IG_HASHTAG_LIMIT) errors.push(`${tags.length} hashtagów, limit Instagrama to ${IG_HASHTAG_LIMIT}`);
+    if (tags.length > IG_HASHTAG_LIMIT) errors.push(`${tags.length} hashtagów, limit to ${IG_HASHTAG_LIMIT}`);
     if (text.length > 2200) errors.push("opis dłuższy niż 2200 znaków");
   }
   const media = post.media ?? [];

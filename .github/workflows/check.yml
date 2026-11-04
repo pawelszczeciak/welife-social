@@ -1,5 +1,7 @@
 # Raz w tygodniu (i na żądanie) sprawdza token, uprawnienia i połączenie strony FB z IG.
 # Czerwony przebieg = e-mail z GitHuba, np. gdy token wygasa za mniej niż 10 dni.
+# TikTok (jeśli skonfigurowany): odświeżenie tokenu rotuje refresh token, więc zapisujemy
+# zaszyfrowany vault/ jak publikacja i dzielimy z nią grupę concurrency.
 name: Sprawdź konfigurację
 
 on:
@@ -8,7 +10,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 jobs:
   check:
@@ -24,4 +30,20 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          TIKTOK_PRIVACY: ${{ vars.TIKTOK_PRIVACY }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_VAULT_KEY: ${{ secrets.TIKTOK_VAULT_KEY }}
         run: node scripts/check-config.mjs
+      - name: Zapisz sejf tokenu TikTok
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain vault)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add vault
+            git commit -m "Sejf tokenu TikTok"
+            git pull --rebase
+            git push
+          fi
