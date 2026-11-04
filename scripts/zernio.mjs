@@ -42,10 +42,16 @@ function apiError(what, { status, json }) {
 // Konto TikTok: z sekretu ZERNIO_TIKTOK_ACCOUNT_ID albo jedyne podłączone konto TikTok.
 export async function findTikTokAccount(env, call) {
   if (env.ZERNIO_TIKTOK_ACCOUNT_ID) return { id: env.ZERNIO_TIKTOK_ACCOUNT_ID, name: null };
-  const res = await call("GET", "/accounts?platform=tiktok&status=connected");
+  // Bez filtrów w zapytaniu: dokumentacja Zernio pokazuje samo GET /v1/accounts, a nieznany
+  // filtr (np. status) potrafi zwrócić pustą listę mimo podłączonego konta.
+  const res = await call("GET", "/accounts");
   if (res.status !== 200) throw apiError("lista kont", res);
-  const accounts = (res.json.accounts ?? []).filter((a) => a.platform === "tiktok");
-  if (accounts.length === 0) throw new ZernioError("w Zernio nie ma podłączonego konta TikTok");
+  const all = res.json.accounts ?? res.json.data ?? [];
+  const accounts = all.filter((a) => String(a.platform ?? "").toLowerCase() === "tiktok");
+  if (accounts.length === 0) {
+    const seen = [...new Set(all.map((a) => String(a.platform ?? "?").toLowerCase()))];
+    throw new ZernioError(`w Zernio nie ma podłączonego konta TikTok (widoczne konta: ${seen.length ? seen.join(", ") : "brak"})`);
+  }
   if (accounts.length > 1) {
     throw new ZernioError(`w Zernio jest ${accounts.length} kont TikTok: ustaw sekret ZERNIO_TIKTOK_ACCOUNT_ID`);
   }

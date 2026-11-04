@@ -458,3 +458,16 @@ test("check-config: Zernio pokazuje konto TikTok; brak konta albo zła prywatno�
   z.close();
   z0.close();
 });
+
+test("Zernio: konto TikTok znalezione mimo innej wielkości liter, inne platformy pomijane", async () => {
+  const z = await mockZernio({ accounts: [{ _id: "ig1", platform: "instagram" }, { _id: "tt1", platform: "TikTok", username: "welife.world" }] });
+  const { findTikTokAccount, makeZernio } = await import("../scripts/zernio.mjs");
+  const call = makeZernio({ ZERNIO_API_KEY: "sk_test", ZERNIO_BASE: `${z.base}/api/v1` });
+  const a = await findTikTokAccount({}, call);
+  assert.equal(a.id, "tt1");
+  assert.equal(z.calls.find((c) => c.path === "/api/v1/accounts").query, "", "bez nieudokumentowanych filtrów");
+  const none = await mockZernio({ accounts: [{ _id: "ig1", platform: "instagram" }] });
+  await assert.rejects(findTikTokAccount({}, makeZernio({ ZERNIO_API_KEY: "sk_test", ZERNIO_BASE: `${none.base}/api/v1` })), /widoczne konta: instagram/);
+  none.close();
+  z.close();
+});
