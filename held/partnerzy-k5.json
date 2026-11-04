@@ -1,0 +1,21 @@
+{
+  "id": "partnerzy-k5",
+  "publish_at": "USTAW-DATĘ",
+  "platforms": [
+    "instagram",
+    "facebook"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K5-01.jpg",
+    "media/K5-02.jpg",
+    "media/K5-03.jpg",
+    "media/K5-04.jpg",
+    "media/K5-05.jpg"
+  ],
+  "caption": "Nowość w WE.LIFE: 7 sklepów partnerskich w Zakupach. Przesuń, żeby zobaczyć, kto dołączył.\n\nBee.pl, MarketBio, Coś dla zdrowia, Vivi Polska, Cafes Guilis, Królewskie Miody i Bosalo. W Zakupach klikasz „Przejdź do sklepu” i jesteś u partnera. Zamówienie, płatność i dostawa odbywają się w sklepie partnera, a Twój plan posiłków i lista zostają w WE.LIFE, nie przechodzą do koszyka.\n\nWspółpraca: to linki partnerskie, WE.LIFE może otrzymać prowizję od zakupów rozpoczętych z tych linków. Link do darmowej bety WE.LIFE masz w bio @welife.world. To wersja beta (testowa).\n\n#zakupyonline #planposiłków #współpraca",
+  "facebook": {
+    "message": "Nowość w WE.LIFE: 7 sklepów partnerskich w Zakupach. Przesuń, żeby zobaczyć, kto dołączył.\n\nBee.pl, MarketBio, Coś dla zdrowia, Vivi Polska, Cafes Guilis, Królewskie Miody i Bosalo. W Zakupach klikasz „Przejdź do sklepu” i jesteś u partnera. Zamówienie, płatność i dostawa odbywają się w sklepie partnera, a Twój plan posiłków i lista zostają w WE.LIFE, nie przechodzą do koszyka.\n\nWspółpraca: to linki partnerskie, WE.LIFE może otrzymać prowizję od zakupów rozpoczętych z tych linków. Link do darmowej bety WE.LIFE:\nhttps://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=partnerzy-k5 To wersja beta (testowa).\n\n#zakupyonline #planposiłków #współpraca"
+  },
+  "note": "WSTRZYMANE: przenieś do queue/ z datą dopiero, gdy sekcja sklepów partnerskich jest włączona na produkcji."
+}
