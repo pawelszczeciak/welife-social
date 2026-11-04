@@ -1,0 +1,19 @@
+{
+  "id": "2026-11-17-1230-r27",
+  "publish_at": "2026-11-17T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R27.mp4"
+  ],
+  "cover": "media/R27-cover.jpg",
+  "ai_imagery": true,
+  "caption": "W jakim języku gotujecie w domu? Napisz w komentarzu.\n\nWE.LIFE działa po polsku i po angielsku. Każdy czyta plan posiłków w swoim języku, a lista zakupów jest wspólna.\n\nLink do darmowej bety WE.LIFE masz w bio @welife.world. To wersja beta (testowa).\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #listazakupów #obiad",
+  "facebook": {
+    "message": "W jakim języku gotujecie w domu? Napisz w komentarzu.\n\nWE.LIFE działa po polsku i po angielsku. Każdy czyta plan posiłków w swoim języku, a lista zakupów jest wspólna.\n\nLink do darmowej bety WE.LIFE:\nhttps://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-17-1230-r27 To wersja beta (testowa).\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #listazakupów #obiad"
+  }
+}
