@@ -208,7 +208,8 @@ własnej marki (`brand_organic_toggle`).
 ## Czego API nie zrobi (zostaje ręcznie)
 
 - **Przypięcie posta** na profilu IG.
-- **Muzyka z biblioteki Instagrama**: rolki z API wychodzą z dźwiękiem z pliku (tu: cisza).
+- **Muzyka z biblioteki Instagrama**: rolki z API wychodzą z dźwiękiem z pliku. Dlatego każda rolka
+  ma w pliku własny podkład i efekty (`welife-app` → `marketing/instagram/tools/soundtrack.py`).
 - **Przełącznik „Etykieta AI”**: zamiast niego tekst każdego posta z obrazami AI mówi o tym wprost
   (bezpiecznik `ai_imagery`). Po publikacji możesz dodatkowo włączyć etykietę w edycji posta, jeśli aplikacja ją pokazuje.
 - Odpowiedzi na komentarze i wiadomości (PLAN) obsługujesz w Meta Business Suite.
