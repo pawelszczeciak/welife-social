@@ -124,7 +124,38 @@ Jeden plik na post w `queue/` (nazwa = id), pliki w `media/`. Przykład rolki:
 Po pushu workflow **Testy** sprawdza całą kolejkę. Rolki i karuzele generuje `welife-app`
 (`marketing/instagram/tools/reel.mjs`, `render.mjs`); Claude może dopisywać tu kolejne posty.
 
-## TikTok (opcjonalny, trzecia platforma)
+## TikTok przez Zernio (zalecane, publicznie)
+
+Rolki (`"type": "reel"` z `"tiktok"` w `platforms`) idą na TikToka przez **Zernio**
+(dawniej Late, https://zernio.com). To zatwierdzony partner TikToka, więc filmy są **publiczne**.
+Koszt: 1–2 podłączone konta za darmo, pełne API w cenie. Gdy jest sekret `ZERNIO_API_KEY`,
+automat używa Zernio i nie dotyka bezpośredniego API TikToka (sekcja niżej).
+
+Co wysyła automat (`scripts/zernio.mjs`): `POST /v1/posts` z `publishNow: true`, filmem
+pod publicznym adresem z tego repo, prywatnością `PUBLIC_TO_EVERYONE` (zmienna `TIKTOK_PRIVACY`
+może to zmienić), oznaczeniem promocji własnej marki (`brand_organic`), oznaczeniem AI
+(`video_made_with_ai`) przy postach z `"ai_imagery": true` i okładką z `cover`.
+
+### Konfiguracja (raz, ok. 5 minut)
+
+1. Załóż konto na https://zernio.com.
+2. W panelu Zernio podłącz konto TikTok WE.LIFE (Connect → TikTok, zaloguj się na TikToka i zatwierdź).
+3. https://zernio.com/dashboard/api-keys → **Create API key**. Skopiuj klucz (`sk_…`), pokazuje się raz.
+4. Sekrety repo (Settings → Secrets and variables → Actions → New repository secret):
+   - `ZERNIO_API_KEY`: klucz z kroku 3,
+   - `ZERNIO_TIKTOK_ACCOUNT_ID`: opcjonalnie; bez niego automat sam znajdzie jedyne konto TikTok w Zernio.
+5. Actions → **Sprawdź konfigurację** → Run workflow. W logu ma być
+   `TikTok (Zernio): … · konto … · prywatność: PUBLIC_TO_EVERYONE, …`.
+
+Limity Zernio: 25 postów na godzinę na konto; duplikat tego samego tekstu w ciągu 24 h jest
+odrzucany (automat traktuje go jako już opublikowany). Ponowienie po błędzie używa nowego
+klucza idempotencji, więc nie tworzy dwóch postów.
+
+## TikTok bezpośrednio przez API TikToka (zapasowo, tylko prywatnie)
+
+Używane tylko wtedy, gdy nie ma `ZERNIO_API_KEY`.
+
+### Opis bezpośredniej ścieżki
 
 Automat publikuje na TikToku tylko **rolki** (`"platforms": [..., "tiktok"]`, `"type": "reel"`),
 przez oficjalne Content Posting API (Direct Post, wysyłka pliku MP4 z repo). Bez sekretów TikToka

@@ -5,6 +5,7 @@ import { pathToFileURL, fileURLToPath } from "node:url";
 import { resolve, dirname } from "node:path";
 import { makeGraph } from "./lib.mjs";
 import { tiktokConfigured, getTikTokAccess, creatorInfo, readVault } from "./tiktok.mjs";
+import { zernioConfigured, makeZernio, findTikTokAccount, tiktokCreatorInfo } from "./zernio.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -16,8 +17,31 @@ export async function check(env = process.env, opts = {}) {
   return { problems };
 }
 
+// TikTok przez Zernio: konto podłączone w Zernio i dozwolona prywatność.
+async function checkZernio(env, { log, fetchImpl }) {
+  const problems = [];
+  try {
+    const call = makeZernio(env, fetchImpl);
+    const account = await findTikTokAccount(env, call);
+    const info = await tiktokCreatorInfo(call, account.id);
+    const options = (info.privacyLevels ?? []).map((p) => p.value);
+    const name = info.creator?.nickname ?? account.name ?? "?";
+    log(`TikTok (Zernio): ${name} · konto ${account.id} · prywatność: ${options.join(", ") || "(brak)"}`);
+    const privacy = env.TIKTOK_PRIVACY || "PUBLIC_TO_EVERYONE";
+    if (options.length && !options.includes(privacy)) {
+      problems.push(`TikTok (Zernio): TIKTOK_PRIVACY=${privacy} nie jest dostępne dla konta (${options.join(", ")})`);
+    }
+    if (info.creator && info.creator.canPostMore === false) problems.push("TikTok (Zernio): konto chwilowo nie może publikować (limit TikToka)");
+  } catch (e) {
+    problems.push(`TikTok (Zernio): ${e.message}`);
+  }
+  return problems;
+}
+
 // TikTok jest opcjonalny: bez sekretów tylko odnotowujemy, że go nie ma.
+// Zernio ma pierwszeństwo; bezpośrednie API sprawdzamy tylko bez Zernio (każde sprawdzenie rotuje jego token).
 async function checkTikTok(env, { log, fetchImpl, now, root }) {
+  if (zernioConfigured(env)) return checkZernio(env, { log, fetchImpl });
   if (!tiktokConfigured(env)) {
     log("TikTok: nie skonfigurowany");
     return [];

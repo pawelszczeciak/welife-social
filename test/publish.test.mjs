@@ -337,3 +337,124 @@ test("TikTok: nowy sekret TIKTOK_REFRESH_TOKEN (ponowna autoryzacja) ma pierwsze
   assert.deepEqual(refreshes, ["TT_REFRESH_1", "TT_REFRESH_NEW"]);
   t.close();
 });
+
+// --- TikTok przez Zernio ---------------------------------------------------------------
+async function mockZernio({ accounts = [{ _id: "acc_tt", platform: "tiktok", username: "welife.world" }], failPosts = 0 } = {}) {
+  const calls = [];
+  let fails = failPosts;
+  const server = createServer(async (req, res) => {
+    let raw = "";
+    for await (const c of req) raw += c;
+    const url = new URL(req.url, "http://x");
+    const send = (code, obj) => {
+      res.writeHead(code, { "content-type": "application/json" });
+      res.end(JSON.stringify(obj));
+    };
+    if (url.pathname.startsWith("/files/")) return res.writeHead(206).end("x");
+    const call = { method: req.method, path: url.pathname, query: url.search, headers: req.headers, json: raw ? JSON.parse(raw) : null };
+    calls.push(call);
+    if (req.headers.authorization !== "Bearer sk_test") return send(401, { error: "invalid_credentials" });
+    if (url.pathname === "/api/v1/accounts") return send(200, { accounts, hasAnalyticsAccess: false });
+    if (/^\/api\/v1\/accounts\/[^/]+\/tiktok\/creator-info$/.test(url.pathname)) {
+      return send(200, { creator: { nickname: "WE.LIFE", isVerified: false, canPostMore: true }, privacyLevels: [{ value: "PUBLIC_TO_EVERYONE", label: "Public" }, { value: "SELF_ONLY", label: "Only me" }] });
+    }
+    if (url.pathname === "/api/v1/posts" && req.method === "POST") {
+      if (fails > 0) {
+        fails--;
+        return send(207, { message: "failed", error: "TikTok upstream error", post: { _id: "zp_fail", status: "failed", platforms: [{ platform: "tiktok", status: "failed" }] }, platformResults: [{ platform: "tiktok", status: "failed", error: "upstream" }] });
+      }
+      return send(201, { message: "ok", post: { _id: "zp_1", status: "published", platforms: [{ platform: "tiktok", status: "published", platformPostUrl: "https://www.tiktok.com/@welife.world/video/1" }] } });
+    }
+    send(404, { error: "not_found" });
+  });
+  await new Promise((r) => server.listen(0, r));
+  const base = `http://127.0.0.1:${server.address().port}`;
+  return { base, calls, close: () => server.close() };
+}
+
+const zernioEnv = (z, over = {}) => ({
+  PUBLISH_LIVE: "true", NOW: "2026-11-02T18:40:00+01:00", META_ACCESS_TOKEN: "META", ZERNIO_API_KEY: "sk_test",
+  ZERNIO_BASE: `${z.base}/api/v1`, MEDIA_BASE_URL: `${z.base}/files/`, ...over,
+});
+
+test("Zernio: publikuje rolkę na TikToku publicznie, z oznaczeniem AI, kontem wykrytym automatycznie", async () => {
+  const z = await mockZernio();
+  const root = fixture([ttReel({ cover: "media/a.jpg" })]);
+  const r = await run(zernioEnv(z), { root, ...quiet });
+  assert.equal(r.failures, 0);
+  const post = z.calls.find((c) => c.path === "/api/v1/posts");
+  assert.equal(post.headers.authorization, "Bearer sk_test");
+  assert.match(post.headers["idempotency-key"], /^[0-9a-f-]{36}$/);
+  assert.deepEqual(post.json.platforms, [{ platform: "tiktok", accountId: "acc_tt" }]);
+  assert.deepEqual(post.json.mediaItems, [{ type: "video", url: `${z.base}/files/media/R1.mp4` }]);
+  assert.equal(post.json.publishNow, true);
+  assert.equal(post.json.tiktokSettings.privacy_level, "PUBLIC_TO_EVERYONE");
+  assert.equal(post.json.tiktokSettings.video_made_with_ai, true);
+  assert.equal(post.json.tiktokSettings.commercial_content_type, "brand_organic");
+  assert.equal(post.json.tiktokSettings.video_cover_image_url, `${z.base}/files/media/a.jpg`);
+  assert.match(post.json.content, /beta/);
+  const s = state(root)["r1:tiktok"];
+  assert.equal(s.status, "published");
+  assert.equal(s.via, "zernio");
+  assert.equal(s.permalink, "https://www.tiktok.com/@welife.world/video/1");
+  assert.doesNotMatch(readFileSync(join(root, "state", "published.json"), "utf8"), /sk_test/);
+  const before = z.calls.length;
+  await run(zernioEnv(z), { root, ...quiet });
+  assert.equal(z.calls.length, before, "drugi przebieg nie publikuje ponownie");
+  z.close();
+});
+
+test("Zernio: ZERNIO_TIKTOK_ACCOUNT_ID pomija wyszukiwanie konta; dwa konta bez ID to czytelny błąd", async () => {
+  const z = await mockZernio({ accounts: [{ _id: "a1", platform: "tiktok" }, { _id: "a2", platform: "tiktok" }] });
+  const root = fixture([ttReel()]);
+  await run(zernioEnv(z, { ZERNIO_TIKTOK_ACCOUNT_ID: "acc_fixed" }), { root, ...quiet });
+  assert.equal(z.calls.filter((c) => c.path === "/api/v1/accounts").length, 0);
+  assert.equal(z.calls.find((c) => c.path === "/api/v1/posts").json.platforms[0].accountId, "acc_fixed");
+  const root2 = fixture([ttReel()]);
+  await run(zernioEnv(z), { root: root2, ...quiet });
+  assert.match(state(root2)["r1:tiktok"].error, /ZERNIO_TIKTOK_ACCOUNT_ID/);
+  z.close();
+});
+
+test("Zernio ma pierwszeństwo przed bezpośrednim API TikToka", async () => {
+  const z = await mockZernio();
+  const t = await mockTikTok();
+  const root = fixture([ttReel()]);
+  await run({ ...tiktokEnv(t), ...zernioEnv(z) }, { root, ...quiet });
+  assert.equal(t.calls.length, 0, "bez wywołań bezpośredniego API (nie rotujemy jego tokenu)");
+  assert.equal(state(root)["r1:tiktok"].via, "zernio");
+  z.close();
+  t.close();
+});
+
+test("Zernio: błąd publikacji → ponowienie z nowym kluczem idempotencji, po 3 próbach failed", async () => {
+  const z = await mockZernio({ failPosts: 5 });
+  const root = fixture([ttReel()]);
+  for (let i = 0; i < 3; i++) await run(zernioEnv(z), { root, ...quiet });
+  const s = state(root)["r1:tiktok"];
+  assert.equal(s.status, "failed");
+  assert.equal(s.attempts, 3);
+  assert.match(s.error, /TikTok nie opublikował/);
+  const keys = z.calls.filter((c) => c.path === "/api/v1/posts").map((c) => c.headers["idempotency-key"]);
+  assert.equal(new Set(keys).size, 3);
+  assert.doesNotMatch(JSON.stringify(s), /sk_test/);
+  z.close();
+});
+
+test("check-config: Zernio pokazuje konto TikTok; brak konta albo zła prywatność to problem", async () => {
+  const g = await mockGraph();
+  const z = await mockZernio();
+  const meta = { META_ACCESS_TOKEN: "T", FB_PAGE_ID: "PAGE", IG_USER_ID: "IG", GRAPH_BASE: g.base };
+  const logs = [];
+  const ok = await check({ ...meta, ZERNIO_API_KEY: "sk_test", ZERNIO_BASE: `${z.base}/api/v1` }, { log: (l) => logs.push(l) });
+  assert.deepEqual(ok.problems, []);
+  assert.ok(logs.some((l) => l.startsWith("TikTok (Zernio): WE.LIFE · konto acc_tt")));
+  const bad = await check({ ...meta, ZERNIO_API_KEY: "sk_test", ZERNIO_BASE: `${z.base}/api/v1`, TIKTOK_PRIVACY: "FOLLOWER_OF_CREATOR" }, { log: () => {} });
+  assert.match(bad.problems.join(" "), /FOLLOWER_OF_CREATOR/);
+  const z0 = await mockZernio({ accounts: [] });
+  const none = await check({ ...meta, ZERNIO_API_KEY: "sk_test", ZERNIO_BASE: `${z0.base}/api/v1` }, { log: () => {} });
+  assert.match(none.problems.join(" "), /nie ma podłączonego konta TikTok/);
+  g.close();
+  z.close();
+  z0.close();
+});
