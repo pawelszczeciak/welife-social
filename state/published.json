@@ -28,5 +28,31 @@
     "id": "1306038305932559_122122812363483309",
     "published_at": "2026-11-03T18:14:22.123Z",
     "updated_at": "2026-11-03T18:13:47.652Z"
+  },
+  "2026-11-04-r5:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1646904903903719",
+    "published_at": "2026-11-04T17:37:00.000Z",
+    "updated_at": "2026-11-04T17:37:16.000Z",
+    "note": "stan dopisany ręcznie"
+  },
+  "2026-11-04-r5:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "DfVAfmblF5s",
+    "permalink": "https://www.instagram.com/reel/DfVAfmblF5s/",
+    "published_at": "2026-11-04T17:36:50.000Z",
+    "updated_at": "2026-11-04T17:37:16.000Z",
+    "note": "stan dopisany ręcznie: krok zapisu w workflow nie zadziałał"
+  },
+  "2026-11-04-r5:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "id": "6aeb6d3d6c6d509312833c7f",
+    "via": "zernio",
+    "published_at": "2026-11-04T17:37:15.000Z",
+    "updated_at": "2026-11-04T17:37:16.000Z",
+    "note": "stan dopisany ręcznie; Zernio zwrócił status publishing"
   }
 }

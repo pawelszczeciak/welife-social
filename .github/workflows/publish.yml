@@ -45,7 +45,8 @@ jobs:
           if [ -n "$(git status --porcelain state vault)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add state vault
+            git add state
+            if [ -d vault ]; then git add vault; fi
             git commit -m "Stan publikacji"
             git pull --rebase
             git push
