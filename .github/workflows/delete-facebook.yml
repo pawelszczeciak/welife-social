@@ -1,0 +1,38 @@
+# Ręczne usuwanie wskazanych postów/filmów z fanpage'a (np. duplikatów po błędzie publikacji).
+# Nie usuwa oryginałów zapisanych w state/published.json ani obiektów innych stron.
+name: Usuń posty z Facebooka
+
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Identyfikatory postów/filmów, oddzielone przecinkami"
+        required: true
+      dry_run:
+        description: "Tylko pokaż, co zostałoby usunięte"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - env:
+          IDS: ${{ inputs.ids }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: node scripts/delete-facebook.mjs

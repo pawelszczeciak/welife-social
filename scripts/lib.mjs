@@ -66,8 +66,8 @@ export function makeGraph({ base = "https://graph.facebook.com", version = "v23.
   async function call(method, path, params = {}, accessToken = token) {
     const body = new URLSearchParams({ ...stringify(params), access_token: accessToken });
     const res =
-      method === "GET"
-        ? await fetchImpl(`${url(path)}?${body}`)
+      method === "GET" || method === "DELETE"
+        ? await fetchImpl(`${url(path)}?${body}`, { method })
         : await fetchImpl(url(path), { method, body, headers: { "content-type": "application/x-www-form-urlencoded" } });
     const json = await res.json().catch(() => ({}));
     if (!res.ok || json.error) {
@@ -78,7 +78,11 @@ export function makeGraph({ base = "https://graph.facebook.com", version = "v23.
     }
     return json;
   }
-  return { get: (p, q, t) => call("GET", p, q, t), post: (p, q, t) => call("POST", p, q, t) };
+  return {
+    get: (p, q, t) => call("GET", p, q, t),
+    post: (p, q, t) => call("POST", p, q, t),
+    del: (p, q, t) => call("DELETE", p, q, t),
+  };
 }
 
 function stringify(params) {
