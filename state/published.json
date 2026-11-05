@@ -54,5 +54,17 @@
     "published_at": "2026-11-04T17:37:15.000Z",
     "updated_at": "2026-11-04T17:37:16.000Z",
     "note": "stan dopisany ręcznie; Zernio zwrócił status publishing"
+  },
+  "2026-11-05-0830-c1:facebook": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "plik media/C1.jpg niedostępny pod publicznym adresem (403)",
+    "updated_at": "2026-11-05T07:36:33.660Z"
+  },
+  "2026-11-05-0830-c1:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "plik media/C1.jpg niedostępny pod publicznym adresem (403)",
+    "updated_at": "2026-11-05T07:36:33.660Z"
   }
 }
