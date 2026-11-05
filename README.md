@@ -24,10 +24,15 @@ Bezpieczniki w `scripts/lib.mjs` (post nie wyjdzie, jeśli):
 - tekst zawiera niewypełnione pole `{{…}}`;
 - post ma obrazy AI (`"ai_imagery": true`), a tekst nie mówi o AI;
 - na Instagramie jest więcej niż 5 hashtagów albo zdjęcie nie jest JPEG;
+- rolka nie ma dźwięku (brak ścieżki audio albo cisza, poniżej 16 kb/s); dźwięku nie da się dodać po publikacji;
 - plik nie odpowiada pod publicznym adresem;
 - termin minął ponad 24 h temu (np. automat był wyłączony); wtedy post jest pomijany, nie wysyłany z opóźnieniem.
 
 Błąd API → ponowienie w kolejnym przebiegu, po 3 próbach status `failed` i czerwony przebieg (e-mail z GitHuba).
+
+Status `removed` w `state/published.json` = publikacja usunięta z platformy (np. podmieniona na wersję z dźwiękiem);
+automat nie publikuje jej ponownie. Duplikaty z Facebooka usuwa ręcznie uruchamiany workflow „Usuń posty z Facebooka”
+(nie rusza wpisów o statusie `published`). Instagram i TikTok nie pozwalają usuwać filmów przez API.
 
 ## Uruchomienie (raz, ok. 20 minut)
 
