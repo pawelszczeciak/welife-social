@@ -115,6 +115,17 @@ test("post z przyszłą datą czeka, przeterminowany o ponad 24 h jest pomijany"
   g.close();
 });
 
+test("wpis oznaczony jako removed nie jest publikowany ponownie", async () => {
+  const g = await mockGraph();
+  const root = fixture([reel()]);
+  const removed = { status: "removed", id: "x", note: "usunięte, podmienione na nową wersję" };
+  writeFileSync(join(root, "state", "published.json"), JSON.stringify({ "r1:instagram": removed, "r1:facebook": removed }) + "\n");
+  await run(env(g), { root, ...quiet });
+  assert.equal(g.calls.length, 0);
+  assert.equal(state(root)["r1:instagram"].status, "removed");
+  g.close();
+});
+
 test("odrzuca tekst z niewypełnionym {{…}} albo bez informacji o becie, bez wywołań API", async () => {
   const g = await mockGraph();
   const root = fixture([reel({ id: "ph", caption: `${BETA} Wypadło {{N}}.` }), reel({ id: "nobeta", caption: "Napisz PLAN." })]);

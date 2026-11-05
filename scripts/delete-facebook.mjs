@@ -2,7 +2,8 @@
 // Uruchamiane ręcznie z GitHub Actions („Usuń posty z Facebooka”), bo token strony jest tylko w sekretach.
 //
 // Bezpieczniki:
-// - nie usunie niczego, co jest zapisane w state/published.json (to oryginały z kolejki);
+// - nie usunie niczego, co state/published.json ma jako "published" (to oryginały z kolejki);
+//   żeby celowo usunąć oryginał (np. podmiana na nową wersję), najpierw ustaw mu w stanie "removed";
 // - usuwa tylko obiekty, których autorem jest nasza strona (FB_PAGE_ID);
 // - DRY_RUN=true tylko pokazuje, co by usunął.
 import { readFileSync } from "node:fs";
@@ -13,7 +14,7 @@ import { makeGraph, GraphError } from "./lib.mjs";
 export async function deleteFacebook({ ids, graph, pageId, state = {}, dryRun = false, log = console.log }) {
   const protectedIds = new Set(
     Object.entries(state)
-      .filter(([key]) => key.endsWith(":facebook"))
+      .filter(([key, v]) => key.endsWith(":facebook") && v.status === "published")
       .flatMap(([, v]) => [v.id, String(v.id ?? "").split("_").pop()])
       .filter(Boolean),
   );
@@ -26,7 +27,7 @@ export async function deleteFacebook({ ids, graph, pageId, state = {}, dryRun = 
       continue;
     }
     if (protectedIds.has(id) || protectedIds.has(id.split("_").pop())) {
-      results.push({ id, status: "odrzucone", reason: "to oryginał zapisany w state/published.json" });
+      results.push({ id, status: "odrzucone", reason: "to oryginał opublikowany z kolejki (state/published.json)" });
       continue;
     }
     let obj;

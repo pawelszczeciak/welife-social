@@ -38,6 +38,17 @@ test("usuwa duplikat strony tokenem strony, odrzuca oryginał i cudzy obiekt", a
   }
 });
 
+test("oryginał oznaczony w stanie jako removed można usunąć", async () => {
+  const m = await mock();
+  try {
+    const removed = { "2026-11-04-r5:facebook": { status: "removed", id: "222" } };
+    const r = await deleteFacebook({ ids: ["222"], graph: m.graph, pageId: "PAGE", state: removed, log: () => {} });
+    assert.equal(r[0].status, "usunięte");
+  } finally {
+    m.close();
+  }
+});
+
 test("próba niczego nie usuwa", async () => {
   const m = await mock();
   try {

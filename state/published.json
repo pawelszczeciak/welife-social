@@ -31,20 +31,21 @@
   },
   "2026-11-04-r5:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1646904903903719",
     "published_at": "2026-11-04T17:37:00.000Z",
     "updated_at": "2026-11-04T17:37:16.000Z",
-    "note": "stan dopisany ręcznie"
+    "note": "wersja bez dźwięku, do usunięcia przez API (workflow „Usuń posty z Facebooka”); zastąpione przez 2026-11-05-2150-r5-dzwiek"
   },
   "2026-11-04-r5:instagram": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "DfVAfmblF5s",
     "permalink": "https://www.instagram.com/reel/DfVAfmblF5s/",
     "published_at": "2026-11-04T17:36:50.000Z",
     "updated_at": "2026-11-04T17:37:16.000Z",
-    "note": "stan dopisany ręcznie: krok zapisu w workflow nie zadziałał"
+    "note": "usunięte z Instagrama przez właściciela (wersja bez dźwięku); zastąpione przez 2026-11-05-2150-r5-dzwiek",
+    "removed_at": "2026-11-05T20:40:00Z"
   },
   "2026-11-04-r5:tiktok": {
     "attempts": 1,

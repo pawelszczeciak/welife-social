@@ -48,7 +48,8 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
     for (const platform of post.platforms ?? []) {
       const key = `${post.id}:${platform}`;
       const entry = state[key] ?? { attempts: 0 };
-      if (["published", "skipped_stale", "failed"].includes(entry.status)) continue;
+      // "removed" = opublikowane, a potem usunięte z platformy (np. podmiana na wersję z dźwiękiem): nie wracamy do tego.
+      if (["published", "skipped_stale", "failed", "removed"].includes(entry.status)) continue;
       if (due > now) continue;
       const set = (patch) => {
         state[key] = { ...entry, ...patch, updated_at: new Date(now).toISOString() };
