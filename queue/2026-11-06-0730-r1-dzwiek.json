@@ -1,0 +1,20 @@
+{
+  "id": "2026-11-06-0730-r1-dzwiek",
+  "publish_at": "2026-11-06T07:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R1.mp4"
+  ],
+  "cover": "media/R1-cover.jpg",
+  "ai_imagery": true,
+  "note": "R1 ponownie, z dźwiękiem. Cicha wersja z 2.11: Facebook usunięty przez API; Instagram usuwa właściciel ręcznie (API nie usuwa) i przypina tę wersję zamiast starej.",
+  "caption": "Trzeci słoik passaty w szafce? Napisz, co u Ciebie najczęściej się dubluje.\n\nLink do darmowej bety WE.LIFE masz w bio @welife.world.\n\nLista zakupów pisana z pamięci łatwo dubluje to, co już stoi w szafce. Stąd trzeci słoik passaty i druga paczka ryżu.\n\nW WE.LIFE robisz plan posiłków na 7 dni. Lista zakupów składa się z przepisów, razem z ilościami, a produkty zapisane w spiżarni z niej wypadają.\n\nTo wersja beta, czyli testowa. Działa w przeglądarce na telefonie, po polsku, bez karty.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#planposiłków #listazakupów #mniejmarnowania",
+  "facebook": {
+    "message": "Trzeci słoik passaty w szafce? Napisz, co u Ciebie najczęściej się dubluje.\n\nLink do darmowej bety WE.LIFE znajdziesz tutaj: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-06-0730-r1-dzwiek\n\nLista zakupów pisana z pamięci łatwo dubluje to, co już stoi w szafce. Stąd trzeci słoik passaty i druga paczka ryżu.\n\nW WE.LIFE robisz plan posiłków na 7 dni. Lista zakupów składa się z przepisów, razem z ilościami, a produkty zapisane w spiżarni z niej wypadają.\n\nTo wersja beta, czyli testowa. Działa w przeglądarce na telefonie, po polsku, bez karty.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#planposiłków #listazakupów #mniejmarnowania"
+  }
+}

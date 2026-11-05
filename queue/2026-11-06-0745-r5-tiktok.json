@@ -1,0 +1,15 @@
+{
+  "id": "2026-11-06-0745-r5-tiktok",
+  "publish_at": "2026-11-06T07:45:00+01:00",
+  "platforms": [
+    "tiktok"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R5.mp4"
+  ],
+  "cover": "media/R5-cover.jpg",
+  "ai_imagery": true,
+  "note": "R5 z dźwiękiem na TikToka. Ciche wersje z 4.11 usuwa właściciel ręcznie (API TikToka nie usuwa filmów).",
+  "caption": "Co najczęściej zostaje Ci w lodówce? Napisz w komentarzu.\n\nLink do WE.LIFE masz w bio @welife.world. To darmowa wersja beta (testowa).\n\nResztki z kilku dni to nie problem, tylko gotowy obiad. W WE.LIFE wybierasz „Ze Spiżarni” i dostajesz propozycję z tego, co już masz w domu. Tak działa plan posiłków, który zaczyna się od lodówki.\n\nMniej jedzenia w koszu, mniej dodatkowych zakupów, a obiad i tak jest.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#resztki #niemarnujjedzenia #planposiłków"
+}

@@ -50,7 +50,59 @@ export function validate(post, platform, root) {
   for (const m of [...media, ...(post.cover ? [post.cover] : [])]) {
     if (root && !existsSync(join(root, m))) errors.push(`brak pliku ${m}`);
   }
+  // Zasada właściciela: każda rolka ma dźwięk. Po publikacji nie da się go już dodać.
+  if (post.type === "reel" && root && /\.mp4$/i.test(media[0] ?? "") && existsSync(join(root, media[0]))) {
+    const kbps = audioKbps(join(root, media[0]));
+    if (kbps === null) errors.push(`rolka ${media[0]} nie ma ścieżki dźwiękowej`);
+    else if (kbps < MIN_AUDIO_KBPS) errors.push(`rolka ${media[0]} jest cicha (dźwięk ${kbps.toFixed(1)} kb/s)`);
+  }
   return errors;
+}
+
+// Cisza zakodowana w AAC zajmuje ~2 kb/s, podkład muzyczny ~160 kb/s (ffmpeg, -b:a 160k).
+export const MIN_AUDIO_KBPS = 16;
+
+// Średni bitrate ścieżki dźwiękowej z tabel MP4 (hdlr „soun”, mdhd, stsz), bez ffmpeg.
+// null = brak ścieżki dźwiękowej albo plik, którego nie da się odczytać jako MP4.
+export function audioKbps(file) {
+  const buf = readFileSync(file);
+  const boxes = (start, end) => {
+    const out = [];
+    for (let at = start; at + 8 <= end; ) {
+      let size = buf.readUInt32BE(at);
+      const type = buf.toString("latin1", at + 4, at + 8);
+      let head = 8;
+      if (size === 1) {
+        size = Number(buf.readBigUInt64BE(at + 8));
+        head = 16;
+      } else if (size === 0) size = end - at;
+      if (size < head || at + size > end) break;
+      out.push({ type, start: at + head, end: at + size });
+      at += size;
+    }
+    return out;
+  };
+  const child = (box, type) => box && boxes(box.start, box.end).find((b) => b.type === type);
+  const moov = boxes(0, buf.length).find((b) => b.type === "moov");
+  if (!moov) return null;
+  for (const trak of boxes(moov.start, moov.end).filter((b) => b.type === "trak")) {
+    const mdia = child(trak, "mdia");
+    const hdlr = child(mdia, "hdlr");
+    if (!hdlr || buf.toString("latin1", hdlr.start + 8, hdlr.start + 12) !== "soun") continue;
+    const mdhd = child(mdia, "mdhd");
+    const stsz = child(child(child(mdia, "minf"), "stbl"), "stsz");
+    if (!mdhd || !stsz) return null;
+    const v1 = buf[mdhd.start] === 1;
+    const timescale = buf.readUInt32BE(mdhd.start + (v1 ? 20 : 12));
+    const duration = v1 ? Number(buf.readBigUInt64BE(mdhd.start + 24)) : buf.readUInt32BE(mdhd.start + 16);
+    const fixed = buf.readUInt32BE(stsz.start + 4);
+    const count = buf.readUInt32BE(stsz.start + 8);
+    let bytes = fixed * count;
+    if (fixed === 0) for (let i = 0; i < count; i++) bytes += buf.readUInt32BE(stsz.start + 12 + 4 * i);
+    const secs = duration / timescale;
+    return secs > 0 ? (bytes * 8) / secs / 1000 : null;
+  }
+  return null;
 }
 
 export class GraphError extends Error {

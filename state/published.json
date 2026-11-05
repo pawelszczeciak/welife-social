@@ -9,10 +9,11 @@
   },
   "2026-11-02-r1:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "2591191488028636",
     "published_at": "2026-11-02T17:37:51.345Z",
-    "updated_at": "2026-11-02T17:36:57.747Z"
+    "updated_at": "2026-11-02T17:36:57.747Z",
+    "note": "wersja bez dźwięku, usuwana przez API; zastąpione przez 2026-11-06-0730-r1-dzwiek"
   },
   "2026-11-02-r1:instagram": {
     "attempts": 1,
@@ -35,7 +36,8 @@
     "id": "1646904903903719",
     "published_at": "2026-11-04T17:37:00.000Z",
     "updated_at": "2026-11-04T17:37:16.000Z",
-    "note": "wersja bez dźwięku, do usunięcia przez API (workflow „Usuń posty z Facebooka”); zastąpione przez 2026-11-05-2150-r5-dzwiek"
+    "note": "wersja bez dźwięku, usunięta przez API; zastąpione przez 2026-11-05-2150-r5-dzwiek",
+    "removed_at": "2026-11-05T20:43:57Z"
   },
   "2026-11-04-r5:instagram": {
     "attempts": 1,

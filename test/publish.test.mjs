@@ -4,7 +4,8 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, existsSync, cpSync } from "node:fs";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { tmpdir } from "node:os";
 import { run } from "../scripts/publish.mjs";
 import { check } from "../scripts/check-config.mjs";
@@ -50,10 +51,13 @@ async function mockGraph({ failPublish = 0, bioLink = "https://welife.world/?utm
 
 const BETA = "Napisz PLAN, wyślemy link. To wersja beta (testowa).";
 
+const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), "fixtures");
+const SOUND = join(FIXTURES, "sound.mp4");
+
 function fixture(posts) {
   const root = mkdtempSync(join(tmpdir(), "social-"));
   for (const d of ["queue", "state", "media"]) mkdirSync(join(root, d));
-  writeFileSync(join(root, "media", "R1.mp4"), "x");
+  cpSync(SOUND, join(root, "media", "R1.mp4"));
   writeFileSync(join(root, "media", "a.jpg"), "x");
   writeFileSync(join(root, "media", "b.jpg"), "x");
   for (const p of posts) writeFileSync(join(root, "queue", `${p.id}.json`), JSON.stringify(p));
@@ -112,6 +116,21 @@ test("post z przyszłą datą czeka, przeterminowany o ponad 24 h jest pomijany"
   assert.equal(s["future:instagram"], undefined);
   assert.equal(s["old:instagram"].status, "skipped_stale");
   assert.equal(g.calls.length, 0);
+  g.close();
+});
+
+test("rolka cicha albo bez ścieżki dźwiękowej nie wychodzi; rolka z dźwiękiem tak", async () => {
+  const g = await mockGraph();
+  const root = fixture([reel({ id: "cicha", media: ["media/cicha.mp4"] }), reel({ id: "bezaudio", media: ["media/bez.mp4"] }), reel({ id: "ok" })]);
+  cpSync(join(FIXTURES, "silent.mp4"), join(root, "media", "cicha.mp4"));
+  cpSync(join(FIXTURES, "no-audio.mp4"), join(root, "media", "bez.mp4"));
+  await run(env(g), { root, ...quiet });
+  const s = state(root);
+  assert.equal(s["cicha:instagram"].status, "failed");
+  assert.match(s["cicha:instagram"].error, /cicha/);
+  assert.match(s["bezaudio:facebook"].error, /nie ma ścieżki dźwiękowej/);
+  assert.equal(s["ok:instagram"].status, "published");
+  assert.ok(!g.calls.some((c) => /cicha|bez\.mp4/.test(JSON.stringify(c.params))), "ciche pliki nie idą do API");
   g.close();
 });
 
@@ -254,7 +273,7 @@ const ttReel = (over = {}) => reel({ platforms: ["tiktok"], ai_imagery: true, ca
 test("TikTok: odświeżenie → creator_info → init (FILE_UPLOAD) → wysyłka → status, bez tokenów w stanie", async () => {
   const t = await mockTikTok();
   const root = fixture([ttReel(), ttReel({ id: "r2", publish_at: "2026-11-02T18:35:00+01:00" })]);
-  writeFileSync(join(root, "media", "R1.mp4"), Buffer.alloc(1234, 1));
+  const size = readFileSync(SOUND).length;
   const e = tiktokEnv(t);
   const r = await run(e, { root, ...quiet, waitOpts: { intervalMs: 1 } });
   assert.equal(r.failures, 0);
@@ -267,14 +286,14 @@ test("TikTok: odświeżenie → creator_info → init (FILE_UPLOAD) → wysyłka
   assert.equal(tokenCalls[0].form.grant_type, "refresh_token");
   assert.equal(tokenCalls[0].form.refresh_token, "TT_REFRESH_1");
   const init = t.calls.find((c) => c.path === "/v2/post/publish/video/init/").json;
-  assert.deepEqual(init.source_info, { source: "FILE_UPLOAD", video_size: 1234, chunk_size: 1234, total_chunk_count: 1 });
+  assert.deepEqual(init.source_info, { source: "FILE_UPLOAD", video_size: size, chunk_size: size, total_chunk_count: 1 });
   assert.equal(init.post_info.privacy_level, "SELF_ONLY");
   assert.equal(init.post_info.is_aigc, true);
   assert.equal(init.post_info.brand_organic_toggle, true);
   assert.equal(init.post_info.disable_stitch, true, "ustawienia z creator_info są respektowane");
   const put = t.calls.find((c) => c.method === "PUT");
-  assert.equal(put.headers["content-range"], "bytes 0-1233/1234");
-  assert.equal(put.bytes, 1234);
+  assert.equal(put.headers["content-range"], `bytes 0-${size - 1}/${size}`);
+  assert.equal(put.bytes, size);
   const saved = readFileSync(join(root, "state", "published.json"), "utf8");
   assert.doesNotMatch(saved, /TT_ACCESS|TT_REFRESH|CLIENT_SECRET_X/);
   const vaultRaw = readFileSync(join(root, "vault", "tiktok.json.enc"), "utf8");
