@@ -56,15 +56,20 @@
     "note": "stan dopisany ręcznie; Zernio zwrócił status publishing"
   },
   "2026-11-05-0830-c1:facebook": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "plik media/C1.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-05T07:36:33.660Z"
+    "updated_at": "2026-11-05T07:45:44.941Z",
+    "id": "1306038305932559_122123226759483309",
+    "published_at": "2026-11-05T07:45:58.902Z"
   },
   "2026-11-05-0830-c1:instagram": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "plik media/C1.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-05T07:36:33.660Z"
+    "updated_at": "2026-11-05T07:45:44.941Z",
+    "id": "18498874813128411",
+    "permalink": "https://www.instagram.com/p/DfWhtidH9qO/",
+    "published_at": "2026-11-05T07:45:55.011Z"
   }
 }
