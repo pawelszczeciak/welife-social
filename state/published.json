@@ -240,5 +240,20 @@
     "zernio_status": "publishing",
     "permalink": null,
     "published_at": "2026-11-06T06:54:45.315Z"
+  },
+  "2026-11-06-0830-k2:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122123481489483309",
+    "published_at": "2026-11-06T07:37:37.641Z",
+    "updated_at": "2026-11-06T07:36:19.131Z"
+  },
+  "2026-11-06-0830-k2:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18126984500510664",
+    "permalink": "https://www.instagram.com/p/DfZFhFYGm9v/",
+    "published_at": "2026-11-06T07:37:16.268Z",
+    "updated_at": "2026-11-06T07:36:19.131Z"
   }
 }
