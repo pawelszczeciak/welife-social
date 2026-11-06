@@ -229,5 +229,11 @@
     "permalink": null,
     "published_at": "2026-11-06T06:37:07.148Z",
     "updated_at": "2026-11-06T06:35:17.546Z"
+  },
+  "2026-11-06-0745-r5-tiktok:tiktok": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "plik media/R5-cover.jpg niedostępny pod publicznym adresem (403)",
+    "updated_at": "2026-11-06T06:45:32.742Z"
   }
 }
