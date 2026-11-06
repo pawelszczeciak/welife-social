@@ -257,15 +257,20 @@
     "updated_at": "2026-11-06T07:36:19.131Z"
   },
   "2026-11-06-1000-k2-en:facebook": {
-    "attempts": 2,
-    "status": "retry",
+    "attempts": 3,
+    "status": "published",
     "error": "plik media/K2-en-01.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-06T09:25:52.654Z"
+    "updated_at": "2026-11-06T09:36:38.701Z",
+    "id": "1306038305932559_122123550333483309",
+    "published_at": "2026-11-06T09:37:50.966Z"
   },
   "2026-11-06-1000-k2-en:instagram": {
-    "attempts": 2,
-    "status": "retry",
+    "attempts": 3,
+    "status": "published",
     "error": "plik media/K2-en-01.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-06T09:25:52.654Z"
+    "updated_at": "2026-11-06T09:36:38.701Z",
+    "id": "18347195188281622",
+    "permalink": "https://www.instagram.com/p/DfZTR2BAJds/",
+    "published_at": "2026-11-06T09:37:31.569Z"
   }
 }
