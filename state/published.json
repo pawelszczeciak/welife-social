@@ -257,15 +257,15 @@
     "updated_at": "2026-11-06T07:36:19.131Z"
   },
   "2026-11-06-1000-k2-en:facebook": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "retry",
     "error": "plik media/K2-en-01.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-06T09:15:49.790Z"
+    "updated_at": "2026-11-06T09:25:52.654Z"
   },
   "2026-11-06-1000-k2-en:instagram": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "retry",
     "error": "plik media/K2-en-01.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-06T09:15:49.790Z"
+    "updated_at": "2026-11-06T09:25:52.654Z"
   }
 }
