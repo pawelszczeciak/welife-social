@@ -427,5 +427,30 @@
     "permalink": null,
     "published_at": "2026-11-07T11:37:55.523Z",
     "updated_at": "2026-11-07T11:36:49.448Z"
+  },
+  "2026-11-07-1500-r6-en:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "2347653035996957",
+    "published_at": "2026-11-07T14:10:17.114Z",
+    "updated_at": "2026-11-07T14:09:25.266Z"
+  },
+  "2026-11-07-1500-r6-en:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18182168638443004",
+    "permalink": "https://www.instagram.com/reel/DfcXORaDnQz/",
+    "published_at": "2026-11-07T14:10:10.717Z",
+    "updated_at": "2026-11-07T14:09:25.266Z"
+  },
+  "2026-11-07-1500-r6-en:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6aef314904ead766ee9c7b4a",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-07T14:10:31.844Z",
+    "updated_at": "2026-11-07T14:09:25.266Z"
   }
 }
