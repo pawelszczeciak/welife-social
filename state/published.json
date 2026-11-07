@@ -452,5 +452,30 @@
     "permalink": null,
     "published_at": "2026-11-07T14:10:31.844Z",
     "updated_at": "2026-11-07T14:09:25.266Z"
+  },
+  "2026-11-07-1830-r15:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1742405590184980",
+    "published_at": "2026-11-07T17:37:56.253Z",
+    "updated_at": "2026-11-07T17:36:38.426Z"
+  },
+  "2026-11-07-1830-r15:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "17916977391503443",
+    "permalink": "https://www.instagram.com/reel/Dfcu_LWHJa2/",
+    "published_at": "2026-11-07T17:37:48.528Z",
+    "updated_at": "2026-11-07T17:36:38.426Z"
+  },
+  "2026-11-07-1830-r15:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6aef61f58ddf7a1433c7c5da",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-07T17:38:12.556Z",
+    "updated_at": "2026-11-07T17:36:38.426Z"
   }
 }
