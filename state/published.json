@@ -387,5 +387,20 @@
     "permalink": "https://www.instagram.com/p/DfbqXkAl-tF/",
     "published_at": "2026-11-07T07:37:49.080Z",
     "updated_at": "2026-11-07T07:37:35.657Z"
+  },
+  "2026-11-07-1000-c2-en:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122123833683483309",
+    "published_at": "2026-11-07T09:10:42.474Z",
+    "updated_at": "2026-11-07T09:10:21.677Z"
+  },
+  "2026-11-07-1000-c2-en:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "17929980870183329",
+    "permalink": "https://www.instagram.com/p/Dfb0_HTk3o7/",
+    "published_at": "2026-11-07T09:10:37.063Z",
+    "updated_at": "2026-11-07T09:10:21.677Z"
   }
 }
