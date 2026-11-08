@@ -502,5 +502,18 @@
     "permalink": null,
     "published_at": "2026-11-07T20:10:27.595Z",
     "updated_at": "2026-11-07T20:09:21.409Z"
+  },
+  "2026-11-08-0830-k3:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122124117915483309",
+    "published_at": "2026-11-08T07:36:42.863Z",
+    "updated_at": "2026-11-08T07:35:48.351Z"
+  },
+  "2026-11-08-0830-k3:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Graph API POST 17841453915108697/media_publish: Media ID is not available",
+    "updated_at": "2026-11-08T07:35:48.351Z"
   }
 }
