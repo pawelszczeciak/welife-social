@@ -511,9 +511,12 @@
     "updated_at": "2026-11-08T07:35:48.351Z"
   },
   "2026-11-08-0830-k3:instagram": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "Graph API POST 17841453915108697/media_publish: Media ID is not available",
-    "updated_at": "2026-11-08T07:35:48.351Z"
+    "updated_at": "2026-11-08T07:44:49.716Z",
+    "id": "18126765022715448",
+    "permalink": "https://www.instagram.com/p/DfeQC42Gf3t/",
+    "published_at": "2026-11-08T07:45:32.098Z"
   }
 }
