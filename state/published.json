@@ -663,5 +663,30 @@
     "permalink": "https://www.instagram.com/p/Dfg_MVQmCfq/",
     "published_at": "2026-11-09T09:16:00.866Z",
     "updated_at": "2026-11-09T09:15:44.723Z"
+  },
+  "2026-11-09-1230-r8:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1882636409574065",
+    "published_at": "2026-11-09T11:39:21.816Z",
+    "updated_at": "2026-11-09T11:38:14.839Z"
+  },
+  "2026-11-09-1230-r8:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18078323513571293",
+    "permalink": "https://www.instagram.com/reel/DfhPjTACLuM/",
+    "published_at": "2026-11-09T11:39:13.532Z",
+    "updated_at": "2026-11-09T11:38:14.839Z"
+  },
+  "2026-11-09-1230-r8:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6af1b0eb000a77ceaeef38cd",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-09T11:39:38.297Z",
+    "updated_at": "2026-11-09T11:38:14.839Z"
   }
 }
