@@ -775,5 +775,20 @@
     "status": "failed",
     "error": "plik media/K4-02.jpg niedostępny pod publicznym adresem (403)",
     "updated_at": "2026-11-10T07:54:33.282Z"
+  },
+  "2026-11-10-1000-k4-en:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122124676809483309",
+    "published_at": "2026-11-10T09:16:18.387Z",
+    "updated_at": "2026-11-10T09:15:11.792Z"
+  },
+  "2026-11-10-1000-k4-en:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "17954535237334135",
+    "permalink": "https://www.instagram.com/p/DfjkACFHedz/",
+    "published_at": "2026-11-10T09:16:04.888Z",
+    "updated_at": "2026-11-10T09:15:11.792Z"
   }
 }
