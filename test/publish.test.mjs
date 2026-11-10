@@ -27,6 +27,8 @@ async function mockGraph({ failPublish = 0, bioLink = "https://welife.world/?utm
     if (url.pathname.startsWith("/files/")) return res.writeHead(206).end("x");
     if (url.pathname.startsWith("/missing/")) return res.writeHead(404).end();
     const p = url.pathname.replace(/^\/v\d+\.\d+\//, "");
+    // GET /media = lista postów konta (sprawdzenie przed publikacją); tu konto bez postów.
+    if (p === "IG/media" && req.method === "GET") return send(200, { data: [] });
     if (p === "IG/media") return send(200, { id: `c${++n}` });
     if (p === "IG/media_publish") {
       if (fails > 0) {
@@ -87,7 +89,7 @@ test("publikuje należną rolkę na IG i FB, zapisuje stan i nie powtarza publik
   assert.equal(s["r1:instagram"].status, "published");
   assert.equal(s["r1:instagram"].permalink.startsWith("https://www.instagram.com/reel/"), true);
   assert.equal(s["r1:facebook"].status, "published");
-  const media = g.calls.find((c) => c.path.endsWith("/IG/media"));
+  const media = g.calls.find((c) => c.method === "POST" && c.path.endsWith("/IG/media"));
   assert.equal(media.params.media_type, "REELS");
   assert.equal(media.params.video_url, `${g.base}/files/media/R1.mp4`);
   const fbVideo = g.calls.find((c) => c.path.endsWith("/PAGE/videos"));

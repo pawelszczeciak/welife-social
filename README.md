@@ -29,6 +29,24 @@ Bezpieczniki w `scripts/lib.mjs` (post nie wyjdzie, jeśli):
 - termin minął ponad 24 h temu (np. automat był wyłączony); wtedy post jest pomijany, nie wysyłany z opóźnieniem.
 
 Błąd API → ponowienie w kolejnym przebiegu, po 3 próbach status `failed` i czerwony przebieg (e-mail z GitHuba).
+Błąd limitu zapytań Meta (np. „Application request limit reached”) → kolejna próba najwcześniej po 60 min
+(`RATE_LIMIT_BACKOFF_MINUTES`, 0–1440; dłużej, jeśli Meta poda szacowany czas odblokowania). To okno
+bezpieczeństwa, nie gwarancja odnowienia każdego limitu.
+Błąd Instagrama nie dowodzi, że post nie wyszedł (K4 PL: 3 kopie przy statusie `failed`). Dlatego:
+kontener jest zapisywany na dysk przed `media_publish`, a id posta zaraz po nim; kolejna próba najpierw sprawdza
+stan kontenera i ostatnie posty konta. Post z identycznym opisem od czasu kontenera = zapis jako opublikowany.
+Ponowna publikacja tylko przy rozstrzygającym braku posta i kontenerze `FINISHED` (ten sam) albo `EXPIRED` (nowy);
+`IN_PROGRESS` czeka, a wszystko niepewne (inny status, lista bez dojścia do daty, post bez id/czasu) kończy się
+statusem `failed` do sprawdzenia ręcznego, bez publikacji. Przed pierwszą publikacją IG automat też sprawdza, czy
+post z tym opisem nie wyszedł już od terminu (np. gdy stan poprzedniego przebiegu nie został wypchnięty).
+
+Ręczne wznowienie pozycji `failed`: `scripts/requeue.mjs` (tylko po sprawdzeniu, że posta nie ma na platformie).
+Post widoczny na platformie mimo `failed`: `scripts/reconcile.mjs <post:platforma> --id <id> [--duplicate <id>]`
+zapisuje jego id (bez publikowania i usuwania). Oba domyślnie w trybie próby, zapis wymaga `--apply --expect-sha256`.
+Workflow „Diagnostyka Meta” (ręczny, tylko odczyty Graph API, bez TikToka/Zernio i bez zapisu do repo) pokazuje
+limit publikacji IG, zużycie limitów Meta, posty IG z identycznym opisem i to, czy pozycje IG `failed`/`retry`
+nie są jednak na koncie; niepewny lub nieudany odczyt to błąd przebiegu, nie dowód nieobecności. „Sprawdź
+konfigurację” robi to samo, ale dodatkowo sprawdza TikToka (bezpośrednie API może przy tym odświeżyć token).
 
 Status `removed` w `state/published.json` = publikacja usunięta z platformy (np. podmieniona na wersję z dźwiękiem);
 automat nie publikuje jej ponownie. Duplikaty z Facebooka usuwa ręcznie uruchamiany workflow „Usuń posty z Facebooka”
