@@ -765,16 +765,28 @@
     "updated_at": "2026-11-09T20:10:46.280Z"
   },
   "2026-11-10-0830-k4:facebook": {
-    "attempts": 3,
-    "status": "failed",
-    "error": "plik media/K4-02.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-10T07:54:33.282Z"
+    "attempts": 0,
+    "requeued_at": "2026-11-10T15:40:44.167Z",
+    "requeued_from": {
+      "status": "failed",
+      "attempts": 3,
+      "error": "plik media/K4-02.jpg niedostępny pod publicznym adresem (403)",
+      "updated_at": "2026-11-10T07:54:33.282Z"
+    },
+    "requeue_basis": "operator_verified",
+    "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty"
   },
   "2026-11-10-0830-k4:instagram": {
-    "attempts": 3,
-    "status": "failed",
-    "error": "plik media/K4-02.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-10T07:54:33.282Z"
+    "attempts": 0,
+    "requeued_at": "2026-11-10T15:40:44.167Z",
+    "requeued_from": {
+      "status": "failed",
+      "attempts": 3,
+      "error": "plik media/K4-02.jpg niedostępny pod publicznym adresem (403)",
+      "updated_at": "2026-11-10T07:54:33.282Z"
+    },
+    "requeue_basis": "operator_verified",
+    "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty"
   },
   "2026-11-10-1000-k4-en:facebook": {
     "attempts": 1,
