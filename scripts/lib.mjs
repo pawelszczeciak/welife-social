@@ -115,12 +115,16 @@ export class GraphError extends Error {
 // Klient Graph API. Token nigdy nie trafia do logów ani do komunikatów błędów.
 export function makeGraph({ base = "https://graph.facebook.com", version = "v23.0", token, fetchImpl = fetch }) {
   const url = (path) => `${base.replace(/\/$/, "")}/${version}/${path.replace(/^\//, "")}`;
+  // Ostatnio widziane nagłówki zużycia limitów (X-App-Usage, X-Business-Use-Case-Usage), tylko do diagnostyki.
+  // Meta dołącza je nie do każdej odpowiedzi, więc brak nagłówka nie kasuje poprzedniej wartości.
+  let usage = { app: null, buc: null };
   async function call(method, path, params = {}, accessToken = token) {
     const body = new URLSearchParams({ ...stringify(params), access_token: accessToken });
     const res =
       method === "GET" || method === "DELETE"
         ? await fetchImpl(`${url(path)}?${body}`, { method })
         : await fetchImpl(url(path), { method, body, headers: { "content-type": "application/x-www-form-urlencoded" } });
+    usage = { app: res.headers?.get?.("x-app-usage") ?? usage.app, buc: res.headers?.get?.("x-business-use-case-usage") ?? usage.buc };
     const json = await res.json().catch(() => ({}));
     if (!res.ok || json.error) {
       const e = json.error ?? {};
@@ -134,6 +138,7 @@ export function makeGraph({ base = "https://graph.facebook.com", version = "v23.
     get: (p, q, t) => call("GET", p, q, t),
     post: (p, q, t) => call("POST", p, q, t),
     del: (p, q, t) => call("DELETE", p, q, t),
+    usage: () => usage,
   };
 }
 
@@ -159,32 +164,115 @@ export async function waitForContainer(graph, id, { intervalMs = 5000, timeoutMs
   }
 }
 
+const normCaption = (s) => (s ?? "").replace(/\s+/g, " ").trim();
+export const sameCaption = (a, b) => normCaption(a).length > 0 && normCaption(a) === normCaption(b);
+
+const MEDIA_PAGE = 50;
+const review = (message) => new GraphError(message, { needsReview: true });
+
+// Czy na koncie jest post z identycznym opisem, opublikowany nie wcześniej niż `since` − 5 min (ms).
+// Wynik jest jednym z trzech, a niepewność NIGDY nie staje się ani "jest", ani "nie ma":
+//   { status: "found", id, permalink, copies }  – co najmniej jeden pasujący post z id i poprawnym czasem,
+//   { status: "absent" }                         – strona sięga przed dolną granicę albo jest całym kontem,
+//   { status: "inconclusive", reason }           – brak/zła granica, pasujący post bez id lub czasu,
+//                                                  albo pełna strona bez dojścia do granicy (paginacja).
+// Ten sam opis opublikowany dni wcześniej (przed granicą) nie jest dopasowaniem.
+export async function findInstagramByCaption(graph, igUserId, caption, since) {
+  if (!Number.isFinite(since) || since <= 0) return { status: "inconclusive", reason: "brak poprawnej dolnej granicy czasu" };
+  const lower = since - 5 * 60 * 1000;
+  const page = await graph.get(`${igUserId}/media`, { fields: "id,caption,timestamp,permalink", limit: MEDIA_PAGE });
+  if (!Array.isArray(page?.data)) return { status: "inconclusive", reason: "odpowiedź bez listy postów" };
+  let oldest = Infinity;
+  const hits = [];
+  for (const m of page.data) {
+    const at = Date.parse(m?.timestamp);
+    const match = sameCaption(m?.caption, caption);
+    if (!Number.isFinite(at)) {
+      if (match) return { status: "inconclusive", reason: "pasujący post bez poprawnego czasu" };
+      continue;
+    }
+    oldest = Math.min(oldest, at);
+    if (!match || at < lower) continue;
+    if (!m.id) return { status: "inconclusive", reason: "pasujący post bez id" };
+    hits.push({ id: String(m.id), permalink: m.permalink, at });
+  }
+  if (hits.length) {
+    hits.sort((a, b) => a.at - b.at);
+    return { status: "found", id: hits[0].id, permalink: hits[0].permalink, copies: hits.map((h) => h.id) };
+  }
+  const wholeAccount = !page.paging?.next && page.data.length < MEDIA_PAGE;
+  if (oldest < lower || wholeAccount) return { status: "absent" };
+  return { status: "inconclusive", reason: `${page.data.length} najnowszych postów nie sięga do granicy czasu` };
+}
+
+// K4 PL IG: media_publish trzy razy zwrócił "Application request limit reached", a post i tak wyszedł
+// za każdym razem (3 kopie). Przed ponowieniem z zapisanym kontenerem NAJPIERW: stan kontenera i ostatnie posty.
+// Wyłącznie rozstrzygająca nieobecność posta pozwala na dalsze POST-y:
+//   FINISHED → ponownie ten sam kontener (nie wyszedł i nadal można go opublikować),
+//   EXPIRED  → nowy kontener (Meta: "nie opublikowany w ciągu 24 h i wygasł", więc ten kontener nie wyszedł),
+//   IN_PROGRESS → czekamy (błąd bez POST-a, kolejna próba później),
+//   PUBLISHED, ERROR, inny lub brak statusu → sprawdzenie ręczne, bez POST-a.
+// Każdy błąd odczytu przerywa próbę przed jakimkolwiek POST-em.
+async function reconcileInstagram(graph, igUserId, creationId, caption, since) {
+  const { status_code: code } = (await graph.get(creationId, { fields: "status_code" })) ?? {};
+  const search = await findInstagramByCaption(graph, igUserId, caption, since);
+  if (search.status === "found") return { action: "reconciled", ...search, containerStatus: code };
+  if (search.status !== "absent") throw review(`kontener ${creationId} (${code ?? "brak statusu"}): nie da się rozstrzygnąć, czy post wyszedł (${search.reason}); bez ponownej publikacji`);
+  if (code === "FINISHED") return { action: "reuse" };
+  if (code === "EXPIRED") return { action: "new" };
+  if (code === "IN_PROGRESS") throw new GraphError(`kontener ${creationId}: IN_PROGRESS, czekam na kolejną próbę (bez publikacji)`, { stage: "reconcile" });
+  throw review(`kontener ${creationId}: ${code ?? "brak statusu"}, a posta nie ma na koncie; wymaga sprawdzenia ręcznego, bez ponownej publikacji`);
+}
+
+// opts.creationId/opts.since: kontener z poprzedniej próby i czas jego utworzenia (ms).
+// opts.dueAt: termin posta (ms); bez zapisanego kontenera sprawdzamy, czy post z tym opisem nie wyszedł już od
+//   terminu (np. stan poprzedniego przebiegu nie został wypchnięty) – wtedy sprawdzenie ręczne, nie publikacja.
+// opts.checkpoint(patch): trwały zapis stanu PRZED media_publish (kontener) i ZARAZ po nim (id posta), żeby
+//   przerwanie przebiegu albo zgubiona odpowiedź nie kończyły się ślepym ponowieniem.
+// Każdy błąd po utworzeniu kontenera niesie e.creationId.
 export async function publishInstagram(graph, igUserId, post, mediaUrl, opts = {}) {
   const caption = textFor(post, "instagram");
-  let creationId;
-  if (post.type === "reel") {
-    ({ id: creationId } = await graph.post(`${igUserId}/media`, {
-      media_type: "REELS",
-      video_url: mediaUrl(post.media[0]),
-      cover_url: post.cover ? mediaUrl(post.cover) : undefined,
-      caption,
-      share_to_feed: "true",
-    }));
-  } else if (post.type === "carousel") {
-    const children = [];
-    for (const m of post.media) {
-      const { id } = await graph.post(`${igUserId}/media`, { image_url: mediaUrl(m), is_carousel_item: "true" });
-      children.push(id);
+  const checkpoint = opts.checkpoint ?? (() => {});
+  let creationId = opts.creationId ?? null;
+  try {
+    if (creationId) {
+      const r = await reconcileInstagram(graph, igUserId, creationId, caption, opts.since);
+      if (r.action === "reconciled") return { id: r.id, permalink: r.permalink, reconciled: true, containerStatus: r.containerStatus, copies: r.copies };
+      if (r.action === "new") creationId = null;
+    } else {
+      const prior = await findInstagramByCaption(graph, igUserId, caption, opts.dueAt);
+      if (prior.status === "found") throw review(`post z identycznym opisem jest już na koncie od terminu (${prior.permalink ?? prior.id}); stan go nie zna, bez publikacji`);
+      if (prior.status !== "absent") throw review(`nie da się sprawdzić, czy post już wyszedł (${prior.reason}); bez publikacji`);
     }
-    for (const id of children) await waitForContainer(graph, id, opts);
-    ({ id: creationId } = await graph.post(`${igUserId}/media`, { media_type: "CAROUSEL", children: children.join(","), caption }));
-  } else {
-    ({ id: creationId } = await graph.post(`${igUserId}/media`, { image_url: mediaUrl(post.media[0]), caption }));
+    if (!creationId && post.type === "reel") {
+      ({ id: creationId } = await graph.post(`${igUserId}/media`, {
+        media_type: "REELS",
+        video_url: mediaUrl(post.media[0]),
+        cover_url: post.cover ? mediaUrl(post.cover) : undefined,
+        caption,
+        share_to_feed: "true",
+      }));
+    } else if (!creationId && post.type === "carousel") {
+      const children = [];
+      for (const m of post.media) {
+        const { id } = await graph.post(`${igUserId}/media`, { image_url: mediaUrl(m), is_carousel_item: "true" });
+        children.push(id);
+      }
+      for (const id of children) await waitForContainer(graph, id, opts);
+      ({ id: creationId } = await graph.post(`${igUserId}/media`, { media_type: "CAROUSEL", children: children.join(","), caption }));
+    } else if (!creationId) {
+      ({ id: creationId } = await graph.post(`${igUserId}/media`, { image_url: mediaUrl(post.media[0]), caption }));
+    }
+    await waitForContainer(graph, creationId, opts);
+    checkpoint({ creation_id: creationId });
+    const { id } = await graph.post(`${igUserId}/media_publish`, { creation_id: creationId });
+    checkpoint({ creation_id: creationId, media_id: id });
+    const { permalink } = await graph.get(id, { fields: "permalink" }).catch(() => ({}));
+    return { id, permalink };
+  } catch (e) {
+    if (creationId) e.creationId = creationId;
+    throw e;
   }
-  await waitForContainer(graph, creationId, opts);
-  const { id } = await graph.post(`${igUserId}/media_publish`, { creation_id: creationId });
-  const { permalink } = await graph.get(id, { fields: "permalink" }).catch(() => ({}));
-  return { id, permalink };
 }
 
 export async function publishFacebook(graph, pageId, post, mediaUrl) {

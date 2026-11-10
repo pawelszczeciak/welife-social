@@ -2,8 +2,9 @@
 // Kończy się błędem (czerwony przebieg = e-mail z GitHuba), gdy coś wymaga Twojej uwagi,
 // np. token wygasa za mniej niż 10 dni.
 import { pathToFileURL, fileURLToPath } from "node:url";
-import { resolve, dirname } from "node:path";
-import { makeGraph } from "./lib.mjs";
+import { resolve, dirname, join } from "node:path";
+import { readFileSync, existsSync } from "node:fs";
+import { makeGraph, loadQueue, textFor, findInstagramByCaption } from "./lib.mjs";
 import { tiktokConfigured, getTikTokAccess, creatorInfo, readVault } from "./tiktok.mjs";
 import { zernioConfigured, makeZernio, findTikTokAccount, tiktokCreatorInfo } from "./zernio.mjs";
 
@@ -11,9 +12,13 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const REQUIRED = ["instagram_basic", "instagram_content_publish", "pages_show_list", "pages_read_engagement", "pages_manage_posts"];
 
+// opts.metaOnly (albo --meta-only / CHECK_META_ONLY=true): tylko Facebook/Instagram, bez żadnego wywołania
+// TikToka ani Zernio (bez odświeżania i rotacji tokenów). Workflow "Diagnostyka Meta" uruchamia wyłącznie to.
 export async function check(env = process.env, opts = {}) {
-  const { problems } = await checkMeta(env, { log: console.log, fetchImpl: fetch, now: Date.now(), ...opts });
-  problems.push(...(await checkTikTok(env, { log: console.log, fetchImpl: fetch, now: Date.now(), root: ROOT, ...opts })));
+  const metaOnly = opts.metaOnly === true || env.CHECK_META_ONLY === "true";
+  const { problems } = await checkMeta(env, { log: console.log, fetchImpl: fetch, now: Date.now(), root: ROOT, ...opts });
+  if (metaOnly) console.log("TikTok: pominięty (tylko diagnostyka Meta)");
+  else problems.push(...(await checkTikTok(env, { log: console.log, fetchImpl: fetch, now: Date.now(), root: ROOT, ...opts })));
   return { problems };
 }
 
@@ -67,7 +72,77 @@ async function checkTikTok(env, { log, fetchImpl, now, root }) {
   return problems;
 }
 
-async function checkMeta(env, { log, fetchImpl, now }) {
+// Tylko odczyt (same GET): limit publikacji IG, zużycie limitów zapytań Meta, posty z identycznym opisem
+// i obecność pozycji IG "failed"/"retry" na koncie. Błąd albo niepewny wynik sprawdzenia obecności to PROBLEM
+// ("nie można potwierdzić"), nigdy dowód nieobecności. Problemem jest też post znaleziony mimo failed/retry.
+async function igPublishingDiagnostics(graph, igId, { log, root }) {
+  const problems = [];
+  try {
+    const { data = [] } = await graph.get(`${igId}/content_publishing_limit`, { fields: "quota_usage,config" });
+    const q = data[0] ?? {};
+    log(`IG limit publikacji: ${q.quota_usage ?? "?"}/${q.config?.quota_total ?? "?"} w ${Math.round((q.config?.quota_duration ?? 86400) / 3600)} h`);
+  } catch (e) {
+    log(`IG limit publikacji: nie odczytano (${e.message})`);
+  }
+  try {
+    const { data: media = [] } = await graph.get(`${igId}/media`, { fields: "id,caption,timestamp,permalink", limit: 50 });
+    // Ten sam opis więcej niż raz = prawdopodobny duplikat (K4 PL: 3 kopie). Tylko informacja; usuwa człowiek.
+    const groups = new Map();
+    for (const m of media) {
+      const k = (m.caption ?? "").replace(/\s+/g, " ").trim();
+      if (k) groups.set(k, [...(groups.get(k) ?? []), m]);
+    }
+    for (const copies of groups.values()) {
+      if (copies.length > 1) log(`UWAGA: ${copies.length} posty IG z identycznym opisem: ${copies.map((m) => `${m.id}${m.permalink ? ` ${m.permalink}` : ""} (${m.timestamp ?? "?"})`).join(", ")}`);
+    }
+  } catch (e) {
+    log(`IG ostatnie posty: nie odczytano (${e.message})`);
+  }
+  for (const p of pendingInstagram(root)) {
+    try {
+      const r = await findInstagramByCaption(graph, igId, p.caption, p.since);
+      if (r.status === "found") problems.push(`${p.key} ma status ${p.status}, a post JEST na Instagramie (${r.permalink ?? r.id}; kopii: ${r.copies.length}): nie wznawiaj, ryzyko duplikatu`);
+      else if (r.status === "absent") log(`${p.key} (${p.status}): brak na koncie od ${new Date(p.since).toISOString()} (rozstrzygające: lista sięga przed tę datę)`);
+      else problems.push(`${p.key} (${p.status}): nie można potwierdzić nieobecności na Instagramie (${r.reason}); to nie jest dowód, że posta nie ma`);
+    } catch (e) {
+      problems.push(`${p.key} (${p.status}): nie można potwierdzić nieobecności na Instagramie (błąd odczytu: ${e.message}); to nie jest dowód, że posta nie ma`);
+    }
+  }
+  const u = graph.usage();
+  log(`zużycie limitów Meta (ostatni nagłówek): aplikacja ${u.app ?? "(brak nagłówka)"} · BUC ${bucSummary(u.buc)}`);
+  return problems;
+}
+
+// Pozycje IG "failed"/"retry" z ich opisem i dolną granicą czasu: pierwszy kontener albo termin posta.
+function pendingInstagram(root) {
+  const statePath = join(root, "state", "published.json");
+  if (!existsSync(statePath) || !existsSync(join(root, "queue"))) return [];
+  const state = JSON.parse(readFileSync(statePath, "utf8"));
+  const posts = new Map(loadQueue(join(root, "queue")).map((p) => [p.id, p]));
+  const out = [];
+  for (const [key, e] of Object.entries(state)) {
+    if (!key.endsWith(":instagram") || !["failed", "retry"].includes(e?.status)) continue;
+    const post = posts.get(key.slice(0, -":instagram".length));
+    if (!post) continue;
+    const created = Date.parse(e.creation_at);
+    out.push({ key, status: e.status, caption: textFor(post, "instagram"), since: Number.isFinite(created) ? Math.min(created, Date.parse(post.publish_at)) : Date.parse(post.publish_at) });
+  }
+  return out;
+}
+
+// Bez identyfikatorów kont (logi publicznego repo): tylko najwyższe procenty i czas do odblokowania.
+function bucSummary(raw) {
+  if (!raw) return "(brak nagłówka)";
+  try {
+    const rows = Object.values(JSON.parse(raw)).flat();
+    const max = (k) => Math.max(0, ...rows.map((r) => Number(r?.[k]) || 0));
+    return `max call_count ${max("call_count")}%, cputime ${max("total_cputime")}%, time ${max("total_time")}%, odblokowanie za ${max("estimated_time_to_regain_access")} min`;
+  } catch {
+    return "(nieczytelny)";
+  }
+}
+
+async function checkMeta(env, { log, fetchImpl, now, root }) {
   const problems = [];
   if (!env.META_ACCESS_TOKEN) return { problems: ["brak sekretu META_ACCESS_TOKEN"] };
   const graph = makeGraph({ base: env.GRAPH_BASE || undefined, version: env.GRAPH_VERSION || undefined, token: env.META_ACCESS_TOKEN, fetchImpl });
@@ -104,12 +179,13 @@ async function checkMeta(env, { log, fetchImpl, now }) {
     if (!/welife\.world/i.test(profile.website ?? "")) {
       problems.push("w bio Instagrama brakuje linku do welife.world: ustaw go w aplikacji (Edytuj profil → Linki)");
     }
+    problems.push(...(await igPublishingDiagnostics(graph, ig.id, { log, root })));
   }
   return { problems };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  check()
+  check(process.env, { metaOnly: process.argv.includes("--meta-only") })
     .then(({ problems }) => {
       for (const p of problems) console.log(`DO ZROBIENIA: ${p}`);
       if (!problems.length) console.log("Konfiguracja OK.");

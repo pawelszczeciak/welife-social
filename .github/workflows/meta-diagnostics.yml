@@ -1,0 +1,32 @@
+# Ręczna diagnostyka TYLKO Facebooka/Instagrama (same odczyty Graph API): token, strona, IG, limit publikacji,
+# zużycie limitów, posty z identycznym opisem i obecność pozycji IG failed/retry na koncie.
+# Bez TikToka i Zernio (żadnych ich sekretów w środowisku, więc żadnego odświeżania ani rotacji tokenów),
+# bez zapisu do repo. Czerwony przebieg przy pozycji failed/retry = post jest na koncie ALBO nie da się tego
+# rozstrzygnąć; to nigdy nie jest dowód nieobecności.
+name: Diagnostyka Meta
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  meta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - env:
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+        run: node scripts/check-config.mjs --meta-only

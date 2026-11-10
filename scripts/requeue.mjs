@@ -56,7 +56,26 @@ export function requeue(keys, { root = resolve(dirname(fileURLToPath(import.meta
     }
   }
 
-  // Blokada wyłączności lokalna + ponowny odczyt i porównanie skrótu tuż przed zapisem.
+  writeStateCas(root, digest, (next) => {
+    for (const key of plan) {
+      const e = next[key];
+      next[key] = {
+        attempts: 0,
+        // Kontener IG z nieudanej próby: publikator najpierw sprawdzi, czy post już nie wyszedł.
+        ...(e.creation_id ? { creation_id: e.creation_id, creation_at: e.creation_at } : {}),
+        requeued_at: new Date(now).toISOString(),
+        requeued_from: { status: e.status, attempts: e.attempts, error: e.error, updated_at: e.updated_at, history: e.history },
+        ...(provenBeforeApi(e) ? { requeue_basis: "history_all_probe" } : { requeue_basis: "operator_verified", verified_absent_on_platform: verifiedAbsent.trim() }),
+      };
+    }
+  });
+  return { applied: true, keys: plan, sha256: digest };
+}
+
+// Zapis stanu z blokadą wyłączności (state/.requeue.lock, wspólna dla requeue i reconcile) i ponownym
+// porównaniem skrótu tuż przed zapisem. `mutate` zmienia przekazany obiekt stanu w miejscu.
+export function writeStateCas(root, digest, mutate) {
+  const statePath = join(root, "state", "published.json");
   const lockPath = join(root, "state", ".requeue.lock");
   let fd;
   try {
@@ -68,15 +87,7 @@ export function requeue(keys, { root = resolve(dirname(fileURLToPath(import.meta
     const fresh = readFileSync(statePath, "utf8");
     if (sha256(fresh) !== digest) throw new Error("stan zmienił się w trakcie, przerwano bez zapisu");
     const next = JSON.parse(fresh);
-    for (const key of plan) {
-      const e = next[key];
-      next[key] = {
-        attempts: 0,
-        requeued_at: new Date(now).toISOString(),
-        requeued_from: { status: e.status, attempts: e.attempts, error: e.error, updated_at: e.updated_at, history: e.history },
-        ...(provenBeforeApi(e) ? { requeue_basis: "history_all_probe" } : { requeue_basis: "operator_verified", verified_absent_on_platform: verifiedAbsent.trim() }),
-      };
-    }
+    mutate(next);
     const sorted = Object.fromEntries(Object.keys(next).sort().map((k) => [k, next[k]]));
     const tmp = `${statePath}.tmp`;
     writeFileSync(tmp, JSON.stringify(sorted, null, 2) + "\n");
@@ -85,7 +96,6 @@ export function requeue(keys, { root = resolve(dirname(fileURLToPath(import.meta
     closeSync(fd);
     unlinkSync(lockPath);
   }
-  return { applied: true, keys: plan, sha256: digest };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
