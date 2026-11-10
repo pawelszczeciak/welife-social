@@ -781,7 +781,7 @@
     "updated_at": "2026-11-10T15:42:17.734Z"
   },
   "2026-11-10-0830-k4:instagram": {
-    "attempts": 1,
+    "attempts": 2,
     "requeued_at": "2026-11-10T15:40:44.167Z",
     "requeued_from": {
       "status": "failed",
@@ -798,9 +798,14 @@
         "at": "2026-11-10T15:42:17.734Z",
         "stage": "publish",
         "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached"
+      },
+      {
+        "at": "2026-11-10T15:47:20.710Z",
+        "stage": "publish",
+        "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached"
       }
     ],
-    "updated_at": "2026-11-10T15:42:17.734Z"
+    "updated_at": "2026-11-10T15:47:20.710Z"
   },
   "2026-11-10-1000-k4-en:facebook": {
     "attempts": 1,
