@@ -765,15 +765,15 @@
     "updated_at": "2026-11-09T20:10:46.280Z"
   },
   "2026-11-10-0830-k4:facebook": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "retry",
-    "error": "plik media/K4-06.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-10T07:36:18.625Z"
+    "error": "plik media/K4-08.jpg niedostępny pod publicznym adresem (403)",
+    "updated_at": "2026-11-10T07:45:40.969Z"
   },
   "2026-11-10-0830-k4:instagram": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "retry",
-    "error": "plik media/K4-06.jpg niedostępny pod publicznym adresem (403)",
-    "updated_at": "2026-11-10T07:36:18.625Z"
+    "error": "plik media/K4-08.jpg niedostępny pod publicznym adresem (403)",
+    "updated_at": "2026-11-10T07:45:40.969Z"
   }
 }
