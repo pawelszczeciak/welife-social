@@ -765,7 +765,7 @@
     "updated_at": "2026-11-09T20:10:46.280Z"
   },
   "2026-11-10-0830-k4:facebook": {
-    "attempts": 0,
+    "attempts": 1,
     "requeued_at": "2026-11-10T15:40:44.167Z",
     "requeued_from": {
       "status": "failed",
@@ -774,10 +774,14 @@
       "updated_at": "2026-11-10T07:54:33.282Z"
     },
     "requeue_basis": "operator_verified",
-    "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty"
+    "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty",
+    "status": "published",
+    "id": "1306038305932559_122124763251483309",
+    "published_at": "2026-11-10T15:43:21.589Z",
+    "updated_at": "2026-11-10T15:42:17.734Z"
   },
   "2026-11-10-0830-k4:instagram": {
-    "attempts": 0,
+    "attempts": 1,
     "requeued_at": "2026-11-10T15:40:44.167Z",
     "requeued_from": {
       "status": "failed",
@@ -786,7 +790,17 @@
       "updated_at": "2026-11-10T07:54:33.282Z"
     },
     "requeue_basis": "operator_verified",
-    "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty"
+    "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty",
+    "status": "retry",
+    "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached",
+    "history": [
+      {
+        "at": "2026-11-10T15:42:17.734Z",
+        "stage": "publish",
+        "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached"
+      }
+    ],
+    "updated_at": "2026-11-10T15:42:17.734Z"
   },
   "2026-11-10-1000-k4-en:facebook": {
     "attempts": 1,
