@@ -22,12 +22,34 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
   const statePath = join(root, "state", "published.json");
   const state = existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : {};
   // Puste zmienne repo przychodzą z Actions jako "", więc || zamiast ??.
-  const base =
-    env.MEDIA_BASE_URL ||
-    (env.GITHUB_REPOSITORY && env.GITHUB_SHA ? `https://cdn.jsdelivr.net/gh/${env.GITHUB_REPOSITORY}@${env.GITHUB_SHA}/` : null);
-  const mediaUrl = (p) => {
-    if (!base) throw new Error("brak MEDIA_BASE_URL (poza GitHub Actions ustaw go ręcznie)");
-    return base.replace(/\/?$/, "/") + p;
+  // Hosty plików dla Mety, w kolejności prób. Jawny MEDIA_BASE_URL to jedyny host (bez zmian).
+  // Domyślnie: jsDelivr odrzuca (403 "Package size exceeded 50 MB") wszystko spoza cache, gdy repo
+  // przekracza 50 MB (media tego repo to ponad 200 MB), więc zdjęcia idą najpierw z GitHub raw
+  // (poprawny image/jpeg), a rolki z jsDelivr (raw podaje mp4 jako application/octet-stream).
+  const mediaBases = (post) => {
+    if (env.MEDIA_BASE_URL) return [env.MEDIA_BASE_URL];
+    if (!(env.GITHUB_REPOSITORY && env.GITHUB_SHA)) return [];
+    const raw = `${env.RAW_MEDIA_HOST || "https://raw.githubusercontent.com"}/${env.GITHUB_REPOSITORY}/${env.GITHUB_SHA}/`;
+    const cdn = `${env.JSDELIVR_MEDIA_HOST || "https://cdn.jsdelivr.net"}/gh/${env.GITHUB_REPOSITORY}@${env.GITHUB_SHA}/`;
+    return post.type === "reel" ? [cdn, raw] : [raw, cdn];
+  };
+  const urlWith = (base, p) => base.replace(/\/?$/, "/") + p;
+  const noBase = () => new Error("brak MEDIA_BASE_URL (poza GitHub Actions ustaw go ręcznie)");
+  // Wybiera pierwszy host, na którym WSZYSTKIE pliki posta są publicznie dostępne (GET pierwszego bajtu).
+  const pickMedia = async (post) => {
+    const bases = mediaBases(post);
+    if (!bases.length) throw noBase();
+    let last;
+    for (const base of bases) {
+      const url = (p) => urlWith(base, p);
+      try {
+        await probeMedia(post, url, fetchImpl);
+        return url;
+      } catch (e) {
+        last = e;
+      }
+    }
+    throw last;
   };
   const graph = makeGraph({ base: env.GRAPH_BASE || undefined, version: env.GRAPH_VERSION || undefined, token: env.META_ACCESS_TOKEN, fetchImpl });
   const targets = { instagram: env.IG_USER_ID, facebook: env.FB_PAGE_ID };
@@ -82,7 +104,7 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
       }
       try {
         if (platform === "tiktok" && viaZernio) {
-          await probeMedia(post, mediaUrl, fetchImpl);
+          const mediaUrl = await pickMedia(post);
           zernioAccount ??= await findTikTokAccount(env, zernio);
           const result = await publishTikTokZernio(env, zernio, zernioAccount.id, post, mediaUrl, { attempt: entry.attempts + 1 });
           set({ status: "published", via: "zernio", id: result.id, zernio_status: result.status, permalink: result.permalink, attempts: entry.attempts + 1, published_at: new Date().toISOString() });
@@ -96,7 +118,7 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
           log(`OPUBLIKOWANE ${key} → ${result.permalink ?? result.id} (${result.status}, ${result.privacy})`);
           continue;
         }
-        await probeMedia(post, mediaUrl, fetchImpl);
+        const mediaUrl = await pickMedia(post);
         const result =
           platform === "instagram"
             ? await publishInstagram(graph, targets.instagram, post, mediaUrl, waitOpts)
@@ -105,14 +127,36 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
         log(`OPUBLIKOWANE ${key} → ${result.permalink ?? result.id}`);
       } catch (e) {
         const attempts = entry.attempts + 1;
-        set({ status: attempts >= maxAttempts ? "failed" : "retry", attempts, error: e.message });
+        // Historia prób z etapem: "probe" = błąd PRZED jakimkolwiek wywołaniem Graph/Zernio (nic nie mogło
+        // wyjść), "publish" = po rozpoczęciu publikacji (post mógł częściowo lub w pełni powstać).
+        // Sam brak "id" w stanie nie dowodzi, że nic nie wyszło.
+        const history = [...(entry.history ?? []), { at: new Date(now).toISOString(), stage: e.stage ?? "publish", error: e.message }].slice(-5);
+        set({ status: attempts >= maxAttempts ? "failed" : "retry", attempts, error: e.message, history });
         log(`BŁĄD ${key} (próba ${attempts}/${maxAttempts}): ${e.message}`);
         failures++;
       }
     }
   }
   if (changed) writeFileSync(statePath, JSON.stringify(sortKeys(state), null, 2) + "\n");
-  return { failures, changed, live };
+  // Wyczerpane próby nie mogą zniknąć po jednym czerwonym przebiegu: dopóki pozycja z ostatnich
+  // ALERT_WINDOW_HOURS (domyślnie 48) jest "failed" i nikt jej nie potwierdził, przebieg jest czerwony.
+  const unresolved = findUnresolved(state, loadQueue(join(root, "queue")), now, Number(env.ALERT_WINDOW_HOURS ?? 48) * HOUR);
+  for (const u of unresolved) log(`::error::NIEOPUBLIKOWANE ${u.key} (próby: ${u.attempts}): ${u.error ?? "brak opisu"}`);
+  return { failures, changed, live, unresolved };
+}
+
+// Pozycje w stanie "failed" (próby wyczerpane), bez "acknowledged": true, których termin mieści się w oknie.
+// "skipped_stale" i "removed" to świadome decyzje, więc nie alarmują. Wpis bez posta w kolejce jest pomijany.
+export function findUnresolved(state, posts, now, windowMs) {
+  const due = new Map(posts.map((p) => [p.id, Date.parse(p.publish_at)]));
+  const out = [];
+  for (const [key, entry] of Object.entries(state)) {
+    if (entry?.status !== "failed" || entry.acknowledged === true) continue;
+    const at = due.get(key.slice(0, key.lastIndexOf(":")));
+    if (at === undefined || Number.isNaN(at) || now - at > windowMs) continue;
+    out.push({ key, attempts: entry.attempts ?? 0, error: entry.error });
+  }
+  return out;
 }
 
 // Meta i Zernio pobierają pliki same, więc najpierw sprawdzamy, czy adres publiczny działa
@@ -121,7 +165,7 @@ async function probeMedia(post, mediaUrl, fetchImpl) {
   for (const m of [...(post.media ?? []), ...(post.cover ? [post.cover] : [])]) {
     const probe = await fetchImpl(mediaUrl(m), { headers: { range: "bytes=0-0" } });
     await probe.body?.cancel();
-    if (!probe.ok) throw new Error(`plik ${m} niedostępny pod publicznym adresem (${probe.status})`);
+    if (!probe.ok) throw Object.assign(new Error(`plik ${m} niedostępny pod publicznym adresem (${probe.status})`), { stage: "probe" });
   }
 }
 
@@ -133,7 +177,7 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   run()
     // Próba nigdy nie kończy się błędem (cron co 10 minut nie zasypie Cię e-mailami przed
     // konfiguracją); błędy w kolejce łapie validate-queue.mjs przy każdym pushu.
-    .then(({ failures, live }) => process.exit(live && failures ? 1 : 0))
+    .then(({ failures, live, unresolved }) => process.exit(live && (failures || unresolved.length) ? 1 : 0))
     .catch((e) => {
       console.error(e.message);
       process.exit(1);
