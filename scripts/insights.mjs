@@ -154,10 +154,18 @@ async function facebook(graph, pageId, { state, posts, log }) {
 async function tiktok(call, env, { state, posts, log }) {
   const out = { followers: null, missing: [], posts: [] };
   const byId = indexState(state, "tiktok");
-  const res = await call("GET", "/analytics?platform=tiktok&limit=100");
+  // Bez filtra platformy w zapytaniu (z filtrem lista wróciła pusta przy 28 opublikowanych filmach); filtrujemy sami.
+  const res = await call("GET", "/analytics?limit=100&source=all");
   if (res.status !== 200) throw new Error(`Zernio /analytics: HTTP ${res.status} ${res.json?.error ?? res.json?.message ?? ""}`.trim());
-  const rows = res.json.posts ?? res.json.data ?? [];
-  if (rows.length === 0) log(`TikTok: brak postów w odpowiedzi Zernio (pola: ${Object.keys(res.json).join(", ")})`);
+  const all = res.json.posts ?? res.json.data ?? [];
+  const isTikTok = (r) => [r.platform, ...(r.platformAnalytics ?? r.platforms ?? []).map((x) => x.platform)].some((x) => String(x ?? "").toLowerCase() === "tiktok");
+  const rows = all.filter((r) => isTikTok(r) || (r.platform == null && !(r.platformAnalytics ?? r.platforms)));
+  if (rows.length === 0) {
+    // Nazwy pól i liczniki (bez treści), żeby dało się zobaczyć, dlaczego lista jest pusta.
+    const note = `Zernio /analytics: 0 filmów TikTok z ${all.length} pozycji; pola: ${Object.keys(res.json).join(", ")}; dostęp do statystyk: ${res.json.hasAnalyticsAccess ?? "?"}`;
+    log(`TikTok: ${note}`);
+    out.missing.push(note);
+  }
   for (const r of rows) {
     const ids = [r._id, r.postId, r.id, r.latePostId].filter(Boolean).map(String);
     const key = ids.map((i) => byId.get(i)).find(Boolean) ?? null;

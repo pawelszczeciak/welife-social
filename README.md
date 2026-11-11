@@ -52,6 +52,18 @@ Status `removed` w `state/published.json` = publikacja usunięta z platformy (np
 automat nie publikuje jej ponownie. Duplikaty z Facebooka usuwa ręcznie uruchamiany workflow „Usuń posty z Facebooka”
 (nie rusza wpisów o statusie `published`). Instagram i TikTok nie pozwalają usuwać filmów przez API.
 
+## Statystyki (co działa, a co nie)
+
+Workflow „Statystyki” raz dziennie (4:23 w nocy) pobiera wyniki z Instagrama, Facebooka i TikToka (przez Zernio)
+i zapisuje `insights/latest.json` (każdy post: wyświetlenia, zasięg, polubienia, komentarze, zapisy, udostępnienia,
+średni czas oglądania; do tego język, pora i pierwsza linia opisu) oraz jeden wiersz dziennie w `insights/history.jsonl`.
+Pole `summary` ma mediany dla rolek/karuzel/kart, PL/EN i pór dnia oraz 5 najlepszych i 5 najsłabszych postów.
+Automat treści czyta ten plik przed dopisaniem kolejnych postów.
+
+Pełne dane z Instagrama wymagają w tokenie uprawnienia `instagram_manage_insights`, a zasięg postów na Facebooku
+`read_insights`. Bez nich są tylko polubienia, komentarze i liczba obserwujących; pole `missing` mówi, czego brakuje.
+Repo jest publiczne, więc te liczby też są publiczne.
+
 ## Uruchomienie (raz, ok. 20 minut)
 
 ### 1. Portfolio firmowe ze stroną i Instagramem

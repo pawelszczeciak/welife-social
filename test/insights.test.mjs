@@ -82,6 +82,7 @@ test("pełny odczyt: metryki, czas oglądania, przypisanie do kolejki i podsumow
     assert.deepEqual(d.facebook.posts.map((p) => [p.key, p.kind, p.views, p.reactions]), [["2026-11-05-1230-r3", "reel", 40, 2], ["2026-11-05-0830-c1", "image", null, 3]]);
     assert.match(d.facebook.missing.join(), /read_insights/);
     assert.deepEqual([d.tiktok.followers, d.tiktok.posts[0].key, d.tiktok.posts[0].views], [1, "2026-11-05-1230-r3", 210]);
+    assert.deepEqual(d.tiktok.missing, []);
     assert.ok(m.calls.every((c) => c.method === "GET"), "same odczyty");
     assert.ok(m.calls.length <= 9, `za dużo wywołań: ${m.calls.length}`);
 
