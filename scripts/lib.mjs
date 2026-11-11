@@ -4,7 +4,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-export const PLATFORMS = ["instagram", "facebook", "tiktok"];
+export const PLATFORMS = ["instagram", "facebook", "tiktok", "youtube"];
 export const TYPES = ["reel", "carousel", "image", "text"];
 const IG_HASHTAG_LIMIT = 5;
 
@@ -18,7 +18,21 @@ export function loadQueue(dir) {
 export function textFor(post, platform) {
   if (platform === "facebook" && post.facebook?.message) return post.facebook.message;
   if (platform === "tiktok" && post.tiktok?.caption) return post.tiktok.caption;
+  if (platform === "youtube") {
+    if (post.youtube?.description) return post.youtube.description;
+    // Na YouTube nie ma „linku w bio”: kierujemy wprost na stronę i dodajemy link z oznaczeniem źródła.
+    const base = (post.caption ?? "").replace(/w bio @welife\.world/g, "na welife.world").replace(/in our bio @welife\.world/g, "at welife.world");
+    return `${base}\n\nhttps://welife.world/?utm_source=youtube&utm_medium=social&utm_campaign=${post.id}`;
+  }
   return post.caption ?? "";
+}
+
+// Tytuł filmu na YouTube: post.youtube.title albo pierwsza linia opisu, przycięta do 100 znaków na granicy słowa.
+export function youtubeTitle(post) {
+  if (post.youtube?.title) return post.youtube.title;
+  const line = (post.caption ?? "").split("\n")[0].trim();
+  if (line.length <= 100) return line;
+  return line.slice(0, 99).replace(/\s+\S*$/, "") + "…";
 }
 
 // Zwraca listę powodów, dla których posta NIE wolno opublikować na danej platformie.
@@ -30,6 +44,14 @@ export function validate(post, platform, root) {
   if (!TYPES.includes(post.type)) errors.push(`nieznany typ: ${post.type}`);
   if (platform === "instagram" && post.type === "text") errors.push("Instagram nie przyjmuje postów bez zdjęcia/filmu");
   if (platform === "tiktok" && post.type !== "reel") errors.push("TikTok w tym automacie przyjmuje tylko rolki (type: reel)");
+  if (platform === "youtube") {
+    if (post.type !== "reel") errors.push("YouTube w tym automacie przyjmuje tylko rolki (type: reel)");
+    const title = youtubeTitle(post);
+    if (!title) errors.push("YouTube: pusty tytuł (pierwsza linia opisu)");
+    if (title.length > 100) errors.push(`YouTube: tytuł ma ${title.length} znaków, limit to 100`);
+    if (/[<>]/.test(title)) errors.push("YouTube: tytuł nie może zawierać znaków < ani >");
+    if (text.length > 5000) errors.push("YouTube: opis dłuższy niż 5000 znaków");
+  }
   if (!text.trim()) errors.push("pusty tekst");
   if (text.includes("{{")) errors.push("tekst zawiera niewypełnione pole {{…}}");
   // Zasada właściciela: każdy materiał mówi, że to wersja beta (testowa).

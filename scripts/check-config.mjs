@@ -6,7 +6,7 @@ import { resolve, dirname, join } from "node:path";
 import { readFileSync, existsSync } from "node:fs";
 import { makeGraph, loadQueue, textFor, findInstagramByCaption } from "./lib.mjs";
 import { tiktokConfigured, getTikTokAccess, creatorInfo, readVault } from "./tiktok.mjs";
-import { zernioConfigured, makeZernio, findTikTokAccount, tiktokCreatorInfo } from "./zernio.mjs";
+import { zernioConfigured, makeZernio, findTikTokAccount, tiktokCreatorInfo, findYouTubeAccount } from "./zernio.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -39,6 +39,13 @@ async function checkZernio(env, { log, fetchImpl }) {
     if (info.creator && info.creator.canPostMore === false) problems.push("TikTok (Zernio): konto chwilowo nie może publikować (limit TikToka)");
   } catch (e) {
     problems.push(`TikTok (Zernio): ${e.message}`);
+  }
+  // YouTube jest opcjonalny: brak kanału to informacja, nie problem.
+  try {
+    const yt = await findYouTubeAccount(env, makeZernio(env, fetchImpl));
+    log(yt ? `YouTube (Zernio): kanał ${yt.name ?? "?"} · konto ${yt.id}` : "YouTube (Zernio): kanał nie jest podłączony, rolki na YouTube są pomijane");
+  } catch (e) {
+    problems.push(`YouTube (Zernio): ${e.message}`);
   }
   return problems;
 }

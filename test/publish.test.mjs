@@ -395,7 +395,9 @@ async function mockZernio({ accounts = [{ _id: "acc_tt", platform: "tiktok", use
         fails--;
         return send(207, { message: "failed", error: "TikTok upstream error", post: { _id: "zp_fail", status: "failed", platforms: [{ platform: "tiktok", status: "failed" }] }, platformResults: [{ platform: "tiktok", status: "failed", error: "upstream" }] });
       }
-      return send(201, { message: "ok", post: { _id: "zp_1", status: "published", platforms: [{ platform: "tiktok", status: "published", platformPostUrl: "https://www.tiktok.com/@welife.world/video/1" }] } });
+      const platform = call.json?.platforms?.[0]?.platform ?? "tiktok";
+      const link = platform === "youtube" ? "https://www.youtube.com/watch?v=abc123" : "https://www.tiktok.com/@welife.world/video/1";
+      return send(201, { message: "ok", post: { _id: platform === "youtube" ? "zp_yt" : "zp_1", status: "published", platforms: [{ platform, status: "published", platformPostUrl: link }] } });
     }
     send(404, { error: "not_found" });
   });
@@ -502,4 +504,67 @@ test("Zernio: konto TikTok znalezione mimo innej wielkości liter, inne platform
   await assert.rejects(findTikTokAccount({}, makeZernio({ ZERNIO_API_KEY: "sk_test", ZERNIO_BASE: `${none.base}/api/v1` })), /widoczne konta: instagram/);
   none.close();
   z.close();
+});
+
+// --- YouTube Shorts przez Zernio -------------------------------------------------------
+const YT_ACCOUNTS = [{ _id: "acc_tt", platform: "tiktok", username: "welife.world" }, { _id: "acc_yt", platform: "youtube", displayName: "WE.LIFE" }];
+const ytReel = (over = {}) => reel({
+  platforms: ["youtube"], ai_imagery: true, cover: "media/a.jpg",
+  caption: `Ile razy w tygodniu decydujesz, co na obiad?\n\nLink do darmowej bety WE.LIFE masz w bio @welife.world. ${BETA}\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków`,
+  ...over,
+});
+
+test("YouTube: rolka wychodzi jako Short z tytułem z pierwszej linii, linkiem do strony, miniaturą i oznaczeniem AI", async () => {
+  const z = await mockZernio({ accounts: YT_ACCOUNTS });
+  const root = fixture([ytReel()]);
+  const r = await run(zernioEnv(z), { root, ...quiet });
+  assert.equal(r.failures, 0);
+  const post = z.calls.find((c) => c.path === "/api/v1/posts");
+  assert.deepEqual(post.json.platforms, [{
+    platform: "youtube", accountId: "acc_yt",
+    platformSpecificData: { title: "Ile razy w tygodniu decydujesz, co na obiad?", visibility: "public", madeForKids: false, containsSyntheticMedia: true, categoryId: "26" },
+  }]);
+  assert.deepEqual(post.json.mediaItems, [{ type: "video", url: `${z.base}/files/media/R1.mp4`, thumbnail: `${z.base}/files/media/a.jpg` }]);
+  assert.match(post.json.content, /masz na welife\.world\./);
+  assert.doesNotMatch(post.json.content, /w bio/);
+  assert.match(post.json.content, /https:\/\/welife\.world\/\?utm_source=youtube&utm_medium=social&utm_campaign=r1$/);
+  assert.equal(post.json.tiktokSettings, undefined);
+  const s = state(root)["r1:youtube"];
+  assert.deepEqual([s.status, s.via, s.permalink], ["published", "zernio", "https://www.youtube.com/watch?v=abc123"]);
+  const before = z.calls.length;
+  await run(zernioEnv(z), { root, ...quiet });
+  assert.equal(z.calls.length, before, "drugi przebieg nie publikuje ponownie");
+  z.close();
+});
+
+test("YouTube: bez podłączonego kanału rolka czeka bez błędu i bez zużywania prób, a TikTok wychodzi normalnie", async () => {
+  const z = await mockZernio();
+  const root = fixture([ytReel({ platforms: ["tiktok", "youtube"] })]);
+  const logs = [];
+  const r = await run(zernioEnv(z), { root, log: (l) => logs.push(l) });
+  assert.equal(r.failures, 0);
+  const s = state(root);
+  assert.equal(s["r1:tiktok"].status, "published");
+  assert.equal(s["r1:youtube"], undefined);
+  assert.equal(z.calls.filter((c) => c.path === "/api/v1/posts").length, 1);
+  assert.ok(logs.some((l) => /POMINIĘTE r1:youtube: w Zernio nie ma podłączonego kanału YouTube/.test(l)));
+  // bez klucza Zernio też tylko pominięcie
+  const root2 = fixture([ytReel()]);
+  const g = await mockGraph();
+  const r2 = await run(env(g), { root: root2, ...quiet });
+  assert.equal(r2.failures, 0);
+  assert.equal(existsSync(join(root2, "state", "published.json")), false, "nic nie zapisano w stanie");
+  assert.equal(g.calls.length, 0);
+  g.close();
+  z.close();
+});
+
+test("YouTube: odrzuca karuzelę i za długi tytuł; długą pierwszą linię przycina do 100 znaków", async () => {
+  const { validate, youtubeTitle } = await import("../scripts/lib.mjs");
+  assert.match(validate(ytReel({ type: "carousel", media: ["media/a.jpg", "media/b.jpg"] }), "youtube").join(), /tylko rolki/);
+  assert.match(validate(ytReel({ youtube: { title: "x".repeat(101) } }), "youtube").join(), /limit to 100/);
+  assert.deepEqual(validate(ytReel(), "youtube"), []);
+  const long = youtubeTitle({ caption: `${"słowo ".repeat(30)}\n\nreszta` });
+  assert.ok(long.length <= 100 && long.endsWith("…") && !long.includes("  "), long);
+  assert.equal(youtubeTitle({ caption: "Krótki tytuł?\n\nopis", youtube: {} }), "Krótki tytuł?");
 });

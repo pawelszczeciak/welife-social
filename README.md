@@ -52,6 +52,21 @@ Status `removed` w `state/published.json` = publikacja usunięta z platformy (np
 automat nie publikuje jej ponownie. Duplikaty z Facebooka usuwa ręcznie uruchamiany workflow „Usuń posty z Facebooka”
 (nie rusza wpisów o statusie `published`). Instagram i TikTok nie pozwalają usuwać filmów przez API.
 
+## YouTube Shorts
+
+Rolki z `"youtube"` w `platforms` idą też na YouTube przez Zernio (ten sam klucz `ZERNIO_API_KEY`, YouTube mieści się
+w 2 darmowych kontach Zernio razem z TikTokiem). Pionowy film do 3 minut YouTube sam uznaje za Short.
+
+- **Włączenie:** w Zernio podłącz kanał YouTube (Accounts → Connect → YouTube). Nic więcej: automat sam znajdzie kanał.
+  Dopóki kanału nie ma, rolki na YouTube są pomijane bez błędu (log „POMINIĘTE … nie ma podłączonego kanału YouTube”),
+  a po 24 h dana rolka nie jest już nadrabiana.
+- **Co wychodzi:** tytuł = pierwsza linia opisu (do 100 znaków) albo `youtube.title`; opis = opis posta, w którym
+  „w bio @welife.world” zamienia się na „na welife.world”, plus link `…?utm_source=youtube&utm_campaign=<id>`
+  (albo własny `youtube.description`); okładka jako miniatura; film publiczny, nie „dla dzieci”, kategoria Howto & Style;
+  przy `ai_imagery` zgłoszone treści syntetyczne (YouTube może dodać etykietę).
+- Zmienne opcjonalne: `YOUTUBE_VISIBILITY` (`public`/`unlisted`/`private`), `YOUTUBE_CATEGORY_ID`,
+  sekret `ZERNIO_YOUTUBE_ACCOUNT_ID` (tylko gdy w Zernio są dwa kanały).
+
 ## Statystyki (co działa, a co nie)
 
 Workflow „Statystyki” raz dziennie (4:23 w nocy) pobiera wyniki z Instagrama, Facebooka i TikToka (przez Zernio)

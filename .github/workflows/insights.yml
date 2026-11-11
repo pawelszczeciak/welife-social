@@ -32,6 +32,7 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
           ZERNIO_TIKTOK_ACCOUNT_ID: ${{ secrets.ZERNIO_TIKTOK_ACCOUNT_ID }}
+          ZERNIO_YOUTUBE_ACCOUNT_ID: ${{ secrets.ZERNIO_YOUTUBE_ACCOUNT_ID }}
         run: node scripts/insights.mjs
       - name: Zapisz statystyki
         run: |
