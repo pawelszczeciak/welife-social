@@ -1,0 +1,45 @@
+# Raz dziennie (i na żądanie) pobiera wyniki publikacji z Instagrama, Facebooka i TikToka (przez Zernio)
+# i zapisuje insights/latest.json oraz wiersz w insights/history.jsonl. Same odczyty, kilka wywołań API.
+# Pora nocna, żeby nie zużywać limitu Meta w godzinach publikacji; ta sama grupa concurrency co publikacja.
+name: Statystyki
+
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Pobierz statystyki
+        env:
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          ZERNIO_TIKTOK_ACCOUNT_ID: ${{ secrets.ZERNIO_TIKTOK_ACCOUNT_ID }}
+        run: node scripts/insights.mjs
+      - name: Zapisz statystyki
+        run: |
+          if [ -n "$(git status --porcelain insights)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add insights
+            git commit -m "Statystyki"
+            git pull --rebase
+            git push
+          fi
