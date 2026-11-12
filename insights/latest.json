@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-11T22:00:11.114Z",
+  "collected_at": "2026-11-12T03:28:40.998Z",
   "instagram": {
     "followers": 2,
     "media_count": 44,
@@ -917,7 +917,7 @@
         "id": "1003517569463968",
         "published_at": "2026-11-11T20:15:02+0000",
         "kind": "reel",
-        "views": 10,
+        "views": 42,
         "reactions": 0,
         "comments": 0,
         "shares": null,
@@ -1351,8 +1351,8 @@
         "permalink": "https://www.tiktok.com/@welife.world/video/7707015339799743766?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
         "published_at": "2026-11-11T20:35:48.000Z",
         "kind": "reel",
-        "views": 35,
-        "likes": 0,
+        "views": 275,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -1367,7 +1367,7 @@
         "slot": "21:00",
         "media": "R19-en.mp4",
         "hook": "What's in your fridge right now? Comment 3 things.",
-        "views": 236,
+        "views": 239,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2036,7 +2036,7 @@
         "reel": {
           "n": 28,
           "median": 0,
-          "total": 14,
+          "total": 46,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2123,7 +2123,7 @@
         {
           "key": null,
           "kind": "reel",
-          "views": 10,
+          "views": 42,
           "likes": 0,
           "shares": null
         },
@@ -2225,8 +2225,8 @@
         "reel": {
           "n": 28,
           "median": 462.5,
-          "total": 12078,
-          "likes": 15,
+          "total": 12321,
+          "likes": 16,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2236,7 +2236,7 @@
         "en": {
           "n": 12,
           "median": 298,
-          "total": 3946,
+          "total": 3949,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2256,7 +2256,7 @@
         "21:00": {
           "n": 6,
           "median": 60.5,
-          "total": 1133,
+          "total": 1136,
           "likes": 0,
           "comments": 0,
           "saved": 0,
