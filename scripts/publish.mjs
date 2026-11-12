@@ -1,5 +1,6 @@
-// Publikuje posty z queue/, których czas minął, na Instagram, stronę FB, TikTok i YouTube Shorts
-// (TikTok przez Zernio, gdy jest ZERNIO_API_KEY; inaczej bezpośrednio, tylko prywatnie; YouTube tylko przez Zernio).
+// Publikuje posty z queue/, których czas minął, na Instagram, stronę FB, TikTok, YouTube Shorts i Pinterest
+// (TikTok przez Zernio, gdy jest ZERNIO_API_KEY; inaczej bezpośrednio, tylko prywatnie; YouTube i Pinterest
+// tylko przez Zernio).
 // Domyślnie TRYB PRÓBNY: nic nie wysyła, tylko wypisuje, co by zrobił.
 // Na żywo dopiero gdy PUBLISH_LIVE=true (zmienna repo w GitHub Actions).
 //
@@ -10,7 +11,14 @@ import { join, resolve, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { loadQueue, validate, makeGraph, publishInstagram, publishFacebook } from "./lib.mjs";
 import { tiktokConfigured, getTikTokAccess, publishTikTok } from "./tiktok.mjs";
-import { zernioConfigured, makeZernio, findTikTokAccount, publishTikTokZernio, findYouTubeAccount, publishYouTubeZernio } from "./zernio.mjs";
+import { zernioConfigured, makeZernio, findTikTokAccount, publishTikTokZernio, findYouTubeAccount, publishYouTubeZernio, findPinterestAccount, publishPinterestZernio } from "./zernio.mjs";
+
+// Platformy opcjonalne, tylko przez Zernio: bez podłączonego konta pozycja czeka (bez zużywania prób)
+// i po 24 h jest pomijana.
+const OPTIONAL = {
+  youtube: { name: "YouTube", find: findYouTubeAccount, publish: publishYouTubeZernio, missing: "w Zernio nie ma podłączonego kanału YouTube" },
+  pinterest: { name: "Pinterest", find: findPinterestAccount, publish: publishPinterestZernio, missing: "w Zernio nie ma podłączonego konta Pinterest" },
+};
 
 const HOUR = 3600 * 1000;
 
@@ -62,7 +70,7 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
   const viaZernio = zernioConfigured(env);
   const zernio = viaZernio ? makeZernio(env, fetchImpl) : null;
   let zernioAccount = null;
-  let youtubeAccount; // undefined = jeszcze nie sprawdzony, null = kanał nie jest podłączony w Zernio
+  const optionalAccounts = {}; // brak klucza = jeszcze nie sprawdzone, null = konto nie jest podłączone w Zernio
   let tiktokToken = null;
 
   log(`${live ? "NA ŻYWO" : "TRYB PRÓBNY (PUBLISH_LIVE≠true)"} · teraz ${new Date(now).toISOString()}`);
@@ -96,11 +104,11 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
         log(`POMINIĘTE ${key}: TikTok nie skonfigurowany (brak ZERNIO_API_KEY ani sekretów TIKTOK_*)`);
         continue;
       }
-      if (platform === "youtube" && !viaZernio) {
-        log(`POMINIĘTE ${key}: YouTube idzie przez Zernio, a nie ma ZERNIO_API_KEY`);
+      if (OPTIONAL[platform] && !viaZernio) {
+        log(`POMINIĘTE ${key}: ${OPTIONAL[platform].name} idzie przez Zernio, a nie ma ZERNIO_API_KEY`);
         continue;
       }
-      if (!["tiktok", "youtube"].includes(platform) && !targets[platform]) {
+      if (platform !== "tiktok" && !OPTIONAL[platform] && !targets[platform]) {
         log(`BŁĄD ${key}: brak ${platform === "instagram" ? "IG_USER_ID" : "FB_PAGE_ID"}`);
         failures++;
         continue;
@@ -125,15 +133,16 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
           log(`OPUBLIKOWANE ${key} przez Zernio → ${result.permalink ?? result.id} (${result.status})`);
           continue;
         }
-        if (platform === "youtube") {
-          // Kanał YouTube jest opcjonalny: bez niego rolka czeka (bez zużywania prób) i po 24 h jest pomijana.
-          if (youtubeAccount === undefined) youtubeAccount = await findYouTubeAccount(env, zernio);
-          if (!youtubeAccount) {
-            log(`POMINIĘTE ${key}: w Zernio nie ma podłączonego kanału YouTube`);
+        if (OPTIONAL[platform]) {
+          const optional = OPTIONAL[platform];
+          if (!(platform in optionalAccounts)) optionalAccounts[platform] = await optional.find(env, zernio);
+          const account = optionalAccounts[platform];
+          if (!account) {
+            log(`POMINIĘTE ${key}: ${optional.missing}`);
             continue;
           }
           const mediaUrl = await pickMedia(post);
-          const result = await publishYouTubeZernio(env, zernio, youtubeAccount.id, post, mediaUrl, { attempt: entry.attempts + 1 });
+          const result = await optional.publish(env, zernio, account.id, post, mediaUrl, { attempt: entry.attempts + 1 });
           set({ status: "published", via: "zernio", id: result.id, zernio_status: result.status, permalink: result.permalink, attempts: entry.attempts + 1, published_at: new Date().toISOString() });
           log(`OPUBLIKOWANE ${key} przez Zernio → ${result.permalink ?? result.id} (${result.status})`);
           continue;

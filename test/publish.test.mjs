@@ -371,7 +371,7 @@ test("TikTok: nowy sekret TIKTOK_REFRESH_TOKEN (ponowna autoryzacja) ma pierwsze
 });
 
 // --- TikTok przez Zernio ---------------------------------------------------------------
-async function mockZernio({ accounts = [{ _id: "acc_tt", platform: "tiktok", username: "welife.world" }], failPosts = 0 } = {}) {
+async function mockZernio({ accounts = [{ _id: "acc_tt", platform: "tiktok", username: "welife.world" }], failPosts = 0, boards = [] } = {}) {
   const calls = [];
   let fails = failPosts;
   const server = createServer(async (req, res) => {
@@ -390,13 +390,19 @@ async function mockZernio({ accounts = [{ _id: "acc_tt", platform: "tiktok", use
     if (/^\/api\/v1\/accounts\/[^/]+\/tiktok\/creator-info$/.test(url.pathname)) {
       return send(200, { creator: { nickname: "WE.LIFE", isVerified: false, canPostMore: true }, privacyLevels: [{ value: "PUBLIC_TO_EVERYONE", label: "Public" }, { value: "SELF_ONLY", label: "Only me" }] });
     }
+    if (/^\/api\/v1\/accounts\/[^/]+\/pinterest-boards$/.test(url.pathname)) {
+      if (req.method === "GET") return send(200, { boards });
+      const board = { id: `b_new${boards.length + 1}`, name: call.json.name, description: call.json.description, privacy: call.json.privacy };
+      boards.push(board);
+      return send(201, { board });
+    }
     if (url.pathname === "/api/v1/posts" && req.method === "POST") {
       if (fails > 0) {
         fails--;
         return send(207, { message: "failed", error: "TikTok upstream error", post: { _id: "zp_fail", status: "failed", platforms: [{ platform: "tiktok", status: "failed" }] }, platformResults: [{ platform: "tiktok", status: "failed", error: "upstream" }] });
       }
       const platform = call.json?.platforms?.[0]?.platform ?? "tiktok";
-      const link = platform === "youtube" ? "https://www.youtube.com/watch?v=abc123" : "https://www.tiktok.com/@welife.world/video/1";
+      const link = platform === "youtube" ? "https://www.youtube.com/watch?v=abc123" : platform === "pinterest" ? "https://www.pinterest.com/pin/123/" : "https://www.tiktok.com/@welife.world/video/1";
       return send(201, { message: "ok", post: { _id: platform === "youtube" ? "zp_yt" : "zp_1", status: "published", platforms: [{ platform, status: "published", platformPostUrl: link }] } });
     }
     send(404, { error: "not_found" });
@@ -567,4 +573,73 @@ test("YouTube: odrzuca karuzelę i za długi tytuł; długą pierwszą linię pr
   const long = youtubeTitle({ caption: `${"słowo ".repeat(30)}\n\nreszta` });
   assert.ok(long.length <= 100 && long.endsWith("…") && !long.includes("  "), long);
   assert.equal(youtubeTitle({ caption: "Krótki tytuł?\n\nopis", youtube: {} }), "Krótki tytuł?");
+});
+
+// --- Pinterest przez Zernio ------------------------------------------------------------
+const PIN_CAPTION = `Wiesz rano, co na obiad? Napisz A albo B.\n\nRano wiesz, co na obiad. W WE.LIFE układasz plan posiłków na 7 dni raz.\n\nWE.LIFE to darmowa wersja beta (testowa). Link do darmowej bety WE.LIFE masz w bio @welife.world.\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\n#planposiłków #jadłospis`;
+const pinPost = (over = {}) => ({
+  id: "c1", publish_at: "2026-11-02T08:30:00+01:00", platforms: ["pinterest"], type: "image", media: ["media/a.jpg"],
+  ai_imagery: true, caption: PIN_CAPTION, ...over,
+});
+const pinAccounts = (id) => [{ _id: "acc_tt", platform: "tiktok" }, { _id: id, platform: "pinterest", username: "welifeworld" }];
+
+test("Pinterest: karta wychodzi jako pin z tytułem, klikalnym linkiem z UTM, tablicą i oznaczeniem AI", async () => {
+  const z = await mockZernio({ accounts: pinAccounts("acc_pin1"), boards: [{ id: "b_inne", name: "Inspiracje" }, { id: "b1", name: "plan posiłków" }] });
+  const root = fixture([pinPost()]);
+  const r = await run(zernioEnv(z), { root, ...quiet });
+  assert.equal(r.failures, 0);
+  const post = z.calls.find((c) => c.path === "/api/v1/posts");
+  assert.deepEqual(post.json.platforms, [{
+    platform: "pinterest", accountId: "acc_pin1",
+    platformSpecificData: { boardId: "b1", title: "Wiesz rano, co na obiad?", link: "https://welife.world/?utm_source=pinterest&utm_medium=social&utm_campaign=c1", isAiGenerated: true },
+  }]);
+  assert.deepEqual(post.json.mediaItems, [{ type: "image", url: `${z.base}/files/media/a.jpg` }]);
+  assert.match(post.json.content, /^Rano wiesz, co na obiad\./);
+  assert.match(post.json.content, /wersja beta \(testowa\)/);
+  assert.doesNotMatch(post.json.content, /w bio|#planposiłków|Napisz A albo B/);
+  assert.equal(z.calls.filter((c) => c.method === "POST" && c.path.endsWith("/pinterest-boards")).length, 0, "istniejąca tablica nie jest zakładana drugi raz");
+  const s = state(root)["c1:pinterest"];
+  assert.deepEqual([s.status, s.via, s.permalink], ["published", "zernio", "https://www.pinterest.com/pin/123/"]);
+  z.close();
+});
+
+test("Pinterest: brak tablicy → zakłada ją raz; karuzela idzie wybranym slajdem, rolka jako film z okładką", async () => {
+  const z = await mockZernio({ accounts: pinAccounts("acc_pin2") });
+  const root = fixture([
+    pinPost({ id: "k1", type: "carousel", media: ["media/a.jpg", "media/b.jpg"], pinterest: { media: "media/b.jpg", title: "Lista zakupów bez dublowania: 5 kroków", description: "Plan posiłków i lista zakupów. Wersja beta (testowa). Ilustracje AI." } }),
+    pinPost({ id: "r1", type: "reel", media: ["media/R1.mp4"], cover: "media/a.jpg" }),
+  ]);
+  const r = await run(zernioEnv(z), { root, ...quiet });
+  assert.equal(r.failures, 0);
+  const created = z.calls.filter((c) => c.method === "POST" && c.path.endsWith("/pinterest-boards"));
+  assert.equal(created.length, 1);
+  assert.deepEqual([created[0].json.name, created[0].json.privacy], ["Plan posiłków", "PUBLIC"]);
+  const [k1, r1] = z.calls.filter((c) => c.path === "/api/v1/posts");
+  assert.deepEqual(k1.json.mediaItems, [{ type: "image", url: `${z.base}/files/media/b.jpg` }]);
+  assert.equal(k1.json.platforms[0].platformSpecificData.title, "Lista zakupów bez dublowania: 5 kroków");
+  assert.equal(k1.json.platforms[0].platformSpecificData.boardId, "b_new1");
+  assert.equal(k1.json.content, "Plan posiłków i lista zakupów. Wersja beta (testowa). Ilustracje AI.");
+  assert.deepEqual(r1.json.mediaItems, [{ type: "video", url: `${z.base}/files/media/R1.mp4` }]);
+  assert.equal(r1.json.platforms[0].platformSpecificData.coverImageUrl, `${z.base}/files/media/a.jpg`);
+  assert.equal(r1.json.platforms[0].platformSpecificData.boardId, "b_new1");
+  z.close();
+});
+
+test("Pinterest: bez podłączonego konta pin czeka bez błędu; zły wpis jest odrzucany", async () => {
+  const z = await mockZernio();
+  const root = fixture([pinPost()]);
+  const logs = [];
+  const r = await run(zernioEnv(z), { root, log: (l) => logs.push(l) });
+  assert.equal(r.failures, 0);
+  assert.equal(z.calls.filter((c) => c.path === "/api/v1/posts").length, 0);
+  assert.equal(existsSync(join(root, "state", "published.json")), false);
+  assert.ok(logs.some((l) => /POMINIĘTE c1:pinterest: w Zernio nie ma podłączonego konta Pinterest/.test(l)));
+  z.close();
+  const { validate } = await import("../scripts/lib.mjs");
+  assert.deepEqual(validate(pinPost(), "pinterest"), []);
+  assert.match(validate(pinPost({ type: "text", media: [] }), "pinterest").join(), /tylko obraz/);
+  assert.match(validate(pinPost({ pinterest: { title: "x".repeat(101) } }), "pinterest").join(), /limit to 100/);
+  assert.match(validate(pinPost({ pinterest: { description: `beta AI ${"y".repeat(800)}` } }), "pinterest").join(), /limit to 800/);
+  assert.match(validate(pinPost({ pinterest: { media: "media/obcy.jpg" } }), "pinterest").join(), /jednym z plików posta/);
+  assert.match(validate(pinPost({ pinterest: { link: "https://bit.ly/x" } }), "pinterest").join(), /welife\.world/);
 });

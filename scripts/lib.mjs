@@ -4,7 +4,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-export const PLATFORMS = ["instagram", "facebook", "tiktok", "youtube"];
+export const PLATFORMS = ["instagram", "facebook", "tiktok", "youtube", "pinterest"];
 export const TYPES = ["reel", "carousel", "image", "text"];
 const IG_HASHTAG_LIMIT = 5;
 
@@ -24,8 +24,36 @@ export function textFor(post, platform) {
     const base = (post.caption ?? "").replace(/w bio @welife\.world/g, "na welife.world").replace(/in our bio @welife\.world/g, "at welife.world");
     return `${base}\n\nhttps://welife.world/?utm_source=youtube&utm_medium=social&utm_campaign=${post.id}`;
   }
+  if (platform === "pinterest") {
+    if (post.pinterest?.description) return post.pinterest.description;
+    // Pin ma własny klikalny link, więc bez „linku w bio”, bez pytania do komentujących (pierwszy akapit)
+    // i bez samych hashtagów; całe akapity, dopóki mieszczą się w 800 znakach.
+    const paras = (post.caption ?? "").split(/\n{2,}/).slice(1)
+      .map((x) => x.replace(/Link\b[^\n]*?w bio @welife\.world\.\s*/g, "").trim())
+      .filter((x) => x && !/^(#\S+\s*)+$/u.test(x));
+    let out = "";
+    for (const x of paras) {
+      const next = out ? `${out}\n\n${x}` : x;
+      if (next.length > 800) break;
+      out = next;
+    }
+    return out;
+  }
   return post.caption ?? "";
 }
+
+// Pinterest: tytuł = post.pinterest.title albo pierwsze zdanie pierwszej linii opisu (do 100 znaków).
+export function pinterestTitle(post) {
+  if (post.pinterest?.title) return post.pinterest.title;
+  const line = (post.caption ?? "").split("\n")[0].trim();
+  const first = /^.*?[?!.](?=\s|$)/.exec(line)?.[0] ?? line;
+  return first.length <= 100 ? first : first.slice(0, 99).replace(/\s+\S*$/, "") + "…";
+}
+
+// Pin to jeden obraz albo jeden film: dla karuzeli post.pinterest.media albo pierwszy slajd.
+export const pinterestMedia = (post) => post.pinterest?.media ?? post.media?.[0];
+export const pinterestLink = (post) =>
+  post.pinterest?.link ?? `https://welife.world/?utm_source=pinterest&utm_medium=social&utm_campaign=${post.id}`;
 
 // Tytuł filmu na YouTube: post.youtube.title albo pierwsza linia opisu, przycięta do 100 znaków na granicy słowa.
 export function youtubeTitle(post) {
@@ -57,6 +85,17 @@ export function validate(post, platform, root) {
   // Zasada właściciela: każdy materiał mówi, że to wersja beta (testowa).
   if (!/beta/i.test(text)) errors.push("tekst nie mówi, że WE.LIFE to wersja beta");
   if (post.ai_imagery && !/\bAI\b/.test(text)) errors.push("obrazy AI bez informacji „AI” w tekście");
+  if (platform === "pinterest") {
+    if (!["reel", "image", "carousel"].includes(post.type)) errors.push("Pinterest przyjmuje tylko obraz, karuzelę (jeden slajd) albo rolkę");
+    const title = pinterestTitle(post);
+    if (!title) errors.push("Pinterest: pusty tytuł");
+    if (title.length > 100) errors.push(`Pinterest: tytuł ma ${title.length} znaków, limit to 100`);
+    if (text.length > 800) errors.push(`Pinterest: opis ma ${text.length} znaków, limit to 800`);
+    if (!/^https:\/\/welife\.world\//.test(pinterestLink(post))) errors.push("Pinterest: link musi prowadzić na https://welife.world/");
+    const m = pinterestMedia(post) ?? "";
+    if (post.type !== "reel" && !/\.(jpe?g|png|webp)$/i.test(m)) errors.push("Pinterest: pin obrazkowy wymaga pliku JPEG, PNG albo WebP");
+    if (post.type !== "reel" && !(post.media ?? []).includes(m)) errors.push("Pinterest: pinterest.media musi być jednym z plików posta");
+  }
   if (platform === "instagram" || platform === "tiktok") {
     const tags = text.match(/(?:^|\s)#\w+/gu) ?? [];
     if (tags.length > IG_HASHTAG_LIMIT) errors.push(`${tags.length} hashtagów, limit to ${IG_HASHTAG_LIMIT}`);

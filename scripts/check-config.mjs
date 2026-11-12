@@ -6,7 +6,7 @@ import { resolve, dirname, join } from "node:path";
 import { readFileSync, existsSync } from "node:fs";
 import { makeGraph, loadQueue, textFor, findInstagramByCaption } from "./lib.mjs";
 import { tiktokConfigured, getTikTokAccess, creatorInfo, readVault } from "./tiktok.mjs";
-import { zernioConfigured, makeZernio, findTikTokAccount, tiktokCreatorInfo, findYouTubeAccount } from "./zernio.mjs";
+import { zernioConfigured, makeZernio, findTikTokAccount, tiktokCreatorInfo, findYouTubeAccount, findPinterestAccount, PINTEREST_BOARD } from "./zernio.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -46,6 +46,22 @@ async function checkZernio(env, { log, fetchImpl }) {
     log(yt ? `YouTube (Zernio): kanał ${yt.name ?? "?"} · konto ${yt.id}` : "YouTube (Zernio): kanał nie jest podłączony, rolki na YouTube są pomijane");
   } catch (e) {
     problems.push(`YouTube (Zernio): ${e.message}`);
+  }
+  // Pinterest też jest opcjonalny. Tylko odczyt: tablicy tu nie zakładamy (robi to pierwsza publikacja).
+  try {
+    const call = makeZernio(env, fetchImpl);
+    const pin = await findPinterestAccount(env, call);
+    if (!pin) log("Pinterest (Zernio): konto nie jest podłączone, piny są pomijane");
+    else {
+      const res = await call("GET", `/accounts/${encodeURIComponent(pin.id)}/pinterest-boards`);
+      const names = (res.json.boards ?? []).map((b) => b.name);
+      const want = env.PINTEREST_BOARD_NAME || PINTEREST_BOARD.name;
+      const has = env.PINTEREST_BOARD_ID || names.some((n) => String(n).trim().toLowerCase() === want.trim().toLowerCase());
+      log(`Pinterest (Zernio): ${pin.name ?? "?"} · konto ${pin.id} · tablice: ${names.join(", ") || "(brak)"} · ${has ? "tablica na piny jest" : `tablica „${want}” zostanie założona przy pierwszym pinie`}`);
+      if (res.status !== 200) problems.push(`Pinterest (Zernio): nie da się odczytać tablic (HTTP ${res.status})`);
+    }
+  } catch (e) {
+    problems.push(`Pinterest (Zernio): ${e.message}`);
   }
   return problems;
 }

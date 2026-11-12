@@ -67,6 +67,22 @@ w 2 darmowych kontach Zernio razem z TikTokiem). Pionowy film do 3 minut YouTube
 - Zmienne opcjonalne: `YOUTUBE_VISIBILITY` (`public`/`unlisted`/`private`), `YOUTUBE_CATEGORY_ID`,
   sekret `ZERNIO_YOUTUBE_ACCOUNT_ID` (tylko gdy w Zernio są dwa kanały).
 
+## Pinterest
+
+Posty i rolki z `"pinterest"` w `platforms` wychodzą jako piny przez Zernio. Pin ma **klikalny link** prosto do
+`welife.world` (z `utm_source=pinterest&utm_campaign=<id>`), czego nie ma Instagram ani TikTok. W Zernio to trzecie
+konto, czyli 6 USD miesięcznie (dwa pierwsze są darmowe).
+
+- **Włączenie:** załóż konto firmowe na Pintereście, podłącz je w Zernio (Accounts → Connect → Pinterest). Dopóki
+  konta nie ma, piny są pomijane bez błędu.
+- **Tablica:** automat używa tablicy „Plan posiłków” (albo `PINTEREST_BOARD_NAME` / `PINTEREST_BOARD_ID` w zmiennych
+  repo). Jeśli jej nie ma, zakłada ją publicznie przy pierwszym pinie.
+- **Co wychodzi:** karta = pin obrazkowy; karuzela = jeden slajd (`pinterest.media` albo pierwszy), bo Pinterest
+  nie ma karuzel przez API; rolka = pin wideo z okładką. Tytuł i opis najlepiej podać wprost w `pinterest.title`
+  (do 100 znaków) i `pinterest.description` (do 800), pisane pod wyszukiwarkę („plan posiłków na tydzień”, „lista
+  zakupów”). Bez nich tytułem jest pierwsze zdanie opisu, a opisem opis posta bez pytania do komentujących,
+  „linku w bio” i hashtagów. Przy `ai_imagery` pin dostaje oznaczenie treści AI.
+
 ## Statystyki (co działa, a co nie)
 
 Workflow „Statystyki” raz dziennie (4:23 w nocy) pobiera wyniki z Instagrama, Facebooka i TikToka (przez Zernio)

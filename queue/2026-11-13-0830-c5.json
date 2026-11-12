@@ -3,7 +3,8 @@
   "publish_at": "2026-11-13T08:30:00+01:00",
   "platforms": [
     "instagram",
-    "facebook"
+    "facebook",
+    "pinterest"
   ],
   "type": "image",
   "media": [
@@ -13,5 +14,9 @@
   "caption": "Ile osób je u Ciebie obiad? Napisz liczbę w komentarzu.\n\nJeden plan posiłków dla całego domu.\n\nKażdy domownik ma w WE.LIFE własne preferencje i alergeny (14 kategorii uznawanych w UE). Propozycje pokazują tylko przepisy z potwierdzonym brakiem zaznaczonych alergenów, a zakupy liczą się dla wszystkich naraz. Przy alergii ważne decyzje konsultuj z lekarzem.\n\nWE.LIFE to darmowa wersja beta (testowa). Link masz w bio @welife.world.\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#obiadydlarodziny #alergie #planposiłków",
   "facebook": {
     "message": "Ile osób je u Ciebie obiad? Napisz liczbę w komentarzu.\n\nGotujesz dla domu, w którym każdy je trochę inaczej?\n\nW WE.LIFE każdy domownik ma własne preferencje i alergeny (14 kategorii uznawanych w UE). Plan powstaje jeden, dla wszystkich, a propozycje pokazują tylko przepisy z potwierdzonym brakiem zaznaczonych alergenów. Lista zakupów liczy się od razu dla całego domu.\n\nMniej osobnych obiadów, mniej pilnowania, kto czego nie je.\n\nPrzy alergii ważne decyzje konsultuj z lekarzem. WE.LIFE pomaga planować, nie leczy.\n\nTo wersja beta (testowa), za darmo: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=post-dom\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł."
+  },
+  "pinterest": {
+    "title": "Jeden plan posiłków dla całej rodziny, także przy alergiach",
+    "description": "Plan posiłków na tydzień dla całego domu: każdy domownik ma własne preferencje i alergeny (14 kategorii uznawanych w UE), a lista zakupów liczy się dla wszystkich naraz. Propozycje pokazują tylko przepisy z potwierdzonym brakiem zaznaczonych alergenów. Przy alergii ważne decyzje konsultuj z lekarzem. WE.LIFE to darmowa wersja beta (testowa). Zdjęcie: ilustracja wygenerowana przez AI."
   }
 }

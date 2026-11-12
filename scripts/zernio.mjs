@@ -1,10 +1,10 @@
-// TikTok i YouTube Shorts przez Zernio (dawniej Late, https://docs.zernio.com): zatwierdzony partner TikToka,
-// więc filmy wychodzą publicznie. YouTube działa, gdy w Zernio jest podłączony kanał. Ma pierwszeństwo przed bezpośrednim API TikToka
+// TikTok, YouTube Shorts i Pinterest przez Zernio (dawniej Late, https://docs.zernio.com): zatwierdzony partner
+// TikToka, więc filmy wychodzą publicznie. YouTube i Pinterest działają, gdy w Zernio jest podłączone konto. Ma pierwszeństwo przed bezpośrednim API TikToka
 // (scripts/tiktok.mjs), które bez audytu TikToka publikuje tylko prywatnie.
 //
 // Klucz ZERNIO_API_KEY nigdy nie trafia do logów, stanu ani komunikatów błędów.
 import { createHash } from "node:crypto";
-import { textFor, youtubeTitle } from "./lib.mjs";
+import { textFor, youtubeTitle, pinterestTitle, pinterestMedia, pinterestLink } from "./lib.mjs";
 
 export const ZERNIO_BASE = "https://zernio.com/api/v1";
 
@@ -65,20 +65,44 @@ export async function tiktokCreatorInfo(call, accountId) {
   return res.json;
 }
 
-// Kanał YouTube podłączony w Zernio: z sekretu ZERNIO_YOUTUBE_ACCOUNT_ID albo jedyny podłączony kanał.
-// Brak kanału to nie błąd (zwraca null): YouTube jest opcjonalny i rolki są wtedy pomijane.
-export async function findYouTubeAccount(env, call) {
-  if (env.ZERNIO_YOUTUBE_ACCOUNT_ID) return { id: env.ZERNIO_YOUTUBE_ACCOUNT_ID, name: null };
+// Opcjonalne konto w Zernio (YouTube, Pinterest): z sekretu albo jedyne podłączone konto tej platformy.
+// Brak konta to nie błąd (zwraca null): platforma jest wtedy pomijana.
+async function findOptionalAccount(env, call, platform, secretName, label) {
+  if (env[secretName]) return { id: env[secretName], name: null };
   const res = await call("GET", "/accounts");
   if (res.status !== 200) throw apiError("lista kont", res);
   const all = res.json.accounts ?? res.json.data ?? [];
-  const accounts = all.filter((a) => String(a.platform ?? "").toLowerCase() === "youtube");
+  const accounts = all.filter((a) => String(a.platform ?? "").toLowerCase() === platform);
   if (accounts.length === 0) return null;
-  if (accounts.length > 1) {
-    throw new ZernioError(`w Zernio jest ${accounts.length} kanałów YouTube: ustaw sekret ZERNIO_YOUTUBE_ACCOUNT_ID`);
-  }
+  if (accounts.length > 1) throw new ZernioError(`w Zernio jest ${accounts.length} ${label}: ustaw sekret ${secretName}`);
   const a = accounts[0];
   return { id: a._id ?? a.id, name: a.displayName ?? a.username ?? a.name ?? null };
+}
+
+export const findYouTubeAccount = (env, call) => findOptionalAccount(env, call, "youtube", "ZERNIO_YOUTUBE_ACCOUNT_ID", "kanałów YouTube");
+export const findPinterestAccount = (env, call) => findOptionalAccount(env, call, "pinterest", "ZERNIO_PINTEREST_ACCOUNT_ID", "kont Pinterest");
+
+// Tablica na piny: PINTEREST_BOARD_ID, albo tablica o nazwie PINTEREST_BOARD_NAME (domyślnie „Plan posiłków”),
+// a gdy takiej nie ma, automat zakłada ją raz (publiczną). Bez boardId Pinterest wybiera przypadkową tablicę.
+export const PINTEREST_BOARD = { name: "Plan posiłków", description: "Plan posiłków na tydzień, lista zakupów i domowe zapasy. WE.LIFE, darmowa wersja beta (testowa): welife.world" };
+const boards = new Map();
+export async function pinterestBoard(env, call, accountId) {
+  if (env.PINTEREST_BOARD_ID) return { id: env.PINTEREST_BOARD_ID, name: null, created: false };
+  if (boards.has(accountId)) return boards.get(accountId);
+  const path = `/accounts/${encodeURIComponent(accountId)}/pinterest-boards`;
+  const res = await call("GET", path);
+  if (res.status !== 200) throw apiError("tablice Pinterest", res);
+  const want = (env.PINTEREST_BOARD_NAME || PINTEREST_BOARD.name).trim().toLowerCase();
+  const found = (res.json.boards ?? []).find((b) => String(b.name ?? "").trim().toLowerCase() === want);
+  let board;
+  if (found) board = { id: found.id, name: found.name, created: false };
+  else {
+    const made = await call("POST", path, { body: { name: env.PINTEREST_BOARD_NAME || PINTEREST_BOARD.name, description: PINTEREST_BOARD.description, privacy: "PUBLIC" } });
+    if (![200, 201].includes(made.status) || !made.json.board?.id) throw apiError("założenie tablicy Pinterest", made);
+    board = { id: made.json.board.id, name: made.json.board.name, created: true };
+  }
+  boards.set(accountId, board);
+  return board;
 }
 
 // Ten sam klucz dla tej samej próby: ponowienie po przerwanym połączeniu nie zrobi duplikatu,
@@ -156,4 +180,31 @@ export async function publishYouTubeZernio(env, call, accountId, post, mediaUrl,
     },
   });
   return readResult(res, "youtube", "YouTube");
+}
+
+// Pinterest: jeden obraz albo jeden film na pin, z klikalnym linkiem do welife.world (z UTM) i tablicą.
+// Karuzela idzie jako jeden slajd (pinterest.media albo pierwszy). Obrazy AI zgłoszone polem isAiGenerated.
+export async function publishPinterestZernio(env, call, accountId, post, mediaUrl, { attempt = 1 } = {}) {
+  const board = await pinterestBoard(env, call, accountId);
+  const video = post.type === "reel";
+  const res = await call("POST", "/posts", {
+    headers: { "Idempotency-Key": idempotencyKey(post.id, attempt, "pinterest") },
+    body: {
+      content: textFor(post, "pinterest"),
+      mediaItems: [video ? { type: "video", url: mediaUrl(post.media[0]) } : { type: "image", url: mediaUrl(pinterestMedia(post)) }],
+      platforms: [{
+        platform: "pinterest",
+        accountId,
+        platformSpecificData: {
+          boardId: board.id,
+          title: pinterestTitle(post),
+          link: pinterestLink(post),
+          isAiGenerated: Boolean(post.ai_imagery),
+          ...(video && post.cover ? { coverImageUrl: mediaUrl(post.cover) } : {}),
+        },
+      }],
+      publishNow: true,
+    },
+  });
+  return readResult(res, "pinterest", "Pinterest");
 }

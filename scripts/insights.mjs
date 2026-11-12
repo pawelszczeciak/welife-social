@@ -152,7 +152,7 @@ async function facebook(graph, pageId, { state, posts, log }) {
 // TikTok przez Zernio: GET /analytics (wyświetlenia, polubienia, komentarze, udostępnienia; dane z opóźnieniem
 // do 60 min) i liczba obserwujących z /analytics/tiktok/account-insights. Dwa wywołania.
 async function zernioPlatform(call, env, platform, { state, posts, log }) {
-  const label = platform === "youtube" ? "YouTube" : "TikTok";
+  const label = { youtube: "YouTube", pinterest: "Pinterest" }[platform] ?? "TikTok";
   const out = { followers: null, missing: [], posts: [] };
   const byId = indexState(state, platform);
   // Bez filtra platformy w zapytaniu (z filtrem lista wróciła pusta przy 28 opublikowanych filmach); filtrujemy sami.
@@ -174,8 +174,9 @@ async function zernioPlatform(call, env, platform, { state, posts, log }) {
     const a = { ...(tt.analytics ?? {}), ...(r.analytics ?? {}) };
     out.posts.push({
       key, id: ids[0] ?? null, permalink: tt.platformPostUrl ?? r.platformPostUrl ?? null, published_at: r.publishedAt ?? null,
-      kind: "reel", ...describe(posts.get(key)),
-      views: a.views ?? null, likes: a.likes ?? null, comments: a.comments ?? null, shares: a.shares ?? null,
+      kind: posts.get(key)?.type ?? "reel", ...describe(posts.get(key)),
+      views: a.views ?? a.impressions ?? null, likes: a.likes ?? null, comments: a.comments ?? null, shares: a.shares ?? null,
+      ...(platform === "pinterest" ? { saved: a.saves ?? null, clicks: a.clicks ?? null } : {}),
     });
   }
   if (platform !== "tiktok") return out; // liczba obserwujących: na razie tylko TikTok
@@ -199,7 +200,7 @@ const median = (xs) => {
 // Zestawienie, z którego korzysta człowiek i automat treści: mediany w grupach i najlepsze/najsłabsze posty.
 export function summarize(data) {
   const out = {};
-  for (const platform of ["instagram", "facebook", "tiktok", "youtube"]) {
+  for (const platform of ["instagram", "facebook", "tiktok", "youtube", "pinterest"]) {
     if (data[platform]?.posts) out[platform] = summarizePlatform(data[platform].posts);
   }
   return out;
@@ -249,13 +250,14 @@ export async function collect({ graph, igUserId, pageId, zernio = null, env = {}
       log(`tiktok: nie odczytano (${e.message})`);
       data.tiktok = { error: e.message };
     }
-    // YouTube dopiero, gdy coś tam wyszło (kanał jest opcjonalny).
-    if (Object.entries(state).some(([k, v]) => k.endsWith(":youtube") && v.status === "published")) {
+    // YouTube i Pinterest dopiero, gdy coś tam wyszło (konta są opcjonalne).
+    for (const platform of ["youtube", "pinterest"]) {
+      if (!Object.entries(state).some(([k, v]) => k.endsWith(`:${platform}`) && v.status === "published")) continue;
       try {
-        data.youtube = await zernioPlatform(zernio, env, "youtube", { state, posts, log });
+        data[platform] = await zernioPlatform(zernio, env, platform, { state, posts, log });
       } catch (e) {
-        log(`youtube: nie odczytano (${e.message})`);
-        data.youtube = { error: e.message };
+        log(`${platform}: nie odczytano (${e.message})`);
+        data[platform] = { error: e.message };
       }
     }
   }
@@ -279,6 +281,8 @@ export function save(root, data) {
     tt_followers: data.tiktok?.followers ?? null, tt_posts: data.tiktok?.posts?.length ?? null,
     tt_views: data.tiktok?.posts ? sum(data.tiktok.posts, "views") : null, tt_likes: data.tiktok?.posts ? sum(data.tiktok.posts, "likes") : null,
     yt_posts: data.youtube?.posts?.length ?? null, yt_views: data.youtube?.posts ? sum(data.youtube.posts, "views") : null,
+    pin_posts: data.pinterest?.posts?.length ?? null, pin_views: data.pinterest?.posts ? sum(data.pinterest.posts, "views") : null,
+    pin_clicks: data.pinterest?.posts ? sum(data.pinterest.posts, "clicks") : null,
   };
   const history = join(dir, "history.jsonl");
   const lines = existsSync(history) ? readFileSync(history, "utf8").split("\n").filter(Boolean) : [];
@@ -300,6 +304,6 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const line = save(root, data);
   console.log(`zapisane: ${JSON.stringify(line)}`);
   console.log(`podsumowanie: ${JSON.stringify(data.summary)}`);
-  for (const p of ["instagram", "facebook", "tiktok", "youtube"]) for (const m of data[p]?.missing ?? []) console.log(`BRAK (${p}): ${m}`);
+  for (const p of ["instagram", "facebook", "tiktok", "youtube", "pinterest"]) for (const m of data[p]?.missing ?? []) console.log(`BRAK (${p}): ${m}`);
   if (data.instagram?.error && data.facebook?.error) process.exit(1);
 }
