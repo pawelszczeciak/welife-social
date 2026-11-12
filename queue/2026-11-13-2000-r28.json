@@ -1,0 +1,26 @@
+{
+  "id": "2026-11-13-2000-r28",
+  "publish_at": "2026-11-13T20:00:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R28.mp4"
+  ],
+  "cover": "media/R28-cover.jpg",
+  "ai_imagery": true,
+  "note": "Krótka rolka w nowym formacie (ok. 11 s). Jedna z trzech kreacji do testu reklamowego nr 1 (welife-app: marketing/reklamy-meta/README.md).",
+  "caption": "O której u Ciebie pada „co na obiad”? Napisz godzinę.\n\nJedna decyzja na tydzień zamiast siedmiu wieczornych. W WE.LIFE układasz plan posiłków raz, a rano widzisz, co dziś jesz.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. To darmowa wersja beta (testowa). Link do darmowej bety WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #conaobiad #jadłospis",
+  "facebook": {
+    "message": "O której u Ciebie pada „co na obiad”? Napisz godzinę.\n\nJedna decyzja na tydzień zamiast siedmiu wieczornych. W WE.LIFE układasz plan posiłków raz, a rano widzisz, co dziś jesz.\n\nWypróbuj za darmo: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-13-2000-r28\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. To wersja beta (testowa).\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #conaobiad #jadłospis"
+  },
+  "pinterest": {
+    "title": "Plan posiłków na tydzień: koniec z pytaniem „co na obiad”",
+    "description": "Plan posiłków na 7 dni układasz raz, a rano widzisz dzisiejsze posiłki. Jedna decyzja na tydzień zamiast siedmiu wieczornych. WE.LIFE to darmowa wersja beta (testowa). Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}
