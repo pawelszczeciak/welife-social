@@ -1000,7 +1000,10 @@
         "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%403734dc9edfe4ed997c2db2cce00546bf41c2b502/media/R10.mp4: 400)"
       }
     ],
-    "updated_at": "2026-11-13T11:09:54.070Z"
+    "updated_at": "2026-11-13T11:09:54.070Z",
+    "acknowledged": true,
+    "acknowledged_at": "2026-11-13T12:00:00Z",
+    "note": "Potwierdzone 13.11: Zernio trzy razy nie pobrał pliku (adres jsDelivr z %40 → HTTP 400), więc film na YouTube nie powstał. Przyczyna naprawiona (commit 2fb9a07: YouTube i Pinterest dostają adres z GitHub raw). Rolka nie jest nadrabiana, termin minął ponad 24 h temu."
   },
   "2026-11-12-1830-r20:facebook": {
     "attempts": 1,
