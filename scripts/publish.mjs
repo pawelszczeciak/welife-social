@@ -38,18 +38,22 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
   // Domyślnie: jsDelivr odrzuca (403 "Package size exceeded 50 MB") wszystko spoza cache, gdy repo
   // przekracza 50 MB (media tego repo to ponad 200 MB), więc zdjęcia idą najpierw z GitHub raw
   // (poprawny image/jpeg), a rolki z jsDelivr (raw podaje mp4 jako application/octet-stream).
-  const mediaBases = (post) => {
+  // YouTube i Pinterest przez Zernio: Zernio koduje „@” w adresie pliku jako %40, a jsDelivr odpowiada na to 400
+  // („Failed to fetch video … welife-social%40<sha> …: 400”, 13.11.2026), więc te platformy dostają tylko adres
+  // bez „@”, czyli GitHub raw (mp4 ma tam typ application/octet-stream).
+  const mediaBases = (post, platform) => {
     if (env.MEDIA_BASE_URL) return [env.MEDIA_BASE_URL];
     if (!(env.GITHUB_REPOSITORY && env.GITHUB_SHA)) return [];
     const raw = `${env.RAW_MEDIA_HOST || "https://raw.githubusercontent.com"}/${env.GITHUB_REPOSITORY}/${env.GITHUB_SHA}/`;
     const cdn = `${env.JSDELIVR_MEDIA_HOST || "https://cdn.jsdelivr.net"}/gh/${env.GITHUB_REPOSITORY}@${env.GITHUB_SHA}/`;
+    if (OPTIONAL[platform]) return [raw];
     return post.type === "reel" ? [cdn, raw] : [raw, cdn];
   };
   const urlWith = (base, p) => base.replace(/\/?$/, "/") + p;
   const noBase = () => new Error("brak MEDIA_BASE_URL (poza GitHub Actions ustaw go ręcznie)");
   // Wybiera pierwszy host, na którym WSZYSTKIE pliki posta są publicznie dostępne (GET pierwszego bajtu).
-  const pickMedia = async (post) => {
-    const bases = mediaBases(post);
+  const pickMedia = async (post, platform) => {
+    const bases = mediaBases(post, platform);
     if (!bases.length) throw noBase();
     let last;
     for (const base of bases) {
@@ -141,7 +145,7 @@ export async function run(env = process.env, { root = resolve(dirname(fileURLToP
             log(`POMINIĘTE ${key}: ${optional.missing}`);
             continue;
           }
-          const mediaUrl = await pickMedia(post);
+          const mediaUrl = await pickMedia(post, platform);
           const result = await optional.publish(env, zernio, account.id, post, mediaUrl, { attempt: entry.attempts + 1 });
           set({ status: "published", via: "zernio", id: result.id, zernio_status: result.status, permalink: result.permalink, attempts: entry.attempts + 1, published_at: new Date().toISOString() });
           log(`OPUBLIKOWANE ${key} przez Zernio → ${result.permalink ?? result.id} (${result.status})`);

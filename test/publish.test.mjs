@@ -643,3 +643,25 @@ test("Pinterest: bez podłączonego konta pin czeka bez błędu; zły wpis jest 
   assert.match(validate(pinPost({ pinterest: { media: "media/obcy.jpg" } }), "pinterest").join(), /jednym z plików posta/);
   assert.match(validate(pinPost({ pinterest: { link: "https://bit.ly/x" } }), "pinterest").join(), /welife\.world/);
 });
+
+test("YouTube i Pinterest dostają adres pliku bez „@” (GitHub raw), TikTok dalej z jsDelivr", async () => {
+  const z = await mockZernio({ accounts: [...YT_ACCOUNTS, { _id: "acc_pin3", platform: "pinterest" }], boards: [{ id: "b1", name: "Plan posiłków" }] });
+  const hits = [];
+  const media = createServer((req, res) => {
+    hits.push(req.url);
+    res.writeHead(206).end("x");
+  });
+  await new Promise((r) => media.listen(0, r));
+  const host = `http://127.0.0.1:${media.address().port}`;
+  const root = fixture([ytReel({ platforms: ["tiktok", "youtube", "pinterest"] })]);
+  const r = await run(zernioEnv(z, { MEDIA_BASE_URL: "", GITHUB_REPOSITORY: "o/r", GITHUB_SHA: "abc123", RAW_MEDIA_HOST: `${host}/raw`, JSDELIVR_MEDIA_HOST: `${host}/cdn` }), { root, ...quiet });
+  assert.equal(r.failures, 0);
+  const byPlatform = Object.fromEntries(z.calls.filter((c) => c.path === "/api/v1/posts").map((c) => [c.json.platforms[0].platform, c.json]));
+  assert.equal(byPlatform.tiktok.mediaItems[0].url, `${host}/cdn/gh/o/r@abc123/media/R1.mp4`);
+  assert.deepEqual(byPlatform.youtube.mediaItems[0], { type: "video", url: `${host}/raw/o/r/abc123/media/R1.mp4`, thumbnail: `${host}/raw/o/r/abc123/media/a.jpg` });
+  assert.equal(byPlatform.pinterest.mediaItems[0].url, `${host}/raw/o/r/abc123/media/R1.mp4`);
+  assert.equal(byPlatform.pinterest.platforms[0].platformSpecificData.coverImageUrl, `${host}/raw/o/r/abc123/media/a.jpg`);
+  for (const p of ["youtube", "pinterest"]) assert.doesNotMatch(JSON.stringify(byPlatform[p]), /@abc123/, `${p}: adres z „@”`);
+  media.close();
+  z.close();
+});
