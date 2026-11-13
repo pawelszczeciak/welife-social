@@ -1076,5 +1076,43 @@
     "permalink": "https://www.instagram.com/p/DfrHCc0FwO1/",
     "reconciled_at": "2026-11-13T08:37:44.638Z",
     "reconciled_container_status": "ERROR"
+  },
+  "2026-11-13-1230-r11:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "3623772091121333",
+    "published_at": "2026-11-13T11:38:16.715Z",
+    "updated_at": "2026-11-13T11:37:21.985Z"
+  },
+  "2026-11-13-1230-r11:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18129710434868281",
+    "permalink": "https://www.instagram.com/reel/DfrinAMjcIh/",
+    "published_at": "2026-11-13T11:38:11.107Z",
+    "updated_at": "2026-11-13T11:37:21.985Z"
+  },
+  "2026-11-13-1230-r11:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6af6f6a9bd995c42fd5ab516",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-13T11:38:30.875Z",
+    "updated_at": "2026-11-13T11:37:21.985Z"
+  },
+  "2026-11-13-1230-r11:youtube": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%4037d9e64163a6d99c6405ef26c001e26882b5bb28/media/R11.mp4: 400)",
+    "history": [
+      {
+        "at": "2026-11-13T11:37:21.985Z",
+        "stage": "publish",
+        "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%4037d9e64163a6d99c6405ef26c001e26882b5bb28/media/R11.mp4: 400)"
+      }
+    ],
+    "updated_at": "2026-11-13T11:37:21.985Z"
   }
 }
