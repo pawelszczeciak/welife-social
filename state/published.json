@@ -980,17 +980,22 @@
     "updated_at": "2026-11-12T11:37:33.908Z"
   },
   "2026-11-12-1230-r10:youtube": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "retry",
-    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40c7952c5adf589c0a7dc0dfe768f134c4969d41fa/media/R10.mp4: 400)",
+    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R10.mp4: 400)",
     "history": [
       {
         "at": "2026-11-13T10:44:46.659Z",
         "stage": "publish",
         "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40c7952c5adf589c0a7dc0dfe768f134c4969d41fa/media/R10.mp4: 400)"
+      },
+      {
+        "at": "2026-11-13T10:54:06.212Z",
+        "stage": "publish",
+        "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R10.mp4: 400)"
       }
     ],
-    "updated_at": "2026-11-13T10:44:46.659Z"
+    "updated_at": "2026-11-13T10:54:06.212Z"
   },
   "2026-11-12-1830-r20:facebook": {
     "attempts": 1,
@@ -1018,17 +1023,22 @@
     "updated_at": "2026-11-12T17:37:27.981Z"
   },
   "2026-11-12-1830-r20:youtube": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "retry",
-    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40c7952c5adf589c0a7dc0dfe768f134c4969d41fa/media/R20.mp4: 400)",
+    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R20.mp4: 400)",
     "history": [
       {
         "at": "2026-11-13T10:44:46.659Z",
         "stage": "publish",
         "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40c7952c5adf589c0a7dc0dfe768f134c4969d41fa/media/R20.mp4: 400)"
+      },
+      {
+        "at": "2026-11-13T10:54:06.212Z",
+        "stage": "publish",
+        "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R20.mp4: 400)"
       }
     ],
-    "updated_at": "2026-11-13T10:44:46.659Z"
+    "updated_at": "2026-11-13T10:54:06.212Z"
   },
   "2026-11-13-0830-c5:facebook": {
     "attempts": 1,
