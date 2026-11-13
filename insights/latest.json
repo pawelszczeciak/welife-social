@@ -1,12 +1,87 @@
 {
-  "collected_at": "2026-11-12T03:28:40.998Z",
+  "collected_at": "2026-11-13T03:29:51.649Z",
   "instagram": {
     "followers": 2,
-    "media_count": 44,
+    "media_count": 48,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-12-1830-r20",
+        "id": "18081646286468089",
+        "permalink": "https://www.instagram.com/reel/DfpnB13Eiz0/",
+        "published_at": "2026-11-12T17:38:20+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R20.mp4",
+        "hook": "Który posiłek najczęściej pomijasz: śniadanie, obiad czy kolację? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-12-1230-r10",
+        "id": "18120897103787346",
+        "permalink": "https://www.instagram.com/reel/Dfo95_UAuXO/",
+        "published_at": "2026-11-12T11:39:01+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R10.mp4",
+        "hook": "O której zwykle decydujesz, co na obiad? Napisz godzinę w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": null,
+        "id": "18658200226001904",
+        "permalink": "https://www.instagram.com/reel/Dfor7C6DLqj/",
+        "published_at": "2026-11-12T09:01:46+0000",
+        "kind": "reel",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-12-0830-c4",
+        "id": "18106377254014021",
+        "permalink": "https://www.instagram.com/p/DfoiNqljErl/",
+        "published_at": "2026-11-12T07:36:35+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "C4.jpg",
+        "hook": "Planujesz budżet na jedzenie czy liczysz przy kasie? Napisz A albo B.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": null,
         "id": "17954366061443164",
@@ -902,11 +977,43 @@
     ],
     "posts": [
       {
-        "key": null,
-        "id": "2060565084644461",
-        "published_at": "2026-11-11T20:57:45+0000",
+        "key": "2026-11-12-1830-r20",
+        "id": "29210877658575080",
+        "published_at": "2026-11-12T17:38:29+0000",
         "kind": "reel",
-        "views": 0,
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R20.mp4",
+        "hook": "Który posiłek najczęściej pomijasz: śniadanie, obiad czy kolację? Napisz w komentarzu.",
+        "views": 2,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-12-1230-r10",
+        "id": "1039204509206581",
+        "published_at": "2026-11-12T11:39:13+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R10.mp4",
+        "hook": "O której zwykle decydujesz, co na obiad? Napisz godzinę w komentarzu.",
+        "views": 2,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": null,
+        "id": "1122848337324593",
+        "published_at": "2026-11-12T09:01:18+0000",
+        "kind": "reel",
+        "views": 138,
         "reactions": 0,
         "comments": 0,
         "shares": null,
@@ -917,7 +1024,7 @@
         "id": "1003517569463968",
         "published_at": "2026-11-11T20:15:02+0000",
         "kind": "reel",
-        "views": 42,
+        "views": 43,
         "reactions": 0,
         "comments": 0,
         "shares": null,
@@ -1346,12 +1453,55 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-12-1830-r20",
+        "id": "6af627a5b4dda67a892a4b96",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7707340856340024608?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-12T17:38:38.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R20.mp4",
+        "hook": "Który posiłek najczęściej pomijasz: śniadanie, obiad czy kolację? Napisz w komentarzu.",
+        "views": 545,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-12-1230-r10",
+        "id": "6af5c5972e43b3147cd33a26",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7707248253653372193?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-12T11:39:21.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R10.mp4",
+        "hook": "O której zwykle decydujesz, co na obiad? Napisz godzinę w komentarzu.",
+        "views": 692,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": null,
+        "id": "6af59485b45bfe9b20b87d13",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7707020571619462422?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-12T09:00:00.000Z",
+        "kind": "reel",
+        "views": 724,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": null,
         "id": "6af4d70fa3168a2e75795740",
         "permalink": "https://www.tiktok.com/@welife.world/video/7707015339799743766?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
         "published_at": "2026-11-11T20:35:48.000Z",
         "kind": "reel",
-        "views": 275,
+        "views": 744,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -1367,7 +1517,7 @@
         "slot": "21:00",
         "media": "R19-en.mp4",
         "hook": "What's in your fridge right now? Comment 3 things.",
-        "views": 239,
+        "views": 240,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1383,7 +1533,7 @@
         "slot": "18:30",
         "media": "R19.mp4",
         "hook": "Co masz teraz w lodówce? Napisz 3 rzeczy w komentarzu.",
-        "views": 744,
+        "views": 745,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -1399,7 +1549,7 @@
         "slot": "15:00",
         "media": "R9-en.mp4",
         "hook": "How many different diets are there in your home? Comment the number.",
-        "views": 616,
+        "views": 617,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1415,7 +1565,7 @@
         "slot": "12:30",
         "media": "R9.mp4",
         "hook": "Ile różnych diet jest w Twoim domu? Napisz liczbę w komentarzu.",
-        "views": 744,
+        "views": 745,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -1431,7 +1581,7 @@
         "slot": "21:00",
         "media": "R18-en.mp4",
         "hook": "How many dinners do you plan at once: 1 day, 3–4 days or the whole week? Tell us in the comments.",
-        "views": 119,
+        "views": 120,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1447,7 +1597,7 @@
         "slot": "18:30",
         "media": "R18.mp4",
         "hook": "Ile obiadów planujesz naraz: 1 dzień, 3–4 dni czy cały tydzień? Napisz w komentarzu.",
-        "views": 764,
+        "views": 765,
         "likes": 2,
         "comments": 0,
         "shares": 0
@@ -1463,7 +1613,7 @@
         "slot": "15:00",
         "media": "R8-en.mp4",
         "hook": "Do you know what you spend on food each week, or guess? Comment KNOW or GUESS.",
-        "views": 546,
+        "views": 547,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1559,7 +1709,7 @@
         "slot": "21:00",
         "media": "R15-en.mp4",
         "hook": "Which sign is you: 1, 2 or 3? Comment the number.",
-        "views": 776,
+        "views": 778,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1793,13 +1943,22 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 46,
+      "posts": 50,
       "by_kind": {
         "reel": {
-          "n": 31,
+          "n": 34,
           "median": 0,
           "total": 14,
           "likes": 14,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "image": {
+          "n": 7,
+          "median": 0,
+          "total": 2,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -1812,18 +1971,18 @@
           "comments": 0,
           "saved": 0,
           "shares": 0
-        },
-        "image": {
-          "n": 6,
-          "median": 0,
-          "total": 2,
-          "likes": 2,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
         }
       },
       "by_lang": {
+        "pl": {
+          "n": 24,
+          "median": 0,
+          "total": 8,
+          "likes": 8,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "en": {
           "n": 18,
           "median": 1,
@@ -1832,20 +1991,20 @@
           "comments": 0,
           "saved": 0,
           "shares": 0
-        },
-        "pl": {
-          "n": 21,
-          "median": 0,
-          "total": 8,
-          "likes": 8,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
         }
       },
       "by_slot": {
-        "21:00": {
-          "n": 6,
+        "18:30": {
+          "n": 8,
+          "median": 0,
+          "total": 3,
+          "likes": 3,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "12:30": {
+          "n": 7,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -1853,11 +2012,20 @@
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
-          "n": 7,
+        "08:30": {
+          "n": 6,
           "median": 0,
-          "total": 3,
-          "likes": 3,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "21:00": {
+          "n": 6,
+          "median": 0,
+          "total": 2,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -1871,29 +2039,11 @@
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
-          "n": 6,
-          "median": 0,
-          "total": 2,
-          "likes": 2,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
         "10:00": {
           "n": 6,
           "median": 1,
           "total": 5,
           "likes": 5,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "08:30": {
-          "n": 5,
-          "median": 0,
-          "total": 0,
-          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2031,12 +2181,12 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 28,
+      "posts": 30,
       "by_kind": {
         "reel": {
-          "n": 28,
+          "n": 30,
           "median": 0,
-          "total": 46,
+          "total": 189,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2044,6 +2194,15 @@
         }
       },
       "by_lang": {
+        "pl": {
+          "n": 16,
+          "median": 0,
+          "total": 6,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "en": {
           "n": 12,
           "median": 0,
@@ -2052,28 +2211,28 @@
           "comments": 0,
           "saved": 0,
           "shares": 0
-        },
-        "pl": {
-          "n": 14,
+        }
+      },
+      "by_slot": {
+        "18:30": {
+          "n": 7,
           "median": 0,
           "total": 2,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
-        }
-      },
-      "by_slot": {
-        "21:00": {
-          "n": 6,
+        },
+        "12:30": {
+          "n": 7,
           "median": 0,
-          "total": 0,
+          "total": 4,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
+        "21:00": {
           "n": 6,
           "median": 0,
           "total": 0,
@@ -2087,15 +2246,6 @@
           "median": 0,
           "total": 2,
           "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "12:30": {
-          "n": 6,
-          "median": 0,
-          "total": 2,
-          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2123,9 +2273,36 @@
         {
           "key": null,
           "kind": "reel",
-          "views": 42,
+          "views": 138,
           "likes": 0,
           "shares": null
+        },
+        {
+          "key": null,
+          "kind": "reel",
+          "views": 43,
+          "likes": 0,
+          "shares": null
+        },
+        {
+          "key": "2026-11-12-1830-r20",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 2,
+          "likes": 0,
+          "shares": null,
+          "hook": "Który posiłek najczęściej pomijasz: śniadanie, obiad czy kolację? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-12-1230-r10",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 2,
+          "likes": 0,
+          "shares": null,
+          "hook": "O której zwykle decydujesz, co na obiad? Napisz godzinę w komentarzu."
         },
         {
           "key": "2026-11-05-1230-r3",
@@ -2136,33 +2313,6 @@
           "likes": 0,
           "shares": null,
           "hook": "Liczysz kalorie czy nie? Napisz TAK albo NIE w komentarzu."
-        },
-        {
-          "key": "2026-11-10-1500-r9-en",
-          "kind": "reel",
-          "lang": "en",
-          "slot": "15:00",
-          "views": 1,
-          "likes": 0,
-          "shares": null,
-          "hook": "How many different diets are there in your home? Comment the number."
-        },
-        {
-          "key": "2026-11-05-1500-r3-en",
-          "kind": "reel",
-          "lang": "en",
-          "slot": "15:00",
-          "views": 1,
-          "likes": 1,
-          "shares": null,
-          "hook": "Do you count calories? Comment YES or NO."
-        },
-        {
-          "key": null,
-          "kind": "reel",
-          "views": 0,
-          "likes": 0,
-          "shares": null
         }
       ],
       "bottom": [
@@ -2220,53 +2370,62 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 28,
+      "posts": 31,
       "by_kind": {
         "reel": {
-          "n": 28,
-          "median": 462.5,
-          "total": 12321,
-          "likes": 16,
+          "n": 31,
+          "median": 545,
+          "total": 14760,
+          "likes": 17,
           "comments": 0,
           "saved": 0,
           "shares": 0
         }
       },
       "by_lang": {
-        "en": {
-          "n": 12,
-          "median": 298,
-          "total": 3949,
-          "likes": 1,
+        "pl": {
+          "n": 17,
+          "median": 745,
+          "total": 9337,
+          "likes": 15,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "pl": {
-          "n": 15,
-          "median": 744,
-          "total": 8097,
-          "likes": 14,
+        "en": {
+          "n": 12,
+          "median": 298,
+          "total": 3955,
+          "likes": 1,
           "comments": 0,
           "saved": 0,
           "shares": 0
         }
       },
       "by_slot": {
-        "21:00": {
-          "n": 6,
-          "median": 60.5,
-          "total": 1136,
-          "likes": 0,
+        "18:30": {
+          "n": 8,
+          "median": 408,
+          "total": 3126,
+          "likes": 7,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
+        "12:30": {
           "n": 7,
-          "median": 271,
-          "total": 2579,
-          "likes": 6,
+          "median": 745,
+          "total": 4495,
+          "likes": 7,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "21:00": {
+          "n": 6,
+          "median": 61,
+          "total": 1140,
+          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2274,17 +2433,8 @@
         "15:00": {
           "n": 6,
           "median": 527.5,
-          "total": 2813,
+          "total": 2815,
           "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "12:30": {
-          "n": 6,
-          "median": 751,
-          "total": 3802,
-          "likes": 7,
           "comments": 0,
           "saved": 0,
           "shares": 0
