@@ -980,9 +980,9 @@
     "updated_at": "2026-11-12T11:37:33.908Z"
   },
   "2026-11-12-1230-r10:youtube": {
-    "attempts": 2,
-    "status": "retry",
-    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R10.mp4: 400)",
+    "attempts": 3,
+    "status": "failed",
+    "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%403734dc9edfe4ed997c2db2cce00546bf41c2b502/media/R10.mp4: 400)",
     "history": [
       {
         "at": "2026-11-13T10:44:46.659Z",
@@ -993,9 +993,14 @@
         "at": "2026-11-13T10:54:06.212Z",
         "stage": "publish",
         "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R10.mp4: 400)"
+      },
+      {
+        "at": "2026-11-13T11:09:54.070Z",
+        "stage": "publish",
+        "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%403734dc9edfe4ed997c2db2cce00546bf41c2b502/media/R10.mp4: 400)"
       }
     ],
-    "updated_at": "2026-11-13T10:54:06.212Z"
+    "updated_at": "2026-11-13T11:09:54.070Z"
   },
   "2026-11-12-1830-r20:facebook": {
     "attempts": 1,
@@ -1023,8 +1028,8 @@
     "updated_at": "2026-11-12T17:37:27.981Z"
   },
   "2026-11-12-1830-r20:youtube": {
-    "attempts": 2,
-    "status": "retry",
+    "attempts": 3,
+    "status": "published",
     "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R20.mp4: 400)",
     "history": [
       {
@@ -1038,7 +1043,12 @@
         "error": "Zernio: YouTube nie opublikował (YouTube upload failed: Failed to fetch video from https://cdn.jsdelivr.net/gh/pawelszczeciak/welife-social%40e46e72a1ea23def57971df8ce683a81628d564c2/media/R20.mp4: 400)"
       }
     ],
-    "updated_at": "2026-11-13T10:54:06.212Z"
+    "updated_at": "2026-11-13T11:09:54.070Z",
+    "via": "zernio",
+    "id": "6af6f011e4dc4ec81c6d71cc",
+    "zernio_status": "published",
+    "permalink": "https://www.youtube.com/watch?v=yIzg0mUsP-c",
+    "published_at": "2026-11-13T11:10:15.134Z"
   },
   "2026-11-13-0830-c5:facebook": {
     "attempts": 1,
