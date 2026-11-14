@@ -1371,5 +1371,28 @@
     "permalink": "https://www.youtube.com/watch?v=FWImepPf_xc",
     "published_at": "2026-11-14T11:37:59.489Z",
     "updated_at": "2026-11-14T11:36:38.024Z"
+  },
+  "2026-11-14-1500-c6b:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122125774461483309",
+    "published_at": "2026-11-14T14:08:59.638Z",
+    "updated_at": "2026-11-14T14:08:45.854Z"
+  },
+  "2026-11-14-1500-c6b:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached",
+    "history": [
+      {
+        "at": "2026-11-14T14:08:45.854Z",
+        "stage": "publish",
+        "code": 4,
+        "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached"
+      }
+    ],
+    "creation_id": "18009111551797171",
+    "creation_at": "2026-11-14T14:08:45.854Z",
+    "updated_at": "2026-11-14T14:08:45.854Z"
   }
 }
