@@ -1,0 +1,65 @@
+# Ręczne usuwanie z platform publikacji sprzed podanej chwili (np. wszystkiego w starej szacie graficznej).
+# Facebook przez Graph API, YouTube i Pinterest przez Zernio; Instagram i TikTok kończą na liście do
+# usunięcia ręcznego, bo ich API na to nie pozwala. Usunięte wpisy dostają w stanie status "removed".
+name: Usuń stare publikacje
+
+on:
+  workflow_dispatch:
+    inputs:
+      platforms:
+        description: "Platformy, oddzielone przecinkami (facebook, youtube, pinterest, instagram, tiktok)"
+        required: true
+      before:
+        description: "Usuń publikacje sprzed tej chwili (ISO, np. 2026-11-14T01:00:00Z)"
+        required: true
+      limit:
+        description: "Najwyżej tyle usunięć w tym przebiegu"
+        default: "25"
+      reason:
+        description: "Notatka zapisywana przy usuniętych wpisach"
+        default: "usunięte z platformy"
+      dry_run:
+        description: "Tylko pokaż, co zostałoby usunięte"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Usuń publikacje
+        env:
+          PLATFORMS: ${{ inputs.platforms }}
+          BEFORE: ${{ inputs.before }}
+          LIMIT: ${{ inputs.limit }}
+          REASON: ${{ inputs.reason }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+        run: node scripts/purge.mjs
+      - name: Zapisz stan
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain state)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state
+            git commit -m "Stan po usunięciu starych publikacji"
+            git pull --rebase
+            git push
+          fi
