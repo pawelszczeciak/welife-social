@@ -1168,6 +1168,11 @@
     "reconciled_at": "2026-11-13T08:37:44.638Z",
     "reconciled_container_status": "ERROR"
   },
+  "2026-11-13-0830-c5:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-14T07:37:15.014Z"
+  },
   "2026-11-13-1230-r11:facebook": {
     "attempts": 1,
     "status": "removed",
@@ -1297,5 +1302,28 @@
     "updated_at": "2026-11-13T19:09:05.436Z",
     "removed_at": "2026-11-14T01:17:36.500Z",
     "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
+  },
+  "2026-11-14-0830-c6:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122125693947483309",
+    "published_at": "2026-11-14T07:37:33.099Z",
+    "updated_at": "2026-11-14T07:37:15.014Z"
+  },
+  "2026-11-14-0830-c6:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached",
+    "history": [
+      {
+        "at": "2026-11-14T07:37:15.014Z",
+        "stage": "publish",
+        "code": 4,
+        "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached"
+      }
+    ],
+    "creation_id": "18009023072797171",
+    "creation_at": "2026-11-14T07:37:15.014Z",
+    "updated_at": "2026-11-14T07:37:15.014Z"
   }
 }
