@@ -582,10 +582,12 @@
   },
   "2026-11-08-1230-r7:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1597067541642973",
     "published_at": "2026-11-08T11:37:44.733Z",
-    "updated_at": "2026-11-08T11:36:50.536Z"
+    "updated_at": "2026-11-08T11:36:50.536Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-08-1230-r7:instagram": {
     "attempts": 1,
@@ -607,10 +609,12 @@
   },
   "2026-11-08-1500-r7-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "3063819793980395",
     "published_at": "2026-11-08T14:10:28.563Z",
-    "updated_at": "2026-11-08T14:09:02.276Z"
+    "updated_at": "2026-11-08T14:09:02.276Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-08-1500-r7-en:instagram": {
     "attempts": 1,
@@ -632,10 +636,12 @@
   },
   "2026-11-08-1830-r16:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "2171203246941385",
     "published_at": "2026-11-08T17:37:10.832Z",
-    "updated_at": "2026-11-08T17:36:19.946Z"
+    "updated_at": "2026-11-08T17:36:19.946Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-08-1830-r16:instagram": {
     "attempts": 1,
@@ -657,10 +663,12 @@
   },
   "2026-11-08-2100-r16-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "4670218236629512",
     "published_at": "2026-11-08T20:12:33.693Z",
-    "updated_at": "2026-11-08T20:11:48.371Z"
+    "updated_at": "2026-11-08T20:11:48.371Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-08-2100-r16-en:instagram": {
     "attempts": 1,
@@ -682,10 +690,12 @@
   },
   "2026-11-09-0830-c3:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122124399213483309",
     "published_at": "2026-11-09T07:38:28.475Z",
-    "updated_at": "2026-11-09T07:38:12.494Z"
+    "updated_at": "2026-11-09T07:38:12.494Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-09-0830-c3:instagram": {
     "attempts": 1,
@@ -697,10 +707,12 @@
   },
   "2026-11-09-1000-c3-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122124414267483309",
     "published_at": "2026-11-09T09:16:06.811Z",
-    "updated_at": "2026-11-09T09:15:44.723Z"
+    "updated_at": "2026-11-09T09:15:44.723Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-09-1000-c3-en:instagram": {
     "attempts": 1,
@@ -712,10 +724,12 @@
   },
   "2026-11-09-1230-r8:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1882636409574065",
     "published_at": "2026-11-09T11:39:21.816Z",
-    "updated_at": "2026-11-09T11:38:14.839Z"
+    "updated_at": "2026-11-09T11:38:14.839Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-09-1230-r8:instagram": {
     "attempts": 1,
@@ -737,10 +751,12 @@
   },
   "2026-11-09-1500-r8-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "3078917499107265",
     "published_at": "2026-11-09T14:13:19.808Z",
-    "updated_at": "2026-11-09T14:11:32.674Z"
+    "updated_at": "2026-11-09T14:11:32.674Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-09-1500-r8-en:instagram": {
     "attempts": 1,
@@ -762,10 +778,12 @@
   },
   "2026-11-09-1830-r18:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "28305530125787543",
     "published_at": "2026-11-09T17:37:14.204Z",
-    "updated_at": "2026-11-09T17:36:22.496Z"
+    "updated_at": "2026-11-09T17:36:22.496Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-09-1830-r18:instagram": {
     "attempts": 1,
@@ -787,10 +805,12 @@
   },
   "2026-11-09-2100-r18-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1850256482831034",
     "published_at": "2026-11-09T20:12:17.264Z",
-    "updated_at": "2026-11-09T20:10:46.280Z"
+    "updated_at": "2026-11-09T20:10:46.280Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-09-2100-r18-en:instagram": {
     "attempts": 1,
@@ -821,10 +841,12 @@
     },
     "requeue_basis": "operator_verified",
     "verified_absent_on_platform": "Codex 2026-11-10 before requeue: Meta Business Suite FB We.Life World and IG welife.world, Polish K4 caption search, range Nov1-Nov10; Polish K4 absent; English K4 present; drafts empty",
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122124763251483309",
     "published_at": "2026-11-10T15:43:21.589Z",
-    "updated_at": "2026-11-10T15:42:17.734Z"
+    "updated_at": "2026-11-10T15:42:17.734Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-10-0830-k4:instagram": {
     "attempts": 3,
@@ -860,10 +882,12 @@
   },
   "2026-11-10-1000-k4-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122124676809483309",
     "published_at": "2026-11-10T09:16:18.387Z",
-    "updated_at": "2026-11-10T09:15:11.792Z"
+    "updated_at": "2026-11-10T09:15:11.792Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-10-1000-k4-en:instagram": {
     "attempts": 1,
@@ -875,10 +899,12 @@
   },
   "2026-11-10-1230-r9:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "29103490015976183",
     "published_at": "2026-11-10T11:38:28.291Z",
-    "updated_at": "2026-11-10T11:37:37.584Z"
+    "updated_at": "2026-11-10T11:37:37.584Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-10-1230-r9:instagram": {
     "attempts": 1,
@@ -900,10 +926,12 @@
   },
   "2026-11-10-1500-r9-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "968122352649295",
     "published_at": "2026-11-10T14:12:04.461Z",
-    "updated_at": "2026-11-10T14:11:12.326Z"
+    "updated_at": "2026-11-10T14:11:12.326Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-10-1500-r9-en:instagram": {
     "attempts": 1,
@@ -925,10 +953,12 @@
   },
   "2026-11-10-1830-r19:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "2211765736421760",
     "published_at": "2026-11-10T17:39:30.720Z",
-    "updated_at": "2026-11-10T17:37:40.451Z"
+    "updated_at": "2026-11-10T17:37:40.451Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-10-1830-r19:instagram": {
     "attempts": 1,
@@ -950,10 +980,12 @@
   },
   "2026-11-10-2100-r19-en:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1432621292381597",
     "published_at": "2026-11-10T20:14:40.385Z",
-    "updated_at": "2026-11-10T20:13:48.830Z"
+    "updated_at": "2026-11-10T20:13:48.830Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-10-2100-r19-en:instagram": {
     "attempts": 1,
@@ -975,10 +1007,12 @@
   },
   "2026-11-12-0830-c4:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122125184655483309",
     "published_at": "2026-11-12T07:36:43.135Z",
-    "updated_at": "2026-11-12T07:36:28.009Z"
+    "updated_at": "2026-11-12T07:36:28.009Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-12-0830-c4:instagram": {
     "attempts": 2,
@@ -1002,10 +1036,12 @@
   },
   "2026-11-12-1230-r10:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1039204509206581",
     "published_at": "2026-11-12T11:39:18.487Z",
-    "updated_at": "2026-11-12T11:37:33.908Z"
+    "updated_at": "2026-11-12T11:37:33.908Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-12-1230-r10:instagram": {
     "attempts": 1,
@@ -1053,10 +1089,12 @@
   },
   "2026-11-12-1830-r20:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "29210877658575080",
     "published_at": "2026-11-12T17:38:33.691Z",
-    "updated_at": "2026-11-12T17:37:27.981Z"
+    "updated_at": "2026-11-12T17:37:27.981Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-12-1830-r20:instagram": {
     "attempts": 1,
@@ -1103,10 +1141,12 @@
   },
   "2026-11-13-0830-c5:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122125443447483309",
     "published_at": "2026-11-13T07:37:03.296Z",
-    "updated_at": "2026-11-13T07:36:43.356Z"
+    "updated_at": "2026-11-13T07:36:43.356Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-13-0830-c5:instagram": {
     "attempts": 2,
@@ -1130,10 +1170,12 @@
   },
   "2026-11-13-1230-r11:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "3623772091121333",
     "published_at": "2026-11-13T11:38:16.715Z",
-    "updated_at": "2026-11-13T11:37:21.985Z"
+    "updated_at": "2026-11-13T11:37:21.985Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-13-1230-r11:instagram": {
     "attempts": 1,
@@ -1180,10 +1222,12 @@
   },
   "2026-11-13-1830-r21:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1874666836868639",
     "published_at": "2026-11-13T17:37:47.272Z",
-    "updated_at": "2026-11-13T17:36:58.972Z"
+    "updated_at": "2026-11-13T17:36:58.972Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-13-1830-r21:instagram": {
     "attempts": 1,
@@ -1217,10 +1261,12 @@
   },
   "2026-11-13-2000-r28:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1859773918781660",
     "published_at": "2026-11-13T19:09:54.297Z",
-    "updated_at": "2026-11-13T19:09:05.436Z"
+    "updated_at": "2026-11-13T19:09:05.436Z",
+    "removed_at": "2026-11-14T01:20:49.926Z",
+    "note": "stara szata graficzna (zielona), usunięte 14.11.2026 na polecenie właściciela"
   },
   "2026-11-13-2000-r28:instagram": {
     "attempts": 1,
