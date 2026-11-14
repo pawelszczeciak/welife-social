@@ -1310,10 +1310,12 @@
   },
   "2026-11-14-0830-c6:facebook": {
     "attempts": 1,
-    "status": "published",
+    "status": "removed",
     "id": "1306038305932559_122125693947483309",
     "published_at": "2026-11-14T07:37:33.099Z",
-    "updated_at": "2026-11-14T07:37:15.014Z"
+    "updated_at": "2026-11-14T07:37:15.014Z",
+    "removed_at": "2026-11-14T11:49:04.010Z",
+    "note": "karta C6 opisywała kafel „Nie chce mi się”, którego już nie ma; usunięta 14.11.2026 na polecenie właściciela"
   },
   "2026-11-14-0830-c6:instagram": {
     "attempts": 2,
