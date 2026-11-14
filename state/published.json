@@ -1247,6 +1247,11 @@
     "published_at": "2026-11-13T17:37:41.119Z",
     "updated_at": "2026-11-13T17:36:58.972Z"
   },
+  "2026-11-13-1830-r21:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-14T17:36:07.916Z"
+  },
   "2026-11-13-1830-r21:tiktok": {
     "attempts": 1,
     "status": "published",
@@ -1398,5 +1403,47 @@
     "permalink": "https://www.instagram.com/p/DfuYsvaDeIP/",
     "reconciled_at": "2026-11-14T15:17:50.790Z",
     "reconciled_container_status": "ERROR"
+  },
+  "2026-11-14-1830-r22:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1609491084282635",
+    "published_at": "2026-11-14T17:36:51.312Z",
+    "updated_at": "2026-11-14T17:36:07.916Z"
+  },
+  "2026-11-14-1830-r22:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "kontener 18009167561797171: ERROR Error: Media upload has failed with error code 2207077",
+    "history": [
+      {
+        "at": "2026-11-14T17:36:07.916Z",
+        "stage": "publish",
+        "error": "kontener 18009167561797171: ERROR Error: Media upload has failed with error code 2207077"
+      }
+    ],
+    "creation_id": "18009167561797171",
+    "creation_at": "2026-11-14T17:36:07.916Z",
+    "updated_at": "2026-11-14T17:36:07.916Z"
+  },
+  "2026-11-14-1830-r22:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6af89c334d9613fddef39709",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-14T17:37:07.790Z",
+    "updated_at": "2026-11-14T17:36:07.916Z"
+  },
+  "2026-11-14-1830-r22:youtube": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6af89c44860b1b8fc97a6b70",
+    "zernio_status": "published",
+    "permalink": "https://www.youtube.com/watch?v=foywPefbCL0",
+    "published_at": "2026-11-14T17:37:13.633Z",
+    "updated_at": "2026-11-14T17:36:07.916Z"
   }
 }
