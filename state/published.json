@@ -1412,8 +1412,8 @@
     "updated_at": "2026-11-14T17:36:07.916Z"
   },
   "2026-11-14-1830-r22:instagram": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "kontener 18009167561797171: ERROR Error: Media upload has failed with error code 2207077",
     "history": [
       {
@@ -1424,7 +1424,10 @@
     ],
     "creation_id": "18009167561797171",
     "creation_at": "2026-11-14T17:36:07.916Z",
-    "updated_at": "2026-11-14T17:36:07.916Z"
+    "updated_at": "2026-11-14T17:44:46.289Z",
+    "id": "17905146573372805",
+    "permalink": "https://www.instagram.com/reel/DfuwhpKjSql/",
+    "published_at": "2026-11-14T17:45:04.051Z"
   },
   "2026-11-14-1830-r22:tiktok": {
     "attempts": 1,
