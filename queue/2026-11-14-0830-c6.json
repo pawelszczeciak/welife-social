@@ -3,8 +3,7 @@
   "publish_at": "2026-11-14T08:30:00+01:00",
   "platforms": [
     "instagram",
-    "facebook",
-    "pinterest"
+    "facebook"
   ],
   "type": "image",
   "media": [
@@ -14,9 +13,5 @@
   "caption": "Co jesz, kiedy nie masz siły gotować? Napisz w komentarzu.\n\nJedna decyzja mniej po pracy.\n\nKliknij „Nie chce mi się” albo napisz eNZi „nie mam siły gotować” i wybierz z szybkich propozycji. To Twój plan posiłków na gorszy dzień. Wybierasz Ty, eNZi tylko podpowiada.\n\nKonto w WE.LIFE jest bezpłatne. Link masz w bio @welife.world.\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#szybkiobiad #obiadnadziś #planposiłków",
   "facebook": {
     "message": "Co jesz, kiedy nie masz siły gotować? Napisz w komentarzu.\n\nNajtrudniejsze w gotowaniu po pracy jest pytanie „co dziś?”.\n\nW WE.LIFE możesz napisać eNZi „nie mam siły gotować” albo kliknąć „Nie chce mi się” i dostać kilka szybkich propozycji. Możesz też poprosić o obiad z tego, co już masz w domu. Wybierasz Ty, eNZi tylko podpowiada.\n\nSpokojniejszy wieczór zaczyna się od jednej decyzji mniej.\n\nZa darmo: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=post-wieczor\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł."
-  },
-  "pinterest": {
-    "title": "Szybki obiad, gdy nie masz siły gotować",
-    "description": "Pomysł na szybki obiad po pracy bez zastanawiania się, co ugotować. W WE.LIFE klikasz „Nie chce mi się” albo piszesz eNZi „nie mam siły gotować” i wybierasz z szybkich propozycji. To plan posiłków na gorszy dzień: wybierasz Ty, eNZi tylko podpowiada. Konto w WE.LIFE jest bezpłatne. Zdjęcie: ilustracja wygenerowana przez AI."
   }
 }
