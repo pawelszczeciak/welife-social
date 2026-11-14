@@ -82,8 +82,7 @@ export function validate(post, platform, root) {
   }
   if (!text.trim()) errors.push("pusty tekst");
   if (text.includes("{{")) errors.push("tekst zawiera niewypełnione pole {{…}}");
-  // Zasada właściciela: każdy materiał mówi, że to wersja beta (testowa).
-  if (!/beta/i.test(text)) errors.push("tekst nie mówi, że WE.LIFE to wersja beta");
+  // Do 13.11.2026 każdy tekst musiał mówić o wersji beta; właściciel wycofał tę zasadę 14.11.2026.
   if (post.ai_imagery && !/\bAI\b/.test(text)) errors.push("obrazy AI bez informacji „AI” w tekście");
   if (platform === "pinterest") {
     if (!["reel", "image", "carousel"].includes(post.type)) errors.push("Pinterest przyjmuje tylko obraz, karuzelę (jeden slajd) albo rolkę");

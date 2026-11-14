@@ -20,7 +20,6 @@ state/published.json  ◄──  zapis: co, gdzie i kiedy wyszło (nic nie wycho
 
 Bezpieczniki w `scripts/lib.mjs` (post nie wyjdzie, jeśli):
 
-- tekst nie mówi, że WE.LIFE to **wersja beta** (zasada właściciela);
 - tekst zawiera niewypełnione pole `{{…}}`;
 - post ma obrazy AI (`"ai_imagery": true`), a tekst nie mówi o AI;
 - na Instagramie jest więcej niż 5 hashtagów albo zdjęcie nie jest JPEG;
@@ -174,7 +173,7 @@ Jeden plik na post w `queue/` (nazwa = id), pliki w `media/`. Przykład rolki:
   "media": ["media/R1.mp4"],
   "cover": "media/R1-cover.jpg",
   "ai_imagery": true,
-  "caption": "… wersja beta … AI … #planposiłków"
+  "caption": "… AI … #planposiłków"
 }
 ```
 

@@ -51,7 +51,7 @@ async function mockGraph({ failPublish = 0, bioLink = "https://welife.world/?utm
   return { base, calls, close: () => server.close() };
 }
 
-const BETA = "Napisz PLAN, wyślemy link. To wersja beta (testowa).";
+const BETA = "Napisz PLAN, wyślemy link. Konto jest bezpłatne."; // nazwa historyczna: tekst bez wzmianki o becie
 
 const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), "fixtures");
 const SOUND = join(FIXTURES, "sound.mp4");
@@ -147,16 +147,17 @@ test("wpis oznaczony jako removed nie jest publikowany ponownie", async () => {
   g.close();
 });
 
-test("odrzuca tekst z niewypełnionym {{…}} albo bez informacji o becie, bez wywołań API", async () => {
+test("odrzuca tekst z niewypełnionym {{…}}, bez wywołań API; tekst bez słowa „beta” jest w porządku (zasada wycofana 14.11)", async () => {
   const g = await mockGraph();
-  const root = fixture([reel({ id: "ph", caption: `${BETA} Wypadło {{N}}.` }), reel({ id: "nobeta", caption: "Napisz PLAN." })]);
+  const root = fixture([reel({ id: "ph", caption: `${BETA} Wypadło {{N}}.` })]);
   const r = await run(env(g), { root, ...quiet });
   const s = state(root);
   assert.match(s["ph:instagram"].error, /\{\{/);
-  assert.match(s["nobeta:facebook"].error, /beta/);
-  assert.equal(r.failures, 4);
+  assert.equal(r.failures, 2);
   assert.equal(g.calls.length, 0);
   g.close();
+  const { validate } = await import("../scripts/lib.mjs");
+  assert.deepEqual(validate(reel({ caption: "Napisz PLAN. Konto jest bezpłatne." }), "instagram"), []);
 });
 
 test("obrazy AI wymagają informacji AI w tekście; IG przyjmuje maks. 5 hashtagów", async () => {
@@ -432,7 +433,7 @@ test("Zernio: publikuje rolkę na TikToku publicznie, z oznaczeniem AI, kontem w
   assert.equal(post.json.tiktokSettings.video_made_with_ai, true);
   assert.equal(post.json.tiktokSettings.commercial_content_type, "brand_organic");
   assert.equal(post.json.tiktokSettings.video_cover_image_url, `${z.base}/files/media/a.jpg`);
-  assert.match(post.json.content, /beta/);
+  assert.match(post.json.content, /bezpłatne/);
   const s = state(root)["r1:tiktok"];
   assert.equal(s.status, "published");
   assert.equal(s.via, "zernio");
@@ -516,7 +517,7 @@ test("Zernio: konto TikTok znalezione mimo innej wielkości liter, inne platform
 const YT_ACCOUNTS = [{ _id: "acc_tt", platform: "tiktok", username: "welife.world" }, { _id: "acc_yt", platform: "youtube", displayName: "WE.LIFE" }];
 const ytReel = (over = {}) => reel({
   platforms: ["youtube"], ai_imagery: true, cover: "media/a.jpg",
-  caption: `Ile razy w tygodniu decydujesz, co na obiad?\n\nLink do darmowej bety WE.LIFE masz w bio @welife.world. ${BETA}\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków`,
+  caption: `Ile razy w tygodniu decydujesz, co na obiad?\n\nLink do WE.LIFE masz w bio @welife.world. ${BETA}\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków`,
   ...over,
 });
 
@@ -576,7 +577,7 @@ test("YouTube: odrzuca karuzelę i za długi tytuł; długą pierwszą linię pr
 });
 
 // --- Pinterest przez Zernio ------------------------------------------------------------
-const PIN_CAPTION = `Wiesz rano, co na obiad? Napisz A albo B.\n\nRano wiesz, co na obiad. W WE.LIFE układasz plan posiłków na 7 dni raz.\n\nWE.LIFE to darmowa wersja beta (testowa). Link do darmowej bety WE.LIFE masz w bio @welife.world.\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\n#planposiłków #jadłospis`;
+const PIN_CAPTION = `Wiesz rano, co na obiad? Napisz A albo B.\n\nRano wiesz, co na obiad. W WE.LIFE układasz plan posiłków na 7 dni raz.\n\nKonto w WE.LIFE jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcie: ilustracja wygenerowana przez AI.\n\n#planposiłków #jadłospis`;
 const pinPost = (over = {}) => ({
   id: "c1", publish_at: "2026-11-02T08:30:00+01:00", platforms: ["pinterest"], type: "image", media: ["media/a.jpg"],
   ai_imagery: true, caption: PIN_CAPTION, ...over,
@@ -595,7 +596,7 @@ test("Pinterest: karta wychodzi jako pin z tytułem, klikalnym linkiem z UTM, ta
   }]);
   assert.deepEqual(post.json.mediaItems, [{ type: "image", url: `${z.base}/files/media/a.jpg` }]);
   assert.match(post.json.content, /^Rano wiesz, co na obiad\./);
-  assert.match(post.json.content, /wersja beta \(testowa\)/);
+  assert.match(post.json.content, /Konto w WE\.LIFE jest bezpłatne/);
   assert.doesNotMatch(post.json.content, /w bio|#planposiłków|Napisz A albo B/);
   assert.equal(z.calls.filter((c) => c.method === "POST" && c.path.endsWith("/pinterest-boards")).length, 0, "istniejąca tablica nie jest zakładana drugi raz");
   const s = state(root)["c1:pinterest"];
@@ -606,7 +607,7 @@ test("Pinterest: karta wychodzi jako pin z tytułem, klikalnym linkiem z UTM, ta
 test("Pinterest: brak tablicy → zakłada ją raz; karuzela idzie wybranym slajdem, rolka jako film z okładką", async () => {
   const z = await mockZernio({ accounts: pinAccounts("acc_pin2") });
   const root = fixture([
-    pinPost({ id: "k1", type: "carousel", media: ["media/a.jpg", "media/b.jpg"], pinterest: { media: "media/b.jpg", title: "Lista zakupów bez dublowania: 5 kroków", description: "Plan posiłków i lista zakupów. Wersja beta (testowa). Ilustracje AI." } }),
+    pinPost({ id: "k1", type: "carousel", media: ["media/a.jpg", "media/b.jpg"], pinterest: { media: "media/b.jpg", title: "Lista zakupów bez dublowania: 5 kroków", description: "Plan posiłków i lista zakupów. Konto jest bezpłatne. Ilustracje AI." } }),
     pinPost({ id: "r1", type: "reel", media: ["media/R1.mp4"], cover: "media/a.jpg" }),
   ]);
   const r = await run(zernioEnv(z), { root, ...quiet });
@@ -618,7 +619,7 @@ test("Pinterest: brak tablicy → zakłada ją raz; karuzela idzie wybranym slaj
   assert.deepEqual(k1.json.mediaItems, [{ type: "image", url: `${z.base}/files/media/b.jpg` }]);
   assert.equal(k1.json.platforms[0].platformSpecificData.title, "Lista zakupów bez dublowania: 5 kroków");
   assert.equal(k1.json.platforms[0].platformSpecificData.boardId, "b_new1");
-  assert.equal(k1.json.content, "Plan posiłków i lista zakupów. Wersja beta (testowa). Ilustracje AI.");
+  assert.equal(k1.json.content, "Plan posiłków i lista zakupów. Konto jest bezpłatne. Ilustracje AI.");
   assert.deepEqual(r1.json.mediaItems, [{ type: "video", url: `${z.base}/files/media/R1.mp4` }]);
   assert.equal(r1.json.platforms[0].platformSpecificData.coverImageUrl, `${z.base}/files/media/a.jpg`);
   assert.equal(r1.json.platforms[0].platformSpecificData.boardId, "b_new1");
@@ -639,7 +640,7 @@ test("Pinterest: bez podłączonego konta pin czeka bez błędu; zły wpis jest 
   assert.deepEqual(validate(pinPost(), "pinterest"), []);
   assert.match(validate(pinPost({ type: "text", media: [] }), "pinterest").join(), /tylko obraz/);
   assert.match(validate(pinPost({ pinterest: { title: "x".repeat(101) } }), "pinterest").join(), /limit to 100/);
-  assert.match(validate(pinPost({ pinterest: { description: `beta AI ${"y".repeat(800)}` } }), "pinterest").join(), /limit to 800/);
+  assert.match(validate(pinPost({ pinterest: { description: `AI ${"y".repeat(800)}` } }), "pinterest").join(), /limit to 800/);
   assert.match(validate(pinPost({ pinterest: { media: "media/obcy.jpg" } }), "pinterest").join(), /jednym z plików posta/);
   assert.match(validate(pinPost({ pinterest: { link: "https://bit.ly/x" } }), "pinterest").join(), /welife\.world/);
 });
