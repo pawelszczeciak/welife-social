@@ -1462,8 +1462,8 @@
     "updated_at": "2026-11-15T07:40:42.044Z"
   },
   "2026-11-15-0830-c7:instagram": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached",
     "history": [
       {
@@ -1475,6 +1475,10 @@
     ],
     "creation_id": "18009326039797171",
     "creation_at": "2026-11-15T07:40:42.044Z",
-    "updated_at": "2026-11-15T07:40:42.044Z"
+    "updated_at": "2026-11-15T08:45:35.452Z",
+    "id": "18122974271048275",
+    "permalink": "https://www.instagram.com/p/DfwRFVsFKlE/",
+    "reconciled_at": "2026-11-15T08:45:35.452Z",
+    "reconciled_container_status": "ERROR"
   }
 }
