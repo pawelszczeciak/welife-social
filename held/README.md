@@ -15,3 +15,12 @@ koncie utrudniają platformie dobranie widowni.
 
 W `en/` leżą angielskie pozycje, które czekały w kolejce (pliki media zostały w `media/`). Wrócą na osobnych
 kontach anglojęzycznych, gdy polskie zaczną działać. Wtedy: nowe `publish_at`, przeniesienie do `queue/`.
+
+### Nowy angielski zestaw (15.11.2026): R31–R38
+
+`en/*-r31-en.json` … `en/*-r38-en.json` to angielskie odpowiedniki polskich rolek R31–R38 (kolejka 18–21.11):
+nowy, morski wygląd, angielskie ekrany aplikacji, bez słowa „beta”, konto opisane jako bezpłatne. Daty w plikach są
+umowne (ten sam dzień co wersja polska, 15:00); przy uruchomieniu angielskiego konta ustaw nowe `publish_at` i `id`.
+
+Starsze pozycje w `en/` (sprzed 15.11) są w starej, zielonej szacie i piszą o wersji beta. Nie publikować ich bez
+ponownego renderu i przepisania opisów.

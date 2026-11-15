@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-20-1830-r34",
+  "publish_at": "2026-11-20T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R34.mp4"
+  ],
+  "cover": "media/R34-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.\n\nNie musisz pamiętać. W WE.LIFE klikasz „+ szklanka”, a licznik na Starcie pokazuje, ile już za Tobą. Jest obok propozycji obiadu, a plan posiłków masz pod ręką.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#woda #nawyki #planposiłków",
+  "facebook": {
+    "message": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.\n\nNie musisz pamiętać. W WE.LIFE klikasz „+ szklanka”, a licznik na Starcie pokazuje, ile już za Tobą. Jest obok propozycji obiadu, a plan posiłków masz pod ręką.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-20-1830-r34\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#woda #nawyki #planposiłków"
+  },
+  "pinterest": {
+    "title": "Licznik wody obok planu posiłków: ile szklanek już za Tobą",
+    "description": "Prosty licznik wody obok planu posiłków. W WE.LIFE klikasz „+ szklanka”, a na ekranie startowym widzisz, ile szklanek masz już za sobą. Bez osobnej aplikacji do picia wody. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

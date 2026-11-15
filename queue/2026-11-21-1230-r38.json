@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-21-1230-r38",
+  "publish_at": "2026-11-21T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R38.mp4"
+  ],
+  "cover": "media/R38-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu.\n\nGotowanie zaczyna się od kroku 1. W WE.LIFE wybierasz danie, klikasz „Zobacz przepis” i idziesz po kolei, bo każdy przepis ma kroki przygotowania. Tak plan posiłków zamienia się w obiad.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#gotowanie #przepisy #planposiłków",
+  "facebook": {
+    "message": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu.\n\nGotowanie zaczyna się od kroku 1. W WE.LIFE wybierasz danie, klikasz „Zobacz przepis” i idziesz po kolei, bo każdy przepis ma kroki przygotowania. Tak plan posiłków zamienia się w obiad.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-21-1230-r38\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#gotowanie #przepisy #planposiłków"
+  },
+  "pinterest": {
+    "title": "Przepisy krok po kroku w planie posiłków: gotowanie bez zgadywania",
+    "description": "Nie wiesz, od czego zacząć gotowanie? W WE.LIFE każdy przepis w planie posiłków ma kroki przygotowania po kolei. Wybierasz danie, otwierasz przepis i gotujesz bez zgadywania. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

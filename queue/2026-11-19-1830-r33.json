@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-19-1830-r33",
+  "publish_at": "2026-11-19T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R33.mp4"
+  ],
+  "cover": "media/R33-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Jesz przed treningiem czy po? Napisz PRZED albo PO.\n\nTrening i jedzenie zwykle żyją w dwóch aplikacjach. W WE.LIFE trening widzisz obok posiłków, a plan posiłków masz ułożony na cały tydzień. Wracasz do domu i wiesz, co jesz.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#trening #obiad #planposiłków",
+  "facebook": {
+    "message": "Jesz przed treningiem czy po? Napisz PRZED albo PO.\n\nTrening i jedzenie zwykle żyją w dwóch aplikacjach. W WE.LIFE trening widzisz obok posiłków, a plan posiłków masz ułożony na cały tydzień. Wracasz do domu i wiesz, co jesz.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-19-1830-r33\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#trening #obiad #planposiłków"
+  },
+  "pinterest": {
+    "title": "Plan posiłków i trening w jednej aplikacji",
+    "description": "Trening i plan posiłków na tydzień w jednym miejscu. W WE.LIFE zaplanowany trening widzisz obok posiłków na dany dzień, więc po powrocie wiesz, co jest na obiad. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-18-1830-r32",
+  "publish_at": "2026-11-18T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R32.mp4"
+  ],
+  "cover": "media/R32-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Liczby na ekranie czy jedzenie bez liczenia? Napisz A albo B.\n\nW WE.LIFE wybierasz tryb. Fit i forma pokazuje, ile kcal zostało Ci na dziś, a obok białko, węglowodany i tłuszcze. Na co dzień to plan posiłków i zakupy bez liczb. Tryb możesz zmienić później.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#kalorie #makro #planposiłków",
+  "facebook": {
+    "message": "Liczby na ekranie czy jedzenie bez liczenia? Napisz A albo B.\n\nW WE.LIFE wybierasz tryb. Fit i forma pokazuje, ile kcal zostało Ci na dziś, a obok białko, węglowodany i tłuszcze. Na co dzień to plan posiłków i zakupy bez liczb. Tryb możesz zmienić później.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-18-1830-r32\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#kalorie #makro #planposiłków"
+  },
+  "pinterest": {
+    "title": "Licznik kalorii i makro w planie posiłków: ile kcal zostało na dziś",
+    "description": "Plan posiłków z licznikiem kalorii: w trybie Fit i forma widzisz, ile kcal zostało na dziś, oraz białko, węglowodany i tłuszcze. Wolisz bez liczb? Tryb Na co dzień pokazuje plan posiłków i listę zakupów bez liczenia. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}
