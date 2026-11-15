@@ -1,12 +1,92 @@
 {
-  "collected_at": "2026-11-14T03:27:41.644Z",
+  "collected_at": "2026-11-15T03:32:04.991Z",
   "instagram": {
     "followers": 2,
-    "media_count": 52,
+    "media_count": 56,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-14-1830-r22",
+        "id": "17905146573372805",
+        "permalink": "https://www.instagram.com/reel/DfuwhpKjSql/",
+        "published_at": "2026-11-14T17:44:55+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R22.mp4",
+        "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-14-1500-c6b",
+        "id": "18106253804534002",
+        "permalink": "https://www.instagram.com/p/DfuYsvaDeIP/",
+        "published_at": "2026-11-14T14:08:52+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "15:00",
+        "media": "C6b.jpg",
+        "hook": "Co jesz, kiedy nie masz siły gotować? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-14-1230-r12",
+        "id": "17916101262500044",
+        "permalink": "https://www.instagram.com/reel/DfuHTpVGXEg/",
+        "published_at": "2026-11-14T11:37:18+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R12.mp4",
+        "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-14-0830-c6",
+        "id": "17917002147514525",
+        "permalink": "https://www.instagram.com/p/Dftr5IAl1cb/",
+        "published_at": "2026-11-14T07:37:26+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "C6.jpg",
+        "hook": "Co jesz, kiedy nie masz siły gotować? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-13-2000-r28",
         "id": "17915186751560245",
@@ -1057,6 +1137,38 @@
     ],
     "posts": [
       {
+        "key": "2026-11-14-1830-r22",
+        "id": "1609491084282635",
+        "published_at": "2026-11-14T17:36:47+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R22.mp4",
+        "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-14-1230-r12",
+        "id": "2075407626463435",
+        "published_at": "2026-11-14T11:37:28+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R12.mp4",
+        "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": null,
         "id": "1122848337324593",
         "published_at": "2026-11-12T09:01:18+0000",
@@ -1085,6 +1197,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-14-1830-r22",
+        "id": "6af89e0e8cb6271be710a80e",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708082588690189600?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-14T17:36:56.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R22.mp4",
+        "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
+        "views": 273,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-14-1230-r12",
+        "id": "6af86bd45dff7a3c4e93c026",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7707989980248919329?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-14T11:37:36.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R12.mp4",
+        "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu.",
+        "views": 260,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-13-2000-r28",
         "id": "6af77cd993baeb5077bc77c8",
         "permalink": "https://www.tiktok.com/@welife.world/video/7707735470674873632?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -1095,8 +1239,8 @@
         "slot": "20:00",
         "media": "R28.mp4",
         "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
-        "views": 354,
-        "likes": 0,
+        "views": 767,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -1111,8 +1255,8 @@
         "slot": "18:30",
         "media": "R21.mp4",
         "hook": "Czego nie znosisz w przepisach? Napisz w komentarzu.",
-        "views": 379,
-        "likes": 0,
+        "views": 772,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -1373,7 +1517,7 @@
         "slot": "12:30",
         "media": "R7.mp4",
         "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu.",
-        "views": 784,
+        "views": 785,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -1421,8 +1565,8 @@
         "slot": "15:00",
         "media": "R6-en.mp4",
         "hook": "What's your dinner on a bad day? Tell us in the comments.",
-        "views": 540,
-        "likes": 1,
+        "views": 0,
+        "likes": 0,
         "comments": 0,
         "shares": 0
       },
@@ -1437,8 +1581,8 @@
         "slot": "12:30",
         "media": "R6.mp4",
         "hook": "Jaki jest Twój obiad na gorszy dzień? Napisz w komentarzu.",
-        "views": 410,
-        "likes": 1,
+        "views": 0,
+        "likes": 0,
         "comments": 0,
         "shares": 0
       },
@@ -1501,8 +1645,8 @@
         "slot": "12:30",
         "media": "R2.mp4",
         "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu.",
-        "views": 922,
-        "likes": 1,
+        "views": 0,
+        "likes": 0,
         "comments": 0,
         "shares": 0
       },
@@ -1597,7 +1741,7 @@
         "slot": "12:30",
         "media": "R3.mp4",
         "hook": "Liczysz kalorie czy nie? Napisz TAK albo NIE w komentarzu.",
-        "views": 184,
+        "views": 0,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1620,13 +1764,20 @@
       }
     ]
   },
+  "youtube": {
+    "followers": null,
+    "missing": [
+      "Zernio /analytics: 0 filmów YouTube z 36 pozycji; pola: overview, posts, pagination, accounts, hasAnalyticsAccess; dostęp do statystyk: true"
+    ],
+    "posts": []
+  },
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 54,
+      "posts": 58,
       "by_kind": {
         "reel": {
-          "n": 37,
+          "n": 39,
           "median": 0,
           "total": 15,
           "likes": 15,
@@ -1635,7 +1786,7 @@
           "shares": 0
         },
         "image": {
-          "n": 8,
+          "n": 10,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -1655,7 +1806,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 28,
+          "n": 32,
           "median": 0,
           "total": 9,
           "likes": 9,
@@ -1674,17 +1825,8 @@
         }
       },
       "by_slot": {
-        "20:00": {
-          "n": 1,
-          "median": 0,
-          "total": 0,
-          "likes": 0,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
         "18:30": {
-          "n": 9,
+          "n": 10,
           "median": 0,
           "total": 4,
           "likes": 4,
@@ -1692,8 +1834,17 @@
           "saved": 0,
           "shares": 0
         },
+        "15:00": {
+          "n": 7,
+          "median": 1,
+          "total": 4,
+          "likes": 4,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "12:30": {
-          "n": 8,
+          "n": 9,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -1702,7 +1853,16 @@
           "shares": 0
         },
         "08:30": {
-          "n": 7,
+          "n": 8,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "20:00": {
+          "n": 1,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -1715,15 +1875,6 @@
           "median": 0,
           "total": 2,
           "likes": 2,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "15:00": {
-          "n": 6,
-          "median": 1,
-          "total": 4,
-          "likes": 4,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -1870,11 +2021,11 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 2,
+      "posts": 4,
       "by_kind": {
         "reel": {
-          "n": 2,
-          "median": 91.5,
+          "n": 4,
+          "median": 21.5,
           "total": 183,
           "likes": 0,
           "comments": 0,
@@ -1882,8 +2033,37 @@
           "shares": 0
         }
       },
-      "by_lang": {},
-      "by_slot": {},
+      "by_lang": {
+        "pl": {
+          "n": 2,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        }
+      },
+      "by_slot": {
+        "18:30": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "12:30": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        }
+      },
       "top": [
         {
           "key": null,
@@ -1898,9 +2078,49 @@
           "views": 43,
           "likes": 0,
           "shares": null
+        },
+        {
+          "key": "2026-11-14-1830-r22",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
+        },
+        {
+          "key": "2026-11-14-1230-r12",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
         }
       ],
       "bottom": [
+        {
+          "key": "2026-11-14-1230-r12",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-14-1830-r22",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
+        },
         {
           "key": null,
           "kind": "reel",
@@ -1919,13 +2139,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 34,
+      "posts": 36,
       "by_kind": {
         "reel": {
-          "n": 34,
-          "median": 543.5,
-          "total": 16608,
-          "likes": 19,
+          "n": 36,
+          "median": 531,
+          "total": 15892,
+          "likes": 20,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -1933,48 +2153,48 @@
       },
       "by_lang": {
         "pl": {
-          "n": 20,
+          "n": 22,
           "median": 751.5,
-          "total": 11182,
-          "likes": 17,
+          "total": 11006,
+          "likes": 19,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "en": {
           "n": 12,
-          "median": 298,
-          "total": 3955,
-          "likes": 1,
+          "median": 249.5,
+          "total": 3415,
+          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         }
       },
       "by_slot": {
-        "20:00": {
-          "n": 1,
-          "median": 354,
-          "total": 354,
-          "likes": 0,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
         "18:30": {
-          "n": 9,
-          "median": 379,
-          "total": 3746,
-          "likes": 7,
+          "n": 10,
+          "median": 509,
+          "total": 4412,
+          "likes": 10,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 8,
-          "median": 769,
-          "total": 5366,
-          "likes": 9,
+          "n": 9,
+          "median": 745,
+          "total": 4111,
+          "likes": 7,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "20:00": {
+          "n": 1,
+          "median": 767,
+          "total": 767,
+          "likes": 1,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -1990,9 +2210,9 @@
         },
         "15:00": {
           "n": 6,
-          "median": 527.5,
-          "total": 2815,
-          "likes": 1,
+          "median": 426,
+          "total": 2275,
+          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2017,16 +2237,6 @@
         }
       },
       "top": [
-        {
-          "key": "2026-11-06-1230-r2",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 922,
-          "likes": 1,
-          "shares": 0,
-          "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu."
-        },
         {
           "key": "2026-11-06-0745-r5-tiktok",
           "kind": "reel",
@@ -2066,6 +2276,16 @@
           "likes": 1,
           "shares": 0,
           "hook": "Który posiłek najczęściej pomijasz: śniadanie, obiad czy kolację? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-08-1230-r7",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 785,
+          "likes": 1,
+          "shares": 0,
+          "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -2078,6 +2298,16 @@
           "likes": 0,
           "shares": 0,
           "hook": "Co najczęściej zostaje Ci w lodówce? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-05-1230-r3",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Liczysz kalorie czy nie? Napisz TAK albo NIE w komentarzu."
         },
         {
           "key": "2026-11-05-1830-r13",
@@ -2100,26 +2330,25 @@
           "hook": "Do you know in the morning what's for dinner, or decide at 6 pm? Comment A or B."
         },
         {
-          "key": "2026-11-08-1830-r16",
+          "key": "2026-11-06-1230-r2",
           "kind": "reel",
           "lang": "pl",
-          "slot": "18:30",
+          "slot": "12:30",
           "views": 0,
           "likes": 0,
           "shares": 0,
-          "hook": "Co najczęściej wyrzucasz z lodówki? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-08-2100-r16-en",
-          "kind": "reel",
-          "lang": "en",
-          "slot": "21:00",
-          "views": 0,
-          "likes": 0,
-          "shares": 0,
-          "hook": "What do you throw away most from your fridge? Tell us in the comments."
+          "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu."
         }
       ]
+    },
+    "youtube": {
+      "metric": "reactions",
+      "posts": 0,
+      "by_kind": {},
+      "by_lang": {},
+      "by_slot": {},
+      "top": [],
+      "bottom": []
     }
   },
   "api_usage": {
