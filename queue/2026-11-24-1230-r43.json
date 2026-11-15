@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-24-1230-r43",
+  "publish_at": "2026-11-24T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R43.mp4"
+  ],
+  "cover": "media/R43-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Jaki obiad robisz, gdy masz 35 minut? Napisz w komentarzu.\n\nNa Starcie WE.LIFE czeka propozycja na dziś, na przykład pieczona pierś z kurczaka z warzywami na 35 minut. Klikasz „Zobacz przepis” i gotujesz. Nie pasuje? „Pokaż inne”. Tak plan posiłków zaczyna się bez wymyślania.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#szybkiobiad #obiad #planposiłków",
+  "facebook": {
+    "message": "Jaki obiad robisz, gdy masz 35 minut? Napisz w komentarzu.\n\nNa Starcie WE.LIFE czeka propozycja na dziś, na przykład pieczona pierś z kurczaka z warzywami na 35 minut. Klikasz „Zobacz przepis” i gotujesz. Nie pasuje? „Pokaż inne”. Tak plan posiłków zaczyna się bez wymyślania.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-24-1230-r43\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#szybkiobiad #obiad #planposiłków"
+  },
+  "pinterest": {
+    "title": "Szybki obiad w 35 minut: pieczona pierś z kurczaka z warzywami",
+    "description": "Pomysł na szybki obiad bez wymyślania: pieczona pierś z kurczaka z warzywami w 35 minut. W WE.LIFE taka propozycja na dziś czeka na ekranie startowym, a przepis otwierasz jednym kliknięciem. Plan posiłków na tydzień masz w tym samym miejscu. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

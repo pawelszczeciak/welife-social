@@ -1,0 +1,30 @@
+{
+  "id": "2026-11-22-0830-k8",
+  "publish_at": "2026-11-22T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K8-01.jpg",
+    "media/K8-02.jpg",
+    "media/K8-03.jpg",
+    "media/K8-04.jpg",
+    "media/K8-05.jpg",
+    "media/K8-06.jpg",
+    "media/K8-07.jpg",
+    "media/K8-08.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Który z tych 4 kroków robisz przed zakupami? Napisz numer w komentarzu.\n\nPrzegląd lodówki w 4 krokach: najpierw to, co ma krótki termin, potem otwarte słoiki i sosy, miękkie warzywa na zupę albo patelnię, a na koniec zapis tego, co zostało. Dopiero wtedy plan posiłków i lista zakupów. Krok 4 robisz w WE.LIFE: Spiżarnia pokazuje, co ma termin dziś, a co za 2 dni. Zapisz ten post na niedzielę.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#lodówka #mniejmarnowania #planposiłków",
+  "facebook": {
+    "message": "Który z tych 4 kroków robisz przed zakupami? Napisz numer w komentarzu.\n\nPrzegląd lodówki w 4 krokach: najpierw to, co ma krótki termin, potem otwarte słoiki i sosy, miękkie warzywa na zupę albo patelnię, a na koniec zapis tego, co zostało. Dopiero wtedy plan posiłków i lista zakupów. Krok 4 robisz w WE.LIFE: Spiżarnia pokazuje, co ma termin dziś, a co za 2 dni. Zapisz ten post na niedzielę.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-22-0830-k8\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#lodówka #mniejmarnowania #planposiłków"
+  },
+  "pinterest": {
+    "title": "Przegląd lodówki w 4 krokach przed planem posiłków na tydzień",
+    "description": "Zanim ułożysz plan posiłków na tydzień: wyjmij to, co ma krótki termin, sprawdź otwarte słoiki i sosy, miękkie warzywa przeznacz na zupę, a na koniec zapisz, co zostało. W WE.LIFE Spiżarnia pokazuje, co ma termin dziś, a co za 2 dni. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K8-06.jpg"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "2026-11-24-0830-k9",
+  "publish_at": "2026-11-24T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K9-01.jpg",
+    "media/K9-02.jpg",
+    "media/K9-03.jpg",
+    "media/K9-04.jpg",
+    "media/K9-05.jpg",
+    "media/K9-06.jpg",
+    "media/K9-07.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Wieczór w kuchni: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nO 18:00 wiesz, co gotujesz, czy otwierasz lodówkę i myślisz? Brakuje składnika: zamieniasz czy idziesz do sklepu? Za dużo ugotowane: jutro na lunch czy do kosza? Kolacja ciepła czy kanapka? W WE.LIFE na Starcie czeka propozycja na dziś, a plan posiłków na cały tydzień jest obok.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#obiad #kolacja #planposiłków",
+  "facebook": {
+    "message": "Wieczór w kuchni: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nO 18:00 wiesz, co gotujesz, czy otwierasz lodówkę i myślisz? Brakuje składnika: zamieniasz czy idziesz do sklepu? Za dużo ugotowane: jutro na lunch czy do kosza? Kolacja ciepła czy kanapka? W WE.LIFE na Starcie czeka propozycja na dziś, a plan posiłków na cały tydzień jest obok.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-24-0830-k9\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#obiad #kolacja #planposiłków"
+  },
+  "pinterest": {
+    "title": "Co na obiad o 18:00? Propozycja na dziś i plan posiłków na tydzień",
+    "description": "Koniec z pytaniem, co na obiad o 18:00. W WE.LIFE na ekranie startowym czeka propozycja na dziś, a obiady na cały tydzień masz w planie posiłków. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K9-06.jpg"
+  }
+}

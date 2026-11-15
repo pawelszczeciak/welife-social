@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-22-1230-r39",
+  "publish_at": "2026-11-22T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R39.mp4"
+  ],
+  "cover": "media/R39-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.\n\nW WE.LIFE plan posiłków rozpisujesz na cały tydzień. Przy każdym posiłku widzisz zdjęcie i szacowany koszt porcji, a lista zakupów powstaje z planu i ma tylko to, czego brakuje.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#obiadnatydzień #mealprep #planposiłków",
+  "facebook": {
+    "message": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.\n\nW WE.LIFE plan posiłków rozpisujesz na cały tydzień. Przy każdym posiłku widzisz zdjęcie i szacowany koszt porcji, a lista zakupów powstaje z planu i ma tylko to, czego brakuje.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-22-1230-r39\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#obiadnatydzień #mealprep #planposiłków"
+  },
+  "pinterest": {
+    "title": "Plan posiłków na tydzień w niedzielę: obiady i lista zakupów gotowe",
+    "description": "Niedziela i plan obiadów na cały tydzień gotowy. W WE.LIFE przy każdym posiłku widzisz zdjęcie i szacowany koszt porcji, a lista zakupów powstaje z planu posiłków i ma tylko to, czego brakuje. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

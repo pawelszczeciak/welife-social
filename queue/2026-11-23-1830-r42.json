@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-23-1830-r42",
+  "publish_at": "2026-11-23T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R42.mp4"
+  ],
+  "cover": "media/R42-cover.jpg",
+  "ai_imagery": true,
+  "caption": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.\n\nW WE.LIFE zielony przycisk eNzi masz pod ręką. Pytasz, co ugotować z tego, co masz, a plan posiłków, zakupy i Spiżarnię obsłużysz też w rozmowie. eNzi podpowiada, decyzja jest Twoja.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#conaobiad #szybkiobiad #planposiłków",
+  "facebook": {
+    "message": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.\n\nW WE.LIFE zielony przycisk eNzi masz pod ręką. Pytasz, co ugotować z tego, co masz, a plan posiłków, zakupy i Spiżarnię obsłużysz też w rozmowie. eNzi podpowiada, decyzja jest Twoja.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-23-1830-r42\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#conaobiad #szybkiobiad #planposiłków"
+  },
+  "pinterest": {
+    "title": "Co ugotować z tego, co masz? Asystent eNzi w planie posiłków",
+    "description": "Nie wiesz, co ugotować wieczorem? W WE.LIFE pytasz asystenta eNzi, co zrobić z tego, co masz w domu. Plan posiłków, zakupy i spiżarnię obsłużysz też w rozmowie. eNzi podpowiada, decyzja jest Twoja. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

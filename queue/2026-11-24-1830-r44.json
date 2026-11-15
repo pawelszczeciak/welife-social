@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-24-1830-r44",
+  "publish_at": "2026-11-24T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R44.mp4"
+  ],
+  "cover": "media/R44-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Co najczęściej przeterminowuje Ci się w lodówce? Napisz A albo B.\n\nW WE.LIFE na Starcie widzisz kartę Spiżarni: co jest po terminie, co ma termin dziś, a co za 2 dni. Widzisz to, zanim zapomnisz, i układasz plan posiłków pod to, co trzeba zużyć.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#mniejmarnowania #lodówka #planposiłków",
+  "facebook": {
+    "message": "Co najczęściej przeterminowuje Ci się w lodówce? Napisz A albo B.\n\nW WE.LIFE na Starcie widzisz kartę Spiżarni: co jest po terminie, co ma termin dziś, a co za 2 dni. Widzisz to, zanim zapomnisz, i układasz plan posiłków pod to, co trzeba zużyć.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-24-1830-r44\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#mniejmarnowania #lodówka #planposiłków"
+  },
+  "pinterest": {
+    "title": "Jak mniej wyrzucać jedzenia: spiżarnia z terminami ważności",
+    "description": "Jogurt po terminie znowu w koszu? W WE.LIFE karta Spiżarni na ekranie startowym pokazuje, co jest po terminie, co ma termin dziś, a co za 2 dni. Plan posiłków układasz pod to, co trzeba zużyć. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

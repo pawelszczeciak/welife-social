@@ -1,0 +1,29 @@
+{
+  "id": "2026-11-20-0830-k7",
+  "publish_at": "2026-11-20T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K7-01.jpg",
+    "media/K7-02.jpg",
+    "media/K7-03.jpg",
+    "media/K7-04.jpg",
+    "media/K7-05.jpg",
+    "media/K7-06.jpg",
+    "media/K7-07.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Zakupy: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nJeden duży sklep czy kilka małych, lista w telefonie czy na kartce, promocja na zapas czy tylko z listy, a po zakupach szafki od razu czy najpierw daty. Masz plan posiłków? Lista zakupów z WE.LIFE pasuje do każdej odpowiedzi: ma ilości z przepisów i odejmuje to, co już masz.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#zakupy #listazakupów #planposiłków",
+  "facebook": {
+    "message": "Zakupy: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nJeden duży sklep czy kilka małych, lista w telefonie czy na kartce, promocja na zapas czy tylko z listy, a po zakupach szafki od razu czy najpierw daty. Masz plan posiłków? Lista zakupów z WE.LIFE pasuje do każdej odpowiedzi: ma ilości z przepisów i odejmuje to, co już masz.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-20-0830-k7\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#zakupy #listazakupów #planposiłków"
+  },
+  "pinterest": {
+    "title": "Lista zakupów z ilościami: potrzebuję, mam, brakuje",
+    "description": "Lista zakupów, która liczy za Ciebie. W WE.LIFE lista powstaje z planu posiłków na tydzień, ma ilości z przepisów i pokazuje, ile potrzebujesz, ile masz i ile brakuje. Kupujesz tylko to, czego brakuje. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K7-06.jpg"
+  }
+}

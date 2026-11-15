@@ -1,0 +1,31 @@
+{
+  "id": "2026-11-19-0830-k6",
+  "publish_at": "2026-11-19T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K6-01.jpg",
+    "media/K6-02.jpg",
+    "media/K6-03.jpg",
+    "media/K6-04.jpg",
+    "media/K6-05.jpg",
+    "media/K6-06.jpg",
+    "media/K6-07.jpg",
+    "media/K6-08.jpg",
+    "media/K6-09.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Ile z tych 5 robisz przy gotowaniu? Napisz wynik w komentarzu.\n\nCzytasz cały przepis, zanim zaczniesz. Wyjmujesz składniki na blat. Gotujesz tyle porcji, ile osób je. Resztki chowasz od razu. Rano wiesz, co będzie na obiad. Punkty 1 i 5 masz w WE.LIFE: przepis z krokami po kolei i propozycję na dziś, a plan posiłków na tydzień obok.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#gotowanie #przepisy #planposiłków",
+  "facebook": {
+    "message": "Ile z tych 5 robisz przy gotowaniu? Napisz wynik w komentarzu.\n\nCzytasz cały przepis, zanim zaczniesz. Wyjmujesz składniki na blat. Gotujesz tyle porcji, ile osób je. Resztki chowasz od razu. Rano wiesz, co będzie na obiad. Punkty 1 i 5 masz w WE.LIFE: przepis z krokami po kolei i propozycję na dziś, a plan posiłków na tydzień obok.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-19-0830-k6\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#gotowanie #przepisy #planposiłków"
+  },
+  "pinterest": {
+    "title": "5 nawyków przy gotowaniu: przepis krok po kroku i plan posiłków",
+    "description": "Pięć prostych nawyków w kuchni: czytasz cały przepis przed gotowaniem, wyjmujesz składniki na blat, gotujesz tyle porcji, ile osób je, chowasz resztki od razu i rano wiesz, co będzie na obiad. W WE.LIFE przepis ma kroki po kolei, a na ekranie startowym czeka propozycja obiadu na dziś. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K6-08.jpg"
+  }
+}
