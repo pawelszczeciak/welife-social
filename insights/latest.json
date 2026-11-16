@@ -1,12 +1,132 @@
 {
-  "collected_at": "2026-11-15T03:32:04.991Z",
+  "collected_at": "2026-11-16T03:33:46.973Z",
   "instagram": {
     "followers": 2,
-    "media_count": 56,
+    "media_count": 62,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-15-2000-r30",
+        "id": "17911879047571536",
+        "permalink": "https://www.instagram.com/reel/DfxfxS8FKWg/",
+        "published_at": "2026-11-15T19:08:46+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "20:00",
+        "media": "R30.mp4",
+        "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-15-1830-r24",
+        "id": "18118114046144145",
+        "permalink": "https://www.instagram.com/reel/DfxVQ8YiR34/",
+        "published_at": "2026-11-15T17:36:53+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R24.mp4",
+        "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-15-1700-r29",
+        "id": "18373894015213342",
+        "permalink": "https://www.instagram.com/reel/DfxLcXpEgOv/",
+        "published_at": "2026-11-15T16:11:09+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "17:00",
+        "media": "R29.mp4",
+        "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-15-1500-r28",
+        "id": "18119572421006311",
+        "permalink": "https://www.instagram.com/reel/Dfw9h3WFCeG/",
+        "published_at": "2026-11-15T14:09:34+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "15:00",
+        "media": "R28.mp4",
+        "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
+        "likes": 1,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-15-1230-r23",
+        "id": "17916215550500028",
+        "permalink": "https://www.instagram.com/reel/DfwsI7XjiOw/",
+        "published_at": "2026-11-15T11:37:34+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R23.mp4",
+        "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-15-0830-c7",
+        "id": "18122974271048275",
+        "permalink": "https://www.instagram.com/p/DfwRFVsFKlE/",
+        "published_at": "2026-11-15T07:40:48+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "C7.jpg",
+        "hook": "Wpisujesz zakupy do aplikacji czy to za dużo zachodu? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-14-1830-r22",
         "id": "17905146573372805",
@@ -1137,6 +1257,86 @@
     ],
     "posts": [
       {
+        "key": "2026-11-15-2000-r30",
+        "id": "1640576664200622",
+        "published_at": "2026-11-15T19:08:55+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "20:00",
+        "media": "R30.mp4",
+        "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-15-1830-r24",
+        "id": "2074786946498888",
+        "published_at": "2026-11-15T17:37:01+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R24.mp4",
+        "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-15-1700-r29",
+        "id": "28783076751393585",
+        "published_at": "2026-11-15T16:11:17+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "17:00",
+        "media": "R29.mp4",
+        "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-15-1500-r28",
+        "id": "41222834020649142",
+        "published_at": "2026-11-15T14:09:43+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "15:00",
+        "media": "R28.mp4",
+        "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-15-1230-r23",
+        "id": "1367315505334611",
+        "published_at": "2026-11-15T11:37:44+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R23.mp4",
+        "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-14-1830-r22",
         "id": "1609491084282635",
         "published_at": "2026-11-14T17:36:47+0000",
@@ -1146,7 +1346,7 @@
         "slot": "18:30",
         "media": "R22.mp4",
         "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
-        "views": 0,
+        "views": 1,
         "reactions": 0,
         "comments": 0,
         "shares": null,
@@ -1196,6 +1396,86 @@
     "followers": 1,
     "missing": [],
     "posts": [
+      {
+        "key": "2026-11-15-2000-r30",
+        "id": "6afa2a06e45e373b2d200ed8",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708477419736419616?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-15T19:09:06.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "20:00",
+        "media": "R30.mp4",
+        "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu.",
+        "views": 259,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1830-r24",
+        "id": "6af9f3680257ad8ffecfa355",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708453746656677153?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-15T17:37:11.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R24.mp4",
+        "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu.",
+        "views": 270,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1700-r29",
+        "id": "6af9f3680257ad8ffecfa354",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708431640313220384?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-15T16:11:27.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "17:00",
+        "media": "R29.mp4",
+        "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ.",
+        "views": 259,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1500-r28",
+        "id": "6af9c01f49d1581f68da534b",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708400311441919265?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-15T14:09:53.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "15:00",
+        "media": "R28.mp4",
+        "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
+        "views": 245,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1230-r23",
+        "id": "6af9c01f49d1581f68da534a",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708361130388786465?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-15T11:37:53.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R23.mp4",
+        "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B.",
+        "views": 252,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
       {
         "key": "2026-11-14-1830-r22",
         "id": "6af89e0e8cb6271be710a80e",
@@ -1325,7 +1605,7 @@
         "permalink": "https://www.tiktok.com/@welife.world/video/7707015339799743766?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
         "published_at": "2026-11-11T20:35:48.000Z",
         "kind": "reel",
-        "views": 746,
+        "views": 747,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -1565,8 +1845,8 @@
         "slot": "15:00",
         "media": "R6-en.mp4",
         "hook": "What's your dinner on a bad day? Tell us in the comments.",
-        "views": 0,
-        "likes": 0,
+        "views": 540,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -1581,8 +1861,8 @@
         "slot": "12:30",
         "media": "R6.mp4",
         "hook": "Jaki jest Twój obiad na gorszy dzień? Napisz w komentarzu.",
-        "views": 0,
-        "likes": 0,
+        "views": 410,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -1645,8 +1925,8 @@
         "slot": "12:30",
         "media": "R2.mp4",
         "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu.",
-        "views": 0,
-        "likes": 0,
+        "views": 924,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -1741,7 +2021,7 @@
         "slot": "12:30",
         "media": "R3.mp4",
         "hook": "Liczysz kalorie czy nie? Napisz TAK albo NIE w komentarzu.",
-        "views": 0,
+        "views": 184,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1766,27 +2046,138 @@
   },
   "youtube": {
     "followers": null,
-    "missing": [
-      "Zernio /analytics: 0 filmów YouTube z 36 pozycji; pola: overview, posts, pagination, accounts, hasAnalyticsAccess; dostęp do statystyk: true"
-    ],
-    "posts": []
+    "missing": [],
+    "posts": [
+      {
+        "key": "2026-11-15-2000-r30",
+        "id": "6afa35374803ccde4dde3b31",
+        "permalink": "https://www.youtube.com/watch?v=oUktcLICNVU",
+        "published_at": "2026-11-15T19:09:37.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "20:00",
+        "media": "R30.mp4",
+        "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu.",
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1830-r24",
+        "id": "6af9f6cb0257ad8ffed061d3",
+        "permalink": "https://www.youtube.com/watch?v=py7Fnm1xFKQ",
+        "published_at": "2026-11-15T17:37:50.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R24.mp4",
+        "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu.",
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1700-r29",
+        "id": "6af9f6cb0257ad8ffed061d2",
+        "permalink": "https://www.youtube.com/watch?v=1C1QIqnwdtk",
+        "published_at": "2026-11-15T16:12:01.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "17:00",
+        "media": "R29.mp4",
+        "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ.",
+        "views": 47,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1500-r28",
+        "id": "6af9c10e9343947f3e7a565c",
+        "permalink": "https://www.youtube.com/watch?v=jFawhbaWfjE",
+        "published_at": "2026-11-15T14:10:21.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "15:00",
+        "media": "R28.mp4",
+        "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
+        "views": 56,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-15-1230-r23",
+        "id": "6af9c10e9343947f3e7a565b",
+        "permalink": "https://www.youtube.com/watch?v=e6WTygn7FHw",
+        "published_at": "2026-11-15T11:38:22.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R23.mp4",
+        "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B.",
+        "views": 72,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-14-1830-r22",
+        "id": "6af927bc2c8979d2af4776b9",
+        "permalink": "https://www.youtube.com/watch?v=foywPefbCL0",
+        "published_at": "2026-11-14T17:37:36.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R22.mp4",
+        "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
+        "views": 49,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-14-1230-r12",
+        "id": "6af927bc2c8979d2af4776ba",
+        "permalink": "https://www.youtube.com/watch?v=FWImepPf_xc",
+        "published_at": "2026-11-14T11:38:21.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R12.mp4",
+        "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu.",
+        "views": 401,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      }
+    ]
   },
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 58,
+      "posts": 64,
       "by_kind": {
         "reel": {
-          "n": 39,
+          "n": 44,
           "median": 0,
-          "total": 15,
-          "likes": 15,
+          "total": 16,
+          "likes": 16,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "image": {
-          "n": 10,
+          "n": 11,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -1806,10 +2197,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 32,
+          "n": 38,
           "median": 0,
-          "total": 9,
-          "likes": 9,
+          "total": 10,
+          "likes": 10,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -1825,8 +2216,17 @@
         }
       },
       "by_slot": {
+        "20:00": {
+          "n": 2,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "18:30": {
-          "n": 10,
+          "n": 11,
           "median": 0,
           "total": 4,
           "likes": 4,
@@ -1834,17 +2234,26 @@
           "saved": 0,
           "shares": 0
         },
+        "17:00": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "15:00": {
-          "n": 7,
+          "n": 8,
           "median": 1,
-          "total": 4,
-          "likes": 4,
+          "total": 5,
+          "likes": 5,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 9,
+          "n": 10,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -1853,16 +2262,7 @@
           "shares": 0
         },
         "08:30": {
-          "n": 8,
-          "median": 0,
-          "total": 0,
-          "likes": 0,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "20:00": {
-          "n": 1,
+          "n": 9,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -1929,6 +2329,17 @@
           "hook": "Trzeci słoik passaty w szafce to nie przypadek. To lista zakupów pisana z pamięci."
         },
         {
+          "key": "2026-11-15-1500-r28",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "15:00",
+          "likes": 1,
+          "saved": null,
+          "shares": null,
+          "avg_watch_s": null,
+          "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę."
+        },
+        {
           "key": "2026-11-13-1830-r21",
           "kind": "reel",
           "lang": "pl",
@@ -1938,14 +2349,6 @@
           "shares": null,
           "avg_watch_s": null,
           "hook": "Czego nie znosisz w przepisach? Napisz w komentarzu."
-        },
-        {
-          "key": null,
-          "kind": "carousel",
-          "likes": 1,
-          "saved": null,
-          "shares": null,
-          "avg_watch_s": null
         },
         {
           "key": null,
@@ -2021,12 +2424,12 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 4,
+      "posts": 9,
       "by_kind": {
         "reel": {
-          "n": 4,
-          "median": 21.5,
-          "total": 183,
+          "n": 9,
+          "median": 0,
+          "total": 184,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2035,9 +2438,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 2,
+          "n": 7,
           "median": 0,
-          "total": 0,
+          "total": 1,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2045,7 +2448,34 @@
         }
       },
       "by_slot": {
+        "20:00": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "18:30": {
+          "n": 2,
+          "median": 0.5,
+          "total": 1,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "17:00": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "15:00": {
           "n": 1,
           "median": 0,
           "total": 0,
@@ -2055,7 +2485,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 1,
+          "n": 2,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -2084,20 +2514,30 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 0,
+          "views": 1,
           "likes": 0,
           "shares": null,
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-14-1230-r12",
+          "key": "2026-11-15-2000-r30",
           "kind": "reel",
           "lang": "pl",
-          "slot": "12:30",
+          "slot": "20:00",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
+          "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-15-1830-r24",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -2112,40 +2552,56 @@
           "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
         },
         {
-          "key": "2026-11-14-1830-r22",
+          "key": "2026-11-15-1230-r23",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B."
+        },
+        {
+          "key": "2026-11-15-1500-r28",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "15:00",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę."
+        },
+        {
+          "key": "2026-11-15-1700-r29",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "17:00",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ."
+        },
+        {
+          "key": "2026-11-15-1830-r24",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
-        },
-        {
-          "key": null,
-          "kind": "reel",
-          "views": 43,
-          "likes": 0,
-          "shares": null
-        },
-        {
-          "key": null,
-          "kind": "reel",
-          "views": 140,
-          "likes": 0,
-          "shares": null
+          "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu."
         }
       ]
     },
     "tiktok": {
       "metric": "views",
-      "posts": 36,
+      "posts": 41,
       "by_kind": {
         "reel": {
-          "n": 36,
-          "median": 531,
-          "total": 15892,
-          "likes": 20,
+          "n": 41,
+          "median": 515,
+          "total": 19236,
+          "likes": 25,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2153,48 +2609,66 @@
       },
       "by_lang": {
         "pl": {
-          "n": 22,
-          "median": 751.5,
-          "total": 11006,
-          "likes": 19,
+          "n": 27,
+          "median": 745,
+          "total": 13809,
+          "likes": 23,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "en": {
           "n": 12,
-          "median": 249.5,
-          "total": 3415,
-          "likes": 0,
+          "median": 298,
+          "total": 3955,
+          "likes": 1,
           "comments": 0,
           "saved": 0,
           "shares": 0
         }
       },
       "by_slot": {
+        "20:00": {
+          "n": 2,
+          "median": 513,
+          "total": 1026,
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "18:30": {
-          "n": 10,
-          "median": 509,
-          "total": 4412,
-          "likes": 10,
+          "n": 11,
+          "median": 273,
+          "total": 4682,
+          "likes": 11,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "17:00": {
+          "n": 1,
+          "median": 259,
+          "total": 259,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "15:00": {
+          "n": 7,
+          "median": 515,
+          "total": 3060,
+          "likes": 1,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 9,
-          "median": 745,
-          "total": 4111,
-          "likes": 7,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "20:00": {
-          "n": 1,
-          "median": 767,
-          "total": 767,
-          "likes": 1,
+          "n": 10,
+          "median": 751.5,
+          "total": 5881,
+          "likes": 9,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2203,15 +2677,6 @@
           "n": 6,
           "median": 61,
           "total": 1140,
-          "likes": 0,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "15:00": {
-          "n": 6,
-          "median": 426,
-          "total": 2275,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2237,6 +2702,16 @@
         }
       },
       "top": [
+        {
+          "key": "2026-11-06-1230-r2",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 924,
+          "likes": 1,
+          "shares": 0,
+          "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu."
+        },
         {
           "key": "2026-11-06-0745-r5-tiktok",
           "kind": "reel",
@@ -2276,16 +2751,6 @@
           "likes": 1,
           "shares": 0,
           "hook": "Który posiłek najczęściej pomijasz: śniadanie, obiad czy kolację? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-08-1230-r7",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 785,
-          "likes": 1,
-          "shares": 0,
-          "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -2298,16 +2763,6 @@
           "likes": 0,
           "shares": 0,
           "hook": "Co najczęściej zostaje Ci w lodówce? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-05-1230-r3",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 0,
-          "likes": 0,
-          "shares": 0,
-          "hook": "Liczysz kalorie czy nie? Napisz TAK albo NIE w komentarzu."
         },
         {
           "key": "2026-11-05-1830-r13",
@@ -2330,25 +2785,203 @@
           "hook": "Do you know in the morning what's for dinner, or decide at 6 pm? Comment A or B."
         },
         {
-          "key": "2026-11-06-1230-r2",
+          "key": "2026-11-08-1830-r16",
           "kind": "reel",
           "lang": "pl",
-          "slot": "12:30",
+          "slot": "18:30",
           "views": 0,
           "likes": 0,
           "shares": 0,
-          "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu."
+          "hook": "Co najczęściej wyrzucasz z lodówki? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-08-2100-r16-en",
+          "kind": "reel",
+          "lang": "en",
+          "slot": "21:00",
+          "views": 0,
+          "likes": 0,
+          "shares": 0,
+          "hook": "What do you throw away most from your fridge? Tell us in the comments."
         }
       ]
     },
     "youtube": {
-      "metric": "reactions",
-      "posts": 0,
-      "by_kind": {},
-      "by_lang": {},
-      "by_slot": {},
-      "top": [],
-      "bottom": []
+      "metric": "views",
+      "posts": 7,
+      "by_kind": {
+        "reel": {
+          "n": 7,
+          "median": 49,
+          "total": 625,
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        }
+      },
+      "by_lang": {
+        "pl": {
+          "n": 7,
+          "median": 49,
+          "total": 625,
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        }
+      },
+      "by_slot": {
+        "20:00": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "18:30": {
+          "n": 2,
+          "median": 24.5,
+          "total": 49,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "17:00": {
+          "n": 1,
+          "median": 47,
+          "total": 47,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "15:00": {
+          "n": 1,
+          "median": 56,
+          "total": 56,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "12:30": {
+          "n": 2,
+          "median": 236.5,
+          "total": 473,
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        }
+      },
+      "top": [
+        {
+          "key": "2026-11-14-1230-r12",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 401,
+          "likes": 1,
+          "shares": 0,
+          "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-15-1230-r23",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 72,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B."
+        },
+        {
+          "key": "2026-11-15-1500-r28",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "15:00",
+          "views": 56,
+          "likes": 0,
+          "shares": 0,
+          "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę."
+        },
+        {
+          "key": "2026-11-14-1830-r22",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 49,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
+        },
+        {
+          "key": "2026-11-15-1700-r29",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "17:00",
+          "views": 47,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ."
+        }
+      ],
+      "bottom": [
+        {
+          "key": "2026-11-15-1830-r24",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 0,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-15-2000-r30",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "20:00",
+          "views": 0,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-15-1700-r29",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "17:00",
+          "views": 47,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ."
+        },
+        {
+          "key": "2026-11-14-1830-r22",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 49,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
+        },
+        {
+          "key": "2026-11-15-1500-r28",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "15:00",
+          "views": 56,
+          "likes": 0,
+          "shares": 0,
+          "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę."
+        }
+      ]
     }
   },
   "api_usage": {
