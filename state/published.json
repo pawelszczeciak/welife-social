@@ -1496,6 +1496,11 @@
     "reconciled_at": "2026-11-15T08:45:35.452Z",
     "reconciled_container_status": "ERROR"
   },
+  "2026-11-15-0830-c7:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-16T07:52:33.526Z"
+  },
   "2026-11-15-1230-r23:facebook": {
     "attempts": 1,
     "status": "published",
@@ -1670,5 +1675,28 @@
     "permalink": "https://www.youtube.com/watch?v=oUktcLICNVU",
     "published_at": "2026-11-15T19:09:25.537Z",
     "updated_at": "2026-11-15T19:07:40.543Z"
+  },
+  "2026-11-16-0830-c8:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122126178225483309",
+    "published_at": "2026-11-16T07:52:46.020Z",
+    "updated_at": "2026-11-16T07:52:33.526Z"
+  },
+  "2026-11-16-0830-c8:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached",
+    "history": [
+      {
+        "at": "2026-11-16T07:52:33.526Z",
+        "stage": "publish",
+        "code": 4,
+        "error": "Graph API POST 17841453915108697/media_publish: Application request limit reached"
+      }
+    ],
+    "creation_id": "18009669011797171",
+    "creation_at": "2026-11-16T07:52:33.526Z",
+    "updated_at": "2026-11-16T07:52:33.526Z"
   }
 }
