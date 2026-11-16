@@ -1556,6 +1556,11 @@
     "published_at": "2026-11-15T14:09:42.287Z",
     "updated_at": "2026-11-15T14:08:52.896Z"
   },
+  "2026-11-15-1500-r28:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-16T14:00:59.841Z"
+  },
   "2026-11-15-1500-r28:tiktok": {
     "attempts": 1,
     "status": "published",
