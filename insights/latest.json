@@ -1,12 +1,72 @@
 {
-  "collected_at": "2026-11-16T03:33:46.973Z",
+  "collected_at": "2026-11-17T03:28:54.445Z",
   "instagram": {
     "followers": 2,
-    "media_count": 62,
+    "media_count": 65,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-16-1830-r26",
+        "id": "18343094038258816",
+        "permalink": "https://www.instagram.com/reel/Dfz6nXbiikk/",
+        "published_at": "2026-11-16T17:41:52+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R26.mp4",
+        "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-16-1230-r25",
+        "id": "18434258839151800",
+        "permalink": "https://www.instagram.com/reel/DfzRwLEDTGQ/",
+        "published_at": "2026-11-16T11:44:42+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R25.mp4",
+        "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-16-0830-c8",
+        "id": "18057511316588063",
+        "permalink": "https://www.instagram.com/p/Dfy3PAOmBO5/",
+        "published_at": "2026-11-16T07:52:40+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "C8.jpg",
+        "hook": "Jaki przepis chcesz wreszcie ugotować? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-15-2000-r30",
         "id": "17911879047571536",
@@ -1257,6 +1317,38 @@
     ],
     "posts": [
       {
+        "key": "2026-11-16-1830-r26",
+        "id": "1116859941142049",
+        "published_at": "2026-11-16T17:42:59+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R26.mp4",
+        "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-16-1230-r25",
+        "id": "1600387228071874",
+        "published_at": "2026-11-16T11:44:51+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R25.mp4",
+        "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-15-2000-r30",
         "id": "1640576664200622",
         "published_at": "2026-11-15T19:08:55+0000",
@@ -1397,6 +1489,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-16-1830-r26",
+        "id": "6afb70c5eec2c0a014621531",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708826384482700576?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-16T17:43:15.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R26.mp4",
+        "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE.",
+        "views": 245,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-16-1230-r25",
+        "id": "6afb3a3418a277ac71de73db",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7708734066077601056?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-16T11:45:00.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R25.mp4",
+        "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu.",
+        "views": 258,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-15-2000-r30",
         "id": "6afa2a06e45e373b2d200ed8",
         "permalink": "https://www.tiktok.com/@welife.world/video/7708477419736419616?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -1407,7 +1531,7 @@
         "slot": "20:00",
         "media": "R30.mp4",
         "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu.",
-        "views": 259,
+        "views": 260,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -1439,7 +1563,7 @@
         "slot": "17:00",
         "media": "R29.mp4",
         "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ.",
-        "views": 259,
+        "views": 260,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1455,7 +1579,7 @@
         "slot": "15:00",
         "media": "R28.mp4",
         "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
-        "views": 245,
+        "views": 246,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1797,7 +1921,7 @@
         "slot": "12:30",
         "media": "R7.mp4",
         "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu.",
-        "views": 785,
+        "views": 786,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -2049,6 +2173,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-16-1830-r26",
+        "id": "6afb5e6336d4aa2bec7dda8c",
+        "permalink": "https://www.youtube.com/watch?v=7t12x95acUs",
+        "published_at": "2026-11-16T17:43:57.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R26.mp4",
+        "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE.",
+        "views": 56,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-16-1230-r25",
+        "id": "6afb1ac90540d47fd349aff4",
+        "permalink": "https://www.youtube.com/watch?v=FlezK_-3c6E",
+        "published_at": "2026-11-16T11:45:39.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R25.mp4",
+        "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu.",
+        "views": 111,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-15-2000-r30",
         "id": "6afa35374803ccde4dde3b31",
         "permalink": "https://www.youtube.com/watch?v=oUktcLICNVU",
@@ -2139,7 +2295,7 @@
         "slot": "18:30",
         "media": "R22.mp4",
         "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
-        "views": 49,
+        "views": 54,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2155,7 +2311,7 @@
         "slot": "12:30",
         "media": "R12.mp4",
         "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu.",
-        "views": 401,
+        "views": 422,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -2165,10 +2321,10 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 64,
+      "posts": 67,
       "by_kind": {
         "reel": {
-          "n": 44,
+          "n": 46,
           "median": 0,
           "total": 16,
           "likes": 16,
@@ -2177,7 +2333,7 @@
           "shares": 0
         },
         "image": {
-          "n": 11,
+          "n": 12,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -2197,7 +2353,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 38,
+          "n": 41,
           "median": 0,
           "total": 10,
           "likes": 10,
@@ -2216,8 +2372,26 @@
         }
       },
       "by_slot": {
-        "20:00": {
-          "n": 2,
+        "18:30": {
+          "n": 12,
+          "median": 0,
+          "total": 4,
+          "likes": 4,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "12:30": {
+          "n": 11,
+          "median": 0,
+          "total": 2,
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "08:30": {
+          "n": 10,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -2225,11 +2399,11 @@
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
-          "n": 11,
+        "20:00": {
+          "n": 2,
           "median": 0,
-          "total": 4,
-          "likes": 4,
+          "total": 0,
+          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2248,24 +2422,6 @@
           "median": 1,
           "total": 5,
           "likes": 5,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "12:30": {
-          "n": 10,
-          "median": 0,
-          "total": 2,
-          "likes": 2,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "08:30": {
-          "n": 9,
-          "median": 0,
-          "total": 0,
-          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2424,10 +2580,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 9,
+      "posts": 11,
       "by_kind": {
         "reel": {
-          "n": 9,
+          "n": 11,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -2438,7 +2594,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 7,
+          "n": 9,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -2448,8 +2604,17 @@
         }
       },
       "by_slot": {
-        "20:00": {
-          "n": 1,
+        "18:30": {
+          "n": 3,
+          "median": 0,
+          "total": 1,
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "12:30": {
+          "n": 3,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -2457,10 +2622,10 @@
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
-          "n": 2,
-          "median": 0.5,
-          "total": 1,
+        "20:00": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2477,15 +2642,6 @@
         },
         "15:00": {
           "n": 1,
-          "median": 0,
-          "total": 0,
-          "likes": 0,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "12:30": {
-          "n": 2,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -2520,24 +2676,24 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-15-2000-r30",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "20:00",
-          "views": 0,
-          "likes": 0,
-          "shares": null,
-          "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-15-1830-r24",
+          "key": "2026-11-16-1830-r26",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Co u Ciebie najczęściej ląduje w koszu? Napisz w komentarzu."
+          "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE."
+        },
+        {
+          "key": "2026-11-16-1230-r25",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -2595,12 +2751,12 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 41,
+      "posts": 43,
       "by_kind": {
         "reel": {
-          "n": 41,
-          "median": 515,
-          "total": 19236,
+          "n": 43,
+          "median": 410,
+          "total": 19743,
           "likes": 25,
           "comments": 0,
           "saved": 0,
@@ -2609,9 +2765,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 27,
-          "median": 745,
-          "total": 13809,
+          "n": 29,
+          "median": 410,
+          "total": 14316,
           "likes": 23,
           "comments": 0,
           "saved": 0,
@@ -2628,28 +2784,37 @@
         }
       },
       "by_slot": {
-        "20:00": {
-          "n": 2,
-          "median": 513,
-          "total": 1026,
-          "likes": 2,
+        "18:30": {
+          "n": 12,
+          "median": 272,
+          "total": 4927,
+          "likes": 11,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
+        "12:30": {
           "n": 11,
-          "median": 273,
-          "total": 4682,
-          "likes": 11,
+          "median": 745,
+          "total": 6140,
+          "likes": 9,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "20:00": {
+          "n": 2,
+          "median": 513.5,
+          "total": 1027,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "17:00": {
           "n": 1,
-          "median": 259,
-          "total": 259,
+          "median": 260,
+          "total": 260,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2658,17 +2823,8 @@
         "15:00": {
           "n": 7,
           "median": 515,
-          "total": 3060,
+          "total": 3061,
           "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "12:30": {
-          "n": 10,
-          "median": 751.5,
-          "total": 5881,
-          "likes": 9,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2808,12 +2964,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 7,
+      "posts": 9,
       "by_kind": {
         "reel": {
-          "n": 7,
-          "median": 49,
-          "total": 625,
+          "n": 9,
+          "median": 56,
+          "total": 818,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2822,9 +2978,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 7,
-          "median": 49,
-          "total": 625,
+          "n": 9,
+          "median": 56,
+          "total": 818,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2832,19 +2988,28 @@
         }
       },
       "by_slot": {
-        "20:00": {
-          "n": 1,
-          "median": 0,
-          "total": 0,
+        "18:30": {
+          "n": 3,
+          "median": 54,
+          "total": 110,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "18:30": {
-          "n": 2,
-          "median": 24.5,
-          "total": 49,
+        "12:30": {
+          "n": 3,
+          "median": 111,
+          "total": 605,
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "20:00": {
+          "n": 1,
+          "median": 0,
+          "total": 0,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2867,15 +3032,6 @@
           "comments": 0,
           "saved": 0,
           "shares": 0
-        },
-        "12:30": {
-          "n": 2,
-          "median": 236.5,
-          "total": 473,
-          "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
         }
       },
       "top": [
@@ -2884,10 +3040,20 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 401,
+          "views": 422,
           "likes": 1,
           "shares": 0,
           "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
+        },
+        {
+          "key": "2026-11-16-1230-r25",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 111,
+          "likes": 0,
+          "shares": 0,
+          "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu."
         },
         {
           "key": "2026-11-15-1230-r23",
@@ -2900,6 +3066,16 @@
           "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B."
         },
         {
+          "key": "2026-11-16-1830-r26",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 56,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE."
+        },
+        {
           "key": "2026-11-15-1500-r28",
           "kind": "reel",
           "lang": "pl",
@@ -2908,26 +3084,6 @@
           "likes": 0,
           "shares": 0,
           "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę."
-        },
-        {
-          "key": "2026-11-14-1830-r22",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "18:30",
-          "views": 49,
-          "likes": 0,
-          "shares": 0,
-          "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
-        },
-        {
-          "key": "2026-11-15-1700-r29",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "17:00",
-          "views": 47,
-          "likes": 0,
-          "shares": 0,
-          "hook": "Wiesz, ile kosztuje Twój obiad, czy zgadujesz? Napisz WIEM albo ZGADUJĘ."
         }
       ],
       "bottom": [
@@ -2966,7 +3122,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 49,
+          "views": 54,
           "likes": 0,
           "shares": 0,
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
