@@ -1,12 +1,72 @@
 {
-  "collected_at": "2026-11-17T03:28:54.445Z",
+  "collected_at": "2026-11-18T03:28:57.364Z",
   "instagram": {
     "followers": 2,
-    "media_count": 65,
+    "media_count": 68,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-17-1830-c10",
+        "id": "18019188050966629",
+        "permalink": "https://www.instagram.com/p/Df2e12fmqvI/",
+        "published_at": "2026-11-17T17:36:33+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "C10.jpg",
+        "hook": "Ile liczb chcesz widzieć w aplikacji do jedzenia: dużo czy mało? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-17-1230-r27",
+        "id": "17925714864222189",
+        "permalink": "https://www.instagram.com/reel/Df11DSCDJ7t/",
+        "published_at": "2026-11-17T11:31:30+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R27.mp4",
+        "hook": "W jakim języku gotujecie w domu? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-17-0830-c9",
+        "id": "18097469006268231",
+        "permalink": "https://www.instagram.com/p/Df1aPvLE61n/",
+        "published_at": "2026-11-17T07:37:05+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "C9.jpg",
+        "hook": "Instalujesz aplikacje, których potem nie używasz? Napisz TAK albo NIE.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-16-1830-r26",
         "id": "18343094038258816",
@@ -1317,6 +1377,22 @@
     ],
     "posts": [
       {
+        "key": "2026-11-17-1230-r27",
+        "id": "2107054230004581",
+        "published_at": "2026-11-17T11:31:38+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R27.mp4",
+        "hook": "W jakim języku gotujecie w domu? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-16-1830-r26",
         "id": "1116859941142049",
         "published_at": "2026-11-16T17:42:59+0000",
@@ -1489,6 +1565,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-17-1230-r27",
+        "id": "6afc65226c5696949acacb18",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7709101735821724960?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-17T11:31:47.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R27.mp4",
+        "hook": "W jakim języku gotujecie w domu? Napisz w komentarzu.",
+        "views": 240,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-16-1830-r26",
         "id": "6afb70c5eec2c0a014621531",
         "permalink": "https://www.tiktok.com/@welife.world/video/7708826384482700576?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -1499,8 +1591,8 @@
         "slot": "18:30",
         "media": "R26.mp4",
         "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE.",
-        "views": 245,
-        "likes": 0,
+        "views": 246,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -2173,6 +2265,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-17-1230-r27",
+        "id": "6afc5d47aa8b758b92c8d65e",
+        "permalink": "https://www.youtube.com/watch?v=m7lBEQKceTE",
+        "published_at": "2026-11-17T11:32:22.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R27.mp4",
+        "hook": "W jakim języku gotujecie w domu? Napisz w komentarzu.",
+        "views": 67,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-16-1830-r26",
         "id": "6afb5e6336d4aa2bec7dda8c",
         "permalink": "https://www.youtube.com/watch?v=7t12x95acUs",
@@ -2183,7 +2291,7 @@
         "slot": "18:30",
         "media": "R26.mp4",
         "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE.",
-        "views": 56,
+        "views": 61,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2321,22 +2429,22 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 67,
+      "posts": 70,
       "by_kind": {
-        "reel": {
-          "n": 46,
+        "image": {
+          "n": 14,
           "median": 0,
-          "total": 16,
-          "likes": 16,
+          "total": 2,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "image": {
-          "n": 12,
+        "reel": {
+          "n": 47,
           "median": 0,
-          "total": 2,
-          "likes": 2,
+          "total": 16,
+          "likes": 16,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2353,7 +2461,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 41,
+          "n": 44,
           "median": 0,
           "total": 10,
           "likes": 10,
@@ -2373,7 +2481,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 12,
+          "n": 13,
           "median": 0,
           "total": 4,
           "likes": 4,
@@ -2382,7 +2490,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 11,
+          "n": 12,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -2391,7 +2499,7 @@
           "shares": 0
         },
         "08:30": {
-          "n": 10,
+          "n": 11,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -2580,10 +2688,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 11,
+      "posts": 12,
       "by_kind": {
         "reel": {
-          "n": 11,
+          "n": 12,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -2594,7 +2702,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 9,
+          "n": 10,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -2604,19 +2712,19 @@
         }
       },
       "by_slot": {
-        "18:30": {
-          "n": 3,
+        "12:30": {
+          "n": 4,
           "median": 0,
-          "total": 1,
+          "total": 0,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
+        "18:30": {
           "n": 3,
           "median": 0,
-          "total": 0,
+          "total": 1,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -2676,6 +2784,16 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
+          "key": "2026-11-17-1230-r27",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "W jakim języku gotujecie w domu? Napisz w komentarzu."
+        },
+        {
           "key": "2026-11-16-1830-r26",
           "kind": "reel",
           "lang": "pl",
@@ -2684,16 +2802,6 @@
           "likes": 0,
           "shares": null,
           "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE."
-        },
-        {
-          "key": "2026-11-16-1230-r25",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 0,
-          "likes": 0,
-          "shares": null,
-          "hook": "U Ciebie jecie razem czy każdy osobno? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -2751,13 +2859,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 43,
+      "posts": 44,
       "by_kind": {
         "reel": {
-          "n": 43,
-          "median": 410,
-          "total": 19743,
-          "likes": 25,
+          "n": 44,
+          "median": 373.5,
+          "total": 19984,
+          "likes": 27,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2765,10 +2873,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 29,
-          "median": 410,
-          "total": 14316,
-          "likes": 23,
+          "n": 30,
+          "median": 341.5,
+          "total": 14557,
+          "likes": 25,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2784,20 +2892,20 @@
         }
       },
       "by_slot": {
-        "18:30": {
+        "12:30": {
           "n": 12,
-          "median": 272,
-          "total": 4927,
-          "likes": 11,
+          "median": 577.5,
+          "total": 6380,
+          "likes": 10,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
-          "n": 11,
-          "median": 745,
-          "total": 6140,
-          "likes": 9,
+        "18:30": {
+          "n": 12,
+          "median": 272,
+          "total": 4928,
+          "likes": 12,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -2964,12 +3072,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 9,
+      "posts": 10,
       "by_kind": {
         "reel": {
-          "n": 9,
-          "median": 56,
-          "total": 818,
+          "n": 10,
+          "median": 58.5,
+          "total": 890,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2978,9 +3086,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 9,
-          "median": 56,
-          "total": 818,
+          "n": 10,
+          "median": 58.5,
+          "total": 890,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -2988,20 +3096,20 @@
         }
       },
       "by_slot": {
-        "18:30": {
-          "n": 3,
-          "median": 54,
-          "total": 110,
-          "likes": 0,
+        "12:30": {
+          "n": 4,
+          "median": 91.5,
+          "total": 672,
+          "likes": 1,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
+        "18:30": {
           "n": 3,
-          "median": 111,
-          "total": 605,
-          "likes": 1,
+          "median": 54,
+          "total": 115,
+          "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3066,24 +3174,24 @@
           "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B."
         },
         {
+          "key": "2026-11-17-1230-r27",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 67,
+          "likes": 0,
+          "shares": 0,
+          "hook": "W jakim języku gotujecie w domu? Napisz w komentarzu."
+        },
+        {
           "key": "2026-11-16-1830-r26",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 56,
+          "views": 61,
           "likes": 0,
           "shares": 0,
           "hook": "Zapisujesz, co jesz? Napisz TAK albo NIE."
-        },
-        {
-          "key": "2026-11-15-1500-r28",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "15:00",
-          "views": 56,
-          "likes": 0,
-          "shares": 0,
-          "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę."
         }
       ],
       "bottom": [
