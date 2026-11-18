@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-28-1230-r51",
+  "publish_at": "2026-11-28T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R51.mp4"
+  ],
+  "cover": "media/R51-cover.jpg",
+  "ai_imagery": true,
+  "caption": "W który mit o planie posiłków wierzyłeś: 1, 2 czy 3? Napisz numer.\n\nMit 1: plan posiłków jest tylko dla sportowców. W WE.LIFE jest tryb Na co dzień, bez liczenia. Mit 2: z planem kupujesz więcej. Lista zakupów odejmuje to, co już masz. Mit 3: ciągle jesz to samo. Nie pasuje propozycja? Klikasz „Pokaż inne”.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #mealprep #jadłospis",
+  "facebook": {
+    "message": "W który mit o planie posiłków wierzyłeś: 1, 2 czy 3? Napisz numer.\n\nMit 1: plan posiłków jest tylko dla sportowców. W WE.LIFE jest tryb Na co dzień, bez liczenia. Mit 2: z planem kupujesz więcej. Lista zakupów odejmuje to, co już masz. Mit 3: ciągle jesz to samo. Nie pasuje propozycja? Klikasz „Pokaż inne”.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-28-1230-r51\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#planposiłków #mealprep #jadłospis"
+  },
+  "pinterest": {
+    "title": "3 mity o planie posiłków: dla kogo jest i czy trzeba liczyć kalorie",
+    "description": "Plan posiłków nie jest tylko dla sportowców: w WE.LIFE jest tryb Na co dzień, bez liczenia. Z planem nie kupujesz więcej, bo lista zakupów odejmuje to, co już masz. I nie jesz ciągle tego samego: propozycję na dziś zmieniasz jednym kliknięciem. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

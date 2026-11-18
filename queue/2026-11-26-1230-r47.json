@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-26-1230-r47",
+  "publish_at": "2026-11-26T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R47.mp4"
+  ],
+  "cover": "media/R47-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Który typ w kuchni to Ty: 1, 2 czy 3? Napisz numer.\n\nPlanista ma obiady rozpisane na tydzień. Spontaniczny bierze propozycję na dziś ze Startu. Zapasowy pilnuje, co ma w Spiżarni. W WE.LIFE każdy typ ma swoje miejsce: plan posiłków, propozycję na dziś i Spiżarnię z terminami.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#gotowanie #obiad #planposiłków",
+  "facebook": {
+    "message": "Który typ w kuchni to Ty: 1, 2 czy 3? Napisz numer.\n\nPlanista ma obiady rozpisane na tydzień. Spontaniczny bierze propozycję na dziś ze Startu. Zapasowy pilnuje, co ma w Spiżarni. W WE.LIFE każdy typ ma swoje miejsce: plan posiłków, propozycję na dziś i Spiżarnię z terminami.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-26-1230-r47\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#gotowanie #obiad #planposiłków"
+  },
+  "pinterest": {
+    "title": "Planista, spontaniczny czy zapasowy? Plan posiłków dla każdego typu",
+    "description": "Trzy typy w kuchni: planista rozpisuje obiady na tydzień, spontaniczny bierze propozycję na dziś, a zapasowy pilnuje, co ma w spiżarni. W WE.LIFE każdy ma swoje miejsce: plan posiłków na tydzień, propozycję obiadu na dziś i spiżarnię z terminami. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

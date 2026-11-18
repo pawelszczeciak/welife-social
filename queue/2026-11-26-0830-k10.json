@@ -1,0 +1,31 @@
+{
+  "id": "2026-11-26-0830-k10",
+  "publish_at": "2026-11-26T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K10-01.jpg",
+    "media/K10-02.jpg",
+    "media/K10-03.jpg",
+    "media/K10-04.jpg",
+    "media/K10-05.jpg",
+    "media/K10-06.jpg",
+    "media/K10-07.jpg",
+    "media/K10-08.jpg",
+    "media/K10-09.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Ile z tych 5 robisz? Napisz wynik w komentarzu.\n\nKupujesz z listy, nie z półki. Sprawdzasz szafki przed sklepem. Planujesz obiady z tego, co masz. Gotujesz od razu na 2 dni. Mrozisz resztki porcjami. Punkty 1 i 2 robisz w WE.LIFE: plan posiłków daje listę zakupów, która odejmuje to, co już masz.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#zakupy #listazakupów #planposiłków",
+  "facebook": {
+    "message": "Ile z tych 5 robisz? Napisz wynik w komentarzu.\n\nKupujesz z listy, nie z półki. Sprawdzasz szafki przed sklepem. Planujesz obiady z tego, co masz. Gotujesz od razu na 2 dni. Mrozisz resztki porcjami. Punkty 1 i 2 robisz w WE.LIFE: plan posiłków daje listę zakupów, która odejmuje to, co już masz.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-26-0830-k10\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#zakupy #listazakupów #planposiłków"
+  },
+  "pinterest": {
+    "title": "5 nawyków, żeby mniej wydawać na jedzenie: lista zakupów i plan posiłków",
+    "description": "Pięć prostych nawyków: kupujesz z listy, sprawdzasz szafki przed sklepem, planujesz obiady z tego, co masz, gotujesz od razu na 2 dni i mrozisz resztki porcjami. W WE.LIFE plan posiłków daje listę zakupów, która odejmuje to, co już masz w domu. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K10-08.jpg"
+  }
+}

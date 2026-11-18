@@ -1,0 +1,29 @@
+{
+  "id": "2026-11-28-0830-k11",
+  "publish_at": "2026-11-28T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K11-01.jpg",
+    "media/K11-02.jpg",
+    "media/K11-03.jpg",
+    "media/K11-04.jpg",
+    "media/K11-05.jpg",
+    "media/K11-06.jpg",
+    "media/K11-07.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Weekend w kuchni: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nZakupy w sobotę rano czy w tygodniu po pracy? Niedzielny obiad z zapasem na poniedziałek czy tylko na dziś? Plan na tydzień w niedzielę wieczorem czy wcale? Lodówka w poniedziałek: wiesz, co w niej jest, czy niespodzianka? W WE.LIFE plan posiłków na tydzień układasz raz, a lista zakupów powstaje z niego.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#weekend #obiadnatydzień #planposiłków",
+  "facebook": {
+    "message": "Weekend w kuchni: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nZakupy w sobotę rano czy w tygodniu po pracy? Niedzielny obiad z zapasem na poniedziałek czy tylko na dziś? Plan na tydzień w niedzielę wieczorem czy wcale? Lodówka w poniedziałek: wiesz, co w niej jest, czy niespodzianka? W WE.LIFE plan posiłków na tydzień układasz raz, a lista zakupów powstaje z niego.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-28-0830-k11\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#weekend #obiadnatydzień #planposiłków"
+  },
+  "pinterest": {
+    "title": "Plan posiłków na tydzień w weekend: zakupy, niedzielny obiad i lodówka",
+    "description": "Weekend to dobry moment na plan posiłków na cały tydzień. W WE.LIFE układasz go raz, a lista zakupów powstaje z planu, więc w poniedziałek wiesz, co jest w lodówce. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K11-06.jpg"
+  }
+}
