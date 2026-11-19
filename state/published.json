@@ -1969,6 +1969,11 @@
     "published_at": "2026-11-18T11:39:52.041Z",
     "updated_at": "2026-11-18T11:38:11.276Z"
   },
+  "2026-11-18-1230-r31:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-19T11:38:12.946Z"
+  },
   "2026-11-18-1230-r31:tiktok": {
     "attempts": 1,
     "status": "published",
@@ -2050,5 +2055,40 @@
     "permalink": "https://www.instagram.com/p/Df6kDIDE_BJ/",
     "reconciled_at": "2026-11-19T08:38:27.236Z",
     "reconciled_container_status": "ERROR"
+  },
+  "2026-11-19-1230-r36:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1905143567308567",
+    "published_at": "2026-11-19T11:39:30.888Z",
+    "updated_at": "2026-11-19T11:38:12.946Z"
+  },
+  "2026-11-19-1230-r36:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18651758728012421",
+    "permalink": "https://www.instagram.com/reel/Df6_gpUDpl7/",
+    "published_at": "2026-11-19T11:39:24.631Z",
+    "updated_at": "2026-11-19T11:38:12.946Z"
+  },
+  "2026-11-19-1230-r36:tiktok": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6afedff3d15f8ee033f3c9a6",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-19T11:39:45.498Z",
+    "updated_at": "2026-11-19T11:38:12.946Z"
+  },
+  "2026-11-19-1230-r36:youtube": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6afee002f2800948e8b56991",
+    "zernio_status": "published",
+    "permalink": "https://www.youtube.com/watch?v=sZbAXDZusJg",
+    "published_at": "2026-11-19T11:39:51.876Z",
+    "updated_at": "2026-11-19T11:38:12.946Z"
   }
 }
