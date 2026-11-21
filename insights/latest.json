@@ -1,12 +1,72 @@
 {
-  "collected_at": "2026-11-20T03:30:11.526Z",
+  "collected_at": "2026-11-21T03:28:03.125Z",
   "instagram": {
-    "followers": 2,
-    "media_count": 74,
+    "followers": 1,
+    "media_count": 77,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-20-1830-r34",
+        "id": "18017543960986317",
+        "permalink": "https://www.instagram.com/reel/Df-NZ5Bj-C8/",
+        "published_at": "2026-11-20T17:38:16+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R34.mp4",
+        "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-20-1230-r35",
+        "id": "18123222029097685",
+        "permalink": "https://www.instagram.com/reel/Df9kRkZAJrO/",
+        "published_at": "2026-11-20T11:38:57+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R35.mp4",
+        "hook": "Co najczęściej wygrywa z Twoim planem obiadu? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-20-0830-k7",
+        "id": "18109643111635427",
+        "permalink": "https://www.instagram.com/p/Df9IxC-FzPE/",
+        "published_at": "2026-11-20T07:38:16+0000",
+        "kind": "carousel",
+        "type": "carousel",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "K7-01.jpg",
+        "hook": "Zakupy: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-19-1830-r33",
         "id": "17931876072181426",
@@ -1497,6 +1557,38 @@
     ],
     "posts": [
       {
+        "key": "2026-11-20-1830-r34",
+        "id": "2345130206286339",
+        "published_at": "2026-11-20T17:38:29+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R34.mp4",
+        "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-20-1230-r35",
+        "id": "2163975667537372",
+        "published_at": "2026-11-20T11:39:07+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R35.mp4",
+        "hook": "Co najczęściej wygrywa z Twoim planem obiadu? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-19-1830-r33",
         "id": "2240428723207288",
         "published_at": "2026-11-19T17:40:50+0000",
@@ -1749,6 +1841,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-20-1830-r34",
+        "id": "6b0094854db2cb2aa3372f1f",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7710309569192299809?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-20T17:38:37.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R34.mp4",
+        "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.",
+        "views": 258,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-20-1230-r35",
+        "id": "6b005ef0ffd2581d18c17c88",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7710216929021037857?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-20T11:39:16.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R35.mp4",
+        "hook": "Co najczęściej wygrywa z Twoim planem obiadu? Napisz w komentarzu.",
+        "views": 260,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-19-1830-r33",
         "id": "6aff633770d75b9dda3eec67",
         "permalink": "https://www.tiktok.com/@welife.world/video/7709939063909928224?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -1759,7 +1883,7 @@
         "slot": "18:30",
         "media": "R33.mp4",
         "hook": "Jesz przed treningiem czy po? Napisz PRZED albo PO.",
-        "views": 241,
+        "views": 243,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -2513,6 +2637,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-20-1830-r34",
+        "id": "6b00947cf4f2fcb25e5b7d45",
+        "permalink": "https://www.youtube.com/watch?v=LFuRphzk3VA",
+        "published_at": "2026-11-20T17:39:23.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R34.mp4",
+        "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.",
+        "views": 46,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-20-1230-r35",
+        "id": "6b005eeafdc8ce3a9b38a772",
+        "permalink": "https://www.youtube.com/watch?v=OKWfewi2mN0",
+        "published_at": "2026-11-20T11:39:52.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R35.mp4",
+        "hook": "Co najczęściej wygrywa z Twoim planem obiadu? Napisz w komentarzu.",
+        "views": 56,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-19-1830-r33",
         "id": "6aff631d295b44271bb7a6c3",
         "permalink": "https://www.youtube.com/watch?v=M6Kfl8LvP5s",
@@ -2539,7 +2695,7 @@
         "slot": "12:30",
         "media": "R36.mp4",
         "hook": "Które pytanie męczy Cię najbardziej: 1, 2 czy 3? Napisz numer.",
-        "views": 34,
+        "views": 48,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2555,7 +2711,7 @@
         "slot": "18:30",
         "media": "R32.mp4",
         "hook": "Liczby na ekranie czy jedzenie bez liczenia? Napisz A albo B.",
-        "views": 35,
+        "views": 36,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2741,10 +2897,10 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 76,
+      "posts": 79,
       "by_kind": {
         "reel": {
-          "n": 51,
+          "n": 53,
           "median": 0,
           "total": 16,
           "likes": 16,
@@ -2753,7 +2909,7 @@
           "shares": 0
         },
         "carousel": {
-          "n": 10,
+          "n": 11,
           "median": 1,
           "total": 8,
           "likes": 8,
@@ -2773,7 +2929,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 50,
+          "n": 53,
           "median": 0,
           "total": 11,
           "likes": 11,
@@ -2793,7 +2949,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 15,
+          "n": 16,
           "median": 0,
           "total": 4,
           "likes": 4,
@@ -2802,7 +2958,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 14,
+          "n": 15,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -2811,7 +2967,7 @@
           "shares": 0
         },
         "08:30": {
-          "n": 13,
+          "n": 14,
           "median": 0,
           "total": 1,
           "likes": 1,
@@ -3003,10 +3159,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 16,
+      "posts": 18,
       "by_kind": {
         "reel": {
-          "n": 16,
+          "n": 18,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3017,7 +3173,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 14,
+          "n": 16,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3028,7 +3184,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 5,
+          "n": 6,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3037,7 +3193,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 6,
+          "n": 7,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -3099,24 +3255,24 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-19-1830-r33",
+          "key": "2026-11-20-1830-r34",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Jesz przed treningiem czy po? Napisz PRZED albo PO."
+          "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu."
         },
         {
-          "key": "2026-11-19-1230-r36",
+          "key": "2026-11-20-1230-r35",
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Które pytanie męczy Cię najbardziej: 1, 2 czy 3? Napisz numer."
+          "hook": "Co najczęściej wygrywa z Twoim planem obiadu? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -3174,13 +3330,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 48,
+      "posts": 50,
       "by_kind": {
         "reel": {
-          "n": 48,
-          "median": 272.5,
-          "total": 20975,
-          "likes": 29,
+          "n": 50,
+          "median": 270.5,
+          "total": 21495,
+          "likes": 30,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3188,10 +3344,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 34,
-          "median": 270.5,
-          "total": 15548,
-          "likes": 27,
+          "n": 36,
+          "median": 266.5,
+          "total": 16068,
+          "likes": 28,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3208,18 +3364,18 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 14,
-          "median": 270.5,
-          "total": 5433,
-          "likes": 14,
+          "n": 15,
+          "median": 270,
+          "total": 5693,
+          "likes": 15,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 14,
-          "median": 335,
-          "total": 6866,
+          "n": 15,
+          "median": 260,
+          "total": 7126,
           "likes": 10,
           "comments": 0,
           "saved": 0,
@@ -3387,12 +3543,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 14,
+      "posts": 16,
       "by_kind": {
         "reel": {
-          "n": 14,
+          "n": 16,
           "median": 53.5,
-          "total": 1051,
+          "total": 1168,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3401,9 +3557,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 14,
+          "n": 16,
           "median": 53.5,
-          "total": 1051,
+          "total": 1168,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3412,18 +3568,18 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 5,
-          "median": 53,
-          "total": 249,
+          "n": 6,
+          "median": 49.5,
+          "total": 296,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 6,
+          "n": 7,
           "median": 67,
-          "total": 701,
+          "total": 771,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3541,24 +3697,24 @@
           "hook": "Paragon po zakupach: A do kosza czy B do szuflady? Napisz A albo B."
         },
         {
-          "key": "2026-11-19-1230-r36",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 34,
-          "likes": 0,
-          "shares": 0,
-          "hook": "Które pytanie męczy Cię najbardziej: 1, 2 czy 3? Napisz numer."
-        },
-        {
           "key": "2026-11-18-1830-r32",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 35,
+          "views": 36,
           "likes": 0,
           "shares": 0,
           "hook": "Liczby na ekranie czy jedzenie bez liczenia? Napisz A albo B."
+        },
+        {
+          "key": "2026-11-20-1830-r34",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 46,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu."
         }
       ]
     }
