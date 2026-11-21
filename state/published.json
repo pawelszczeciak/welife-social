@@ -2173,6 +2173,11 @@
     "reconciled_at": "2026-11-20T08:37:48.971Z",
     "reconciled_container_status": "ERROR"
   },
+  "2026-11-20-0830-k7:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-21T07:37:52.762Z"
+  },
   "2026-11-20-1230-r35:facebook": {
     "attempts": 1,
     "status": "published",
@@ -2242,5 +2247,28 @@
     "permalink": "https://www.youtube.com/watch?v=LFuRphzk3VA",
     "published_at": "2026-11-20T17:39:02.217Z",
     "updated_at": "2026-11-20T17:37:49.724Z"
+  },
+  "2026-11-21-0830-c12:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1306038305932559_122127621951483309",
+    "published_at": "2026-11-21T07:38:17.766Z",
+    "updated_at": "2026-11-21T07:37:52.762Z"
+  },
+  "2026-11-21-0830-c12:instagram": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Graph API POST 17841453915108697/media_publish: An unexpected error has occurred. Please retry your request later.",
+    "history": [
+      {
+        "at": "2026-11-21T07:37:52.762Z",
+        "stage": "publish",
+        "code": 2,
+        "error": "Graph API POST 17841453915108697/media_publish: An unexpected error has occurred. Please retry your request later."
+      }
+    ],
+    "creation_id": "18011225531797171",
+    "creation_at": "2026-11-21T07:37:52.762Z",
+    "updated_at": "2026-11-21T07:37:52.762Z"
   }
 }
