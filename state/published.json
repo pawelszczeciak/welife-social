@@ -2256,8 +2256,8 @@
     "updated_at": "2026-11-21T07:37:52.762Z"
   },
   "2026-11-21-0830-c12:instagram": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "Graph API POST 17841453915108697/media_publish: An unexpected error has occurred. Please retry your request later.",
     "history": [
       {
@@ -2269,6 +2269,10 @@
     ],
     "creation_id": "18011225531797171",
     "creation_at": "2026-11-21T07:37:52.762Z",
-    "updated_at": "2026-11-21T07:37:52.762Z"
+    "updated_at": "2026-11-21T07:46:59.798Z",
+    "id": "18028508495944862",
+    "permalink": "https://www.instagram.com/p/Df_tiCQD4Pw/",
+    "reconciled_at": "2026-11-21T07:46:59.798Z",
+    "reconciled_container_status": "FINISHED"
   }
 }
