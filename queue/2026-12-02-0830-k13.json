@@ -1,0 +1,29 @@
+{
+  "id": "2026-12-02-0830-k13",
+  "publish_at": "2026-12-02T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K13-01.jpg",
+    "media/K13-02.jpg",
+    "media/K13-03.jpg",
+    "media/K13-04.jpg",
+    "media/K13-05.jpg",
+    "media/K13-06.jpg",
+    "media/K13-07.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Grudzień w kuchni: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nPierniki sam albo sama czy gotowe? Zakupy przed świętami z listą czy na spontanie? Resztki po spotkaniu z planem na następny dzień czy w lodówce do odwołania? Obiad w tygodniu szybki i z planu czy co się da? W WE.LIFE plan posiłków i lista zakupów są w jednym miejscu.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#grudzień #święta #planposiłków",
+  "facebook": {
+    "message": "Grudzień w kuchni: jesteś A czy B? Wpisz w komentarzu swoje 4 litery.\n\nPierniki sam albo sama czy gotowe? Zakupy przed świętami z listą czy na spontanie? Resztki po spotkaniu z planem na następny dzień czy w lodówce do odwołania? Obiad w tygodniu szybki i z planu czy co się da? W WE.LIFE plan posiłków i lista zakupów są w jednym miejscu.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-12-02-0830-k13\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#grudzień #święta #planposiłków"
+  },
+  "pinterest": {
+    "title": "Grudzień z planem posiłków: zakupy przed świętami i obiady w tygodniu",
+    "description": "Grudzień bez chaosu w kuchni: zakupy przed świętami z listą, resztki zaplanowane na następny dzień i szybkie obiady w tygodniu. W WE.LIFE plan posiłków i lista zakupów są w jednym miejscu. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K13-06.jpg"
+  }
+}

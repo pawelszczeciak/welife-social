@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-29-1230-r53",
+  "publish_at": "2026-11-29T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R53.mp4"
+  ],
+  "cover": "media/R53-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Ile razy czytasz przepis, zanim zaczniesz gotować? Napisz liczbę.\n\nW WE.LIFE każdy przepis ma kroki przygotowania po kolei. Masz plan posiłków albo propozycję na dziś, klikasz „Zobacz przepis” i gotujesz bez wracania do początku.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#przepisy #gotowanie #planposiłków",
+  "facebook": {
+    "message": "Ile razy czytasz przepis, zanim zaczniesz gotować? Napisz liczbę.\n\nW WE.LIFE każdy przepis ma kroki przygotowania po kolei. Masz plan posiłków albo propozycję na dziś, klikasz „Zobacz przepis” i gotujesz bez wracania do początku.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-29-1230-r53\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#przepisy #gotowanie #planposiłków"
+  },
+  "pinterest": {
+    "title": "Przepis krok po kroku: gotowanie bez czytania przepisu 3 razy",
+    "description": "W WE.LIFE każdy przepis ma kroki przygotowania po kolei. Wybierasz danie z planu posiłków na tydzień albo propozycję na dziś i gotujesz krok po kroku. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}

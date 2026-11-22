@@ -1,0 +1,30 @@
+{
+  "id": "2026-11-30-0830-k12",
+  "publish_at": "2026-11-30T08:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/K12-01.jpg",
+    "media/K12-02.jpg",
+    "media/K12-03.jpg",
+    "media/K12-04.jpg",
+    "media/K12-05.jpg",
+    "media/K12-06.jpg",
+    "media/K12-07.jpg",
+    "media/K12-08.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Ile obiadów robisz z jednej listy zakupów? Napisz liczbę w komentarzu.\n\n5 obiadów z jednej listy zakupów: wybierz 2 bazy, jedno białko na 2 obiady, warzywa, które pasują do kilku dań, i jedną listę z ilościami. Krok 4 robisz w WE.LIFE: masz plan posiłków, a lista z niego ma ilości z przepisów i odejmuje to, co już masz. Zapisz ten post na niedzielę.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\n#obiadnatydzień #mealprep #planposiłków",
+  "facebook": {
+    "message": "Ile obiadów robisz z jednej listy zakupów? Napisz liczbę w komentarzu.\n\n5 obiadów z jednej listy zakupów: wybierz 2 bazy, jedno białko na 2 obiady, warzywa, które pasują do kilku dań, i jedną listę z ilościami. Krok 4 robisz w WE.LIFE: masz plan posiłków, a lista z niego ma ilości z przepisów i odejmuje to, co już masz. Zapisz ten post na niedzielę.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-30-0830-k12\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\n#obiadnatydzień #mealprep #planposiłków"
+  },
+  "pinterest": {
+    "title": "5 obiadów z jednej listy zakupów: plan posiłków na tydzień w 4 krokach",
+    "description": "Jak ugotować 5 obiadów z jednej listy zakupów: wybierz 2 bazy, jedno białko na 2 obiady, warzywa pasujące do kilku dań i jedną listę z ilościami. W WE.LIFE lista zakupów powstaje z planu posiłków i odejmuje to, co już masz. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/K12-06.jpg"
+  }
+}

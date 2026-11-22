@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-30-1830-r56",
+  "publish_at": "2026-11-30T18:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "pinterest"
+  ],
+  "type": "reel",
+  "media": [
+    "media/R56.mp4"
+  ],
+  "cover": "media/R56-cover.jpg",
+  "ai_imagery": true,
+  "caption": "Co jesz po treningu? Napisz A albo B.\n\nW trybie Fit i forma zaplanowany trening widzisz w planie dnia, a obok posiłki na cały dzień. Po treningu już wiesz, co zjesz, bo plan posiłków jest w tym samym miejscu.\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł. Konto jest bezpłatne. Link do WE.LIFE masz w bio @welife.world.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#trening #potreningu #planposiłków",
+  "facebook": {
+    "message": "Co jesz po treningu? Napisz A albo B.\n\nW trybie Fit i forma zaplanowany trening widzisz w planie dnia, a obok posiłki na cały dzień. Po treningu już wiesz, co zjesz, bo plan posiłków jest w tym samym miejscu.\n\nZałóż bezpłatne konto: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-11-30-1830-r56\n\nWE.LIFE to Life OS na co dzień, a Food OS to jego pierwszy moduł.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#trening #potreningu #planposiłków"
+  },
+  "pinterest": {
+    "title": "Co zjeść po treningu? Trening i plan posiłków w jednym planie dnia",
+    "description": "Trening i jedzenie w jednym miejscu. W trybie Fit i forma WE.LIFE pokazuje zaplanowany trening w planie dnia, a obok plan posiłków na cały dzień. Konto w WE.LIFE jest bezpłatne. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}
