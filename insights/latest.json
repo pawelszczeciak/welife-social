@@ -1,12 +1,72 @@
 {
-  "collected_at": "2026-11-22T03:29:06.876Z",
+  "collected_at": "2026-11-23T03:31:30.210Z",
   "instagram": {
     "followers": 1,
-    "media_count": 81,
+    "media_count": 84,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-22-1830-r40",
+        "id": "17959863936279557",
+        "permalink": "https://www.instagram.com/reel/DgDW26ZgPX9/",
+        "published_at": "2026-11-22T17:37:12+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R40.mp4",
+        "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-22-1230-r39",
+        "id": "18028522436945767",
+        "permalink": "https://www.instagram.com/reel/DgCtoIEGPiU/",
+        "published_at": "2026-11-22T11:36:55+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R39.mp4",
+        "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-22-0830-k8",
+        "id": "18140507350653865",
+        "permalink": "https://www.instagram.com/p/DgCSLETGsOi/",
+        "published_at": "2026-11-22T07:36:44+0000",
+        "kind": "carousel",
+        "type": "carousel",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "K8-01.jpg",
+        "hook": "Który z tych 4 kroków robisz przed zakupami? Napisz numer w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-21-1830-r37",
         "id": "18101026916435547",
@@ -1617,6 +1677,38 @@
     ],
     "posts": [
       {
+        "key": "2026-11-22-1830-r40",
+        "id": "1413956610534331",
+        "published_at": "2026-11-22T17:37:21+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R40.mp4",
+        "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-22-1230-r39",
+        "id": "1128230299916824",
+        "published_at": "2026-11-22T11:37:05+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R39.mp4",
+        "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-21-1830-r37",
         "id": "1685403283196233",
         "published_at": "2026-11-21T17:37:48+0000",
@@ -1933,6 +2025,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-22-1830-r40",
+        "id": "6b033b7ca6fd62358a4ea2c0",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7711051426155203872?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-22T17:37:30.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R40.mp4",
+        "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
+        "views": 255,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-22-1230-r39",
+        "id": "6b030484819862283b32bce4",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7710958566479301920?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-22T11:37:16.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R39.mp4",
+        "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.",
+        "views": 272,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-21-1830-r37",
         "id": "6b01d7eee63e11f54d4e4c3a",
         "permalink": "https://www.tiktok.com/@welife.world/video/7710680462720519457?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -1943,7 +2067,7 @@
         "slot": "18:30",
         "media": "R37.mp4",
         "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu.",
-        "views": 170,
+        "views": 288,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -1959,7 +2083,7 @@
         "slot": "12:30",
         "media": "R38.mp4",
         "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu.",
-        "views": 277,
+        "views": 279,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2761,6 +2885,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-22-1830-r40",
+        "id": "6b033bea2ea810381075adc7",
+        "permalink": "https://www.youtube.com/watch?v=OeEKP0M2YJ0",
+        "published_at": "2026-11-22T17:38:00.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R40.mp4",
+        "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
+        "views": 179,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-22-1230-r39",
+        "id": "6b0304a8819862283b32bf98",
+        "permalink": "https://www.youtube.com/watch?v=NXSRAk5bzhk",
+        "published_at": "2026-11-22T11:37:50.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R39.mp4",
+        "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.",
+        "views": 47,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-21-1830-r37",
         "id": "6b01d7d8dd235f40a1f05d37",
         "permalink": "https://www.youtube.com/watch?v=80mS4XgpX6I",
@@ -2771,7 +2927,7 @@
         "slot": "18:30",
         "media": "R37.mp4",
         "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu.",
-        "views": 8,
+        "views": 18,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2787,7 +2943,7 @@
         "slot": "12:30",
         "media": "R38.mp4",
         "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu.",
-        "views": 98,
+        "views": 97,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2835,7 +2991,7 @@
         "slot": "18:30",
         "media": "R33.mp4",
         "hook": "Jesz przed treningiem czy po? Napisz PRZED albo PO.",
-        "views": 98,
+        "views": 97,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3053,13 +3209,22 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 82,
+      "posts": 85,
       "by_kind": {
         "reel": {
-          "n": 55,
+          "n": 57,
           "median": 0,
           "total": 16,
           "likes": 16,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "carousel": {
+          "n": 12,
+          "median": 1,
+          "total": 8,
+          "likes": 8,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3072,20 +3237,11 @@
           "comments": 0,
           "saved": 0,
           "shares": 0
-        },
-        "carousel": {
-          "n": 11,
-          "median": 1,
-          "total": 8,
-          "likes": 8,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
         }
       },
       "by_lang": {
         "pl": {
-          "n": 56,
+          "n": 59,
           "median": 0,
           "total": 11,
           "likes": 11,
@@ -3105,7 +3261,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 17,
+          "n": 18,
           "median": 0,
           "total": 4,
           "likes": 4,
@@ -3114,7 +3270,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 16,
+          "n": 17,
           "median": 0,
           "total": 2,
           "likes": 2,
@@ -3123,7 +3279,7 @@
           "shares": 0
         },
         "08:30": {
-          "n": 15,
+          "n": 16,
           "median": 0,
           "total": 1,
           "likes": 1,
@@ -3315,10 +3471,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 20,
+      "posts": 22,
       "by_kind": {
         "reel": {
-          "n": 20,
+          "n": 22,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3329,7 +3485,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 18,
+          "n": 20,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3340,7 +3496,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 7,
+          "n": 8,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3349,7 +3505,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 8,
+          "n": 9,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -3411,24 +3567,24 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-21-1830-r37",
+          "key": "2026-11-22-1830-r40",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu."
+          "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B."
         },
         {
-          "key": "2026-11-21-1230-r38",
+          "key": "2026-11-22-1230-r39",
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu."
+          "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG."
         }
       ],
       "bottom": [
@@ -3486,12 +3642,12 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 52,
+      "posts": 54,
       "by_kind": {
         "reel": {
-          "n": 52,
-          "median": 271,
-          "total": 21954,
+          "n": 54,
+          "median": 271.5,
+          "total": 22601,
           "likes": 30,
           "comments": 0,
           "saved": 0,
@@ -3500,9 +3656,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 38,
-          "median": 269.5,
-          "total": 16527,
+          "n": 40,
+          "median": 271,
+          "total": 17174,
           "likes": 28,
           "comments": 0,
           "saved": 0,
@@ -3520,18 +3676,18 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 16,
-          "median": 269.5,
-          "total": 5874,
+          "n": 17,
+          "median": 271,
+          "total": 6247,
           "likes": 15,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 16,
-          "median": 268.5,
-          "total": 7404,
+          "n": 17,
+          "median": 272,
+          "total": 7678,
           "likes": 10,
           "comments": 0,
           "saved": 0,
@@ -3699,12 +3855,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 18,
+      "posts": 20,
       "by_kind": {
         "reel": {
-          "n": 18,
+          "n": 20,
           "median": 55.5,
-          "total": 1292,
+          "total": 1526,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3713,9 +3869,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 18,
+          "n": 20,
           "median": 55.5,
-          "total": 1292,
+          "total": 1526,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3724,18 +3880,18 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 7,
-          "median": 47,
-          "total": 303,
+          "n": 8,
+          "median": 50,
+          "total": 491,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 8,
-          "median": 67.5,
-          "total": 888,
+          "n": 9,
+          "median": 67,
+          "total": 934,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3781,6 +3937,16 @@
           "hook": "Gotujesz z przepisu czy na oko? Napisz w komentarzu."
         },
         {
+          "key": "2026-11-22-1830-r40",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "18:30",
+          "views": 179,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B."
+        },
+        {
           "key": "2026-11-16-1230-r25",
           "kind": "reel",
           "lang": "pl",
@@ -3795,7 +3961,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 98,
+          "views": 97,
           "likes": 0,
           "shares": 0,
           "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu."
@@ -3805,20 +3971,10 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 98,
+          "views": 97,
           "likes": 0,
           "shares": 0,
           "hook": "Jesz przed treningiem czy po? Napisz PRZED albo PO."
-        },
-        {
-          "key": "2026-11-15-1230-r23",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 68,
-          "likes": 0,
-          "shares": 0,
-          "hook": "Bierzesz pierwszą propozycję obiadu czy szukasz dalej? Napisz A albo B."
         }
       ],
       "bottom": [
@@ -3857,7 +4013,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 8,
+          "views": 18,
           "likes": 0,
           "shares": 0,
           "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu."
