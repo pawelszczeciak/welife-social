@@ -24,3 +24,12 @@ umowne (ten sam dzień co wersja polska, 15:00); przy uruchomieniu angielskiego 
 
 Starsze pozycje w `en/` (sprzed 15.11) są w starej, zielonej szacie i piszą o wersji beta. Nie publikować ich bez
 ponownego renderu i przepisania opisów.
+
+## Zapas z listopada (`zapas-2026-11/`), wstrzymany 23.11.2026
+
+Decyzja właściciela z 23.11: jedna publikacja dziennie zamiast trzech i treść, która jest użyteczna sama w sobie
+(przepis, gotowa lista), zamiast rolek pokazujących funkcje aplikacji. Po trzech tygodniach rolki „o funkcjach”
+miały na TikToku ok. 250 wyświetleń każda i nie przyniosły obserwujących.
+
+W tym katalogu leżą pozycje zaplanowane wcześniej na 24.11–2.12 (rolki R43–R60, karty C14–C17, quizy K9, K11, K13).
+Pliki media zostały w `media/`. Można je przywrócić pojedynczo: nowe `publish_at` i `id`, przeniesienie do `queue/`.
