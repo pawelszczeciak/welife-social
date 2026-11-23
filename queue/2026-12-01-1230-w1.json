@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-01-1230-w1",
+  "publish_at": "2026-12-01T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "pinterest"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/W1-01.jpg",
+    "media/W1-02.jpg",
+    "media/W1-03.jpg",
+    "media/W1-04.jpg",
+    "media/W1-05.jpg",
+    "media/W1-06.jpg",
+    "media/W1-07.jpg",
+    "media/W1-08.jpg",
+    "media/W1-09.jpg"
+  ],
+  "ai_imagery": false,
+  "caption": "Wigilia na 8 osób: lista zakupów z ilościami i plan gotowania na 3 dni\n\nZapisz ten post, zanim pójdziesz do sklepu, i wyślij go temu, kto robi zakupy.\n\nNa stole: barszcz z uszkami, pierogi z kapustą i grzybami, karp smażony, ryba po grecku, śledzie w oleju, kapusta z grochem, kompot z suszu i makowiec.\n\nWarzywa: buraki 1,2 kg, cebula 800 g, marchew 700 g, włoszczyzna 350 g, pietruszka 200 g, seler 200 g, czosnek 2 ząbki, cytryna 1 szt.\nRyby: karp w dzwonkach 1,5 kg, filet z białej ryby 800 g, filety śledziowe 500 g.\nSypkie i słoiki: kapusta kiszona 1,2 kg, mąka pszenna 800 g, olej 400 ml, groch łuskany 200 g, grzyby suszone 110 g, cukier 100 g, koncentrat pomidorowy 80 g.\nReszta: pieczywo 400 g, susz owocowy 250 g, masło 50 g, makowiec, opłatek.\n\nPlan: we wtorek 22.12 farsze, uszka, pierogi i śledzie. W środę 23.12 barszcz, ryba po grecku, kapusta z grochem i kompot. W czwartek 24.12 karp, uszka i pierogi z wody.\n\nIlości są orientacyjne, liczone na osobę przy kilku potrawach na stole. Masz inną liczbę osób albo inne potrawy? Darmowy planer przeliczy listę i podzieli, kto co robi. Link w bio @welife.world.\n\nPlaner przygotowało WE.LIFE. Na co dzień robi to samo z planem posiłków i listą zakupów na zwykły tydzień. Konto jest bezpłatne.\n\n#wigilia #listazakupów #święta",
+  "facebook": {
+    "message": "Wigilia na 8 osób: lista zakupów z ilościami i plan gotowania na 3 dni\n\nZapisz ten post, zanim pójdziesz do sklepu, i wyślij go temu, kto robi zakupy.\n\nNa stole: barszcz z uszkami, pierogi z kapustą i grzybami, karp smażony, ryba po grecku, śledzie w oleju, kapusta z grochem, kompot z suszu i makowiec.\n\nIlości są orientacyjne, liczone na osobę przy kilku potrawach na stole. Masz inną liczbę osób albo inne potrawy? Darmowy planer przeliczy listę, ułoży plan gotowania i podzieli, kto co robi. Bez konta, link wysyłasz rodzinie:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/\n\nPlaner przygotowało WE.LIFE. Na co dzień robi to samo z planem posiłków i listą zakupów na zwykły tydzień. Konto jest bezpłatne: https://welife.world/?utm_source=facebook&utm_medium=social&utm_campaign=2026-12-01-1230-w1\n\n#wigilia #listazakupów #święta"
+  },
+  "pinterest": {
+    "title": "Wigilia na 8 osób: lista zakupów z ilościami i plan gotowania na 3 dni",
+    "description": "Lista zakupów na Wigilię dla 8 osób z ilościami: barszcz z uszkami, pierogi z kapustą i grzybami, karp, ryba po grecku, śledzie, kapusta z grochem, kompot z suszu. Do tego plan gotowania na 3 dni przed Wigilią. Ilości są orientacyjne. Darmowy planer WE.LIFE przelicza listę na inną liczbę osób i dzieli, kto co robi. Konto w WE.LIFE jest bezpłatne.",
+    "media": "media/W1-03.jpg"
+  }
+}
