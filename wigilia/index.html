@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wigilia bez chaosu: lista zakupów, plan gotowania i kto co robi | WE.LIFE</title>
+<meta name="description" content="Wpisz liczbę osób i wybierz potrawy. Dostaniesz listę zakupów na Wigilię z ilościami, plan gotowania na 3 dni i podział, kto co robi. Bezpłatnie, bez konta.">
+<meta property="og:title" content="Wigilia bez chaosu: lista zakupów i kto co robi">
+<meta property="og:description" content="Liczba osób i potrawy → lista zakupów z ilościami, plan gotowania na 3 dni i podział zadań dla rodziny. Bezpłatnie, bez konta.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://pawelszczeciak.github.io/welife-social/wigilia/og.jpg">
+<meta property="og:url" content="https://pawelszczeciak.github.io/welife-social/wigilia/">
+<meta name="theme-color" content="#084E57">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --teal:#0A6C78; --dark:#084E57; --light:#D6EBEE; --bg:#F2F6F7; --ink:#0F2428; --muted:#46585C; --hl:#52C5D2; --green:#16834A; --line:#C9DADD; --card:#fff; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:400 17px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 16px; }
+  header.top { background:var(--dark); color:#fff; padding:22px 0 30px; }
+  .brand { font-weight:800; letter-spacing:.06em; font-size:15px; color:var(--hl); text-decoration:none; }
+  h1 { font-size:clamp(30px,7vw,44px); line-height:1.08; margin:14px 0 10px; font-weight:800; letter-spacing:-.01em; text-wrap:balance; }
+  header.top p { margin:0; color:var(--light); font-size:18px; max-width:34em; }
+  h2 { font-size:24px; line-height:1.2; margin:0 0 4px; font-weight:800; }
+  .hint { color:var(--muted); font-size:15px; margin:0 0 14px; }
+  section { padding:26px 0 6px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; }
+  .stepper { display:flex; align-items:center; gap:14px; }
+  .stepper button { width:52px; height:52px; border-radius:14px; border:2px solid var(--teal); background:#fff; color:var(--teal); font:800 26px/1 Figtree,sans-serif; cursor:pointer; }
+  .stepper output { min-width:3ch; text-align:center; font:800 40px/1 Figtree,sans-serif; font-variant-numeric:tabular-nums; }
+  .stepper span { color:var(--muted); }
+  .dishes { display:grid; gap:10px; }
+  .dish { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; align-items:center; padding:12px 14px; border:1px solid var(--line); border-radius:14px; background:#fff; }
+  .dish.on { border-color:var(--teal); background:#F7FBFC; }
+  .dish input[type=checkbox] { width:24px; height:24px; accent-color:var(--teal); grid-row:1; }
+  .dish label { font-weight:700; cursor:pointer; }
+  .dish small { color:var(--muted); font-weight:400; margin-left:6px; white-space:nowrap; }
+  .dish .who { grid-column:2; display:none; }
+  .dish.on .who { display:block; }
+  .who input { width:100%; max-width:260px; padding:9px 12px; border:1px solid var(--line); border-radius:10px; font:400 16px Figtree,sans-serif; color:var(--ink); background:#fff; }
+  .who input::placeholder { color:#7B8C90; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0; }
+  .btn { appearance:none; border:0; border-radius:12px; padding:13px 18px; min-height:48px; font:700 16px/1.1 Figtree,sans-serif; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; }
+  .btn.primary { background:var(--teal); color:#fff; }
+  .btn.ghost { background:#fff; color:var(--dark); border:2px solid var(--teal); }
+  .btn.wa { background:var(--green); color:#fff; }
+  .btn:focus-visible, .stepper button:focus-visible, .who input:focus-visible, select:focus-visible, .title input:focus-visible { outline:3px solid var(--hl); outline-offset:2px; }
+  .filter { display:flex; align-items:center; gap:10px; margin:0 0 12px; font-size:15px; color:var(--muted); }
+  select { padding:9px 12px; border-radius:10px; border:1px solid var(--line); font:600 16px Figtree,sans-serif; color:var(--ink); background:#fff; }
+  .group { margin:0 0 14px; }
+  .group h3 { margin:0 0 6px; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); font-weight:800; }
+  .item { display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:baseline; padding:9px 0; border-top:1px solid #E4EDEF; }
+  .group .item:first-of-type { border-top:0; }
+  .item input { width:20px; height:20px; accent-color:var(--teal); align-self:center; }
+  .item b { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .item input:checked ~ span, .item input:checked ~ b { text-decoration:line-through; color:#7B8C90; }
+  .check { margin:10px 0 0; padding:12px 14px; background:var(--light); border-radius:12px; font-size:15px; }
+  .days { display:grid; gap:12px; }
+  .day h3 { margin:0 0 8px; font-size:18px; font-weight:800; }
+  .day h3 small { font-weight:600; color:var(--muted); font-size:14px; margin-left:8px; }
+  .day ul { margin:0; padding:0; list-style:none; }
+  .day li { padding:7px 0 7px 18px; border-top:1px solid #E4EDEF; position:relative; }
+  .day li:first-child { border-top:0; }
+  .day li::before { content:""; position:absolute; left:2px; top:16px; width:8px; height:8px; border-radius:50%; background:var(--hl); }
+  .day li i { font-style:normal; color:var(--teal); font-weight:700; }
+  .title input { width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:400 17px Figtree,sans-serif; color:var(--ink); }
+  .cta { background:var(--dark); color:#fff; border-radius:22px; padding:24px 20px; margin:30px 0 10px; }
+  .cta h2 { color:#fff; margin-bottom:8px; }
+  .cta p { margin:0 0 16px; color:var(--light); }
+  .cta .btn { background:#fff; color:var(--dark); }
+  footer { color:var(--muted); font-size:14px; padding:18px 0 40px; }
+  footer a { color:var(--teal); }
+  .toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:var(--ink); color:#fff; padding:11px 18px; border-radius:999px; font-weight:600; font-size:15px; opacity:0; pointer-events:none; transition:opacity .2s; }
+  .toast.show { opacity:1; }
+  @media (prefers-reduced-motion:reduce) { .toast { transition:none; } }
+  @media print {
+    header.top, .bar, .cta, .who, #wybor, #udostepnij, .filter, .toast, .stepper button { display:none !important; }
+    body { background:#fff; font-size:13px; }
+    section { padding:10px 0 0; } .card { border:0; padding:0; }
+    .print-head { display:block !important; font-weight:800; font-size:18px; margin:0 0 6px; }
+  }
+  .print-head { display:none; }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=logo">WE.LIFE</a>
+  <h1 id="tytul">Wigilia bez chaosu</h1>
+  <p>Wpisz liczbę osób i wybierz potrawy. Dostaniesz listę zakupów z ilościami, plan gotowania na 3 dni i podział, kto co robi.</p>
+</div></header>
+
+<main class="wrap">
+  <section id="wybor">
+    <h2>1. Ile osób przy stole?</h2>
+    <p class="hint">Dzieci licz jak dorosłych: przy kilku potrawach i tak każdy je po trochu.</p>
+    <div class="card stepper">
+      <button type="button" id="minus" aria-label="Mniej osób">−</button>
+      <output id="n" aria-live="polite">8</output>
+      <button type="button" id="plus" aria-label="Więcej osób">+</button>
+      <span>osób</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Co będzie na stole?</h2>
+    <p class="hint">Zaznacz potrawy. Jeśli gotuje kilka osób, wpisz obok, kto robi którą.</p>
+    <div class="dishes" id="dania"></div>
+  </section>
+
+  <section id="lista-sekcja">
+    <p class="print-head" id="print-head"></p>
+    <h2>3. Lista zakupów</h2>
+    <p class="hint" id="lista-opis"></p>
+    <div class="filter" id="filtr-wrap" hidden><label for="filtr">Pokaż listę dla:</label><select id="filtr"></select></div>
+    <div class="card" id="lista"></div>
+    <div class="check" id="przyprawy"></div>
+    <div class="bar">
+      <button type="button" class="btn primary" id="kopiuj-liste">Kopiuj listę</button>
+      <a class="btn wa" id="wa-lista" target="_blank" rel="noopener">Wyślij listę na WhatsApp</a>
+      <button type="button" class="btn ghost" id="drukuj">Drukuj</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Plan gotowania na 3 dni</h2>
+    <p class="hint">Żeby 24 grudnia zostało tylko to, co musi być świeże.</p>
+    <div class="days" id="plan"></div>
+  </section>
+
+  <section id="udostepnij">
+    <h2>5. Wyślij rodzinie</h2>
+    <p class="hint">Każdy, kto otworzy link, zobaczy ten sam podział i swoją listę zakupów. Niczego nie zapisujemy: wszystko jest w samym linku.</p>
+    <div class="card title">
+      <label for="u" style="font-weight:700;display:block;margin-bottom:6px">U kogo Wigilia? <span style="font-weight:400;color:var(--muted)">(niekonieczne)</span></label>
+      <input id="u" type="text" maxlength="40" placeholder="np. u babci Heni" autocomplete="off">
+      <div class="bar">
+        <a class="btn wa" id="wa-link" target="_blank" rel="noopener">Wyślij plan na WhatsApp</a>
+        <button type="button" class="btn ghost" id="kopiuj-link">Kopiuj link</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Tak samo może wyglądać zwykły tydzień</h2>
+    <p>W WE.LIFE układasz plan posiłków, a lista zakupów z ilościami powstaje z planu i odejmuje to, co już masz w domu. Konto jest bezpłatne.</p>
+    <a class="btn" href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=cta">Załóż bezpłatne konto</a>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  Ilości są orientacyjne: liczone na osobę przy kilku potrawach na stole. Dopasuj je do apetytów w swojej rodzinie.
+  Strona nie używa plików cookie i niczego nie zapisuje na serwerze. Przygotowało <a href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=stopka">WE.LIFE</a>.
+</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// Składniki: [nazwa, sekcja, jednostka, zaokrąglenie w górę]
+const SEKCJE = ["Warzywa i owoce", "Ryby", "Nabiał i jajka", "Mąka, kasze, sypkie", "Słoiki i przetwory", "Tłuszcze", "Bakalie i słodkie", "Pieczywo i inne"];
+const SKL = {
+  buraki: ["Buraki", 0, "g", 100], wloszczyzna: ["Włoszczyzna (marchew, pietruszka, seler)", 0, "g", 50], marchew: ["Marchew", 0, "g", 100],
+  pietruszka: ["Pietruszka, korzeń", 0, "g", 50], seler: ["Seler, korzeń", 0, "g", 50], cebula: ["Cebula", 0, "g", 100], czosnek: ["Czosnek", 0, "ząbek", 1],
+  ziemniaki: ["Ziemniaki", 0, "g", 100], jablko: ["Jabłko", 0, "szt.", 1], cytryna: ["Cytryna", 0, "szt.", 1],
+  karp: ["Karp, dzwonka", 1, "g", 100], ryba: ["Filet z białej ryby (np. dorsz, mintaj)", 1, "g", 100], sledzie: ["Filety śledziowe", 1, "g", 50],
+  jajka: ["Jajka", 2, "szt.", 1], maslo: ["Masło", 2, "g", 50], smietana: ["Śmietana 18%", 2, "ml", 50],
+  maka: ["Mąka pszenna", 3, "g", 100], groch: ["Groch łuskany", 3, "g", 50], pszenica: ["Pszenica na kutię", 3, "g", 50], cukier: ["Cukier", 3, "g", 50],
+  lazanki: ["Makaron łazanki", 3, "g", 50], makaron: ["Makaron wstążki", 3, "g", 50],
+  kapusta: ["Kapusta kiszona", 4, "g", 100], grzyby: ["Grzyby suszone", 4, "g", 10], ogorki: ["Ogórki kiszone", 4, "g", 50], groszek: ["Groszek konserwowy", 4, "g", 50],
+  koncentrat: ["Koncentrat pomidorowy", 4, "g", 10], majonez: ["Majonez", 4, "g", 50],
+  olej: ["Olej rzepakowy", 5, "ml", 50],
+  susz: ["Susz owocowy (śliwki, jabłka, gruszki)", 6, "g", 50], mak: ["Mak", 6, "g", 50], miod: ["Miód", 6, "g", 50], bakalie: ["Bakalie (orzechy, rodzynki)", 6, "g", 50], makowiec: ["Makowiec", 6, "szt.", 1],
+  pieczywo: ["Pieczywo", 7, "g", 100], oplatek: ["Opłatek", 7, "opak.", 1],
+};
+// Potrawy: s = ilość na osobę, stale = ilość niezależna od liczby osób, plan = [ile dni przed Wigilią, zadanie]
+const DANIA = [
+  { id: "barszcz", n: "Barszcz czerwony", p: "ok. 250 ml na osobę", s: { buraki: 150, wloszczyzna: 40, grzyby: 3, czosnek: 0.25 }, plan: [[2, "Ugotuj wywar z włoszczyzny i grzybów na barszcz."], [1, "Ugotuj barszcz. Na drugi dzień jest lepszy."], [0, "Podgrzej barszcz, nie zagotowuj. Dopraw."]], on: 1 },
+  { id: "uszka", n: "Uszka z grzybami", p: "6 szt. na osobę", s: { maka: 25, grzyby: 5, cebula: 15, maslo: 3 }, plan: [[2, "Namocz grzyby, zrób farsz i ulep uszka. Możesz je zamrozić."], [0, "Ugotuj uszka tuż przed kolacją."]], on: 1 },
+  { id: "pierogi", n: "Pierogi z kapustą i grzybami", p: "6 szt. na osobę", s: { maka: 50, kapusta: 60, grzyby: 5, cebula: 20, olej: 5 }, plan: [[2, "Zrób farsz i ulep pierogi. Możesz je zamrozić."], [0, "Ugotuj pierogi i okraś cebulą."]], on: 1 },
+  { id: "karp", n: "Karp smażony", p: "1 dzwonko na osobę", s: { karp: 180, maka: 10, olej: 15, cytryna: 0.125 }, plan: [[1, "Kup karpia, posól i wstaw do lodówki."], [0, "Usmaż karpia tuż przed kolacją."]], on: 1 },
+  { id: "grecka", n: "Ryba po grecku", p: "ok. 200 g na osobę", s: { ryba: 100, marchew: 80, pietruszka: 20, seler: 20, cebula: 30, koncentrat: 10, olej: 10, maka: 5 }, plan: [[1, "Usmaż rybę, uduś warzywa i połącz. Ryba po grecku musi się przegryźć."]], on: 1 },
+  { id: "sledzie", n: "Śledzie w oleju", p: "ok. 60 g na osobę", s: { sledzie: 60, cebula: 20, olej: 15 }, plan: [[2, "Zalej śledzie olejem z cebulą. Najlepsze są po 2 dniach."]], on: 1 },
+  { id: "kapusta", n: "Kapusta z grochem", p: "ok. 120 g na osobę", s: { kapusta: 80, groch: 20, cebula: 15, olej: 5 }, plan: [[2, "Namocz groch na noc."], [1, "Ugotuj groch i kapustę, połącz."], [0, "Podgrzej kapustę z grochem."]], on: 1 },
+  { id: "kompot", n: "Kompot z suszu", p: "ok. 250 ml na osobę", s: { susz: 30, cukier: 10 }, plan: [[1, "Ugotuj kompot z suszu i odstaw do wystudzenia."]], on: 1 },
+  { id: "makowiec", n: "Makowiec, kupiony", p: "1–2 kawałki na osobę", s: { makowiec: 0.1 }, plan: [[2, "Zamów albo kup makowiec."]], on: 1 },
+  { id: "stol", n: "Pieczywo i opłatek", p: "", s: { pieczywo: 50 }, stale: { oplatek: 1 }, plan: [[1, "Kup pieczywo i opłatek."], [0, "Nakryj stół. Pamiętaj o dodatkowym nakryciu."]], on: 1 },
+  { id: "salatka", n: "Sałatka jarzynowa", p: "ok. 120 g na osobę", s: { ziemniaki: 40, marchew: 30, groszek: 15, ogorki: 20, jajka: 0.25, majonez: 15, jablko: 0.1 }, plan: [[1, "Ugotuj warzywa i jajka na sałatkę, pokrój i wymieszaj."]], on: 0 },
+  { id: "grzybowa", n: "Zupa grzybowa z łazankami", p: "ok. 250 ml na osobę", s: { grzyby: 10, wloszczyzna: 40, smietana: 20, lazanki: 25 }, plan: [[2, "Namocz grzyby na zupę."], [1, "Ugotuj zupę grzybową."], [0, "Ugotuj łazanki i podgrzej zupę."]], on: 0 },
+  { id: "kutia", n: "Kutia", p: "ok. 80 g na osobę", s: { pszenica: 25, mak: 15, miod: 15, bakalie: 15 }, plan: [[2, "Namocz pszenicę i mak na kutię."], [1, "Ugotuj pszenicę, zmiel mak, wymieszaj z miodem i bakaliami."]], on: 0 },
+  { id: "kluski", n: "Kluski z makiem", p: "ok. 100 g na osobę", s: { makaron: 40, mak: 15, miod: 10, bakalie: 10 }, plan: [[1, "Przygotuj masę makową do klusek."], [0, "Ugotuj makaron i wymieszaj z makiem."]], on: 0 },
+];
+const DNI = [[2, "2 dni przed", "wtorek 22.12"], [1, "Dzień przed", "środa 23.12"], [0, "Wigilia", "czwartek 24.12"]];
+const PRZYPRAWY = "sól, pieprz, liść laurowy, ziele angielskie, majeranek, goździki, cynamon, ocet albo sok z cytryny";
+const BASE = location.href.split("#")[0];
+
+// Stan: liczba osób, wybrane potrawy, kto robi którą, u kogo. Trzymany wyłącznie w części adresu po znaku #.
+const stan = { n: 8, d: new Set(DANIA.filter((x) => x.on).map((x) => x.id)), k: {}, u: "" };
+function czytajHash() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  const n = parseInt(q.get("n"), 10);
+  if (n >= 2 && n <= 30) stan.n = n;
+  if (q.has("d")) stan.d = new Set(q.get("d").split(".").filter((id) => DANIA.some((x) => x.id === id)));
+  stan.k = {};
+  for (const para of (q.get("k") || "").split("|")) {
+    const i = para.indexOf("~");
+    if (i > 0 && DANIA.some((x) => x.id === para.slice(0, i))) stan.k[para.slice(0, i)] = para.slice(i + 1).slice(0, 24);
+  }
+  stan.u = (q.get("u") || "").slice(0, 40);
+}
+function hash() {
+  const q = new URLSearchParams();
+  q.set("n", stan.n);
+  q.set("d", [...stan.d].join("."));
+  const k = Object.entries(stan.k).filter(([id, kto]) => kto.trim() && stan.d.has(id)).map(([id, kto]) => id + "~" + kto.trim().replace(/[|~]/g, " "));
+  if (k.length) q.set("k", k.join("|"));
+  if (stan.u.trim()) q.set("u", stan.u.trim());
+  return q.toString();
+}
+const link = () => BASE + "#" + hash();
+
+const fmt = (x, j) => {
+  if (j === "g" && x >= 1000) return (x / 1000).toLocaleString("pl-PL", { maximumFractionDigits: 2 }) + " kg";
+  if (j === "ml" && x >= 1000) return (x / 1000).toLocaleString("pl-PL", { maximumFractionDigits: 2 }) + " l";
+  if (j === "ząbek") return x + (x === 1 ? " ząbek" : x < 5 ? " ząbki" : " ząbków");
+  return x.toLocaleString("pl-PL") + " " + j;
+};
+const osoby = () => Object.entries(stan.k).filter(([id, kto]) => kto.trim() && stan.d.has(id)).map(([, kto]) => kto.trim());
+// Lista zakupów: sumuje ten sam składnik z kilku potraw i zaokrągla w górę do ilości, którą da się kupić.
+function zakupy(dla) {
+  const suma = {};
+  for (const d of DANIA) {
+    if (!stan.d.has(d.id)) continue;
+    if (dla && (stan.k[d.id] || "").trim() !== dla) continue;
+    for (const [id, ile] of Object.entries(d.s)) suma[id] = (suma[id] || 0) + ile * stan.n;
+    for (const [id, ile] of Object.entries(d.stale || {})) suma[id] = (suma[id] || 0) + ile;
+  }
+  return SEKCJE.map((nazwa, s) => ({
+    nazwa,
+    poz: Object.entries(suma).filter(([id]) => SKL[id][1] === s).map(([id, x]) => {
+      const [n, , j, krok] = SKL[id];
+      return { n, ile: fmt(Math.ceil(x / krok - 1e-9) * krok, j) };
+    }),
+  })).filter((g) => g.poz.length);
+}
+const naglowek = () => "Wigilia" + (stan.u.trim() ? " " + stan.u.trim() : "") + ", " + stan.n + " osób";
+function tekstListy(dla) {
+  const g = zakupy(dla);
+  return [naglowek() + (dla ? " — lista: " + dla : "") + ". Lista zakupów:", ...g.flatMap((x) => ["", x.nazwa.toUpperCase(), ...x.poz.map((p) => "- " + p.n + ": " + p.ile)]),
+    "", "Sprawdź, czy masz: " + PRZYPRAWY + ".", "", "Zrobione w darmowym planerze WE.LIFE: " + link()].join("\n");
+}
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function rysujDania() {
+  $("dania").innerHTML = DANIA.map((d) => `<div class="dish${stan.d.has(d.id) ? " on" : ""}" data-id="${d.id}">
+    <input type="checkbox" id="c-${d.id}"${stan.d.has(d.id) ? " checked" : ""}>
+    <label for="c-${d.id}">${d.n}${d.p ? `<small>${d.p}</small>` : ""}</label>
+    <div class="who"><input type="text" maxlength="24" placeholder="kto robi? (niekonieczne)" aria-label="Kto robi: ${d.n}" value="${esc(stan.k[d.id] || "")}" autocomplete="off"></div>
+  </div>`).join("");
+}
+function rysuj() {
+  $("n").textContent = stan.n;
+  $("tytul").textContent = stan.u.trim() ? "Wigilia " + stan.u.trim() : "Wigilia bez chaosu";
+  const ludzie = [...new Set(osoby())];
+  const f = $("filtr"), wybrany = ludzie.includes(f.value) ? f.value : "";
+  $("filtr-wrap").hidden = ludzie.length === 0;
+  f.innerHTML = `<option value="">wszystkich</option>` + ludzie.map((o) => `<option${o === wybrany ? " selected" : ""}>${esc(o)}</option>`).join("");
+  const g = zakupy(wybrany);
+  $("lista-opis").textContent = stan.d.size ? `${stan.n} osób, ${stan.d.size} ${stan.d.size === 1 ? "pozycja" : stan.d.size < 5 ? "pozycje" : "pozycji"} na stole. Ten sam składnik z kilku potraw jest zsumowany.` : "Zaznacz przynajmniej jedną potrawę.";
+  $("lista").innerHTML = g.length ? g.map((x) => `<div class="group"><h3>${x.nazwa}</h3>${x.poz.map((p) => `<label class="item"><input type="checkbox"><span>${p.n}</span><b>${p.ile}</b></label>`).join("")}</div>`).join("") : `<p class="hint" style="margin:0">Brak pozycji.</p>`;
+  $("przyprawy").innerHTML = "<b>Sprawdź, czy masz:</b> " + PRZYPRAWY + ".";
+  $("print-head").textContent = naglowek() + (wybrany ? " — lista: " + wybrany : "");
+  $("plan").innerHTML = DNI.map(([ile, nazwa, data]) => {
+    const z = DANIA.filter((d) => stan.d.has(d.id)).flatMap((d) => d.plan.filter(([kiedy]) => kiedy === ile).map(([, co]) => ({ co, kto: (stan.k[d.id] || "").trim() })));
+    return `<div class="card day"><h3>${nazwa}<small>${data}</small></h3>${z.length ? `<ul>${z.map((x) => `<li>${x.kto ? `<i>${esc(x.kto)}:</i> ` : ""}${x.co}</li>`).join("")}</ul>` : `<p class="hint" style="margin:0">Nic do zrobienia.</p>`}</div>`;
+  }).join("");
+  const wiad = naglowek() + ". Podział, lista zakupów z ilościami i plan gotowania: " + link();
+  $("wa-link").href = "https://wa.me/?text=" + encodeURIComponent(wiad);
+  $("wa-lista").href = "https://wa.me/?text=" + encodeURIComponent(tekstListy(wybrany));
+  history.replaceState(null, "", "#" + hash());
+}
+function toast(t) { const el = $("toast"); el.textContent = t; el.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 1800); }
+async function kopiuj(t, ok) {
+  try { await navigator.clipboard.writeText(t); toast(ok); }
+  catch { const a = document.createElement("textarea"); a.value = t; document.body.append(a); a.select(); document.execCommand("copy"); a.remove(); toast(ok); }
+}
+
+czytajHash();
+$("u").value = stan.u;
+rysujDania();
+rysuj();
+$("minus").onclick = () => { stan.n = Math.max(2, stan.n - 1); rysuj(); };
+$("plus").onclick = () => { stan.n = Math.min(30, stan.n + 1); rysuj(); };
+$("dania").addEventListener("change", (e) => {
+  const el = e.target.closest(".dish"); if (!el || e.target.type !== "checkbox") return;
+  e.target.checked ? stan.d.add(el.dataset.id) : stan.d.delete(el.dataset.id);
+  el.classList.toggle("on", e.target.checked); rysuj();
+});
+$("dania").addEventListener("input", (e) => {
+  const el = e.target.closest(".dish"); if (!el || e.target.type !== "text") return;
+  stan.k[el.dataset.id] = e.target.value; rysuj();
+});
+$("u").addEventListener("input", (e) => { stan.u = e.target.value; rysuj(); });
+$("filtr").addEventListener("change", rysuj);
+$("kopiuj-liste").onclick = () => kopiuj(tekstListy($("filtr").value), "Lista skopiowana");
+$("kopiuj-link").onclick = () => kopiuj(link(), "Link skopiowany");
+$("drukuj").onclick = () => window.print();
+window.addEventListener("hashchange", () => { czytajHash(); $("u").value = stan.u; rysujDania(); rysuj(); });
+</script>
+</body>
+</html>
