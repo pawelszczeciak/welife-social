@@ -1,12 +1,72 @@
 {
-  "collected_at": "2026-11-23T03:31:30.210Z",
+  "collected_at": "2026-11-24T03:30:07.345Z",
   "instagram": {
-    "followers": 1,
-    "media_count": 84,
+    "followers": 3,
+    "media_count": 87,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-23-1830-r42",
+        "id": "17994039497865309",
+        "permalink": "https://www.instagram.com/reel/DgF7nj9D7BO/",
+        "published_at": "2026-11-23T17:36:55+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R42.mp4",
+        "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-23-1230-r41",
+        "id": "18135805180826903",
+        "permalink": "https://www.instagram.com/reel/DgFSrtDGWKs/",
+        "published_at": "2026-11-23T11:39:09+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R41.mp4",
+        "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
+      {
+        "key": "2026-11-23-0830-c13",
+        "id": "18060846974800594",
+        "permalink": "https://www.instagram.com/p/DgE3LQKoDhs/",
+        "published_at": "2026-11-23T07:38:30+0000",
+        "kind": "image",
+        "type": "image",
+        "lang": "pl",
+        "slot": "08:30",
+        "media": "C13.jpg",
+        "hook": "Planujesz jedzenie pod trening czy jesz, co jest? Napisz w komentarzu.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-22-1830-r40",
         "id": "17959863936279557",
@@ -1113,7 +1173,7 @@
         "slot": "15:00",
         "media": "R7-en.mp4",
         "hook": "Do you keep receipts or bin them straight away? Tell us in the comments.",
-        "likes": 0,
+        "likes": 1,
         "comments": 0,
         "reach": null,
         "views": null,
@@ -1133,7 +1193,7 @@
         "slot": "12:30",
         "media": "R7.mp4",
         "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu.",
-        "likes": 1,
+        "likes": 2,
         "comments": 0,
         "reach": null,
         "views": null,
@@ -1618,7 +1678,7 @@
         "permalink": "https://www.instagram.com/reel/DfVAfmblF5s/",
         "published_at": "2026-11-04T17:36:44+0000",
         "kind": "reel",
-        "likes": 0,
+        "likes": 1,
         "comments": 0,
         "reach": null,
         "views": null,
@@ -1658,7 +1718,7 @@
         "slot": "12:00",
         "media": "K1-01-okladka.jpg",
         "hook": "Trzeci słoik passaty w szafce to nie przypadek. To lista zakupów pisana z pamięci.",
-        "likes": 2,
+        "likes": 3,
         "comments": 0,
         "reach": null,
         "views": null,
@@ -1676,6 +1736,38 @@
       "posty: Graph API GET 1306038305932559/posts: (#10) This endpoint requires the 'pages_read_engagement' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS for details."
     ],
     "posts": [
+      {
+        "key": "2026-11-23-1830-r42",
+        "id": "1683189030182402",
+        "published_at": "2026-11-23T17:37:05+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R42.mp4",
+        "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
+        "key": "2026-11-23-1230-r41",
+        "id": "1815122799775151",
+        "published_at": "2026-11-23T11:39:18+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R41.mp4",
+        "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
       {
         "key": "2026-11-22-1830-r40",
         "id": "1413956610534331",
@@ -2025,6 +2117,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-23-1830-r42",
+        "id": "6b04842e16b77b0c6ac5fd04",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7711422424423599393?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-23T17:37:13.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R42.mp4",
+        "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
+        "views": 141,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-23-1230-r41",
+        "id": "6b044d35c128393374a14126",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7711330219994418465?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-23T11:39:25.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R41.mp4",
+        "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer.",
+        "views": 243,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-22-1830-r40",
         "id": "6b033b7ca6fd62358a4ea2c0",
         "permalink": "https://www.tiktok.com/@welife.world/video/7711051426155203872?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -2035,7 +2159,7 @@
         "slot": "18:30",
         "media": "R40.mp4",
         "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
-        "views": 255,
+        "views": 270,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2051,7 +2175,7 @@
         "slot": "12:30",
         "media": "R39.mp4",
         "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG.",
-        "views": 272,
+        "views": 274,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2387,7 +2511,7 @@
         "slot": "12:30",
         "media": "R11.mp4",
         "hook": "Ile wizyt w sklepie w tym tygodniu? Napisz liczbę w komentarzu.",
-        "views": 783,
+        "views": 784,
         "likes": 2,
         "comments": 0,
         "shares": 0
@@ -2419,7 +2543,7 @@
         "slot": "12:30",
         "media": "R10.mp4",
         "hook": "O której zwykle decydujesz, co na obiad? Napisz godzinę w komentarzu.",
-        "views": 780,
+        "views": 781,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2430,7 +2554,7 @@
         "permalink": "https://www.tiktok.com/@welife.world/video/7707020571619462422?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
         "published_at": "2026-11-12T09:00:00.000Z",
         "kind": "reel",
-        "views": 725,
+        "views": 726,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2885,6 +3009,38 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-23-1830-r42",
+        "id": "6b048700097dec85299e6492",
+        "permalink": "https://www.youtube.com/watch?v=Qa6hRfxiP0w",
+        "published_at": "2026-11-23T17:37:56.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "18:30",
+        "media": "R42.mp4",
+        "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
+        "views": 19,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "key": "2026-11-23-1230-r41",
+        "id": "6b044d969cb4920cf9a132e4",
+        "permalink": "https://www.youtube.com/watch?v=WOr4J1whxcY",
+        "published_at": "2026-11-23T11:40:04.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "R41.mp4",
+        "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer.",
+        "views": 57,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-22-1830-r40",
         "id": "6b033bea2ea810381075adc7",
         "permalink": "https://www.youtube.com/watch?v=OeEKP0M2YJ0",
@@ -2895,7 +3051,7 @@
         "slot": "18:30",
         "media": "R40.mp4",
         "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
-        "views": 179,
+        "views": 318,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2943,7 +3099,7 @@
         "slot": "12:30",
         "media": "R38.mp4",
         "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu.",
-        "views": 97,
+        "views": 102,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3151,7 +3307,7 @@
         "slot": "15:00",
         "media": "R28.mp4",
         "hook": "O której u Ciebie pada „co na obiad”? Napisz godzinę.",
-        "views": 54,
+        "views": 55,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3209,13 +3365,22 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 85,
+      "posts": 88,
       "by_kind": {
         "reel": {
-          "n": 57,
+          "n": 59,
           "median": 0,
-          "total": 16,
-          "likes": 16,
+          "total": 19,
+          "likes": 19,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
+        "image": {
+          "n": 17,
+          "median": 0,
+          "total": 3,
+          "likes": 3,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3223,17 +3388,8 @@
         "carousel": {
           "n": 12,
           "median": 1,
-          "total": 8,
-          "likes": 8,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
-        "image": {
-          "n": 16,
-          "median": 0,
-          "total": 3,
-          "likes": 3,
+          "total": 9,
+          "likes": 9,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3241,10 +3397,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 59,
+          "n": 62,
           "median": 0,
-          "total": 11,
-          "likes": 11,
+          "total": 13,
+          "likes": 13,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3252,8 +3408,8 @@
         "en": {
           "n": 18,
           "median": 1,
-          "total": 11,
-          "likes": 11,
+          "total": 12,
+          "likes": 12,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3261,7 +3417,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 18,
+          "n": 19,
           "median": 0,
           "total": 4,
           "likes": 4,
@@ -3270,16 +3426,16 @@
           "shares": 0
         },
         "12:30": {
-          "n": 17,
+          "n": 18,
           "median": 0,
-          "total": 2,
-          "likes": 2,
+          "total": 3,
+          "likes": 3,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "08:30": {
-          "n": 16,
+          "n": 17,
           "median": 0,
           "total": 1,
           "likes": 1,
@@ -3308,8 +3464,8 @@
         "15:00": {
           "n": 8,
           "median": 1,
-          "total": 5,
-          "likes": 5,
+          "total": 6,
+          "likes": 6,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3352,9 +3508,9 @@
         },
         "12:00": {
           "n": 1,
-          "median": 2,
-          "total": 2,
-          "likes": 2,
+          "median": 3,
+          "total": 3,
+          "likes": 3,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3366,11 +3522,22 @@
           "kind": "carousel",
           "lang": "pl",
           "slot": "12:00",
-          "likes": 2,
+          "likes": 3,
           "saved": null,
           "shares": null,
           "avg_watch_s": null,
           "hook": "Trzeci słoik passaty w szafce to nie przypadek. To lista zakupów pisana z pamięci."
+        },
+        {
+          "key": "2026-11-08-1230-r7",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "likes": 2,
+          "saved": null,
+          "shares": null,
+          "avg_watch_s": null,
+          "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu."
         },
         {
           "key": "2026-11-15-1500-r28",
@@ -3404,25 +3571,9 @@
           "shares": null,
           "avg_watch_s": null,
           "hook": "Ile osób je u Ciebie obiad? Napisz liczbę w komentarzu."
-        },
-        {
-          "key": null,
-          "kind": "carousel",
-          "likes": 1,
-          "saved": null,
-          "shares": null,
-          "avg_watch_s": null
         }
       ],
       "bottom": [
-        {
-          "key": null,
-          "kind": "reel",
-          "likes": 0,
-          "saved": null,
-          "shares": null,
-          "avg_watch_s": null
-        },
         {
           "key": "2026-11-05-0830-c1",
           "kind": "image",
@@ -3466,15 +3617,26 @@
           "shares": null,
           "avg_watch_s": null,
           "hook": "Ile z tych 5 rzeczy robisz przed zakupami? Policz i napisz wynik w komentarzu."
+        },
+        {
+          "key": "2026-11-06-1230-r2",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "likes": 0,
+          "saved": null,
+          "shares": null,
+          "avg_watch_s": null,
+          "hook": "Ile razy w tygodniu decydujesz, co na obiad? Napisz w komentarzu."
         }
       ]
     },
     "facebook": {
       "metric": "views",
-      "posts": 22,
+      "posts": 24,
       "by_kind": {
         "reel": {
-          "n": 22,
+          "n": 24,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3485,7 +3647,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 20,
+          "n": 22,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3496,7 +3658,7 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 8,
+          "n": 9,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3505,7 +3667,7 @@
           "shares": 0
         },
         "12:30": {
-          "n": 9,
+          "n": 10,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -3567,24 +3729,24 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-22-1830-r40",
+          "key": "2026-11-23-1830-r42",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B."
+          "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu."
         },
         {
-          "key": "2026-11-22-1230-r39",
+          "key": "2026-11-23-1230-r41",
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
           "views": 0,
           "likes": 0,
           "shares": null,
-          "hook": "Planujesz obiady w niedzielę czy w biegu? Napisz NIEDZIELA albo BIEG."
+          "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer."
         }
       ],
       "bottom": [
@@ -3642,13 +3804,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 54,
+      "posts": 56,
       "by_kind": {
         "reel": {
-          "n": 54,
-          "median": 271.5,
-          "total": 22601,
-          "likes": 30,
+          "n": 56,
+          "median": 271,
+          "total": 23005,
+          "likes": 31,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3656,10 +3818,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 40,
-          "median": 271,
-          "total": 17174,
-          "likes": 28,
+          "n": 42,
+          "median": 270.5,
+          "total": 17577,
+          "likes": 29,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3676,19 +3838,19 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 17,
-          "median": 271,
-          "total": 6247,
+          "n": 18,
+          "median": 270.5,
+          "total": 6403,
           "likes": 15,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 17,
-          "median": 272,
-          "total": 7678,
-          "likes": 10,
+          "n": 18,
+          "median": 267,
+          "total": 7925,
+          "likes": 11,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3855,12 +4017,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 20,
+      "posts": 22,
       "by_kind": {
         "reel": {
-          "n": 20,
-          "median": 55.5,
-          "total": 1526,
+          "n": 22,
+          "median": 56,
+          "total": 1747,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3869,9 +4031,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 20,
-          "median": 55.5,
-          "total": 1526,
+          "n": 22,
+          "median": 56,
+          "total": 1747,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3880,18 +4042,18 @@
       },
       "by_slot": {
         "18:30": {
-          "n": 8,
-          "median": 50,
-          "total": 491,
+          "n": 9,
+          "median": 47,
+          "total": 649,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
         "12:30": {
-          "n": 9,
-          "median": 67,
-          "total": 934,
+          "n": 10,
+          "median": 66,
+          "total": 996,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -3917,8 +4079,8 @@
         },
         "15:00": {
           "n": 1,
-          "median": 54,
-          "total": 54,
+          "median": 55,
+          "total": 55,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -3941,7 +4103,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 179,
+          "views": 318,
           "likes": 0,
           "shares": 0,
           "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B."
@@ -3961,7 +4123,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 97,
+          "views": 102,
           "likes": 0,
           "shares": 0,
           "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu."
@@ -4019,14 +4181,14 @@
           "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-18-1830-r32",
+          "key": "2026-11-23-1830-r42",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 35,
+          "views": 19,
           "likes": 0,
           "shares": 0,
-          "hook": "Liczby na ekranie czy jedzenie bez liczenia? Napisz A albo B."
+          "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu."
         }
       ]
     }
