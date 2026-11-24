@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista zakupów na Wigilię z ilościami: 4, 6, 8, 10 i 12 osób | WE.LIFE</title>
+<meta name="description" content="Gotowe listy zakupów na Wigilię z ilościami dla 4, 6, 8, 10 i 12 osób oraz plan przygotowań na 3 dni. Inną liczbę osób przeliczy darmowy planer, bez konta.">
+<link rel="canonical" href="https://pawelszczeciak.github.io/welife-social/wigilia/lista-zakupow/">
+<meta property="og:title" content="Lista zakupów na Wigilię">
+<meta property="og:description" content="Gotowe listy zakupów na Wigilię z ilościami dla 4, 6, 8, 10 i 12 osób oraz plan przygotowań na 3 dni. Inną liczbę osób przeliczy darmowy planer, bez konta.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://pawelszczeciak.github.io/welife-social/wigilia/og.jpg">
+<meta property="og:url" content="https://pawelszczeciak.github.io/welife-social/wigilia/lista-zakupow/">
+<meta name="theme-color" content="#084E57">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --teal:#0A6C78; --dark:#084E57; --light:#D6EBEE; --bg:#F2F6F7; --ink:#0F2428; --muted:#46585C; --hl:#52C5D2; --line:#C9DADD; --card:#fff; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:400 17px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 16px; }
+  header.top { background:var(--dark); color:#fff; padding:22px 0 28px; }
+  .brand { font-weight:800; letter-spacing:.06em; font-size:15px; color:var(--hl); text-decoration:none; }
+  .back { display:inline-block; margin-left:14px; color:var(--light); font-size:15px; }
+  h1 { font-size:clamp(30px,7vw,44px); line-height:1.08; margin:14px 0 10px; font-weight:800; letter-spacing:-.01em; text-wrap:balance; }
+  header.top p { margin:0; color:var(--light); font-size:18px; max-width:34em; }
+  h2 { font-size:24px; line-height:1.2; margin:0 0 8px; font-weight:800; text-wrap:balance; }
+  section { padding:26px 0 4px; }
+  section > p { margin:0 0 12px; max-width:38em; }
+  .hint { color:var(--muted); font-size:15px; margin:0 0 12px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; }
+  .ans { margin:0; font:800 clamp(40px,11vw,60px)/1 Figtree,sans-serif; color:var(--dark); font-variant-numeric:tabular-nums; }
+  .ans + p { margin:6px 0 0; font-weight:600; color:var(--muted); }
+  .pick { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0; }
+  .pick button { min-width:48px; min-height:44px; padding:8px 12px; border-radius:12px; border:2px solid var(--line); background:#fff; color:var(--ink); font:700 16px/1 Figtree,sans-serif; cursor:pointer; }
+  .pick button[aria-pressed=true] { border-color:var(--teal); background:var(--teal); color:#fff; }
+  .pick button:focus-visible, .btn:focus-visible, a:focus-visible { outline:3px solid var(--hl); outline-offset:2px; }
+  .rows { margin:14px 0 0; }
+  .row { display:flex; justify-content:space-between; gap:14px; padding:9px 0; border-top:1px solid #E4EDEF; }
+  .row b { white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .group h3 { margin:14px 0 2px; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); font-weight:800; }
+  .group:first-child h3 { margin-top:0; }
+  .group .row:first-of-type, .card > .row:first-child { border-top:0; }
+  .tab { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:16px; }
+  th, td { text-align:left; padding:10px 10px 10px 0; border-top:1px solid #E4EDEF; vertical-align:top; }
+  thead th { border-top:0; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); }
+  td.n, td.q { white-space:nowrap; font-weight:700; font-variant-numeric:tabular-nums; }
+  td.s { color:var(--muted); font-size:15px; }
+  .check { margin:10px 0 0; padding:12px 14px; background:var(--light); border-radius:12px; font-size:15px; }
+  .day { margin:0 0 12px; }
+  .day h3 { margin:0 0 8px; font-size:18px; font-weight:800; }
+  .day h3 small { font-weight:600; color:var(--muted); font-size:14px; margin-left:8px; }
+  .day ul { margin:0; padding:0; list-style:none; }
+  .day li { padding:7px 0 7px 18px; border-top:1px solid #E4EDEF; position:relative; }
+  .day li:first-child { border-top:0; }
+  .day li::before { content:""; position:absolute; left:2px; top:16px; width:8px; height:8px; border-radius:50%; background:var(--hl); }
+  .cta { background:var(--dark); color:#fff; border-radius:22px; padding:24px 20px; margin:30px 0 6px; }
+  .cta h2 { color:#fff; }
+  .cta p { margin:0 0 16px; color:var(--light); }
+  .btn { appearance:none; border:0; border-radius:12px; padding:13px 18px; min-height:48px; font:700 16px/1.1 Figtree,sans-serif; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; background:#fff; color:var(--dark); }
+  .links { display:grid; gap:8px; padding:0; margin:0; list-style:none; }
+  .links a { display:block; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--dark); font-weight:700; text-decoration:none; }
+  .links a:hover { border-color:var(--teal); }
+  main a:not(.btn):not(.links a) { color:var(--teal); font-weight:600; }
+  footer { color:var(--muted); font-size:14px; padding:22px 0 40px; }
+  footer a { color:var(--teal); }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=odp-lista-logo">WE.LIFE</a><a class="back" href="../" data-planer="../" data-z="odp-lista">← Planer Wigilii</a>
+  <h1>Lista zakupów na Wigilię</h1>
+  <p>Gotowe listy z ilościami dla 4, 6, 8, 10 i 12 osób. Każda liczy te same potrawy i sumuje składniki, które się powtarzają.</p>
+</div></header>
+<main class="wrap">
+
+  <section>
+    <h2>Wybierz liczbę osób</h2>
+    <ul class="links"><li><a href="../lista-zakupow/na-4-osoby/">Wigilia na 4 osoby: 23 pozycje z ilościami</a></li><li><a href="../lista-zakupow/na-6-osob/">Wigilia na 6 osób: 23 pozycje z ilościami</a></li><li><a href="../lista-zakupow/na-8-osob/">Wigilia na 8 osób: 23 pozycje z ilościami</a></li><li><a href="../lista-zakupow/na-10-osob/">Wigilia na 10 osób: 23 pozycje z ilościami</a></li><li><a href="../lista-zakupow/na-12-osob/">Wigilia na 12 osób: 23 pozycje z ilościami</a></li></ul>
+  </section>
+
+  <div class="cta">
+    <h2>Inna liczba osób albo inne potrawy?</h2>
+    <p>Darmowy planer przeliczy listę na 2–30 osób, ułoży plan na 3 dni i podzieli, kto co robi. Bez konta.</p>
+    <a class="btn" href="../?z=odp-lista" data-planer="../" data-z="odp-lista">Otwórz planer Wigilii</a>
+  </div>
+<section><h2>Inne szybkie odpowiedzi</h2><ul class="links"><li><a href="../ile-barszczu-na-osobe/">Ile barszczu na osobę?</a></li><li><a href="../ile-uszek-na-osobe/">Ile uszek na osobę?</a></li><li><a href="../ile-pierogow-na-osobe/">Ile pierogów na osobę?</a></li><li><a href="../ile-karpia-na-osobe/">Ile karpia na osobę?</a></li><li><a href="../ile-sledzi-na-osobe/">Ile śledzi na osobę?</a></li><li><a href="../ile-ryby-po-grecku-na-osobe/">Ile ryby po grecku na osobę?</a></li><li><a href="../plan-przygotowan/">Plan przygotowań do Wigilii na 3 dni</a></li></ul></section>
+</main>
+<footer><div class="wrap">
+  Ilości są orientacyjne: liczone na osobę, gdy na stole jest kilka potraw, i zaokrąglone w górę do ilości, którą da się kupić. Dopasuj je do apetytów w swojej rodzinie.
+  Strona nie używa plików cookie i niczego nie zapisuje na serwerze. Przygotowało <a href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=odp-lista-stopka">WE.LIFE</a>. Stan na 24.11.2026.
+</div></footer>
+<script>
+const zZAdresu = (new URLSearchParams(location.search).get("z") || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+function ustawLinki() {
+  document.querySelectorAll("a[data-planer]").forEach((a) => {
+    a.href = a.dataset.planer + "?z=" + (zZAdresu || a.dataset.z) + (a.dataset.n ? "#n=" + a.dataset.n : "");
+  });
+  if (zZAdresu) document.querySelectorAll('a[href*="utm_source=wigilia"]').forEach((a) => {
+    a.href = a.href.replace(/utm_content=[a-z0-9_-]+-(logo|stopka)$/, "utm_content=" + zZAdresu + "-$1");
+  });
+}
+ustawLinki();
+</script>
+</body>
+</html>

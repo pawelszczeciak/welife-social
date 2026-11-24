@@ -70,13 +70,16 @@
   .cta h2 { color:#fff; margin-bottom:8px; }
   .cta p { margin:0 0 16px; color:var(--light); }
   .cta .btn { background:#fff; color:var(--dark); }
+  .links { display:grid; gap:8px; padding:0; margin:0; list-style:none; }
+  .links a { display:block; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--dark); font-weight:700; text-decoration:none; }
+  .links a:hover { border-color:var(--teal); }
   footer { color:var(--muted); font-size:14px; padding:18px 0 40px; }
   footer a { color:var(--teal); }
   .toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:var(--ink); color:#fff; padding:11px 18px; border-radius:999px; font-weight:600; font-size:15px; opacity:0; pointer-events:none; transition:opacity .2s; }
   .toast.show { opacity:1; }
   @media (prefers-reduced-motion:reduce) { .toast { transition:none; } }
   @media print {
-    header.top, .bar, .cta, .who, #wybor, #udostepnij, #sprawy-sekcja, .filter, .toast, .stepper button { display:none !important; }
+    header.top, .bar, .cta, .who, #wybor, #udostepnij, #sprawy-sekcja, #odpowiedzi, .filter, .toast, .stepper button { display:none !important; }
     body { background:#fff; font-size:13px; }
     section { padding:10px 0 0; } .card { border:0; padding:0; }
     .print-head { display:block !important; font-weight:800; font-size:18px; margin:0 0 6px; }
@@ -153,6 +156,19 @@
         <button type="button" class="btn ghost" id="kopiuj-link">Kopiuj link</button>
       </div>
     </div>
+  </section>
+
+  <section id="odpowiedzi">
+    <h2>Szybkie odpowiedzi</h2>
+    <p class="hint">Jedno pytanie, jedna liczba i tabela na 2–40 osób.</p>
+    <ul class="links">
+      <li><a href="ile-barszczu-na-osobe/">Ile barszczu na osobę?</a></li>
+      <li><a href="ile-uszek-na-osobe/">Ile uszek na osobę?</a></li>
+      <li><a href="ile-pierogow-na-osobe/">Ile pierogów na osobę?</a></li>
+      <li><a href="ile-karpia-na-osobe/">Ile karpia na osobę?</a></li>
+      <li><a href="lista-zakupow/">Gotowe listy zakupów na 4, 6, 8, 10 i 12 osób</a></li>
+      <li><a href="plan-przygotowan/">Plan przygotowań na 3 dni</a></li>
+    </ul>
   </section>
 
   <div class="cta">
