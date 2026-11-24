@@ -16,6 +16,7 @@
 <style>
   :root { --teal:#0A6C78; --dark:#084E57; --light:#D6EBEE; --bg:#F2F6F7; --ink:#0F2428; --muted:#46585C; --hl:#52C5D2; --green:#16834A; --line:#C9DADD; --card:#fff; }
   * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
   html { -webkit-text-size-adjust:100%; }
   body { margin:0; background:var(--bg); color:var(--ink); font:400 17px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif; }
   .wrap { max-width:720px; margin:0 auto; padding:0 16px; }
@@ -70,6 +71,10 @@
   .cta h2 { color:#fff; margin-bottom:8px; }
   .cta p { margin:0 0 16px; color:var(--light); }
   .cta .btn { background:#fff; color:var(--dark); }
+  .chk { display:flex; align-items:center; gap:10px; margin:0 0 4px; font-size:16px; cursor:pointer; }
+  .chk input { width:22px; height:22px; accent-color:var(--teal); flex:none; }
+  #karta-img { display:block; width:100%; max-width:300px; border-radius:16px; border:1px solid var(--line); margin:14px 0 0; }
+  .linkbtn { background:none; border:0; padding:0; color:var(--teal); font:700 15px Figtree,sans-serif; text-decoration:underline; cursor:pointer; }
   .links { display:grid; gap:8px; padding:0; margin:0; list-style:none; }
   .links a { display:block; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--dark); font-weight:700; text-decoration:none; }
   .links a:hover { border-color:var(--teal); }
@@ -154,6 +159,20 @@
       <div class="bar">
         <a class="btn wa" id="wa-link" target="_blank" rel="noopener">Wyślij plan na WhatsApp</a>
         <button type="button" class="btn ghost" id="kopiuj-link">Kopiuj link</button>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <p style="font-weight:700;margin:0 0 4px">Wigilia w liczbach</p>
+      <p class="hint" style="margin-bottom:10px">Obrazek z liczbami z Waszego planu, do wysłania rodzinie albo do relacji. Powstaje w telefonie, niczego nie wysyłamy.</p>
+      <label class="chk" id="karta-imiona-wrap" hidden><input type="checkbox" id="karta-imiona"> Pokaż imiona i podział „kto ile robi”</label>
+      <div class="bar"><button type="button" class="btn primary" id="karta-pokaz">Pokaż naszą Wigilię w liczbach</button></div>
+      <div id="karta-wynik" hidden>
+        <img id="karta-img" alt="">
+        <div class="bar">
+          <button type="button" class="btn wa" id="karta-wyslij" hidden>Wyślij obraz</button>
+          <a class="btn ghost" id="karta-pobierz" download="wigilia-w-liczbach.jpg">Pobierz obraz</a>
+        </div>
+        <p class="hint" style="margin:10px 0 0">Dołącz link do planera, żeby inni policzyli swoją Wigilię: <button type="button" class="linkbtn" id="karta-link">skopiuj link</button></p>
       </div>
     </div>
   </section>
@@ -317,6 +336,12 @@ function rysujSprawy() {
     <div class="who"><input type="text" maxlength="24" placeholder="kto bierze? (niekonieczne)" aria-label="Kto bierze: ${esc(x.co)}" value="${esc(x.kto)}" autocomplete="off"></div>
   </div>`).join("");
 }
+// Zadania jednego dnia planu: potrawy, sprawy poza kuchnią i własne sprawy rodziny. Z tej samej listy liczy karta „Wigilia w liczbach”.
+function zadaniaDnia(ile) {
+  return DANIA.filter((d) => stan.d.has(d.id)).flatMap((d) => d.plan.filter(([kiedy]) => kiedy === ile).map(([, co]) => ({ co, kto: (stan.k[d.id] || "").trim() })))
+    .concat(SPRAWY.filter(([id, , kiedy]) => stan.s.has(id) && kiedy === ile).map(([id, nazwa]) => ({ co: esc(nazwa) + ".", kto: (stan.k["s-" + id] || "").trim() })))
+    .concat(ile === 1 ? stan.w.map((x) => ({ co: esc(x.co), kto: x.kto.trim() })) : []);
+}
 function rysuj() {
   $("n").textContent = stan.n;
   $("tytul").textContent = stan.u.trim() ? "Wigilia " + stan.u.trim() : "Wigilia bez chaosu";
@@ -330,21 +355,131 @@ function rysuj() {
   $("przyprawy").innerHTML = "<b>Sprawdź, czy masz:</b> " + PRZYPRAWY + ".";
   $("print-head").textContent = naglowek() + (wybrany ? " — lista: " + wybrany : "");
   $("plan").innerHTML = DNI.map(([ile, nazwa, data]) => {
-    const z = DANIA.filter((d) => stan.d.has(d.id)).flatMap((d) => d.plan.filter(([kiedy]) => kiedy === ile).map(([, co]) => ({ co, kto: (stan.k[d.id] || "").trim() })))
-      .concat(SPRAWY.filter(([id, , kiedy]) => stan.s.has(id) && kiedy === ile).map(([id, nazwa]) => ({ co: esc(nazwa) + ".", kto: (stan.k["s-" + id] || "").trim() })))
-      .concat(ile === 1 ? stan.w.map((x) => ({ co: esc(x.co), kto: x.kto.trim() })) : []);
+    const z = zadaniaDnia(ile);
     return `<div class="card day"><h3>${nazwa}<small>${data}</small></h3>${z.length ? `<ul>${z.map((x) => `<li>${x.kto ? `<i>${esc(x.kto)}:</i> ` : ""}${x.co}</li>`).join("")}</ul>` : `<p class="hint" style="margin:0">Nic do zrobienia.</p>`}</div>`;
   }).join("");
   const wiad = naglowek() + ". Podział, lista zakupów z ilościami i plan gotowania: " + link();
   $("wa-link").href = "https://wa.me/?text=" + encodeURIComponent(wiad);
   $("wa-lista").href = "https://wa.me/?text=" + encodeURIComponent(tekstListy(wybrany));
   history.replaceState(null, "", "#" + hash());
+  // Karta: pole imion tylko wtedy, gdy ktoś jest wpisany; po każdej zmianie planu stary obrazek znika, żeby nie wysłać nieaktualnego.
+  const saImiona = DNI.some(([ile]) => zadaniaDnia(ile).some((x) => x.kto));
+  $("karta-imiona-wrap").hidden = !saImiona;
+  if (!saImiona) $("karta-imiona").checked = false;
+  $("karta-wynik").hidden = true;
 }
 function toast(t) { const el = $("toast"); el.textContent = t; el.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 1800); }
 async function kopiuj(t, ok) {
   try { await navigator.clipboard.writeText(t); toast(ok); }
   catch { const a = document.createElement("textarea"); a.value = t; document.body.append(a); a.select(); document.execCommand("copy"); a.remove(); toast(ok); }
 }
+
+// „Wigilia w liczbach”: obrazek 1080×1920 z liczbami bieżącego planu. Powstaje w przeglądarce (canvas), nic nie jest wysyłane.
+// Imiona trafiają na kartę tylko po zaznaczeniu pola; link dołączany do karty nie zawiera planu rodziny.
+const ROK = 2026;
+// [potrawa, porcja na osobę, jednostka, nazwa do liczby] w kolejności pierwszeństwa na karcie. Porcje muszą zgadzać się z opisami w DANIA.
+const KARTA = [
+  ["pierogi", 6, "szt", ["pieróg", "pierogi", "pierogów"]], ["uszka", 6, "szt", ["uszko", "uszka", "uszek"]], ["barszcz", 250, "ml", "barszczu"],
+  ["karp", 1, "szt", ["dzwonko karpia", "dzwonka karpia", "dzwonek karpia"]], ["grzybowa", 250, "ml", "zupy grzybowej"], ["kompot", 250, "ml", "kompotu z suszu"],
+  ["grecka", 200, "g", "ryby po grecku"], ["sledzie", 60, "g", "śledzi"], ["kapusta", 120, "g", "kapusty z grochem"],
+  ["salatka", 120, "g", "sałatki jarzynowej"], ["kutia", 80, "g", "kutii"], ["kluski", 100, "g", "klusek z makiem"],
+];
+const odm = (n, f) => (Array.isArray(f) ? (n === 1 ? f[0] : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? f[1] : f[2]) : f);
+function liczbyKarty() {
+  const wybrane = DANIA.filter((d) => stan.d.has(d.id) && d.p);
+  const zadania = DNI.flatMap(([ile]) => zadaniaDnia(ile));
+  const kafle = [[String(stan.n), odm(stan.n, ["osoba przy stole", "osoby przy stole", "osób przy stole"])], [String(wybrane.length), odm(wybrane.length, ["potrawa", "potrawy", "potraw"])]];
+  for (const [id, porcja, j, nazwa] of KARTA) {
+    if (kafle.length >= 5) break;
+    if (stan.d.has(id)) kafle.push([j === "szt" ? String(porcja * stan.n) : fmt(porcja * stan.n, j), odm(porcja * stan.n, nazwa)]);
+  }
+  kafle.push([String(zadania.length), odm(zadania.length, ["zadanie w 3 dni", "zadania w 3 dni", "zadań w 3 dni"])]);
+  const naOsobe = {};
+  for (const x of zadania) if (x.kto) naOsobe[x.kto] = (naOsobe[x.kto] || 0) + 1;
+  const lista = zakupy("").reduce((a, g) => a + g.poz.length, 0);
+  return { potrawy: wybrane.length, kafle, lista, podzial: Object.entries(naOsobe).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "pl")), bezOsoby: zadania.filter((x) => !x.kto).length };
+}
+function rysujKarte(d, zImionami) {
+  const c = document.createElement("canvas"); c.width = 1080; c.height = 1920;
+  const x = c.getContext("2d");
+  const kroj = (waga, px) => `${waga} ${px}px Figtree, system-ui, sans-serif`;
+  const pisz = (t, waga, px, kolor, X, Y, max, wyrownaj) => {
+    let p = px; x.font = kroj(waga, p);
+    while (max && x.measureText(t).width > max && p > 20) { p -= 2; x.font = kroj(waga, p); }
+    x.fillStyle = kolor; x.textAlign = wyrownaj || "left"; x.fillText(t, X, Y + (px - p) * 0.5); x.textAlign = "left";
+    return x.measureText(t).width;
+  };
+  const pole = (X, Y, W, H, r, kolor) => {
+    x.fillStyle = kolor; x.beginPath();
+    if (x.roundRect) x.roundRect(X, Y, W, H, r);
+    else { x.moveTo(X + r, Y); x.arcTo(X + W, Y, X + W, Y + H, r); x.arcTo(X + W, Y + H, X, Y + H, r); x.arcTo(X, Y + H, X, Y, r); x.arcTo(X, Y, X + W, Y, r); x.closePath(); }
+    x.fill();
+  };
+  const tlo = x.createLinearGradient(0, 0, 520, 1920); tlo.addColorStop(0, "#0A6C78"); tlo.addColorStop(0.72, "#084E57"); tlo.addColorStop(1, "#084E57");
+  x.fillStyle = tlo; x.fillRect(0, 0, 1080, 1920); x.textBaseline = "top";
+  pisz("WE.LIFE", 800, 34, "#52C5D2", 80, 264);
+  pisz("Nasza Wigilia " + ROK, 700, 54, "#D6EBEE", 80, 318);
+  pisz("w liczbach", 800, 150, "#fff", 80, 384);
+  const imiona = zImionami && d.podzial.length > 0;
+  const u = imiona ? { kol: 3, odstep: 18, wys: 173, liczba: 84, opis: 29, bok: 24, gora: 24, r: 28 } : { kol: 2, odstep: 22, wys: 215, liczba: 112, opis: 36, bok: 30, gora: 28, r: 34 };
+  const szer = (920 - (u.kol - 1) * u.odstep) / u.kol;
+  d.kafle.forEach(([liczba, opis], i) => {
+    const X = 80 + (i % u.kol) * (szer + u.odstep), Y = 580 + Math.floor(i / u.kol) * (u.wys + u.odstep);
+    pole(X, Y, szer, u.wys, u.r, "#fff");
+    pisz(liczba, 800, u.liczba, "#084E57", X + u.bok, Y + u.gora, szer - 2 * u.bok);
+    pisz(opis, 700, u.opis, "#0F2428", X + u.bok, Y + u.gora + u.liczba + 10, szer - 2 * u.bok);
+  });
+  const rzedy = Math.ceil(d.kafle.length / u.kol);
+  let Y = 580 + rzedy * u.wys + (rzedy - 1) * u.odstep;
+  if (imiona) {
+    const wiersze = d.podzial.length > 6 ? d.podzial.slice(0, 5).concat([["pozostali", d.podzial.slice(5).reduce((a, [, ile]) => a + ile, 0)]]) : d.podzial.slice();
+    if (d.bezOsoby) wiersze.push(["bez osoby", d.bezOsoby, true]);
+    const max = Math.max(...wiersze.map(([, ile]) => ile));
+    Y += 38; pole(80, Y, 920, 84 + wiersze.length * 52 + 18, 30, "#D6EBEE");
+    pisz("KTO ILE ROBI", 800, 34, "#084E57", 112, Y + 28);
+    wiersze.forEach(([kto, ile, szary], i) => {
+      const y = Y + 84 + i * 52;
+      let nazwa = kto; x.font = kroj(700, 36);
+      while (x.measureText(nazwa).width > 200 && nazwa.length > 2) nazwa = nazwa.slice(0, -2).trimEnd() + "…";
+      pisz(nazwa, 700, 36, szary ? "#46585C" : "#0F2428", 112, y);
+      pole(332, y + 8, Math.max(24, Math.round(560 * Math.min(1, ile / max))), 24, 12, szary ? "#9DBFC4" : "#0A6C78");
+      pisz(String(ile), 800, 36, "#0F2428", 968, y, 0, "right");
+    });
+    Y += 84 + wiersze.length * 52 + 18;
+  } else {
+    Y += 31; pole(80, Y, 920, 104, 30, "#D6EBEE");
+    const w = pisz(String(d.lista), 800, 44, "#084E57", 112, Y + 30);
+    pisz(" " + odm(d.lista, ["pozycja", "pozycje", "pozycji"]) + " na liście zakupów", 700, 44, "#084E57", 112 + w, Y + 30);
+    Y += 104;
+  }
+  pisz("Policzone w darmowym planerze Wigilii.", 600, 36, "#D6EBEE", 80, Y + 44);
+  pisz("Policz swoją: link w wiadomości.", 800, 36, "#fff", 80, Y + 92);
+  return c;
+}
+let kartaPlik = null, kartaAdres = "";
+const linkKarty = () => (location.origin === "null" ? BASE.split("?")[0] : location.origin + location.pathname) + "?z=karta";
+$("karta-pokaz").onclick = async () => {
+  const d = liczbyKarty();
+  if (!d.potrawy) { toast("Zaznacz przynajmniej jedną potrawę"); return; }
+  // Czekamy na krój najwyżej 1,5 s: przy słabej sieci karta ma powstać mimo to, najwyżej krojem systemowym.
+  try { await Promise.race([Promise.all([600, 700, 800].map((w) => document.fonts.load(w + " 40px Figtree"))), new Promise((r) => setTimeout(r, 1500))]); } catch { /* zostaje krój systemowy */ }
+  const zImionami = $("karta-imiona").checked;
+  rysujKarte(d, zImionami).toBlob((blob) => {
+    if (!blob) { toast("Nie udało się przygotować obrazka"); return; }
+    if (kartaAdres) URL.revokeObjectURL(kartaAdres);
+    kartaAdres = URL.createObjectURL(blob);
+    kartaPlik = new File([blob], "wigilia-w-liczbach.jpg", { type: "image/jpeg" });
+    $("karta-img").src = kartaAdres;
+    $("karta-img").alt = "Wigilia w liczbach: " + d.kafle.map(([a, b]) => a + " " + b).join(", ") + "; " + d.lista + " " + odm(d.lista, ["pozycja", "pozycje", "pozycji"]) + " na liście zakupów" + (zImionami && d.podzial.length ? ". Kto ile robi: " + d.podzial.map(([kto, ile]) => kto + " " + ile).join(", ") : "") + ".";
+    $("karta-pobierz").href = kartaAdres;
+    $("karta-wyslij").hidden = !(navigator.canShare && navigator.canShare({ files: [kartaPlik] }));
+    $("karta-wynik").hidden = false;
+  }, "image/jpeg", 0.92);
+};
+$("karta-wyslij").onclick = async () => {
+  try { await navigator.share({ files: [kartaPlik], text: "Nasza Wigilia w liczbach. Policz swoją: " + linkKarty() }); } catch { /* udostępnianie przerwane przez użytkownika */ }
+};
+$("karta-link").onclick = () => kopiuj(linkKarty(), "Link skopiowany");
 
 // Oznaczenie źródła: adres z ?z=nazwa (np. link dla jednej grupy albo twórcy) trafia do utm_content linków do aplikacji.
 const zrodlo = (new URLSearchParams(location.search).get("z") || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
