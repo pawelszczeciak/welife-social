@@ -1,7 +1,8 @@
 # „Wigilia w liczbach”: projekt karty do udostępnienia
 
-Stan na 24.11.2026: **projekt do decyzji, nic nie jest wdrożone**. Planer działa bez zmian.
-Przygotowane na prośbę Codexa w welife-app#841: bez imion domyślnie, z rzeczywistymi liczbami, bez nowej domeny.
+Stan na 24.11.2026, późnym wieczorem: **wdrożone w planerze** po decyzji właściciela („tak, wdróż kartę z wariantem imion”),
+commit `beb1f66` w `welife-social`. Wersja w domenie (#837) jeszcze karty nie ma: port trzeba uzupełnić.
+Projekt powstał na prośbę Codexa w welife-app#841: bez imion domyślnie, z rzeczywistymi liczbami, bez nowej domeny.
 
 ## Co to jest
 
@@ -67,3 +68,26 @@ Jeśli zaznaczonych potraw z policzalną porcją jest mniej, kafle uzupełniają
 
 `welife-app`, gałąź `claude/inspiring-maxwell-n89ylj`, `marketing/instagram/kampania/wigilia-w-liczbach/`:
 `karta.cjs` (czyta liczby z planera i składa `karta.html`), `liczby.json` (odczyt z 24.11.2026).
+
+## Co zostało wdrożone (24.11.2026)
+
+- W sekcji „6. Wyślij rodzinie” jest ramka „Wigilia w liczbach” z przyciskiem „Pokaż naszą Wigilię w liczbach”.
+- Po dotknięciu pojawia się podgląd obrazka, przycisk „Pobierz obraz” i, jeśli telefon umie udostępniać pliki, „Wyślij obraz”.
+  Do wiadomości trafia tekst „Nasza Wigilia w liczbach. Policz swoją: …” z linkiem do pustego planera z dopiskiem `?z=karta`.
+  Link nie zawiera planu rodziny.
+- Pole „Pokaż imiona i podział »kto ile robi«” widać tylko wtedy, gdy w planie są wpisane osoby, i jest odznaczone.
+- Po każdej zmianie planu stary obrazek znika, żeby nie wysłać nieaktualnego.
+- Przy słabej sieci karta nie czeka na krój pisma dłużej niż 1,5 s.
+
+Sprawdzone na ekranie telefonu: liczby dla 6 osób zgodne z makietą (6, 9, 36, 36, 1,5 l, 18, 23 pozycje), wariant z imionami
+(Tomek 8, Basia 6, Ola 4, Jan 2, Henia 1), dziewięć osób (pięć pierwszych, „pozostali” i „bez osoby”), jedna potrawa, brak potraw
+(komunikat zamiast pustej karty), udostępnianie z plikiem JPEG 1080×1920, brak błędów w konsoli i brak poziomego przewijania.
+
+Przy okazji naprawione: elementy z atrybutem `hidden` i własną regułą wyświetlania (filtr „Pokaż listę dla” bez wpisanych imion)
+zostawały na ekranie. Teraz znikają.
+
+## Dla portu do domeny
+
+Karta to trzy fragmenty w `site/wigilia/index.html`: tabela `KARTA` z funkcją `liczbyKarty()` (czysta logika, w porcie pasuje do
+`planner-core.mjs`: korzysta z listy zadań planu i z listy zakupów), `rysujKarte(d, zImionami)` (rysunek na canvasie, bez zależności)
+oraz obsługa trzech przycisków (pasuje do `boot.js`). Zadania dnia liczy teraz jedna funkcja `zadaniaDnia()`, odpowiednik `plan(state)` z portu.
