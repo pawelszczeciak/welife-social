@@ -76,7 +76,7 @@
   .toast.show { opacity:1; }
   @media (prefers-reduced-motion:reduce) { .toast { transition:none; } }
   @media print {
-    header.top, .bar, .cta, .who, #wybor, #udostepnij, .filter, .toast, .stepper button { display:none !important; }
+    header.top, .bar, .cta, .who, #wybor, #udostepnij, #sprawy-sekcja, .filter, .toast, .stepper button { display:none !important; }
     body { background:#fff; font-size:13px; }
     section { padding:10px 0 0; } .card { border:0; padding:0; }
     .print-head { display:block !important; font-weight:800; font-size:18px; margin:0 0 6px; }
@@ -88,7 +88,7 @@
 <header class="top"><div class="wrap">
   <a class="brand" href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=logo">WE.LIFE</a>
   <h1 id="tytul">Wigilia bez chaosu</h1>
-  <p>Wpisz liczbę osób i wybierz potrawy. Dostaniesz listę zakupów z ilościami, plan gotowania na 3 dni i podział, kto co robi.</p>
+  <p>Wpisz liczbę osób, wybierz potrawy i sprawy do ogarnięcia. Dostaniesz listę zakupów z ilościami, plan na 3 dni i podział, kto co robi.</p>
 </div></header>
 
 <main class="wrap">
@@ -109,9 +109,22 @@
     <div class="dishes" id="dania"></div>
   </section>
 
+  <section id="sprawy-sekcja">
+    <h2>3. Co jeszcze trzeba ogarnąć?</h2>
+    <p class="hint">Nie tylko gotowanie. Zaznacz sprawy i wpisz, kto je bierze. Trafią do planu na 3 dni.</p>
+    <div class="dishes" id="sprawy"></div>
+    <div class="card title" style="margin-top:10px">
+      <label for="nowa" style="font-weight:700;display:block;margin-bottom:6px">Własna sprawa</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="nowa" type="text" maxlength="60" placeholder="np. pożyczyć krzesła od sąsiadów" autocomplete="off" style="flex:1;min-width:200px">
+        <button type="button" class="btn ghost" id="dodaj-sprawe">Dodaj</button>
+      </div>
+    </div>
+  </section>
+
   <section id="lista-sekcja">
     <p class="print-head" id="print-head"></p>
-    <h2>3. Lista zakupów</h2>
+    <h2>4. Lista zakupów</h2>
     <p class="hint" id="lista-opis"></p>
     <div class="filter" id="filtr-wrap" hidden><label for="filtr">Pokaż listę dla:</label><select id="filtr"></select></div>
     <div class="card" id="lista"></div>
@@ -124,13 +137,13 @@
   </section>
 
   <section>
-    <h2>4. Plan gotowania na 3 dni</h2>
-    <p class="hint">Żeby 24 grudnia zostało tylko to, co musi być świeże.</p>
+    <h2>5. Plan na 3 dni</h2>
+    <p class="hint">Gotowanie i pozostałe sprawy, żeby 24 grudnia zostało tylko to, co musi być świeże.</p>
     <div class="days" id="plan"></div>
   </section>
 
   <section id="udostepnij">
-    <h2>5. Wyślij rodzinie</h2>
+    <h2>6. Wyślij rodzinie</h2>
     <p class="hint">Każdy, kto otworzy link, zobaczy ten sam podział i swoją listę zakupów. Niczego nie zapisujemy: wszystko jest w samym linku.</p>
     <div class="card title">
       <label for="u" style="font-weight:700;display:block;margin-bottom:6px">U kogo Wigilia? <span style="font-weight:400;color:var(--muted)">(niekonieczne)</span></label>
@@ -146,6 +159,7 @@
     <h2>Tak samo może wyglądać zwykły tydzień</h2>
     <p>W WE.LIFE układasz plan posiłków, a lista zakupów z ilościami powstaje z planu i odejmuje to, co już masz w domu. Konto jest bezpłatne.</p>
     <a class="btn" href="https://welife.world/?utm_source=wigilia&utm_medium=tool&utm_campaign=wigilia-2026&utm_content=cta">Załóż bezpłatne konto</a>
+    <p style="margin:14px 0 0;font-size:15px">Pierwszy krok po rejestracji: wybierz „Na co dzień”, otwórz Listę zakupów i dopisz jedną rzecz, po którą idziesz do sklepu.</p>
   </div>
 </main>
 
@@ -189,12 +203,18 @@ const DANIA = [
   { id: "kutia", n: "Kutia", p: "ok. 80 g na osobę", s: { pszenica: 25, mak: 15, miod: 15, bakalie: 15 }, plan: [[2, "Namocz pszenicę i mak na kutię."], [1, "Ugotuj pszenicę, zmiel mak, wymieszaj z miodem i bakaliami."]], on: 0 },
   { id: "kluski", n: "Kluski z makiem", p: "ok. 100 g na osobę", s: { makaron: 40, mak: 15, miod: 10, bakalie: 10 }, plan: [[1, "Przygotuj masę makową do klusek."], [0, "Ugotuj makaron i wymieszaj z makiem."]], on: 0 },
 ];
+// Sprawy poza kuchnią: [id, nazwa, ile dni przed Wigilią]. Własne sprawy użytkownika trafiają na dzień przed.
+const SPRAWY = [
+  ["zakupy", "Zakupy spożywcze", 2], ["choinka", "Choinka i ozdoby", 2], ["prezenty", "Prezenty", 2],
+  ["sprzatanie", "Sprzątanie przed gośćmi", 1], ["krzesla", "Dodatkowe krzesła i nakrycia", 1],
+  ["goscie", "Przywieźć gości (babcia, dziadek)", 0], ["koledy", "Kolędy i świeczki na stół", 0],
+];
 const DNI = [[2, "2 dni przed", "wtorek 22.12"], [1, "Dzień przed", "środa 23.12"], [0, "Wigilia", "czwartek 24.12"]];
 const PRZYPRAWY = "sól, pieprz, liść laurowy, ziele angielskie, majeranek, goździki, cynamon, ocet albo sok z cytryny";
 const BASE = location.href.split("#")[0];
 
 // Stan: liczba osób, wybrane potrawy, kto robi którą, u kogo. Trzymany wyłącznie w części adresu po znaku #.
-const stan = { n: 8, d: new Set(DANIA.filter((x) => x.on).map((x) => x.id)), k: {}, u: "" };
+const stan = { n: 8, d: new Set(DANIA.filter((x) => x.on).map((x) => x.id)), k: {}, u: "", s: new Set(), w: [] };
 function czytajHash() {
   const q = new URLSearchParams(location.hash.slice(1));
   const n = parseInt(q.get("n"), 10);
@@ -206,14 +226,26 @@ function czytajHash() {
     if (i > 0 && DANIA.some((x) => x.id === para.slice(0, i))) stan.k[para.slice(0, i)] = para.slice(i + 1).slice(0, 24);
   }
   stan.u = (q.get("u") || "").slice(0, 40);
+  stan.s = new Set((q.get("s") || "").split(".").filter((id) => SPRAWY.some((x) => x[0] === id)));
+  stan.w = (q.get("w") || "").split("|").filter(Boolean).slice(0, 8).map((para) => {
+    const i = para.indexOf("~");
+    return { co: (i < 0 ? para : para.slice(0, i)).slice(0, 60), kto: i < 0 ? "" : para.slice(i + 1).slice(0, 24) };
+  }).filter((x) => x.co.trim());
+  for (const para of (q.get("k") || "").split("|")) {
+    const i = para.indexOf("~");
+    if (i > 0 && SPRAWY.some((x) => "s-" + x[0] === para.slice(0, i))) stan.k[para.slice(0, i)] = para.slice(i + 1).slice(0, 24);
+  }
 }
 function hash() {
   const q = new URLSearchParams();
   q.set("n", stan.n);
   q.set("d", [...stan.d].join("."));
-  const k = Object.entries(stan.k).filter(([id, kto]) => kto.trim() && stan.d.has(id)).map(([id, kto]) => id + "~" + kto.trim().replace(/[|~]/g, " "));
+  const czyste = (t) => t.trim().replace(/[|~]/g, " ");
+  const k = Object.entries(stan.k).filter(([id, kto]) => kto.trim() && (stan.d.has(id) || (id.startsWith("s-") && stan.s.has(id.slice(2))))).map(([id, kto]) => id + "~" + czyste(kto));
   if (k.length) q.set("k", k.join("|"));
   if (stan.u.trim()) q.set("u", stan.u.trim());
+  if (stan.s.size) q.set("s", [...stan.s].join("."));
+  if (stan.w.length) q.set("w", stan.w.map((x) => czyste(x.co) + (x.kto.trim() ? "~" + czyste(x.kto) : "")).join("|"));
   return q.toString();
 }
 const link = () => BASE + "#" + hash();
@@ -258,6 +290,17 @@ function rysujDania() {
     <div class="who"><input type="text" maxlength="24" placeholder="kto robi? (niekonieczne)" aria-label="Kto robi: ${d.n}" value="${esc(stan.k[d.id] || "")}" autocomplete="off"></div>
   </div>`).join("");
 }
+function rysujSprawy() {
+  $("sprawy").innerHTML = SPRAWY.map(([id, nazwa]) => `<div class="dish${stan.s.has(id) ? " on" : ""}" data-id="${id}">
+    <input type="checkbox" id="t-${id}"${stan.s.has(id) ? " checked" : ""}>
+    <label for="t-${id}">${nazwa}</label>
+    <div class="who"><input type="text" maxlength="24" placeholder="kto bierze? (niekonieczne)" aria-label="Kto bierze: ${nazwa}" value="${esc(stan.k["s-" + id] || "")}" autocomplete="off"></div>
+  </div>`).join("") + stan.w.map((x, i) => `<div class="dish on" data-w="${i}">
+    <input type="checkbox" id="w-${i}" checked aria-label="Usuń: ${esc(x.co)}">
+    <label for="w-${i}">${esc(x.co)}</label>
+    <div class="who"><input type="text" maxlength="24" placeholder="kto bierze? (niekonieczne)" aria-label="Kto bierze: ${esc(x.co)}" value="${esc(x.kto)}" autocomplete="off"></div>
+  </div>`).join("");
+}
 function rysuj() {
   $("n").textContent = stan.n;
   $("tytul").textContent = stan.u.trim() ? "Wigilia " + stan.u.trim() : "Wigilia bez chaosu";
@@ -271,7 +314,9 @@ function rysuj() {
   $("przyprawy").innerHTML = "<b>Sprawdź, czy masz:</b> " + PRZYPRAWY + ".";
   $("print-head").textContent = naglowek() + (wybrany ? " — lista: " + wybrany : "");
   $("plan").innerHTML = DNI.map(([ile, nazwa, data]) => {
-    const z = DANIA.filter((d) => stan.d.has(d.id)).flatMap((d) => d.plan.filter(([kiedy]) => kiedy === ile).map(([, co]) => ({ co, kto: (stan.k[d.id] || "").trim() })));
+    const z = DANIA.filter((d) => stan.d.has(d.id)).flatMap((d) => d.plan.filter(([kiedy]) => kiedy === ile).map(([, co]) => ({ co, kto: (stan.k[d.id] || "").trim() })))
+      .concat(SPRAWY.filter(([id, , kiedy]) => stan.s.has(id) && kiedy === ile).map(([id, nazwa]) => ({ co: esc(nazwa) + ".", kto: (stan.k["s-" + id] || "").trim() })))
+      .concat(ile === 1 ? stan.w.map((x) => ({ co: esc(x.co), kto: x.kto.trim() })) : []);
     return `<div class="card day"><h3>${nazwa}<small>${data}</small></h3>${z.length ? `<ul>${z.map((x) => `<li>${x.kto ? `<i>${esc(x.kto)}:</i> ` : ""}${x.co}</li>`).join("")}</ul>` : `<p class="hint" style="margin:0">Nic do zrobienia.</p>`}</div>`;
   }).join("");
   const wiad = naglowek() + ". Podział, lista zakupów z ilościami i plan gotowania: " + link();
@@ -285,10 +330,29 @@ async function kopiuj(t, ok) {
   catch { const a = document.createElement("textarea"); a.value = t; document.body.append(a); a.select(); document.execCommand("copy"); a.remove(); toast(ok); }
 }
 
+// Oznaczenie źródła: adres z ?z=nazwa (np. link dla jednej grupy albo twórcy) trafia do utm_content linków do aplikacji.
+const zrodlo = (new URLSearchParams(location.search).get("z") || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+if (zrodlo) document.querySelectorAll('a[href*="utm_source=wigilia"]').forEach((a) => { a.href = a.href.replace(/utm_content=([a-z]+)/, "utm_content=" + zrodlo + "-$1"); });
+
 czytajHash();
 $("u").value = stan.u;
 rysujDania();
+rysujSprawy();
 rysuj();
+$("sprawy").addEventListener("change", (e) => {
+  const el = e.target.closest(".dish"); if (!el || e.target.type !== "checkbox") return;
+  if (el.dataset.w !== undefined) { stan.w.splice(+el.dataset.w, 1); rysujSprawy(); }
+  else { e.target.checked ? stan.s.add(el.dataset.id) : stan.s.delete(el.dataset.id); el.classList.toggle("on", e.target.checked); }
+  rysuj();
+});
+$("sprawy").addEventListener("input", (e) => {
+  const el = e.target.closest(".dish"); if (!el || e.target.type !== "text") return;
+  if (el.dataset.w !== undefined) stan.w[+el.dataset.w].kto = e.target.value; else stan.k["s-" + el.dataset.id] = e.target.value;
+  rysuj();
+});
+const dodajSprawe = () => { const t = $("nowa").value.trim(); if (!t || stan.w.length >= 8) return; stan.w.push({ co: t.slice(0, 60), kto: "" }); $("nowa").value = ""; rysujSprawy(); rysuj(); };
+$("dodaj-sprawe").onclick = dodajSprawe;
+$("nowa").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); dodajSprawe(); } });
 $("minus").onclick = () => { stan.n = Math.max(2, stan.n - 1); rysuj(); };
 $("plus").onclick = () => { stan.n = Math.min(30, stan.n + 1); rysuj(); };
 $("dania").addEventListener("change", (e) => {
@@ -305,7 +369,7 @@ $("filtr").addEventListener("change", rysuj);
 $("kopiuj-liste").onclick = () => kopiuj(tekstListy($("filtr").value), "Lista skopiowana");
 $("kopiuj-link").onclick = () => kopiuj(link(), "Link skopiowany");
 $("drukuj").onclick = () => window.print();
-window.addEventListener("hashchange", () => { czytajHash(); $("u").value = stan.u; rysujDania(); rysuj(); });
+window.addEventListener("hashchange", () => { czytajHash(); $("u").value = stan.u; rysujDania(); rysujSprawy(); rysuj(); });
 </script>
 </body>
 </html>
