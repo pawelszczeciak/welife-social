@@ -161,7 +161,7 @@
 </main>
 
 <footer><div class="wrap">
-  Przepisy, kalorie i białko pochodzą z katalogu WE.LIFE i dotyczą 1 porcji. Ilości na liście to porcja z przepisu razy liczba porcji, zaokrąglone w górę do ilości, którą da się kupić.
+  Przepisy i ilość białka pochodzą z katalogu WE.LIFE i dotyczą 1 porcji. Ilości na liście to porcja z przepisu razy liczba porcji, zaokrąglone w górę do ilości, którą da się kupić.
   Zdjęcia potraw to ilustracje wygenerowane przez AI; dodatki na zdjęciu mogą różnić się od przepisu. Strona nie używa plików cookie i niczego nie zapisuje na serwerze.
   Przygotowało <a href="https://welife.world/?utm_source=plan-tygodnia&utm_medium=tool&utm_campaign=plan-tygodnia-2027&utm_content=stopka">WE.LIFE</a>.
 </div></footer>
@@ -244,11 +244,11 @@ function rysujDni() {
   $("dni").innerHTML = stan.d.map((id, i) => {
     const x = id && D[id];
     const wiersz = x
-      ? `<img src="foto/${x.id}.webp" width="76" height="76" alt="" loading="lazy"><div><div class="kiedy">${DNI[i]}</div><div class="co">${esc(x.n)}</div><div class="meta">${x.t} min · ${x.kcal} kcal · ${x.b}&nbsp;g&nbsp;białka</div></div>`
+      ? `<img src="foto/${x.id}.webp" width="76" height="76" alt="" loading="lazy"><div><div class="kiedy">${DNI[i]}</div><div class="co">${esc(x.n)}</div><div class="meta">${x.t} min · ${x.b}&nbsp;g&nbsp;białka</div></div>`
       : `<div class="brak"></div><div><div class="kiedy">${DNI[i]}</div><div class="co" style="color:var(--muted);font-weight:600">Bez obiadu z planu</div></div>`;
     const wybor = otwarty === i
       ? `<div class="wybor"><div class="chipy" role="group" aria-label="Rodzaj dania">${FILTRY.map(([k, nazwa]) => `<button type="button" data-filtr="${k}" aria-pressed="${filtr === k}">${nazwa}</button>`).join("")}</div>
-        <div class="opcje">${DANE.dania.filter(FILTRY.find(([k]) => k === filtr)[2]).map((o) => `<button type="button" class="opcja" data-wybierz="${o.id}" aria-current="${o.id === id}"><img src="foto/${o.id}.webp" width="56" height="56" alt="" loading="lazy"><span><b>${esc(o.n)}</b><small>${o.t} min · ${o.kcal} kcal · ${o.b} g białka · ${RODZAJ[o.r]}${stan.d.includes(o.id) && o.id !== id ? " · już w planie" : ""}</small></span></button>`).join("") || `<p class="hint" style="margin:0">Brak dań w tym filtrze.</p>`}</div>
+        <div class="opcje">${DANE.dania.filter(FILTRY.find(([k]) => k === filtr)[2]).map((o) => `<button type="button" class="opcja" data-wybierz="${o.id}" aria-current="${o.id === id}"><img src="foto/${o.id}.webp" width="56" height="56" alt="" loading="lazy"><span><b>${esc(o.n)}</b><small>${o.t} min · ${o.b} g białka · ${RODZAJ[o.r]}${stan.d.includes(o.id) && o.id !== id ? " · już w planie" : ""}</small></span></button>`).join("") || `<p class="hint" style="margin:0">Brak dań w tym filtrze.</p>`}</div>
         <div class="bar"><button type="button" class="maly" data-wybierz="">Bez obiadu tego dnia</button><button type="button" class="maly" data-zamknij="1">Zamknij</button></div></div>`
       : "";
     return `<div class="dzien${x ? "" : " pusty"}" data-i="${i}"><div class="wiersz">${wiersz}<button type="button" class="maly" data-zmien="1" aria-expanded="${otwarty === i}">${x ? "Zmień" : "Wybierz"}</button></div>${wybor}</div>`;
@@ -263,7 +263,7 @@ function rysuj() {
   $("suma").hidden = !w.length;
   if (w.length) {
     const sr = (pole) => Math.round(w.reduce((a, { x }) => a + x[pole], 0) / w.length);
-    $("suma").innerHTML = `<b>Średnio na porcję:</b> ${sr("kcal")} kcal i ${sr("b")} g białka. Razem ok. ${w.reduce((a, { x }) => a + x.t, 0)} minut gotowania w tygodniu.`;
+    $("suma").innerHTML = `<b>Średnio na porcję:</b> ${sr("b")} g białka. Razem ok. ${w.reduce((a, { x }) => a + x.t, 0)} minut gotowania w tygodniu.`;
   }
   const g = zakupy();
   const ile = g.reduce((a, x) => a + x.poz.length, 0);
