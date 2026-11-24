@@ -2,7 +2,7 @@
 
 Stan na 24.11.2026: **nieopublikowane, poza kolejką**. Automat czyta tylko `queue/` i `media/`, tego katalogu nie.
 Tylko język polski, bez cen, bez płatnej promocji, bez sklepów i bez obietnic o funkcjach aplikacji.
-Po akceptacji Codexa i „tak” właściciela pozycje trafią do kolejki osobnym commitem.
+Publikacja dopiero po odbiorze `/wigilia` (#837), gotowym pomiarze i „tak” właściciela; wtedy pozycje trafią do kolejki osobnym commitem.
 
 Wszystkie liczby i imiona na planszach to odczyt z działającego planera dla 6 osób i domyślnego zestawu potraw
 (odczyt 24.11.2026). Imiona są przykładowe.
@@ -11,7 +11,7 @@ Wszystkie liczby i imiona na planszach to odczyt z działającego planera dla 6 
 
 | Plik | Format | Co to jest |
 |---|---|---|
-| `rolka.mp4` | 1080×1920, 16,4 s, H.264 + AAC | rolka, 7 ujęć, własny podkład |
+| `rolka.mp4` | 1080×1920, 14,2 s, H.264 + AAC | rolka, 6 ujęć, własny podkład |
 | `rolka-okladka.jpg` | 1080×1920 | okładka rolki („Kto robi barszcz?”) |
 | `relacja-1.jpg` … `relacja-3.jpg` | 1080×1920 | relacja, 3 plansze |
 | `karuzela-01-okladka.jpg` … `karuzela-08-cta.jpg` | 1080×1350 | karuzela, 8 slajdów |
@@ -21,10 +21,11 @@ Wszystkie liczby i imiona na planszach to odczyt z działającego planera dla 6 
 1. „Kto robi **barszcz**?” (planer, potrawy bez imion)
 2. „Wpisujesz, **kto co robi**.” (te same potrawy z imionami)
 3. „Lista liczy się sama: **900 g buraków**.” (lista zakupów na 6 osób)
-4. „Plan na 3 dni, **z imionami**.” (22–24 grudnia)
-5. „Basia otwiera link i wybiera **swoją listę**.” (dwa telefony: podział zadań i lista Basi)
-6. „Zmieniasz plan? **Wyślij link jeszcze raz**.” (link to migawka)
-7. „Darmowy planer. **W BIO**. Bez konta. Link masz w bio.”
+4. „Basia otwiera link i wybiera **swoją listę**.” (dwa telefony: podział zadań i lista Basi)
+5. „Zmieniasz plan? **Wyślij link jeszcze raz**.” (link to migawka)
+6. „Ułóż swoją Wigilię. **W BIO**. Darmowy planer, bez konta.”
+
+Plan na 3 dni jest w relacji i w karuzeli; w rolce go nie ma, żeby zmieściła się w 12–15 s.
 
 ### Karuzela, slajd po slajdzie
 
@@ -35,7 +36,7 @@ Wszystkie liczby i imiona na planszach to odczyt z działającego planera dla 6 
 5. Lista, ciąg dalszy (kapusta kiszona 900 g, mąka 600 g, olej 300 ml, susz 200 g, groch 150 g, grzyby 80 g; cała lista ma 23 pozycje).
 6. Plan na 3 dni, z imionami.
 7. Jeden link, każdy widzi swoje (dwa telefony; „Link to migawka: po zmianach wyślij go jeszcze raz”).
-8. Ułóż swój podział. Darmowy planer, bez konta. Link w bio.
+8. Ułóż swoją Wigilię. Darmowy planer, bez konta. Link w bio.
 
 ## Opisy
 
@@ -48,7 +49,7 @@ Darmowy planer Wigilii robi z tego jedną stronę. Wpisujesz liczbę osób i zaz
 
 Przy każdej potrawie wpisujesz, kto ją robi. Planer rozpisuje przygotowania na 3 dni, z imionami. Choinka, prezenty i przywiezienie babci też mają swoje miejsce.
 
-Potem wysyłasz jeden link. Druga osoba otwiera ten sam plan na swoim telefonie i wybiera swoją listę zakupów. Link to migawka: jeśli coś zmienisz, wyślij go jeszcze raz.
+Potem wysyłasz jeden link. Zamiast szukać ustaleń w rodzinnym czacie, każdy ma ten sam podział i wybiera swoją listę zakupów. Link to migawka: jeśli coś zmienisz, wyślij go jeszcze raz.
 
 Bez konta i bez instalowania. Ilości są orientacyjne. Planer przygotowało WE.LIFE. Link masz w bio @welife.world.
 
@@ -110,7 +111,8 @@ https://pawelszczeciak.github.io/welife-social/wigilia/?z=fb-karuzela#n=6
 - Plansza 1: bez naklejek. Opcjonalnie ankieta „U was ustalone, kto robi barszcz?” z odpowiedziami „Tak” / „Jeszcze nie”
   (na wolnym polu pod telefonem nie ma treści, ankieta mieści się nad dolnym marginesem).
 - Plansza 2: bez naklejek.
-- Plansza 3: **naklejka z linkiem** w wolnym polu pod tekstem. Napis na naklejce: `PLANER WIGILII`.
+- Plansza 3: jedyne CTA relacji, napis „Ułóż swoją Wigilię” ze strzałką. **Naklejka z linkiem** w wolnym polu pod strzałką.
+  Napis na naklejce: `UŁÓŻ SWOJĄ WIGILIĘ`.
   Adres: `https://pawelszczeciak.github.io/welife-social/wigilia/?z=ig-relacja#n=6`
 
 Naklejki z linkiem nie da się dodać przez API, dlatego relacja jest do ręcznego wstawienia (ok. 2 minuty).
@@ -150,8 +152,14 @@ Czego tu nie ma: cen i kosztów, sklepów, słowa „beta”, zachęty do zakła
 
 - W kolejce na 1.12 jest karuzela W1 „Wigilia na 8 osób: lista zakupów z ilościami i plan gotowania na 3 dni”.
   Ten zestaw ma inny kąt (podział zadań i drugi telefon, 6 osób) i inne plansze; nic z niego nie jest w `queue/`.
-- Propozycja po akceptacji, do decyzji Codexa i właściciela: rolka w wolnym terminie 4.12 o 12:30, relacja tego samego dnia
-  ręcznie, karuzela 8–10.12. Żadna z tych dat nie jest ustawiona.
+- Żadna data nie jest ustawiona. Kolejność po odbiorze `/wigilia`: rolka o 12:30, relacja tego samego dnia ręcznie,
+  karuzela 4–6 dni później.
+
+## Pomiar
+
+Wskaźniki z #841: potwierdzone konta ze źródłem `wigilia` / `tool` / `wigilia-2026` oraz unikalne osoby z tej grupy,
+które dodały produkt do listy; konta QA osobno. Każdy materiał ma własny dopisek `?z=…`, więc w `utm_content`
+widać, czy osoba przyszła z relacji, z bio, czy z posta na Facebooku.
 
 ## Źródła
 
