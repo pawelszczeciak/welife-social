@@ -24,7 +24,7 @@ WYJ = os.path.join(TU, "../site/tydzien/")
 # Wybrane obiady: skrót identyfikatora przepisu → rodzaj (m = mięso, r = ryba, w = bez mięsa). Kolejność = kolejność w wyborze.
 DANIA = [
     ("07bda1a8", "m"), ("1922e788", "m"), ("3633daa1", "m"), ("0b6fa12f", "m"), ("59965798", "m"), ("127b903c", "m"), ("91b4e904", "m"),
-    ("6decbd81", "m"), ("101f095f", "m"), ("c4e960bf", "m"), ("9d11883a", "m"), ("4d937059", "m"), ("60ddf9f6", "m"), ("893bdeac", "m"),
+    ("6decbd81", "m"), ("101f095f", "m"), ("c4e960bf", "m"), ("9d11883a", "m"), ("4d937059", "m"), ("60ddf9f6", "m"), ("893bdeac", "m"), ("fc81d94d", "m"),
     ("88c56ef6", "r"), ("c4462e3b", "r"), ("9e860d8b", "r"), ("b904c450", "r"), ("5533ddfb", "r"),
     ("54fec575", "w"), ("b92290f1", "w"), ("4d8a4e19", "w"), ("c3132fa8", "w"), ("684a60a6", "w"), ("2826a4b8", "w"), ("31fd65e4", "w"),
     ("de855890", "w"), ("dd116a06", "w"), ("e5003f2c", "w"), ("eff482a6", "w"), ("7e721a4a", "w"),
@@ -67,6 +67,7 @@ SKLADNIKI = {
     "Mięso mielone wołowo-wieprzowe": ("mielone", "Mięso mielone wołowo-wieprzowe", M, "g", {"g": 1}),
     "Schab wieprzowy": ("schab", "Schab wieprzowy", M, "g", {"g": 1}),
     "Wołowina (łopatka)": ("wolowina", "Wołowina (łopatka)", M, "g", {"g": 1}),
+    "Stek wołowy (antrykot)": ("antrykot", "Stek wołowy (antrykot)", M, "g", {"g": 1}),
     "Kiełbasa": ("kielbasa", "Kiełbasa", M, "g", {"g": 1}),
     "Filet z dorsza": ("dorsz", "Filet z dorsza", R, "g", {"g": 1}),
     "Filet z łososia": ("losos", "Filet z łososia", R, "g", {"g": 1}),
@@ -100,6 +101,7 @@ SKLADNIKI = {
     "Sos sojowy": ("sojowy", "Sos sojowy", P, "ml", {"ml": 1}),
     "Bulion": ("bulion", "Bulion warzywny", P, "ml", {"ml": 1}),
     "Oliwa z oliwek": ("oliwa", "Oliwa z oliwek", T, "ml", {"ml": 1, "lyzka": 15}),  # łyżka = 15 ml
+    "Olej rzepakowy": ("olej", "Olej rzepakowy", T, "ml", {"ml": 1, "lyzka": 15}),
     "Tofu": ("tofu", "Tofu naturalne", N, "g", {"g": 1}),
     "Tortilla": ("tortilla", "Tortilla pszenna", C, "szt", SZT),
 }
@@ -141,7 +143,7 @@ for k, rodzaj in DANIA:
     im = Image.open(APP + f"public/cook/heroes/{r['id']}.webp").convert("RGB")
     bok = min(im.size)
     im.crop(((im.width - bok) // 2, (im.height - bok) // 2, (im.width + bok) // 2, (im.height + bok) // 2)).resize((360, 360), Image.LANCZOS).save(WYJ + f"foto/{k}.webp", quality=76, method=6)
-    dania.append({"id": k, "pelne": r["id"], "n": NAZWY.get(k, r["name"]), "r": rodzaj, "t": czas, "kcal": r["calories"], "b": r["protein_g"],
+    dania.append({"id": k, "pelne": r["id"], "n": NAZWY.get(k, r["name"]), "r": rodzaj, "t": czas, "kcal": r["calories"], "b": r["protein_g"], "tl": r["fat_g"], "wg": r["carbs_g"],
                   "s": [[kl, il] for kl, il in skl.items()], "dom": dom, "kroki": kroki})
 
 assert all(x in {k for k, _ in DANIA} for x in DOMYSLNE)
