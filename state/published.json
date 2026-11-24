@@ -2509,6 +2509,11 @@
     "reconciled_at": "2026-11-23T08:44:45.020Z",
     "reconciled_container_status": "ERROR"
   },
+  "2026-11-23-0830-c13:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-24T07:37:48.180Z"
+  },
   "2026-11-23-1230-r41:facebook": {
     "attempts": 1,
     "status": "published",
