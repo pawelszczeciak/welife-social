@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obiady na cały tydzień: plan i lista zakupów | WE.LIFE</title>
+<meta name="description" content="Wybierz obiady na cały tydzień i ustaw liczbę porcji. Dostaniesz jedną listę zakupów z ilościami oraz przepisy na każdy dzień. Bezpłatnie, bez konta.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Obiady na cały tydzień: plan i jedna lista zakupów">
+<meta property="og:description" content="Wybierz obiady, ustaw liczbę porcji i weź jedną listę zakupów na cały tydzień. Bezpłatnie, bez konta.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#084E57">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --teal:#0A6C78; --dark:#084E57; --light:#D6EBEE; --bg:#F2F6F7; --ink:#0F2428; --muted:#46585C; --hl:#52C5D2; --green:#16834A; --line:#C9DADD; --card:#fff; }
+  * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:400 17px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 16px; }
+  header.top { background:var(--dark); color:#fff; padding:22px 0 30px; }
+  .brand { font-weight:800; letter-spacing:.06em; font-size:15px; color:var(--hl); text-decoration:none; }
+  h1 { font-size:clamp(30px,7vw,44px); line-height:1.08; margin:14px 0 10px; font-weight:800; letter-spacing:-.01em; text-wrap:balance; }
+  header.top p { margin:0; color:var(--light); font-size:18px; max-width:34em; }
+  h2 { font-size:24px; line-height:1.2; margin:0 0 4px; font-weight:800; }
+  .hint { color:var(--muted); font-size:15px; margin:0 0 14px; }
+  section { padding:26px 0 6px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; }
+  .stepper { display:flex; align-items:center; gap:14px; }
+  .stepper button { width:52px; height:52px; border-radius:14px; border:2px solid var(--teal); background:#fff; color:var(--teal); font:800 26px/1 Figtree,sans-serif; cursor:pointer; }
+  .stepper output { min-width:2ch; text-align:center; font:800 40px/1 Figtree,sans-serif; font-variant-numeric:tabular-nums; }
+  .stepper span { color:var(--muted); }
+  .days { display:grid; gap:10px; }
+  .dzien { background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .dzien.pusty { border-style:dashed; }
+  .wiersz { display:grid; grid-template-columns:76px 1fr auto; gap:12px; align-items:center; padding:10px 12px 10px 10px; }
+  .wiersz img, .wiersz .brak { width:76px; height:76px; border-radius:12px; object-fit:cover; background:var(--light); display:block; }
+  .kiedy { font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); font-weight:800; }
+  .co { font-weight:700; line-height:1.25; }
+  .meta { color:var(--muted); font-size:14px; }
+  .maly { appearance:none; border:2px solid var(--teal); background:#fff; color:var(--dark); border-radius:10px; padding:9px 12px; min-height:44px; font:700 15px/1 Figtree,sans-serif; cursor:pointer; }
+  .wybor { border-top:1px solid var(--line); padding:12px; background:#F7FBFC; }
+  .chipy { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 10px; }
+  .chipy button { appearance:none; border:2px solid var(--line); background:#fff; color:var(--ink); border-radius:999px; padding:8px 14px; min-height:40px; font:700 14px/1 Figtree,sans-serif; cursor:pointer; }
+  .chipy button[aria-pressed=true] { border-color:var(--teal); background:var(--teal); color:#fff; }
+  .opcje { display:grid; gap:8px; max-height:420px; overflow:auto; padding-right:2px; }
+  .opcja { display:grid; grid-template-columns:56px 1fr; gap:10px; align-items:center; text-align:left; width:100%; padding:6px 10px 6px 6px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); font:400 16px/1.3 Figtree,sans-serif; cursor:pointer; }
+  .opcja img { width:56px; height:56px; border-radius:9px; object-fit:cover; display:block; }
+  .opcja b { display:block; }
+  .opcja small { color:var(--muted); font-size:13px; }
+  .opcja[aria-current=true] { border-color:var(--teal); background:#EAF5F6; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 0; }
+  .btn { appearance:none; border:0; border-radius:12px; padding:13px 18px; min-height:48px; font:700 16px/1.1 Figtree,sans-serif; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; }
+  .btn.primary { background:var(--teal); color:#fff; }
+  .btn.ghost { background:#fff; color:var(--dark); border:2px solid var(--teal); }
+  .btn.wa { background:var(--green); color:#fff; }
+  .btn:focus-visible, .maly:focus-visible, .stepper button:focus-visible, .chipy button:focus-visible, .opcja:focus-visible, summary:focus-visible { outline:3px solid var(--hl); outline-offset:2px; }
+  .suma { margin:12px 0 0; padding:12px 14px; background:var(--light); border-radius:12px; font-size:15px; }
+  .group { margin:0 0 14px; }
+  .group h3 { margin:0 0 6px; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); font-weight:800; }
+  .item { display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:baseline; padding:9px 0; border-top:1px solid #E4EDEF; }
+  .group .item:first-of-type { border-top:0; }
+  .item input { width:20px; height:20px; accent-color:var(--teal); align-self:center; }
+  .item b { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .item input:checked ~ span, .item input:checked ~ b { text-decoration:line-through; color:#7B8C90; }
+  .check { margin:10px 0 0; padding:12px 14px; background:var(--light); border-radius:12px; font-size:15px; }
+  details { background:#fff; border:1px solid var(--line); border-radius:16px; margin:0 0 10px; }
+  summary { cursor:pointer; padding:14px 16px; font-weight:700; list-style:none; display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:"+"; font:800 24px/1 Figtree,sans-serif; color:var(--teal); }
+  details[open] summary::after { content:"−"; }
+  summary small { display:block; font-weight:800; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); }
+  .przepis { padding:0 16px 16px; }
+  .przepis h4 { margin:10px 0 4px; font-size:15px; font-weight:800; }
+  .przepis ul, .przepis ol { margin:0; padding-left:22px; }
+  .przepis li { padding:2px 0; }
+  .przepis a { color:var(--teal); font-weight:700; }
+  .cta { background:var(--dark); color:#fff; border-radius:22px; padding:24px 20px; margin:30px 0 10px; }
+  .cta h2 { color:#fff; margin-bottom:8px; }
+  .cta p { margin:0 0 16px; color:var(--light); }
+  .cta .btn { background:#fff; color:var(--dark); }
+  footer { color:var(--muted); font-size:14px; padding:18px 0 40px; }
+  footer a { color:var(--teal); }
+  .toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:var(--ink); color:#fff; padding:11px 18px; border-radius:999px; font-weight:600; font-size:15px; opacity:0; pointer-events:none; transition:opacity .2s; }
+  .toast.show { opacity:1; }
+  @media (prefers-reduced-motion:reduce) { .toast { transition:none; } }
+  @media print {
+    header.top, .bar, .cta, .maly, .wybor, #porcje, #udostepnij, .toast, footer { display:none !important; }
+    body { background:#fff; font-size:13px; }
+    section { padding:10px 0 0; } .card, .dzien, details { border:0; padding:0; }
+    .wiersz { grid-template-columns:1fr; padding:2px 0; } .wiersz img, .wiersz .brak { display:none; }
+  }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://welife.world/?utm_source=plan-tygodnia&utm_medium=tool&utm_campaign=plan-tygodnia-2027&utm_content=logo">WE.LIFE</a>
+  <h1>Obiady na cały tydzień</h1>
+  <p>Wybierz obiady i ustaw liczbę porcji. Dostaniesz jedną listę zakupów z ilościami i przepis na każdy dzień.</p>
+</div></header>
+
+<main class="wrap">
+  <section id="porcje">
+    <h2>1. Ile porcji na obiad?</h2>
+    <p class="hint">Jedna porcja to pełny obiad dla dorosłej osoby. Małe dziecko zje zwykle pół porcji.</p>
+    <div class="card stepper">
+      <button type="button" id="minus" aria-label="Mniej porcji">−</button>
+      <output id="n" aria-live="polite">4</output>
+      <button type="button" id="plus" aria-label="Więcej porcji">+</button>
+      <span id="n-opis">porcje</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Obiady na ten tydzień</h2>
+    <p class="hint">Zmień danie, które Ci nie pasuje, albo wylosuj cały tydzień od nowa.</p>
+    <div class="days" id="dni"></div>
+    <div class="suma" id="suma"></div>
+    <div class="bar">
+      <button type="button" class="btn primary" id="losuj">Wylosuj cały tydzień</button>
+      <button type="button" class="btn ghost" id="weekend">Dodaj sobotę i niedzielę</button>
+    </div>
+  </section>
+
+  <section id="lista-sekcja">
+    <h2>3. Lista zakupów</h2>
+    <p class="hint" id="lista-opis"></p>
+    <div class="card" id="lista"></div>
+    <div class="check" id="w-domu"></div>
+    <div class="bar">
+      <button type="button" class="btn primary" id="kopiuj-liste">Kopiuj listę</button>
+      <a class="btn wa" id="wa-lista" target="_blank" rel="noopener">Wyślij listę na WhatsApp</a>
+      <button type="button" class="btn ghost" id="drukuj">Drukuj</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Przepisy na każdy dzień</h2>
+    <p class="hint">Składniki są przeliczone na wybraną liczbę porcji. W krokach ilości podane są na 1 porcję.</p>
+    <div id="przepisy"></div>
+  </section>
+
+  <section id="udostepnij">
+    <h2>5. Wyślij domownikom</h2>
+    <p class="hint">Każdy, kto otworzy link, zobaczy ten sam plan i listę zakupów. Niczego nie zapisujemy: wszystko jest w samym linku.</p>
+    <div class="card">
+      <div class="bar" style="margin-top:0">
+        <a class="btn wa" id="wa-link" target="_blank" rel="noopener">Wyślij plan na WhatsApp</a>
+        <button type="button" class="btn ghost" id="kopiuj-link">Kopiuj link</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Tak samo może wyglądać każdy tydzień</h2>
+    <p>W WE.LIFE układasz plan posiłków, a lista zakupów z ilościami powstaje z planu. Możesz założyć bezpłatne konto.</p>
+    <a class="btn" href="https://welife.world/?utm_source=plan-tygodnia&utm_medium=tool&utm_campaign=plan-tygodnia-2027&utm_content=cta">Załóż bezpłatne konto</a>
+    <p style="margin:14px 0 0;font-size:15px">Pierwszy krok po rejestracji: wybierz „Na co dzień”, otwórz Listę zakupów i dopisz jedną rzecz, po którą idziesz do sklepu.</p>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  Przepisy, kalorie i białko pochodzą z katalogu WE.LIFE i dotyczą 1 porcji. Ilości na liście to porcja z przepisu razy liczba porcji, zaokrąglone w górę do ilości, którą da się kupić.
+  Zdjęcia potraw to ilustracje wygenerowane przez AI; dodatki na zdjęciu mogą różnić się od przepisu. Strona nie używa plików cookie i niczego nie zapisuje na serwerze.
+  Przygotowało <a href="https://welife.world/?utm_source=plan-tygodnia&utm_medium=tool&utm_campaign=plan-tygodnia-2027&utm_content=stopka">WE.LIFE</a>.
+</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="dane.js"></script>
+<script>
+// Plan tygodnia: obiady z katalogu WE.LIFE → jedna lista zakupów. Stan (liczba porcji i dania na dni) żyje wyłącznie w części adresu po #.
+const DNI = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
+const D = Object.fromEntries(DANE.dania.map((x) => [x.id, x]));
+const RODZAJ = { m: "z mięsem", r: "z rybą", w: "bez mięsa" };
+const FILTRY = [["wszystkie", "Wszystkie", () => true], ["m", "Z mięsem", (x) => x.r === "m"], ["r", "Z rybą", (x) => x.r === "r"], ["w", "Bez mięsa", (x) => x.r === "w"], ["szybkie", "Do 25 minut", (x) => x.t <= 25], ["bialko", "30 g białka i więcej", (x) => x.b >= 30]];
+const stan = { n: 4, d: DANE.domyslne.slice() };
+let otwarty = -1, filtr = "wszystkie";
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const odm = (n, f) => (n === 1 ? f[0] : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? f[1] : f[2]);
+const liczba = (x) => x.toLocaleString("pl-PL", { maximumFractionDigits: 2 });
+const wGore = (x, krok) => Math.ceil(x / krok - 1e-9) * krok;
+// Ilość na liście zakupów: zaokrąglona w górę do czegoś, co da się kupić.
+function ilosc(x, j) {
+  if (j === "g" || j === "ml") {
+    const v = wGore(x, x < 100 ? 10 : x < 1000 ? 50 : 100);
+    return v >= 1000 ? liczba(v / 1000) + (j === "g" ? " kg" : " l") : v + " " + j;
+  }
+  if (j === "doniczka") return "1 doniczka";
+  if (j === "peczek") return "1 pęczek";
+  const v = wGore(x, 1);
+  if (j === "zabek") return v + " " + odm(v, ["ząbek", "ząbki", "ząbków"]);
+  if (j === "puszka") return v + " " + odm(v, ["puszka", "puszki", "puszek"]);
+  return v + " szt.";
+}
+// Ilość w przepisie na wybraną liczbę porcji: bez zaokrąglania do opakowań.
+function wPrzepisie(x, j) {
+  if (j === "g" || j === "ml") { const v = Math.round(x); return v >= 1000 ? liczba(v / 1000) + (j === "g" ? " kg" : " l") : v + " " + j; }
+  if (j === "doniczka") return "kilka listków";
+  if (j === "peczek") return "do posypania";
+  const v = Math.round(x * 2) / 2;
+  if (j === "zabek") return liczba(v) + " " + odm(Math.ceil(v), ["ząbek", "ząbki", "ząbków"]);
+  if (j === "puszka") return liczba(v) + " " + odm(Math.ceil(v), ["puszka", "puszki", "puszek"]);
+  return liczba(v) + " szt.";
+}
+const STALE = new Set(["doniczka", "peczek"]);
+
+function czytajHash() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  const n = parseInt(q.get("n"), 10);
+  if (n >= 1 && n <= 10) stan.n = n;
+  if (q.has("d")) {
+    const d = q.get("d").split(".").slice(0, 7).map((id) => (D[id] ? id : null));
+    while (d.length < 5) d.push(null);
+    if (d.length === 6) d.push(null);
+    stan.d = d;
+  }
+}
+const hash = () => "n=" + stan.n + "&d=" + stan.d.map((id) => id || "-").join(".");
+const BASE = location.href.split("#")[0];
+const link = () => BASE + "#" + hash();
+const wybrane = () => stan.d.map((id, i) => (id ? { dzien: DNI[i], x: D[id] } : null)).filter(Boolean);
+
+function zakupy() {
+  const suma = {};
+  for (const { x } of wybrane()) for (const [k, il] of x.s) suma[k] = STALE.has(DANE.skladniki[k][2]) ? 1 : (suma[k] || 0) + il * stan.n;
+  return DANE.sekcje.map((nazwa, s) => ({
+    nazwa,
+    poz: Object.entries(suma).filter(([k]) => DANE.skladniki[k][1] === s).map(([k, v]) => ({ n: DANE.skladniki[k][0], ile: ilosc(v, DANE.skladniki[k][2]) })).sort((a, b) => a.n.localeCompare(b.n, "pl")),
+  })).filter((g) => g.poz.length);
+}
+const wDomu = () => [...new Set(wybrane().flatMap(({ x }) => x.dom))];
+const naglowek = () => `Obiady na tydzień: ${wybrane().length} ${odm(wybrane().length, ["obiad", "obiady", "obiadów"])}, ${stan.n} ${odm(stan.n, ["porcja", "porcje", "porcji"])}`;
+function tekstListy() {
+  const dom = wDomu();
+  return [naglowek() + ". Lista zakupów:", ...zakupy().flatMap((g) => ["", g.nazwa.toUpperCase(), ...g.poz.map((p) => "- " + p.n + ": " + p.ile)]),
+    ...(dom.length ? ["", "Sprawdź, czy masz: " + dom.join(", ") + "."] : []),
+    "", "Plan:", ...wybrane().map(({ dzien, x }) => dzien + ": " + x.n), "", "Zrobione w darmowym planerze WE.LIFE: " + link()].join("\n");
+}
+
+function rysujDni() {
+  $("dni").innerHTML = stan.d.map((id, i) => {
+    const x = id && D[id];
+    const wiersz = x
+      ? `<img src="foto/${x.id}.webp" width="76" height="76" alt="" loading="lazy"><div><div class="kiedy">${DNI[i]}</div><div class="co">${esc(x.n)}</div><div class="meta">${x.t} min · ${x.kcal} kcal · ${x.b}&nbsp;g&nbsp;białka</div></div>`
+      : `<div class="brak"></div><div><div class="kiedy">${DNI[i]}</div><div class="co" style="color:var(--muted);font-weight:600">Bez obiadu z planu</div></div>`;
+    const wybor = otwarty === i
+      ? `<div class="wybor"><div class="chipy" role="group" aria-label="Rodzaj dania">${FILTRY.map(([k, nazwa]) => `<button type="button" data-filtr="${k}" aria-pressed="${filtr === k}">${nazwa}</button>`).join("")}</div>
+        <div class="opcje">${DANE.dania.filter(FILTRY.find(([k]) => k === filtr)[2]).map((o) => `<button type="button" class="opcja" data-wybierz="${o.id}" aria-current="${o.id === id}"><img src="foto/${o.id}.webp" width="56" height="56" alt="" loading="lazy"><span><b>${esc(o.n)}</b><small>${o.t} min · ${o.kcal} kcal · ${o.b} g białka · ${RODZAJ[o.r]}${stan.d.includes(o.id) && o.id !== id ? " · już w planie" : ""}</small></span></button>`).join("") || `<p class="hint" style="margin:0">Brak dań w tym filtrze.</p>`}</div>
+        <div class="bar"><button type="button" class="maly" data-wybierz="">Bez obiadu tego dnia</button><button type="button" class="maly" data-zamknij="1">Zamknij</button></div></div>`
+      : "";
+    return `<div class="dzien${x ? "" : " pusty"}" data-i="${i}"><div class="wiersz">${wiersz}<button type="button" class="maly" data-zmien="1" aria-expanded="${otwarty === i}">${x ? "Zmień" : "Wybierz"}</button></div>${wybor}</div>`;
+  }).join("");
+}
+function rysuj() {
+  const w = wybrane();
+  $("n").textContent = stan.n;
+  $("n-opis").textContent = odm(stan.n, ["porcja", "porcje", "porcji"]);
+  $("weekend").textContent = stan.d.length > 5 ? "Usuń sobotę i niedzielę" : "Dodaj sobotę i niedzielę";
+  rysujDni();
+  $("suma").hidden = !w.length;
+  if (w.length) {
+    const sr = (pole) => Math.round(w.reduce((a, { x }) => a + x[pole], 0) / w.length);
+    $("suma").innerHTML = `<b>Średnio na porcję:</b> ${sr("kcal")} kcal i ${sr("b")} g białka. Razem ok. ${w.reduce((a, { x }) => a + x.t, 0)} minut gotowania w tygodniu.`;
+  }
+  const g = zakupy();
+  const ile = g.reduce((a, x) => a + x.poz.length, 0);
+  $("lista-opis").textContent = w.length ? `${naglowek().replace("Obiady na tydzień: ", "")}, ${ile} ${odm(ile, ["pozycja", "pozycje", "pozycji"])}. Ten sam składnik z kilku dań jest zsumowany.` : "Wybierz przynajmniej jeden obiad.";
+  $("lista").innerHTML = g.length ? g.map((x) => `<div class="group"><h3>${x.nazwa}</h3>${x.poz.map((p) => `<label class="item"><input type="checkbox"><span>${esc(p.n)}</span><b>${p.ile}</b></label>`).join("")}</div>`).join("") : `<p class="hint" style="margin:0">Brak pozycji.</p>`;
+  const dom = wDomu();
+  $("w-domu").hidden = !dom.length;
+  $("w-domu").innerHTML = "<b>Sprawdź, czy masz:</b> " + dom.join(", ") + ".";
+  $("przepisy").innerHTML = w.map(({ dzien, x }) => `<details><summary><span><small>${dzien}</small>${esc(x.n)}</span></summary><div class="przepis">
+      <h4>Składniki na ${stan.n} ${odm(stan.n, ["porcję", "porcje", "porcji"])}</h4>
+      <ul>${x.s.map(([k, il]) => `<li>${esc(DANE.skladniki[k][0])}: ${wPrzepisie(STALE.has(DANE.skladniki[k][2]) ? 1 : il * stan.n, DANE.skladniki[k][2])}</li>`).join("")}${x.dom.length ? `<li>${x.dom.join(", ")}</li>` : ""}</ul>
+      <h4>Jak zrobić (ilości w krokach na 1 porcję)</h4>
+      <ol>${x.kroki.map((k) => `<li>${esc(k)}</li>`).join("")}</ol>
+      <p style="margin:10px 0 0"><a href="https://welife.world/preview/${x.pelne}?utm_source=plan-tygodnia&utm_medium=tool&utm_campaign=plan-tygodnia-2027&utm_content=przepis" target="_blank" rel="noopener">Zobacz ten przepis na welife.world</a></p>
+    </div></details>`).join("") || `<p class="hint">Wybierz obiady, a pojawią się tu przepisy.</p>`;
+  $("wa-link").href = "https://wa.me/?text=" + encodeURIComponent(naglowek() + ". Plan, lista zakupów i przepisy: " + link());
+  $("wa-lista").href = "https://wa.me/?text=" + encodeURIComponent(tekstListy());
+  history.replaceState(null, "", "#" + hash());
+}
+function toast(t) { const el = $("toast"); el.textContent = t; el.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 1800); }
+async function kopiuj(t, ok) {
+  try { await navigator.clipboard.writeText(t); toast(ok); }
+  catch { const a = document.createElement("textarea"); a.value = t; document.body.append(a); a.select(); document.execCommand("copy"); a.remove(); toast(ok); }
+}
+// Losowanie: mięso, bez mięsa, mięso, bez mięsa, ryba w piątek; w weekend jeszcze mięso i danie bez mięsa. Bez powtórek.
+function losuj() {
+  const tasuj = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(([, x]) => x);
+  const pula = { m: tasuj(DANE.dania.filter((x) => x.r === "m")), r: tasuj(DANE.dania.filter((x) => x.r === "r")), w: tasuj(DANE.dania.filter((x) => x.r === "w")) };
+  stan.d = ["m", "w", "m", "w", "r", "m", "w"].slice(0, stan.d.length).map((r) => pula[r].pop().id);
+  otwarty = -1; rysuj();
+}
+
+// Oznaczenie źródła: adres z ?z=nazwa trafia do utm_content linków do aplikacji.
+const zrodlo = (new URLSearchParams(location.search).get("z") || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+function oznaczLinki() { if (zrodlo) document.querySelectorAll('a[href*="utm_source=plan-tygodnia"]').forEach((a) => { if (!a.href.includes("utm_content=" + zrodlo + "-")) a.href = a.href.replace(/utm_content=([a-z]+)/, "utm_content=" + zrodlo + "-$1"); }); }
+
+czytajHash();
+rysuj(); oznaczLinki();
+$("minus").onclick = () => { stan.n = Math.max(1, stan.n - 1); rysuj(); oznaczLinki(); };
+$("plus").onclick = () => { stan.n = Math.min(10, stan.n + 1); rysuj(); oznaczLinki(); };
+$("losuj").onclick = () => { losuj(); oznaczLinki(); };
+$("weekend").onclick = () => { stan.d = stan.d.length > 5 ? stan.d.slice(0, 5) : stan.d.concat([null, null]); if (otwarty > stan.d.length - 1) otwarty = -1; rysuj(); oznaczLinki(); };
+$("dni").addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  const i = +b.closest(".dzien").dataset.i;
+  if (b.dataset.zmien) otwarty = otwarty === i ? -1 : i;
+  else if (b.dataset.zamknij) otwarty = -1;
+  else if (b.dataset.filtr) { filtr = b.dataset.filtr; rysujDni(); return; }
+  else if (b.dataset.wybierz !== undefined) { stan.d[i] = b.dataset.wybierz || null; otwarty = -1; }
+  rysuj(); oznaczLinki();
+  if (otwarty === i) document.querySelector(`.dzien[data-i="${i}"]`).scrollIntoView({ block: "nearest" });
+});
+$("kopiuj-liste").onclick = () => kopiuj(tekstListy(), "Lista skopiowana");
+$("kopiuj-link").onclick = () => kopiuj(link(), "Link skopiowany");
+$("drukuj").onclick = () => { document.querySelectorAll("details").forEach((d) => { d.open = false; }); window.print(); };
+window.addEventListener("hashchange", () => { czytajHash(); otwarty = -1; rysuj(); oznaczLinki(); });
+</script>
+</body>
+</html>
