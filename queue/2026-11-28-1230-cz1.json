@@ -1,0 +1,24 @@
+{
+  "id": "2026-11-28-1230-cz1",
+  "publish_at": "2026-11-28T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube"
+  ],
+  "type": "reel",
+  "media": [
+    "media/CZ1.mp4"
+  ],
+  "cover": "media/CZ1-cover.jpg",
+  "ai_imagery": false,
+  "caption": "Kto robi barszcz? W każdej rodzinnej grupie to pytanie pada 3 razy i dalej nikt nie wie.\n\nZamiast czatu jest jeden link. W darmowym planerze Wigilii wpisujesz liczbę osób, zaznaczasz potrawy i przy każdej wpisujesz, kto ją robi. Lista zakupów liczy się sama, a przygotowania rozpisują się na 3 dni, z imionami.\n\nKażdy otwiera ten sam plan na swoim telefonie. Link to migawka: jeśli coś zmienisz, wyślij go jeszcze raz.\n\nBez konta i bez instalowania. Planer przygotowało WE.LIFE. Link masz w bio @welife.world.\n\nWyślij tę rolkę na swoją rodzinną grupę.\n\n#wigilia #święta #rodzina",
+  "facebook": {
+    "message": "Kto robi barszcz? W każdej rodzinnej grupie to pytanie pada 3 razy i dalej nikt nie wie.\n\nZamiast czatu jest jeden link. W darmowym planerze Wigilii wpisujesz liczbę osób, zaznaczasz potrawy i przy każdej wpisujesz, kto ją robi. Lista zakupów liczy się sama, a przygotowania rozpisują się na 3 dni, z imionami. Bez konta i bez instalowania:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/?z=czat1-fb\n\nLink to migawka: jeśli coś zmienisz, wyślij go jeszcze raz. Planer przygotowało WE.LIFE.\n\nWyślij ten film na swoją rodzinną grupę."
+  },
+  "youtube": {
+    "title": "Rodzinny czat przed Wigilią: kto robi barszcz?",
+    "description": "Kto robi barszcz? W każdej rodzinnej grupie to pytanie pada 3 razy i dalej nikt nie wie.\n\nZamiast czatu jest jeden link. W darmowym planerze Wigilii wpisujesz liczbę osób, zaznaczasz potrawy i przy każdej wpisujesz, kto ją robi. Lista zakupów liczy się sama, a przygotowania rozpisują się na 3 dni, z imionami. Bez konta i bez instalowania:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/?z=czat1-yt\n\nLink to migawka: jeśli coś zmienisz, wyślij go jeszcze raz. Planer przygotowało WE.LIFE.\n\nWyślij ten film na swoją rodzinną grupę."
+  }
+}

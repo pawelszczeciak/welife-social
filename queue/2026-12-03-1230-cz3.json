@@ -1,0 +1,24 @@
+{
+  "id": "2026-12-03-1230-cz3",
+  "publish_at": "2026-12-03T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube"
+  ],
+  "type": "reel",
+  "media": [
+    "media/CZ3.mp4"
+  ],
+  "cover": "media/CZ3-cover.jpg",
+  "ai_imagery": false,
+  "caption": "Ile pierogów na 10 osób? Babcia mówi 200. Planer mówi 60.\n\nPrzy kilku potrawach na stole wychodzi 6 pierogów na osobę. Tyle samo uszek, do tego ok. 250 ml barszczu i jedno dzwonko karpia. Darmowy planer Wigilii przeliczy to na dowolną liczbę osób i ułoży listę zakupów.\n\nBabcia i tak ulepi swoje. Ale będzie wiadomo, ile kupić mąki.\n\nBez konta. Ilości są orientacyjne. Planer przygotowało WE.LIFE. Link masz w bio @welife.world.\n\nIle pierogów lepi się u Was? Napisz w komentarzu.\n\n#wigilia #pierogi #święta",
+  "facebook": {
+    "message": "Ile pierogów na 10 osób? Babcia mówi 200. Planer mówi 60.\n\nPrzy kilku potrawach na stole wychodzi 6 pierogów na osobę. Tyle samo uszek, do tego ok. 250 ml barszczu i jedno dzwonko karpia. Tabela na 2–40 osób jest tutaj:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/ile-pierogow-na-osobe/?z=czat3-fb#n=10\n\nBabcia i tak ulepi swoje. Ale będzie wiadomo, ile kupić mąki. Ilości są orientacyjne. Planer przygotowało WE.LIFE.\n\nIle pierogów lepi się u Was? Napiszcie w komentarzu."
+  },
+  "youtube": {
+    "title": "Ile pierogów na 10 osób? Babcia: 200. Planer: 60",
+    "description": "Ile pierogów na 10 osób? Babcia mówi 200. Planer mówi 60.\n\nPrzy kilku potrawach na stole wychodzi 6 pierogów na osobę. Tyle samo uszek, do tego ok. 250 ml barszczu i jedno dzwonko karpia. Tabela na 2–40 osób jest tutaj:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/ile-pierogow-na-osobe/?z=czat3-yt#n=10\n\nBabcia i tak ulepi swoje. Ale będzie wiadomo, ile kupić mąki. Ilości są orientacyjne. Planer przygotowało WE.LIFE.\n\nIle pierogów lepi się u Was? Napiszcie w komentarzu."
+  }
+}

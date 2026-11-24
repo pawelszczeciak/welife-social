@@ -1,0 +1,24 @@
+{
+  "id": "2026-11-30-1230-cz2",
+  "publish_at": "2026-11-30T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube"
+  ],
+  "type": "reel",
+  "media": [
+    "media/CZ2.mp4"
+  ],
+  "cover": "media/CZ2-cover.jpg",
+  "ai_imagery": false,
+  "caption": "„W tym roku skromnie, 5 potraw.” Dziesięć minut później jest ich 12. Jak co roku.\n\nSkoro i tak będzie wszystko, niech przynajmniej lista zakupów policzy się sama. W darmowym planerze Wigilii zaznaczasz potrawy i wpisujesz liczbę osób, a on podaje ilości i sumuje składniki, które się powtarzają. Na 6 osób to między innymi 900 g buraków i 1,1 kg karpia.\n\nDo tego plan na 3 dni i podział, kto co robi. Bez konta. Ilości są orientacyjne. Planer przygotowało WE.LIFE. Link masz w bio @welife.world.\n\nIle potraw jest u Was naprawdę? Napisz liczbę.\n\n#wigilia #święta #listazakupów",
+  "facebook": {
+    "message": "„W tym roku skromnie, 5 potraw.” Dziesięć minut później jest ich 12. Jak co roku.\n\nSkoro i tak będzie wszystko, niech przynajmniej lista zakupów policzy się sama. W darmowym planerze Wigilii zaznaczasz potrawy i wpisujesz liczbę osób, a on podaje ilości i sumuje składniki, które się powtarzają. Na 6 osób to między innymi 900 g buraków i 1,1 kg karpia. Bez konta:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/?z=czat2-fb#n=6\n\nIlości są orientacyjne. Planer przygotowało WE.LIFE.\n\nIle potraw jest u Was naprawdę? Napiszcie liczbę."
+  },
+  "youtube": {
+    "title": "Rodzinny czat przed Wigilią: w tym roku skromnie, 5 potraw",
+    "description": "„W tym roku skromnie, 5 potraw.” Dziesięć minut później jest ich 12. Jak co roku.\n\nSkoro i tak będzie wszystko, niech przynajmniej lista zakupów policzy się sama. W darmowym planerze Wigilii zaznaczasz potrawy i wpisujesz liczbę osób, a on podaje ilości i sumuje składniki, które się powtarzają. Na 6 osób to między innymi 900 g buraków i 1,1 kg karpia. Bez konta:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/?z=czat2-yt#n=6\n\nIlości są orientacyjne. Planer przygotowało WE.LIFE.\n\nIle potraw jest u Was naprawdę? Napiszcie liczbę."
+  }
+}

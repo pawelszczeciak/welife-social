@@ -1,8 +1,9 @@
 # „Rodzinny czat przed Wigilią”: trzy rolki do akceptacji właściciela
 
-Stan na 24.11.2026: **nieopublikowane, poza kolejką**. Automat czyta tylko `queue/` i `media/`, tego katalogu nie.
-Seria powstała po zgodzie właściciela („tak, rób rodzinny czat”), z zastrzeżeniem akceptacji przed publikacją.
+Stan na 24.11.2026, późnym wieczorem: właściciel zaakceptował serię („tak, wstaw do kolejki”).
+Odcinek 1 jest w kolejce na 28.11, odcinek 2 na 30.11, odcinek 3 na 3.12, każdy o 12:30 (`queue/…-cz1.json`, `-cz2`, `-cz3`).
 Tylko język polski, bez cen, bez płatnej promocji, bez sklepów i bez obietnic o funkcjach aplikacji.
+Ten katalog zostaje jako archiwum plików i opisów.
 
 Rozmowy są scenkami, nie cytatami: imiona i wypowiedzi są wymyślone. Liczby na ekranach końcowych pochodzą z planera
 i stron-odpowiedzi (odczyt 24.11.2026). W filmach nie ma zdjęć ani obrazów z AI; podkład i dźwięki wiadomości generuje własny kod.
@@ -174,9 +175,10 @@ YouTube: tytuł `Ile pierogów na 10 osób? Babcia: 200. Planer: 60`, opis jak n
 
 Czego tu nie ma: cen, sklepów, słowa „beta”, zachęty do zakładania konta, obietnic o funkcjach aplikacji, adresu `welife.world/wigilia`.
 
-## Propozycja terminów (do decyzji właściciela)
+## Terminy (zaakceptowane przez właściciela 24.11.2026)
 
-Jedna publikacja dziennie o 12:30. Rolki z czatem zajęłyby terminy rolek-przepisów, a te przesunęłyby się na wolne dni po 6.12:
+Jedna publikacja dziennie o 12:30. Rolki z czatem zajęły poniższe terminy, a dotychczasowe pozycje przeszły na wolne dni:
+P04 na 7.12, K12 na 8.12, P07 na 9.12.
 
 | Data | Zamiast | Rolka |
 |---|---|---|
