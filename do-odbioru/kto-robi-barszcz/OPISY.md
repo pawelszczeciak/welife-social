@@ -1,8 +1,9 @@
 # „Kto robi barszcz?”: materiały do odbioru (welife-app#841)
 
-Stan na 24.11.2026: **nieopublikowane, poza kolejką**. Automat czyta tylko `queue/` i `media/`, tego katalogu nie.
-Tylko język polski, bez cen, bez płatnej promocji, bez sklepów i bez obietnic o funkcjach aplikacji.
-Publikacja dopiero po odbiorze `/wigilia` (#837), gotowym pomiarze i „tak” właściciela; wtedy pozycje trafią do kolejki osobnym commitem.
+Stan na 24.11.2026, wieczorem: właściciel zdecydował o publikacji bez czekania na `/wigilia`.
+Rolka jest w kolejce na 26.11 o 12:30 (`queue/2026-11-26-1230-w2.json`), karuzela na 6.12 o 12:30 (`queue/2026-12-06-1230-w3.json`).
+Relację właściciel wstawia ręcznie 26.11 po publikacji rolki. Tylko język polski, bez cen, bez płatnej promocji, bez sklepów
+i bez obietnic o funkcjach aplikacji. Ten katalog zostaje jako archiwum plików i opisów.
 
 Wszystkie liczby i imiona na planszach to odczyt z działającego planera dla 6 osób i domyślnego zestawu potraw
 (odczyt 24.11.2026). Imiona są przykładowe.

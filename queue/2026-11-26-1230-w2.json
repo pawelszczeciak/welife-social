@@ -1,0 +1,24 @@
+{
+  "id": "2026-11-26-1230-w2",
+  "publish_at": "2026-11-26T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube"
+  ],
+  "type": "reel",
+  "media": [
+    "media/W2.mp4"
+  ],
+  "cover": "media/W2-cover.jpg",
+  "ai_imagery": false,
+  "caption": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.\n\nDarmowy planer Wigilii robi z tego jedną stronę. Wpisujesz liczbę osób i zaznaczasz potrawy. Lista zakupów liczy się sama: na 6 osób wychodzi 900 g buraków, 1,1 kg karpia i 900 g kapusty kiszonej.\n\nPrzy każdej potrawie wpisujesz, kto ją robi. Planer rozpisuje przygotowania na 3 dni, z imionami. Choinka, prezenty i przywiezienie babci też mają swoje miejsce.\n\nPotem wysyłasz jeden link. Zamiast szukać ustaleń w rodzinnym czacie, każdy ma ten sam podział i wybiera swoją listę zakupów. Link to migawka: jeśli coś zmienisz, wyślij go jeszcze raz.\n\nBez konta i bez instalowania. Ilości są orientacyjne. Planer przygotowało WE.LIFE. Link masz w bio @welife.world.\n\nWyślij tę rolkę osobie, która co roku pyta „a ja co mam przynieść?”.\n\n#wigilia #święta #listazakupów",
+  "facebook": {
+    "message": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.\n\nDarmowy planer Wigilii: wpisujesz liczbę osób, zaznaczasz potrawy i wpisujesz, kto co robi. Lista zakupów liczy się sama (na 6 osób wychodzi 900 g buraków), a przygotowania rozpisują się na 3 dni, z imionami.\n\nWysyłasz jeden link, a każdy wybiera swoją listę zakupów. Link to migawka: po zmianach wyślij go jeszcze raz. Bez konta i bez instalowania:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/?z=fb-post#n=6\n\nIlości są orientacyjne. Planer przygotowało WE.LIFE."
+  },
+  "youtube": {
+    "title": "Kto robi barszcz? Darmowy planer Wigilii na 6 osób",
+    "description": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.\n\nDarmowy planer Wigilii: wpisujesz liczbę osób, zaznaczasz potrawy i wpisujesz, kto co robi. Lista zakupów liczy się sama (na 6 osób wychodzi 900 g buraków), a przygotowania rozpisują się na 3 dni, z imionami.\n\nWysyłasz jeden link, a każdy wybiera swoją listę zakupów. Link to migawka: po zmianach wyślij go jeszcze raz. Bez konta i bez instalowania:\nhttps://pawelszczeciak.github.io/welife-social/wigilia/?z=yt-opis#n=6\n\nIlości są orientacyjne. Planer przygotowało WE.LIFE."
+  }
+}
