@@ -2569,6 +2569,11 @@
     "published_at": "2026-11-23T17:37:04.277Z",
     "updated_at": "2026-11-23T17:35:49.699Z"
   },
+  "2026-11-23-1830-r42:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-24T17:38:18.962Z"
+  },
   "2026-11-23-1830-r42:tiktok": {
     "attempts": 1,
     "status": "published",
