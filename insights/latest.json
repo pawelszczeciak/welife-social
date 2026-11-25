@@ -1,12 +1,32 @@
 {
-  "collected_at": "2026-11-24T03:30:07.345Z",
+  "collected_at": "2026-11-25T03:30:31.725Z",
   "instagram": {
     "followers": 3,
-    "media_count": 87,
+    "media_count": 88,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-24-1230-p01",
+        "id": "18078797177725674",
+        "permalink": "https://www.instagram.com/reel/DgH3boeklig/",
+        "published_at": "2026-11-24T11:38:46+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P01.mp4",
+        "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-23-1830-r42",
         "id": "17994039497865309",
@@ -118,7 +138,7 @@
         "slot": "08:30",
         "media": "K8-01.jpg",
         "hook": "Który z tych 4 kroków robisz przed zakupami? Napisz numer w komentarzu.",
-        "likes": 0,
+        "likes": 1,
         "comments": 0,
         "reach": null,
         "views": null,
@@ -1737,6 +1757,22 @@
     ],
     "posts": [
       {
+        "key": "2026-11-24-1230-p01",
+        "id": "2614571412341885",
+        "published_at": "2026-11-24T11:38:54+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P01.mp4",
+        "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-23-1830-r42",
         "id": "1683189030182402",
         "published_at": "2026-11-23T17:37:05+0000",
@@ -2117,6 +2153,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-24-1230-p01",
+        "id": "6b058726c2665e716e61a151",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7711701193801698599?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-24T11:39:03.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P01.mp4",
+        "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
+        "views": 237,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-23-1830-r42",
         "id": "6b04842e16b77b0c6ac5fd04",
         "permalink": "https://www.tiktok.com/@welife.world/video/7711422424423599393?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -2127,7 +2179,7 @@
         "slot": "18:30",
         "media": "R42.mp4",
         "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
-        "views": 141,
+        "views": 238,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2143,7 +2195,7 @@
         "slot": "12:30",
         "media": "R41.mp4",
         "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer.",
-        "views": 243,
+        "views": 247,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -3009,6 +3061,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-24-1230-p01",
+        "id": "6b0598d84605c85f9d3c318c",
+        "permalink": "https://www.youtube.com/watch?v=TS1XS56T0TU",
+        "published_at": "2026-11-24T11:39:39.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P01.mp4",
+        "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
+        "views": 140,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-23-1830-r42",
         "id": "6b048700097dec85299e6492",
         "permalink": "https://www.youtube.com/watch?v=Qa6hRfxiP0w",
@@ -3019,7 +3087,7 @@
         "slot": "18:30",
         "media": "R42.mp4",
         "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
-        "views": 19,
+        "views": 61,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3035,7 +3103,7 @@
         "slot": "12:30",
         "media": "R41.mp4",
         "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer.",
-        "views": 57,
+        "views": 65,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3051,8 +3119,8 @@
         "slot": "18:30",
         "media": "R40.mp4",
         "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
-        "views": 318,
-        "likes": 0,
+        "views": 360,
+        "likes": 1,
         "comments": 0,
         "shares": 0
       },
@@ -3115,7 +3183,7 @@
         "slot": "18:30",
         "media": "R34.mp4",
         "hook": "Która to dziś Twoja szklanka wody? Napisz numer w komentarzu.",
-        "views": 47,
+        "views": 48,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3365,10 +3433,10 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 88,
+      "posts": 89,
       "by_kind": {
         "reel": {
-          "n": 59,
+          "n": 60,
           "median": 0,
           "total": 19,
           "likes": 19,
@@ -3388,8 +3456,8 @@
         "carousel": {
           "n": 12,
           "median": 1,
-          "total": 9,
-          "likes": 9,
+          "total": 10,
+          "likes": 10,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3397,10 +3465,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 62,
+          "n": 63,
           "median": 0,
-          "total": 13,
-          "likes": 13,
+          "total": 14,
+          "likes": 14,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3416,6 +3484,15 @@
         }
       },
       "by_slot": {
+        "12:30": {
+          "n": 19,
+          "median": 0,
+          "total": 3,
+          "likes": 3,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0
+        },
         "18:30": {
           "n": 19,
           "median": 0,
@@ -3425,20 +3502,11 @@
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
-          "n": 18,
-          "median": 0,
-          "total": 3,
-          "likes": 3,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0
-        },
         "08:30": {
           "n": 17,
           "median": 0,
-          "total": 1,
-          "likes": 1,
+          "total": 2,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3540,6 +3608,17 @@
           "hook": "Trzymasz paragony czy wyrzucasz je od razu? Napisz w komentarzu."
         },
         {
+          "key": "2026-11-22-0830-k8",
+          "kind": "carousel",
+          "lang": "pl",
+          "slot": "08:30",
+          "likes": 1,
+          "saved": null,
+          "shares": null,
+          "avg_watch_s": null,
+          "hook": "Który z tych 4 kroków robisz przed zakupami? Napisz numer w komentarzu."
+        },
+        {
           "key": "2026-11-15-1500-r28",
           "kind": "reel",
           "lang": "pl",
@@ -3560,17 +3639,6 @@
           "shares": null,
           "avg_watch_s": null,
           "hook": "Czego nie znosisz w przepisach? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-13-0830-c5",
-          "kind": "image",
-          "lang": "pl",
-          "slot": "08:30",
-          "likes": 1,
-          "saved": null,
-          "shares": null,
-          "avg_watch_s": null,
-          "hook": "Ile osób je u Ciebie obiad? Napisz liczbę w komentarzu."
         }
       ],
       "bottom": [
@@ -3633,10 +3701,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 24,
+      "posts": 25,
       "by_kind": {
         "reel": {
-          "n": 24,
+          "n": 25,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3647,7 +3715,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 22,
+          "n": 23,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3657,19 +3725,19 @@
         }
       },
       "by_slot": {
-        "18:30": {
-          "n": 9,
+        "12:30": {
+          "n": 11,
           "median": 0,
-          "total": 1,
+          "total": 0,
           "likes": 0,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
-          "n": 10,
+        "18:30": {
+          "n": 9,
           "median": 0,
-          "total": 0,
+          "total": 1,
           "likes": 0,
           "comments": 0,
           "saved": 0,
@@ -3729,6 +3797,16 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
+          "key": "2026-11-24-1230-p01",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
+        },
+        {
           "key": "2026-11-23-1830-r42",
           "kind": "reel",
           "lang": "pl",
@@ -3737,16 +3815,6 @@
           "likes": 0,
           "shares": null,
           "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-23-1230-r41",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 0,
-          "likes": 0,
-          "shares": null,
-          "hook": "Który krok po zakupach zwykle pomijasz: 1, 2 czy 3? Napisz numer."
         }
       ],
       "bottom": [
@@ -3804,12 +3872,12 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 56,
+      "posts": 57,
       "by_kind": {
         "reel": {
-          "n": 56,
+          "n": 57,
           "median": 271,
-          "total": 23005,
+          "total": 23343,
           "likes": 31,
           "comments": 0,
           "saved": 0,
@@ -3818,9 +3886,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 42,
-          "median": 270.5,
-          "total": 17577,
+          "n": 43,
+          "median": 270,
+          "total": 17915,
           "likes": 29,
           "comments": 0,
           "saved": 0,
@@ -3837,20 +3905,20 @@
         }
       },
       "by_slot": {
-        "18:30": {
-          "n": 18,
-          "median": 270.5,
-          "total": 6403,
-          "likes": 15,
+        "12:30": {
+          "n": 19,
+          "median": 260,
+          "total": 8166,
+          "likes": 11,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
+        "18:30": {
           "n": 18,
-          "median": 267,
-          "total": 7925,
-          "likes": 11,
+          "median": 270.5,
+          "total": 6500,
+          "likes": 15,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -4017,13 +4085,13 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 22,
+      "posts": 23,
       "by_kind": {
         "reel": {
-          "n": 22,
-          "median": 56,
-          "total": 1747,
-          "likes": 1,
+          "n": 23,
+          "median": 61,
+          "total": 1980,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -4031,29 +4099,29 @@
       },
       "by_lang": {
         "pl": {
-          "n": 22,
-          "median": 56,
-          "total": 1747,
-          "likes": 1,
+          "n": 23,
+          "median": 61,
+          "total": 1980,
+          "likes": 2,
           "comments": 0,
           "saved": 0,
           "shares": 0
         }
       },
       "by_slot": {
-        "18:30": {
-          "n": 9,
-          "median": 47,
-          "total": 649,
-          "likes": 0,
+        "12:30": {
+          "n": 11,
+          "median": 67,
+          "total": 1144,
+          "likes": 1,
           "comments": 0,
           "saved": 0,
           "shares": 0
         },
-        "12:30": {
-          "n": 10,
-          "median": 66,
-          "total": 996,
+        "18:30": {
+          "n": 9,
+          "median": 53,
+          "total": 734,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -4103,10 +4171,20 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 318,
-          "likes": 0,
+          "views": 360,
+          "likes": 1,
           "shares": 0,
           "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B."
+        },
+        {
+          "key": "2026-11-24-1230-p01",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 140,
+          "likes": 0,
+          "shares": 0,
+          "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
         },
         {
           "key": "2026-11-16-1230-r25",
@@ -4127,16 +4205,6 @@
           "likes": 0,
           "shares": 0,
           "hook": "Na którym kroku przepisu zwykle się gubisz? Napisz w komentarzu."
-        },
-        {
-          "key": "2026-11-19-1830-r33",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "18:30",
-          "views": 97,
-          "likes": 0,
-          "shares": 0,
-          "hook": "Jesz przed treningiem czy po? Napisz PRZED albo PO."
         }
       ],
       "bottom": [
@@ -4181,14 +4249,14 @@
           "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu."
         },
         {
-          "key": "2026-11-23-1830-r42",
+          "key": "2026-11-18-1830-r32",
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 19,
+          "views": 35,
           "likes": 0,
           "shares": 0,
-          "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu."
+          "hook": "Liczby na ekranie czy jedzenie bez liczenia? Napisz A albo B."
         }
       ]
     }
