@@ -1,7 +1,9 @@
-# „5 obiadów po 40 g białka”: karuzela Fit do akceptacji właściciela
+# „5 obiadów po 40 g białka”: karuzela Fit
 
-Stan na 24.11.2026, wieczór: **do akceptacji, nie jest w kolejce**. Proponowany termin: styczeń 2027, po jawnym starcie
-„Planu tygodnia”, bo ostatni slajd i opis odsyłają do planera.
+Stan na 26.11.2026: **zaakceptowana przez właściciela** („tak, karuzela fit zaakceptowana”). **Nie jest jeszcze w kolejce**,
+bo ostatni slajd i opis odsyłają do „Planu tygodnia”, a planer czeka na przegląd właściciela.
+Proponowany termin: **sobota 2.01.2027, 12:30**. To pierwszy dzień po Nowym Roku, w którym sklepy są otwarte,
+a lista zakupów obejmuje obiady od poniedziałku 4.01 do piątku 8.01.
 Tylko język polski, bez cen, bez sklepów, bez płatnej promocji, bez obietnic o zdrowiu i chudnięciu, bez ekranów trybu „Fit i forma”.
 
 ## Pliki
@@ -125,12 +127,25 @@ Opis nie zawiera cen, nazw sklepów, obietnic o zdrowiu ani o funkcjach aplikacj
 Na zdjęciach dań (z aplikacji, wygenerowane przez AI) widać dodatki, których nie ma w przepisach, np. ziemniaki
 i fasolkę przy steku. Dlatego opis mówi wprost, że to propozycja podania, a dodatków nie ma na liście zakupów.
 
-## Warunki przed publikacją
+## Co jeszcze musi się stać przed publikacją
 
-1. Akceptacja tej karuzeli przez właściciela.
-2. „Plan tygodnia” jest jawny (dziś ma `noindex` i nie prowadzi do niego żaden link), a link w bio prowadzi do planera.
-3. Wpis w kolejce: `type: "carousel"`, platformy Instagram i Facebook, `ai_imagery: true`, bez Pinteresta
-   (publikator przyjmuje tam tylko linki do welife.world).
+1. ~~Akceptacja tej karuzeli przez właściciela.~~ Jest, 26.11.2026.
+2. Właściciel akceptuje „Plan tygodnia” (dziś ma `noindex` i nie prowadzi do niego żaden link). Po jego „tak” planer
+   staje się jawny i tego samego dnia karuzela trafia do kolejki.
+3. Przed publikacją link w bio Instagrama prowadzi do planera tygodnia
+   (`https://pawelszczeciak.github.io/welife-social/tydzien/?z=ig-bio`), bo opis mówi „Link masz w bio”.
+
+## Gotowy wpis do kolejki
+
+`wpis-do-kolejki.json` w tym katalogu to kompletny wpis (karuzela, Instagram i Facebook, `ai_imagery: true`, bez
+Pinteresta, bo publikator przyjmuje tam tylko linki do welife.world). Przeszedł walidator publikatora dla obu platform.
+Wstawienie to dwa kroki:
+
+1. skopiować slajdy do `media/` pod nazwami `F1-01.jpg` … `F1-07.jpg` (w kolejności: okładka, plan, białko, lista 1,
+   lista 2, przepis, cta),
+2. skopiować `wpis-do-kolejki.json` do `queue/2027-01-02-1230-f1.json` i uruchomić testy oraz `scripts/validate-queue.mjs`.
+
+Przy innym terminie zmienia się `id`, `publish_at` i nazwa pliku.
 
 ## Jak odtworzyć
 

@@ -1,0 +1,23 @@
+{
+  "id": "2027-01-02-1230-f1",
+  "publish_at": "2027-01-02T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook"
+  ],
+  "type": "carousel",
+  "media": [
+    "media/F1-01.jpg",
+    "media/F1-02.jpg",
+    "media/F1-03.jpg",
+    "media/F1-04.jpg",
+    "media/F1-05.jpg",
+    "media/F1-06.jpg",
+    "media/F1-07.jpg"
+  ],
+  "ai_imagery": true,
+  "caption": "5 obiadów na dni robocze. Każdy ma co najmniej 40 g białka w porcji, a zakupy robisz raz.\n\nPoniedziałek: kurczak w sosie śmietanowym z pieczarkami, 44 g.\nWtorek: pierś z indyka z ziemniakami i surówką, 40 g.\nŚroda: pieczona pierś z kurczaka z warzywami, 40 g.\nCzwartek: schab w sosie śmietanowo-pieprzowym, 42 g.\nPiątek: stek wołowy z masłem czosnkowym, 46 g.\n\nNa slajdach masz ilość mięsa w porcji, listę zakupów na 2 porcje każdego obiadu (17 pozycji) i przepis na poniedziałek. Białko każdego dania sprawdziliśmy dwa razy: w danych przepisu i w przeliczeniu ze składników.\n\nWolisz inne dania albo gotujesz dla 4 osób? W darmowym planerze tygodnia zmienisz dania i liczbę porcji, a lista zakupów przeliczy się sama. Bez konta. Link masz w bio @welife.world.\n\nZapisz ten post, przyda się przed zakupami.\n\nZdjęcia dań wygenerowało AI, to propozycja podania.\n\n#obiad #białko #listazakupów",
+  "facebook": {
+    "message": "5 obiadów na dni robocze. Każdy ma co najmniej 40 g białka w porcji, a zakupy robisz raz.\n\nPoniedziałek: kurczak w sosie śmietanowym z pieczarkami, 44 g.\nWtorek: pierś z indyka z ziemniakami i surówką, 40 g.\nŚroda: pieczona pierś z kurczaka z warzywami, 40 g.\nCzwartek: schab w sosie śmietanowo-pieprzowym, 42 g.\nPiątek: stek wołowy z masłem czosnkowym, 46 g.\n\nNa zdjęciach masz ilość mięsa w porcji, listę zakupów na 2 porcje każdego obiadu (17 pozycji) i przepis na poniedziałek. Białko każdego dania sprawdziliśmy dwa razy: w danych przepisu i w przeliczeniu ze składników.\n\nTen plan otworzysz jednym linkiem. Zmienisz w nim dania i liczbę porcji, a lista zakupów przeliczy się sama. Bez konta:\nhttps://pawelszczeciak.github.io/welife-social/tydzien/?z=fb-fit-40g#n=2&d=07bda1a8.101f095f.0b6fa12f.9d11883a.fc81d94d\n\nZdjęcia dań wygenerowało AI, to propozycja podania."
+  }
+}
