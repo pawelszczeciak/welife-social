@@ -2690,8 +2690,8 @@
     "updated_at": "2026-11-26T11:38:43.538Z"
   },
   "2026-11-26-1230-w2:tiktok": {
-    "attempts": 1,
-    "status": "retry",
+    "attempts": 2,
+    "status": "published",
     "error": "Zernio: TikTok nie opublikował (Failed to process video from this URL: Failed to download video: 403 Forbidden)",
     "history": [
       {
@@ -2700,7 +2700,12 @@
         "error": "Zernio: TikTok nie opublikował (Failed to process video from this URL: Failed to download video: 403 Forbidden)"
       }
     ],
-    "updated_at": "2026-11-26T11:38:43.538Z"
+    "updated_at": "2026-11-26T11:47:52.603Z",
+    "via": "zernio",
+    "id": "6b081c6b8069af999f9253e1",
+    "zernio_status": "publishing",
+    "permalink": null,
+    "published_at": "2026-11-26T11:47:58.634Z"
   },
   "2026-11-26-1230-w2:youtube": {
     "attempts": 1,
