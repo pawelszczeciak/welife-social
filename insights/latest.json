@@ -1,12 +1,32 @@
 {
-  "collected_at": "2026-11-25T03:30:31.725Z",
+  "collected_at": "2026-11-26T03:29:46.800Z",
   "instagram": {
     "followers": 3,
-    "media_count": 88,
+    "media_count": 89,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-25-1230-p02",
+        "id": "18140754784638350",
+        "permalink": "https://www.instagram.com/reel/DgKcHxcBpB4/",
+        "published_at": "2026-11-25T11:37:50+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P02.mp4",
+        "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-24-1230-p01",
         "id": "18078797177725674",
@@ -1757,6 +1777,22 @@
     ],
     "posts": [
       {
+        "key": "2026-11-25-1230-p02",
+        "id": "1043753258124381",
+        "published_at": "2026-11-25T11:38:00+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P02.mp4",
+        "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-24-1230-p01",
         "id": "2614571412341885",
         "published_at": "2026-11-24T11:38:54+0000",
@@ -2153,6 +2189,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-25-1230-p02",
+        "id": "6b06fd0dc461256bf4444a66",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7712072050382310689?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-25T11:38:08.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P02.mp4",
+        "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
+        "views": 262,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-24-1230-p01",
         "id": "6b058726c2665e716e61a151",
         "permalink": "https://www.tiktok.com/@welife.world/video/7711701193801698599?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -2163,7 +2215,7 @@
         "slot": "12:30",
         "media": "P01.mp4",
         "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
-        "views": 237,
+        "views": 246,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -2419,7 +2471,7 @@
         "slot": "20:00",
         "media": "R30.mp4",
         "hook": "Co u Ciebie kupuje się podwójnie? Napisz w komentarzu.",
-        "views": 260,
+        "views": 261,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -2499,7 +2551,7 @@
         "slot": "18:30",
         "media": "R22.mp4",
         "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu.",
-        "views": 274,
+        "views": 275,
         "likes": 2,
         "comments": 0,
         "shares": 0
@@ -3061,6 +3113,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-25-1230-p02",
+        "id": "6b06e615138ee6f9a990e52d",
+        "permalink": "https://www.youtube.com/watch?v=1RkFFUMMZU4",
+        "published_at": "2026-11-25T11:38:30.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P02.mp4",
+        "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
+        "views": 47,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-24-1230-p01",
         "id": "6b0598d84605c85f9d3c318c",
         "permalink": "https://www.youtube.com/watch?v=TS1XS56T0TU",
@@ -3071,7 +3139,7 @@
         "slot": "12:30",
         "media": "P01.mp4",
         "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
-        "views": 140,
+        "views": 190,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3087,7 +3155,7 @@
         "slot": "18:30",
         "media": "R42.mp4",
         "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu.",
-        "views": 61,
+        "views": 77,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3231,7 +3299,7 @@
         "slot": "12:30",
         "media": "R36.mp4",
         "hook": "Które pytanie męczy Cię najbardziej: 1, 2 czy 3? Napisz numer.",
-        "views": 57,
+        "views": 58,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3433,10 +3501,10 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 89,
+      "posts": 90,
       "by_kind": {
         "reel": {
-          "n": 60,
+          "n": 61,
           "median": 0,
           "total": 19,
           "likes": 19,
@@ -3465,7 +3533,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 63,
+          "n": 64,
           "median": 0,
           "total": 14,
           "likes": 14,
@@ -3485,7 +3553,7 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 19,
+          "n": 20,
           "median": 0,
           "total": 3,
           "likes": 3,
@@ -3701,10 +3769,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 25,
+      "posts": 26,
       "by_kind": {
         "reel": {
-          "n": 25,
+          "n": 26,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3715,7 +3783,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 23,
+          "n": 24,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3726,7 +3794,7 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 11,
+          "n": 12,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -3797,6 +3865,16 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
+          "key": "2026-11-25-1230-p02",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka"
+        },
+        {
           "key": "2026-11-24-1230-p01",
           "kind": "reel",
           "lang": "pl",
@@ -3805,16 +3883,6 @@
           "likes": 0,
           "shares": null,
           "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
-        },
-        {
-          "key": "2026-11-23-1830-r42",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "18:30",
-          "views": 0,
-          "likes": 0,
-          "shares": null,
-          "hook": "O co zapytałbyś eNzi o 18:00? Napisz w komentarzu."
         }
       ],
       "bottom": [
@@ -3872,13 +3940,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 57,
+      "posts": 58,
       "by_kind": {
         "reel": {
-          "n": 57,
-          "median": 271,
-          "total": 23343,
-          "likes": 31,
+          "n": 58,
+          "median": 270.5,
+          "total": 23616,
+          "likes": 32,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3886,10 +3954,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 43,
-          "median": 270,
-          "total": 17915,
-          "likes": 29,
+          "n": 44,
+          "median": 269,
+          "total": 18188,
+          "likes": 30,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3906,10 +3974,10 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 19,
-          "median": 260,
-          "total": 8166,
-          "likes": 11,
+          "n": 20,
+          "median": 261,
+          "total": 8437,
+          "likes": 12,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3917,7 +3985,7 @@
         "18:30": {
           "n": 18,
           "median": 270.5,
-          "total": 6500,
+          "total": 6501,
           "likes": 15,
           "comments": 0,
           "saved": 0,
@@ -3925,8 +3993,8 @@
         },
         "20:00": {
           "n": 2,
-          "median": 513.5,
-          "total": 1027,
+          "median": 514,
+          "total": 1028,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4085,12 +4153,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 23,
+      "posts": 24,
       "by_kind": {
         "reel": {
-          "n": 23,
-          "median": 61,
-          "total": 1980,
+          "n": 24,
+          "median": 60,
+          "total": 2094,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4099,9 +4167,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 23,
-          "median": 61,
-          "total": 1980,
+          "n": 24,
+          "median": 60,
+          "total": 2094,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4110,9 +4178,9 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 11,
-          "median": 67,
-          "total": 1144,
+          "n": 12,
+          "median": 66,
+          "total": 1242,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -4121,7 +4189,7 @@
         "18:30": {
           "n": 9,
           "median": 53,
-          "total": 734,
+          "total": 750,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -4181,7 +4249,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 140,
+          "views": 190,
           "likes": 0,
           "shares": 0,
           "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
