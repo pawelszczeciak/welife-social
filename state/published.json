@@ -2649,6 +2649,11 @@
     "published_at": "2026-11-25T11:37:59.053Z",
     "updated_at": "2026-11-25T11:36:24.039Z"
   },
+  "2026-11-25-1230-p02:pinterest": {
+    "attempts": 0,
+    "status": "skipped_stale",
+    "updated_at": "2026-11-26T11:38:43.538Z"
+  },
   "2026-11-25-1230-p02:tiktok": {
     "attempts": 1,
     "status": "published",
@@ -2668,5 +2673,43 @@
     "permalink": "https://www.youtube.com/watch?v=1RkFFUMMZU4",
     "published_at": "2026-11-25T11:38:16.858Z",
     "updated_at": "2026-11-25T11:36:24.039Z"
+  },
+  "2026-11-26-1230-w2:facebook": {
+    "attempts": 1,
+    "status": "published",
+    "id": "1446170807673470",
+    "published_at": "2026-11-26T11:39:32.255Z",
+    "updated_at": "2026-11-26T11:38:43.538Z"
+  },
+  "2026-11-26-1230-w2:instagram": {
+    "attempts": 1,
+    "status": "published",
+    "id": "18015061224004173",
+    "permalink": "https://www.instagram.com/reel/DgNBFIzAKBT/",
+    "published_at": "2026-11-26T11:39:25.985Z",
+    "updated_at": "2026-11-26T11:38:43.538Z"
+  },
+  "2026-11-26-1230-w2:tiktok": {
+    "attempts": 1,
+    "status": "retry",
+    "error": "Zernio: TikTok nie opublikował (Failed to process video from this URL: Failed to download video: 403 Forbidden)",
+    "history": [
+      {
+        "at": "2026-11-26T11:38:43.538Z",
+        "stage": "publish",
+        "error": "Zernio: TikTok nie opublikował (Failed to process video from this URL: Failed to download video: 403 Forbidden)"
+      }
+    ],
+    "updated_at": "2026-11-26T11:38:43.538Z"
+  },
+  "2026-11-26-1230-w2:youtube": {
+    "attempts": 1,
+    "status": "published",
+    "via": "zernio",
+    "id": "6b081a79fac366d673cce96e",
+    "zernio_status": "published",
+    "permalink": "https://www.youtube.com/watch?v=-7FV0CJ-n_Q",
+    "published_at": "2026-11-26T11:39:42.574Z",
+    "updated_at": "2026-11-26T11:38:43.538Z"
   }
 }
