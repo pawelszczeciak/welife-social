@@ -1,0 +1,24 @@
+{
+  "id": "2027-01-01-1230-f2",
+  "publish_at": "2027-01-01T12:30:00+01:00",
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube"
+  ],
+  "type": "reel",
+  "media": [
+    "media/F2.mp4"
+  ],
+  "cover": "media/F2-cover.jpg",
+  "ai_imagery": true,
+  "caption": "5 obiadów po 40 g białka: plan na tydzień i jedna lista zakupów\n\nPoniedziałek: kurczak w sosie śmietanowym z pieczarkami, 44 g.\nWtorek: pierś z indyka z ziemniakami i surówką, 40 g.\nŚroda: pieczona pierś z kurczaka z warzywami, 40 g.\nCzwartek: schab w sosie śmietanowo-pieprzowym, 42 g.\nPiątek: stek wołowy z masłem czosnkowym, 46 g.\n\nKażdy obiad to 20 do 35 minut przy kuchni. Lista zakupów na 2 porcje każdego dania ma 17 pozycji, a białko sprawdziliśmy dwa razy: w danych przepisu i w przeliczeniu ze składników.\n\nCały plan z listą i przepisami otworzysz w darmowym planerze tygodnia. Zmienisz w nim dania i liczbę porcji, a lista przeliczy się sama. Bez konta. Link masz w bio @welife.world.\n\nWyślij tę rolkę osobie, z którą robisz zakupy.\n\nZdjęcia w filmie to ilustracje wygenerowane przez AI.\n\n#obiad #białko #listazakupów",
+  "facebook": {
+    "message": "5 obiadów po 40 g białka: plan na tydzień i jedna lista zakupów\n\nPoniedziałek: kurczak w sosie śmietanowym z pieczarkami, 44 g.\nWtorek: pierś z indyka z ziemniakami i surówką, 40 g.\nŚroda: pieczona pierś z kurczaka z warzywami, 40 g.\nCzwartek: schab w sosie śmietanowo-pieprzowym, 42 g.\nPiątek: stek wołowy z masłem czosnkowym, 46 g.\n\nKażdy obiad to 20 do 35 minut przy kuchni. Lista zakupów na 2 porcje każdego dania ma 17 pozycji, a białko sprawdziliśmy dwa razy: w danych przepisu i w przeliczeniu ze składników.\n\nCały plan z listą i przepisami otworzysz jednym linkiem. Zmienisz w nim dania i liczbę porcji, a lista przeliczy się sama. Bez konta:\nhttps://pawelszczeciak.github.io/welife-social/tydzien/?z=fb-fit-rolka#n=2&d=07bda1a8.101f095f.0b6fa12f.9d11883a.fc81d94d\n\nPlaner przygotowało WE.LIFE. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  },
+  "youtube": {
+    "title": "5 obiadów po 40 g białka: plan na tydzień i jedna lista zakupów",
+    "description": "5 obiadów po 40 g białka: plan na tydzień i jedna lista zakupów\n\nPoniedziałek: kurczak w sosie śmietanowym z pieczarkami, 44 g.\nWtorek: pierś z indyka z ziemniakami i surówką, 40 g.\nŚroda: pieczona pierś z kurczaka z warzywami, 40 g.\nCzwartek: schab w sosie śmietanowo-pieprzowym, 42 g.\nPiątek: stek wołowy z masłem czosnkowym, 46 g.\n\nKażdy obiad to 20 do 35 minut przy kuchni. Lista zakupów na 2 porcje każdego dania ma 17 pozycji, a białko sprawdziliśmy dwa razy: w danych przepisu i w przeliczeniu ze składników.\n\nCały plan z listą i przepisami otworzysz jednym linkiem. Zmienisz w nim dania i liczbę porcji, a lista przeliczy się sama. Bez konta:\nhttps://pawelszczeciak.github.io/welife-social/tydzien/?z=yt-fit-rolka#n=2&d=07bda1a8.101f095f.0b6fa12f.9d11883a.fc81d94d\n\nPlaner przygotowało WE.LIFE. Zdjęcia w filmie to ilustracje wygenerowane przez AI."
+  }
+}
