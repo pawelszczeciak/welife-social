@@ -1,12 +1,32 @@
 {
-  "collected_at": "2026-11-26T03:29:46.800Z",
+  "collected_at": "2026-11-27T03:29:57.495Z",
   "instagram": {
     "followers": 3,
-    "media_count": 89,
+    "media_count": 90,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-26-1230-w2",
+        "id": "18015061224004173",
+        "permalink": "https://www.instagram.com/reel/DgNBFIzAKBT/",
+        "published_at": "2026-11-26T11:39:19+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "W2.mp4",
+        "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-25-1230-p02",
         "id": "18140754784638350",
@@ -1777,6 +1797,22 @@
     ],
     "posts": [
       {
+        "key": "2026-11-26-1230-w2",
+        "id": "1446170807673470",
+        "published_at": "2026-11-26T11:39:27+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "W2.mp4",
+        "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-25-1230-p02",
         "id": "1043753258124381",
         "published_at": "2026-11-25T11:38:00+0000",
@@ -2189,6 +2225,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-26-1230-w2",
+        "id": "6b083ef2b64a61f7a48aafcb",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7712445683483053351?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-26T11:47:58.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "W2.mp4",
+        "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.",
+        "views": 269,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-25-1230-p02",
         "id": "6b06fd0dc461256bf4444a66",
         "permalink": "https://www.tiktok.com/@welife.world/video/7712072050382310689?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -2199,7 +2251,7 @@
         "slot": "12:30",
         "media": "P02.mp4",
         "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
-        "views": 262,
+        "views": 265,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -2658,7 +2710,7 @@
         "permalink": "https://www.tiktok.com/@welife.world/video/7707020571619462422?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
         "published_at": "2026-11-12T09:00:00.000Z",
         "kind": "reel",
-        "views": 726,
+        "views": 727,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3113,6 +3165,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-26-1230-w2",
+        "id": "6b084d145ebc348ba0588cc4",
+        "permalink": "https://www.youtube.com/watch?v=-7FV0CJ-n_Q",
+        "published_at": "2026-11-26T11:40:01.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "W2.mp4",
+        "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.",
+        "views": 35,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-25-1230-p02",
         "id": "6b06e615138ee6f9a990e52d",
         "permalink": "https://www.youtube.com/watch?v=1RkFFUMMZU4",
@@ -3123,7 +3191,7 @@
         "slot": "12:30",
         "media": "P02.mp4",
         "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
-        "views": 47,
+        "views": 73,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3139,7 +3207,7 @@
         "slot": "12:30",
         "media": "P01.mp4",
         "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
-        "views": 190,
+        "views": 242,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3187,7 +3255,7 @@
         "slot": "18:30",
         "media": "R40.mp4",
         "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B.",
-        "views": 360,
+        "views": 359,
         "likes": 1,
         "comments": 0,
         "shares": 0
@@ -3219,7 +3287,7 @@
         "slot": "18:30",
         "media": "R37.mp4",
         "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu.",
-        "views": 18,
+        "views": 17,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3331,7 +3399,7 @@
         "slot": "12:30",
         "media": "R31.mp4",
         "hook": "Paragon po zakupach: A do kosza czy B do szuflady? Napisz A albo B.",
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3501,10 +3569,10 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 90,
+      "posts": 91,
       "by_kind": {
         "reel": {
-          "n": 61,
+          "n": 62,
           "median": 0,
           "total": 19,
           "likes": 19,
@@ -3533,7 +3601,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 64,
+          "n": 65,
           "median": 0,
           "total": 14,
           "likes": 14,
@@ -3553,7 +3621,7 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 20,
+          "n": 21,
           "median": 0,
           "total": 3,
           "likes": 3,
@@ -3769,10 +3837,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 26,
+      "posts": 27,
       "by_kind": {
         "reel": {
-          "n": 26,
+          "n": 27,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3783,7 +3851,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 24,
+          "n": 25,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3794,7 +3862,7 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 12,
+          "n": 13,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -3865,6 +3933,16 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
+          "key": "2026-11-26-1230-w2",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15."
+        },
+        {
           "key": "2026-11-25-1230-p02",
           "kind": "reel",
           "lang": "pl",
@@ -3873,16 +3951,6 @@
           "likes": 0,
           "shares": null,
           "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka"
-        },
-        {
-          "key": "2026-11-24-1230-p01",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 0,
-          "likes": 0,
-          "shares": null,
-          "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
         }
       ],
       "bottom": [
@@ -3940,13 +4008,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 58,
+      "posts": 59,
       "by_kind": {
         "reel": {
-          "n": 58,
-          "median": 270.5,
-          "total": 23616,
-          "likes": 32,
+          "n": 59,
+          "median": 270,
+          "total": 23889,
+          "likes": 34,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3954,10 +4022,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 44,
+          "n": 45,
           "median": 269,
-          "total": 18188,
-          "likes": 30,
+          "total": 18460,
+          "likes": 32,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -3974,10 +4042,10 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 20,
-          "median": 261,
-          "total": 8437,
-          "likes": 12,
+          "n": 21,
+          "median": 265,
+          "total": 8709,
+          "likes": 14,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -4153,12 +4221,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 24,
+      "posts": 25,
       "by_kind": {
         "reel": {
-          "n": 24,
-          "median": 60,
-          "total": 2094,
+          "n": 25,
+          "median": 62,
+          "total": 2206,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4167,9 +4235,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 24,
-          "median": 60,
-          "total": 2094,
+          "n": 25,
+          "median": 62,
+          "total": 2206,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4178,9 +4246,9 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 12,
-          "median": 66,
-          "total": 1242,
+          "n": 13,
+          "median": 67,
+          "total": 1356,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -4189,7 +4257,7 @@
         "18:30": {
           "n": 9,
           "median": 53,
-          "total": 750,
+          "total": 748,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -4239,7 +4307,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 360,
+          "views": 359,
           "likes": 1,
           "shares": 0,
           "hook": "Potrzebujesz 3 papryk, a 1 już masz. Ile kupujesz? Napisz A albo B."
@@ -4249,7 +4317,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 190,
+          "views": 242,
           "likes": 0,
           "shares": 0,
           "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
@@ -4301,7 +4369,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 0,
+          "views": 1,
           "likes": 0,
           "shares": 0,
           "hook": "Paragon po zakupach: A do kosza czy B do szuflady? Napisz A albo B."
@@ -4311,7 +4379,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "18:30",
-          "views": 18,
+          "views": 17,
           "likes": 0,
           "shares": 0,
           "hook": "Ile aplikacji masz do jedzenia i zakupów? Napisz liczbę w komentarzu."
