@@ -1,12 +1,32 @@
 {
-  "collected_at": "2026-11-27T03:29:57.495Z",
+  "collected_at": "2026-11-28T03:28:59.004Z",
   "instagram": {
     "followers": 3,
-    "media_count": 90,
+    "media_count": 91,
     "missing": [
       "instagram_manage_insights (zasięg, wyświetlenia, zapisy, udostępnienia)"
     ],
     "posts": [
+      {
+        "key": "2026-11-27-1230-p03",
+        "id": "18035080586681942",
+        "permalink": "https://www.instagram.com/reel/DgPl5NahOxu/",
+        "published_at": "2026-11-27T11:39:25+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P03.mp4",
+        "hook": "Kotlety mielone z purée z kalafiora: 35 minut, 38 g białka",
+        "likes": 0,
+        "comments": 0,
+        "reach": null,
+        "views": null,
+        "saved": null,
+        "shares": null,
+        "interactions": null,
+        "avg_watch_s": null
+      },
       {
         "key": "2026-11-26-1230-w2",
         "id": "18015061224004173",
@@ -1797,6 +1817,22 @@
     ],
     "posts": [
       {
+        "key": "2026-11-27-1230-p03",
+        "id": "1803636477606228",
+        "published_at": "2026-11-27T11:39:33+0000",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P03.mp4",
+        "hook": "Kotlety mielone z purée z kalafiora: 35 minut, 38 g białka",
+        "views": 0,
+        "reactions": 0,
+        "comments": 0,
+        "shares": null,
+        "reach": null
+      },
+      {
         "key": "2026-11-26-1230-w2",
         "id": "1446170807673470",
         "published_at": "2026-11-26T11:39:27+0000",
@@ -2225,6 +2261,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-27-1230-p03",
+        "id": "6b09a05afa609c0df679132c",
+        "permalink": "https://www.tiktok.com/@welife.world/video/7712814627133869351?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
+        "published_at": "2026-11-27T11:39:44.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P03.mp4",
+        "hook": "Kotlety mielone z purée z kalafiora: 35 minut, 38 g białka",
+        "views": 700,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-26-1230-w2",
         "id": "6b083ef2b64a61f7a48aafcb",
         "permalink": "https://www.tiktok.com/@welife.world/video/7712445683483053351?utm_campaign=tt4d_open_api&utm_source=7608030276714774544",
@@ -2235,7 +2287,7 @@
         "slot": "12:30",
         "media": "W2.mp4",
         "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.",
-        "views": 269,
+        "views": 275,
         "likes": 2,
         "comments": 0,
         "shares": 0
@@ -3165,6 +3217,22 @@
     "missing": [],
     "posts": [
       {
+        "key": "2026-11-27-1230-p03",
+        "id": "6b0996fc61f548120e66d10e",
+        "permalink": "https://www.youtube.com/watch?v=f1Uetawe_Vc",
+        "published_at": "2026-11-27T11:40:17.000Z",
+        "kind": "reel",
+        "type": "reel",
+        "lang": "pl",
+        "slot": "12:30",
+        "media": "P03.mp4",
+        "hook": "Kotlety mielone z purée z kalafiora: 35 minut, 38 g białka",
+        "views": 93,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
         "key": "2026-11-26-1230-w2",
         "id": "6b084d145ebc348ba0588cc4",
         "permalink": "https://www.youtube.com/watch?v=-7FV0CJ-n_Q",
@@ -3175,7 +3243,7 @@
         "slot": "12:30",
         "media": "W2.mp4",
         "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15.",
-        "views": 35,
+        "views": 36,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3191,7 +3259,7 @@
         "slot": "12:30",
         "media": "P02.mp4",
         "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka",
-        "views": 73,
+        "views": 74,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3207,7 +3275,7 @@
         "slot": "12:30",
         "media": "P01.mp4",
         "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka",
-        "views": 242,
+        "views": 243,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3399,7 +3467,7 @@
         "slot": "12:30",
         "media": "R31.mp4",
         "hook": "Paragon po zakupach: A do kosza czy B do szuflady? Napisz A albo B.",
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
         "shares": 0
@@ -3569,10 +3637,10 @@
   "summary": {
     "instagram": {
       "metric": "likes",
-      "posts": 91,
+      "posts": 92,
       "by_kind": {
         "reel": {
-          "n": 62,
+          "n": 63,
           "median": 0,
           "total": 19,
           "likes": 19,
@@ -3601,7 +3669,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 65,
+          "n": 66,
           "median": 0,
           "total": 14,
           "likes": 14,
@@ -3621,7 +3689,7 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 21,
+          "n": 22,
           "median": 0,
           "total": 3,
           "likes": 3,
@@ -3837,10 +3905,10 @@
     },
     "facebook": {
       "metric": "views",
-      "posts": 27,
+      "posts": 28,
       "by_kind": {
         "reel": {
-          "n": 27,
+          "n": 28,
           "median": 0,
           "total": 184,
           "likes": 0,
@@ -3851,7 +3919,7 @@
       },
       "by_lang": {
         "pl": {
-          "n": 25,
+          "n": 26,
           "median": 0,
           "total": 1,
           "likes": 0,
@@ -3862,7 +3930,7 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 13,
+          "n": 14,
           "median": 0,
           "total": 0,
           "likes": 0,
@@ -3933,6 +4001,16 @@
           "hook": "Dla ilu osób gotujesz? Napisz liczbę w komentarzu."
         },
         {
+          "key": "2026-11-27-1230-p03",
+          "kind": "reel",
+          "lang": "pl",
+          "slot": "12:30",
+          "views": 0,
+          "likes": 0,
+          "shares": null,
+          "hook": "Kotlety mielone z purée z kalafiora: 35 minut, 38 g białka"
+        },
+        {
           "key": "2026-11-26-1230-w2",
           "kind": "reel",
           "lang": "pl",
@@ -3941,16 +4019,6 @@
           "likes": 0,
           "shares": null,
           "hook": "Kto robi barszcz? Ustalcie to przed 22 grudnia, a nie w Wigilię o 15."
-        },
-        {
-          "key": "2026-11-25-1230-p02",
-          "kind": "reel",
-          "lang": "pl",
-          "slot": "12:30",
-          "views": 0,
-          "likes": 0,
-          "shares": null,
-          "hook": "Spaghetti z sosem pomidorowym i bazylią: 20 minut, 14 g białka"
         }
       ],
       "bottom": [
@@ -4008,13 +4076,13 @@
     },
     "tiktok": {
       "metric": "views",
-      "posts": 59,
+      "posts": 60,
       "by_kind": {
         "reel": {
-          "n": 59,
-          "median": 270,
-          "total": 23889,
-          "likes": 34,
+          "n": 60,
+          "median": 271,
+          "total": 24595,
+          "likes": 35,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -4022,10 +4090,10 @@
       },
       "by_lang": {
         "pl": {
-          "n": 45,
-          "median": 269,
-          "total": 18460,
-          "likes": 32,
+          "n": 46,
+          "median": 270.5,
+          "total": 19166,
+          "likes": 33,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -4042,10 +4110,10 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 21,
-          "median": 265,
-          "total": 8709,
-          "likes": 14,
+          "n": 22,
+          "median": 269.5,
+          "total": 9415,
+          "likes": 15,
           "comments": 0,
           "saved": 0,
           "shares": 0
@@ -4221,12 +4289,12 @@
     },
     "youtube": {
       "metric": "views",
-      "posts": 25,
+      "posts": 26,
       "by_kind": {
         "reel": {
-          "n": 25,
-          "median": 62,
-          "total": 2206,
+          "n": 26,
+          "median": 63.5,
+          "total": 2303,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4235,9 +4303,9 @@
       },
       "by_lang": {
         "pl": {
-          "n": 25,
-          "median": 62,
-          "total": 2206,
+          "n": 26,
+          "median": 63.5,
+          "total": 2303,
           "likes": 2,
           "comments": 0,
           "saved": 0,
@@ -4246,9 +4314,9 @@
       },
       "by_slot": {
         "12:30": {
-          "n": 13,
-          "median": 67,
-          "total": 1356,
+          "n": 14,
+          "median": 67.5,
+          "total": 1453,
           "likes": 1,
           "comments": 0,
           "saved": 0,
@@ -4317,7 +4385,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 242,
+          "views": 243,
           "likes": 0,
           "shares": 0,
           "hook": "Kurczak w sosie śmietanowym z pieczarkami: 25 minut, 44 g białka"
@@ -4369,7 +4437,7 @@
           "kind": "reel",
           "lang": "pl",
           "slot": "12:30",
-          "views": 1,
+          "views": 2,
           "likes": 0,
           "shares": 0,
           "hook": "Paragon po zakupach: A do kosza czy B do szuflady? Napisz A albo B."
